@@ -1,5 +1,7 @@
 # 短剧制作工作流安装与使用
 
+> **ComfyUI-MiniMaxH3Mod 是本工作流的必装依赖。** 缺少它，AVS 人物库的参考准备及 Identity/Clothing RefMod 绑定链路不可用。AVS 不会自动安装它。[作者仓库与下载入口](https://github.com/Luisacaotica/ComfyUI-MiniMaxH3Mod)；完整 ZIP、Git 安装、目标目录与验收步骤见根 README 的“必装：下载与安装 ComfyUI-MiniMaxH3Mod”。
+
 本次交付：2026-10-19，Skills V5.1.10 人物库复用规则补丁 + 本机 AVS 插件源码快照。五个 Skills 保持同级；插件位于 `integrations/ComfyUI-AI-Video-Studio/`，不是第六个 Skill。
 
 ## 包含什么

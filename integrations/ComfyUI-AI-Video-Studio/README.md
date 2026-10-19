@@ -1,5 +1,16 @@
 # AI视频工作室 v0.18.2 V2.6
 
+## 必装依赖：ComfyUI-MiniMaxH3Mod
+
+本版人物库、Identity RefMod 和 Clothing RefMod 流程必须安装 **ComfyUI-MiniMaxH3Mod**。AVS 在内部调用该插件，导入工作流 JSON 不会自动安装它；缺少它就无法完成此人物参考准备与绑定流程。
+
+1. 从 [作者仓库](https://github.com/Luisacaotica/ComfyUI-MiniMaxH3Mod) 点击 **Code → Download ZIP**，或使用 [本次配套提交 ZIP](https://github.com/Luisacaotica/ComfyUI-MiniMaxH3Mod/archive/f9462081e28794389b5a6c5067eb327412ad8ee7.zip)。网盘完整包也附有 `03_RefMod依赖源码/ComfyUI-MiniMaxH3Mod/`，任选一种安装即可。
+2. 将完整插件目录放到 `ComfyUI/custom_nodes/ComfyUI-MiniMaxH3Mod/`，与本 AVS 插件并列；`__init__.py` 应直接在该目录下。
+3. 使用运行 ComfyUI 的 Python 安装该插件的 `requirements.txt`，然后完全重启 ComfyUI。PowerShell 示例：`& "<ComfyUI Python路径>" -m pip install -r "<ComfyUI根目录>/custom_nodes/ComfyUI-MiniMaxH3Mod/requirements.txt"`。
+4. 检查启动日志无导入失败，在节点搜索中确认存在 Create H3 RefMod，再到人物库执行“保存并准备人物参考”。还需配置真实图片与 H3 视频 VAE。
+
+AVS 要求注册的内部节点类型：`MiniMaxH3RefModExtract`、`MiniMaxH3RefModBundleSave`、`MiniMaxH3RefModsLoader`、`MiniMaxH3RefModApply`。上游更新后需核对这些接口；下载源码不等于模型已经安装或视频效果已经验证。
+
 
 
 

@@ -1,5 +1,7 @@
 # AI Drama Skills — MiniMax H3 & AVS RefMod
 
+> **必装依赖：ComfyUI-MiniMaxH3Mod。** 本仓库的 AVS 人物库／Identity RefMod／Clothing RefMod 工作流程依赖该插件；仅安装 AVS 或导入 JSON，不能完成这条人物参考准备与视频绑定链路。请先按下方“必装：下载与安装 ComfyUI-MiniMaxH3Mod”安装，再使用工作流。单独使用 Skills 编写文本不需要运行该插件。
+
 > **2026-10-19 工作流交付更新：** 已加入人物库优先复用与缺图提示词规则。Python 插件源码位于 [`integrations/ComfyUI-AI-Video-Studio`](integrations/ComfyUI-AI-Video-Studio)，安装顺序、空工作流与首次5秒测试见 [WORKFLOW_SETUP.md](WORKFLOW_SETUP.md)，模型清单见 [MODEL_REQUIREMENTS.md](MODEL_REQUIREMENTS.md)。五个 Skills 的原目录结构、H3 FULL 14 栏与一采/二采逻辑保持不变。此包不包含模型权重和个人素材，也未完成8GB视频生成验收。
 
 > **中文 / English · V5.1.10 · 5 个独立 Skills · 整体一键 + 分步制作**
@@ -71,6 +73,48 @@ ai-drama-skills-avs-refmod/
 ```
 
 已有可运行环境无需重复安装模型或更换 Python。新电脑还需支持 H3 的 ComfyUI、匹配的 PyTorch/CUDA 环境及 FFmpeg/ffprobe；本仓库不是包含这些环境的整机安装包。
+
+### 必装：下载与安装 ComfyUI-MiniMaxH3Mod
+
+AVS 已接入该插件的功能，**不代表 AVS 源码自带或会自动安装它**。工作流图上即使没有单独显示 RefMod 节点，人物库准备参考和视频绑定仍会在内部调用它。
+
+**下载方式（三选一，不要重复安装）：**
+
+1. **与本次交付配套的源码：** 使用网盘完整包中的 `03_RefMod依赖源码/ComfyUI-MiniMaxH3Mod/`，或下载 [本机所用提交的 ZIP](https://github.com/Luisacaotica/ComfyUI-MiniMaxH3Mod/archive/f9462081e28794389b5a6c5067eb327412ad8ee7.zip)。该版本用于复现本次依赖快照，不代表已经完成8GB成片验收。
+2. **上游下载：** 打开 [ComfyUI-MiniMaxH3Mod 作者仓库](https://github.com/Luisacaotica/ComfyUI-MiniMaxH3Mod)，点击 **Code → Download ZIP**。上游节点接口仍在变化，最新版需重新检查兼容性。
+3. **Git 安装：** 在 `ComfyUI/custom_nodes/` 目录打开终端，执行：
+
+   ```text
+   git clone https://github.com/Luisacaotica/ComfyUI-MiniMaxH3Mod.git
+   ```
+
+ZIP 解压后，将外层目录命名为 `ComfyUI-MiniMaxH3Mod` 并放入 `custom_nodes`。最终应为：
+
+```text
+ComfyUI/
+└── custom_nodes/
+    ├── ComfyUI-AI-Video-Studio/
+    │   └── __init__.py
+    └── ComfyUI-MiniMaxH3Mod/
+        ├── __init__.py
+        ├── nodes.py
+        ├── requirements.txt
+        └── 其他原始源码文件与目录
+```
+
+不要多嵌套一层 `ComfyUI-MiniMaxH3Mod-main/ComfyUI-MiniMaxH3Mod/`，也不要只复制 `nodes.py`。在**运行 ComfyUI 的 Python 环境**安装依赖，然后完全重启 ComfyUI；PowerShell 示例（替换路径）：
+
+```powershell
+& "<ComfyUI Python路径>" -m pip install -r "<ComfyUI根目录>/custom_nodes/ComfyUI-MiniMaxH3Mod/requirements.txt"
+```
+
+**如何确认装好了：**
+
+- 启动日志中该插件没有 `IMPORT FAILED` 或缺依赖错误。
+- ComfyUI 节点搜索能找到 `Create H3 RefMod` 等该插件节点；AVS 实际要求注册 `MiniMaxH3RefModExtract`、`MiniMaxH3RefModBundleSave`、`MiniMaxH3RefModsLoader`、`MiniMaxH3RefModApply` 四个内部节点类型。
+- 在 AVS 人物库选择真实图片和 H3 视频 VAE，执行“保存并准备人物参考”，队列完成后人物参考可用。仅看到节点不等于这一步已通过。
+
+如果出现“请先安装并启用 ComfyUI-MiniMaxH3Mod，再重启 ComfyUI”，先检查目录层级、Python 环境、依赖安装和重启是否完成。若用了不同版本，检查上述四个节点类型是否仍存在。插件代码不包含 H3 模型，视频 VAE 等权重仍按 [模型清单](MODEL_REQUIREMENTS.md) 配置。
 
 ### 下载和打开工作流
 
