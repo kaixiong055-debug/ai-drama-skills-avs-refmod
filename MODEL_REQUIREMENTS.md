@@ -8,7 +8,7 @@
 | H3 文本编码 | text_encoders | qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors | H3 生成需要，不是独立生图模型 |
 | 视频编码/RefMod | vae | minimax_h3_video_vae_fp16.safetensors | 人物参考准备与视频生成需要 |
 | 音频编码 | vae | minimax_h3_audio_vae_fp32.safetensors | H3 音视频流程需要 |
-| 4步参考生成加速 | loras | minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors | 随附4步模板启用；按实际文件核对 |
+| 4步参考生成加速 | loras | minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors | 随附4步空白模板启用；用户原始8步JSON未带此节点，按所选工作流核对 |
 | 首帧视频 | diffusion_models | minimax_h3_fl2va_pruned_int8_convrot.safetensors | 选择首帧路线才需要 |
 | latent 二采 | latent_upscale_models | minimax_h3_latent_upscaler_3d_conv_v1_fp16.safetensors | 选择随附 latent ×2 二采时需要 |
 | 像素放大 | upscale_models | RealESRGAN_x2plus.pth | 选择对应像素超分时需要 |

@@ -1,0 +1,290 @@
+{
+  "id": "98f13a5f-2ecb-4535-9bf7-00aaed2e4fcf",
+  "revision": 0,
+  "last_node_id": 7,
+  "last_link_id": 4,
+  "nodes": [
+    {
+      "id": 4,
+      "type": "AVSH3ModelProfile",
+      "pos": [
+        -1234.7789476686746,
+        5.39784924085717
+      ],
+      "size": [
+        310,
+        650
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "LoRA堆栈",
+          "shape": 7,
+          "type": "AVS_LORA_STACK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "H3模型配置",
+          "type": "AVS_H3_MODEL_PROFILE",
+          "links": [
+            1
+          ]
+        },
+        {
+          "name": "配置摘要",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "一采：H3 480P正式生成",
+      "properties": {
+        "Node name for S&R": "AVSH3ModelProfile"
+      },
+      "widgets_values": [
+        "5090｜480P一采",
+        "自动检测",
+        "自动检测",
+        "自动检测",
+        "自动检测",
+        "自动检测",
+        "default",
+        8,
+        1.0,
+        "res_multistep",
+        "simple",
+        1.0,
+        12.0,
+        3.0,
+        "match",
+        "多素材参考",
+        "关闭",
+        true,
+        false
+      ],
+      "widgets_values_named": {
+        "配置名称": "5090｜480P一采",
+        "FL2VA模型": "自动检测",
+        "REF2VA模型": "自动检测",
+        "CLIP模型": "自动检测",
+        "视频VAE": "自动检测",
+        "音频VAE": "自动检测",
+        "权重精度": "default",
+        "Steps": 8,
+        "CFG": 1.0,
+        "采样器": "res_multistep",
+        "调度器": "simple",
+        "降噪": 1.0,
+        "视频Shift": 12.0,
+        "音频Shift": 3.0,
+        "参考图尺寸": "match",
+        "生成模式": "多素材参考",
+        "人脸修复": "关闭",
+        "保留一采latent": true,
+        "匹配Turbo参数": false
+      }
+    },
+    {
+      "id": 5,
+      "type": "AVSH3SecondPassProfile",
+      "pos": [
+        -650,
+        20
+      ],
+      "size": [
+        360,
+        620
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "一采模型配置",
+          "type": "AVS_H3_MODEL_PROFILE",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "二采模型配置",
+          "type": "AVS_H3_MODEL_PROFILE",
+          "links": [
+            3
+          ]
+        },
+        {
+          "name": "二采高清设置",
+          "type": "AVS_H3_REFINE_PROFILE",
+          "links": [
+            4
+          ]
+        },
+        {
+          "name": "配置摘要",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "二采：H3潜空间×2｜约960P",
+      "properties": {
+        "Node name for S&R": "AVSH3SecondPassProfile"
+      },
+      "widgets_values": [
+        "H3潜空间×2（推荐）",
+        4,
+        1.0,
+        "res_multistep",
+        "simple",
+        0.12,
+        true,
+        true,
+        "沿用一采",
+        0,
+        "自动检测",
+        "自动检测",
+        true
+      ],
+      "widgets_values_named": {
+        "二采方式": "H3潜空间×2（推荐）",
+        "二采步数": 4,
+        "二采CFG": 1.0,
+        "二采采样器": "res_multistep",
+        "二采调度器": "simple",
+        "二采降噪": 0.12,
+        "显存自动保护": true,
+        "保留一采声音": true,
+        "Seed方式": "沿用一采",
+        "Seed": 0,
+        "latent放大模型": "自动检测",
+        "超分模型": "自动检测",
+        "保持一采参考尺寸": true
+      }
+    },
+    {
+      "id": 7,
+      "type": "AVSDirectorStudio",
+      "pos": [
+        74.91533260128244,
+        -99.49372941108425
+      ],
+      "size": [
+        1400,
+        1465
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "一采模型配置",
+          "type": "AVS_H3_MODEL_PROFILE",
+          "link": 1
+        },
+        {
+          "name": "二采模型配置",
+          "shape": 7,
+          "type": "AVS_H3_MODEL_PROFILE",
+          "link": 3
+        },
+        {
+          "name": "二采高清设置",
+          "shape": 7,
+          "type": "AVS_H3_REFINE_PROFILE",
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "最终视频（可选）",
+          "type": "VIDEO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AVSDirectorStudio"
+      },
+      "widgets_values": [
+        "{\"version\":9,\"shots\":[{\"id\":\"segment-1\",\"name\":\"单人中景修脸测试\",\"episode_id\":\"EP01\",\"episode_name\":\"第1集\",\"scene_id\":\"SC01\",\"scene_name\":\"未分场\",\"segment_role\":\"content\",\"include_in_final\":true,\"spatial_lock_id\":\"\",\"spatial_lock_source_id\":\"\",\"duration\":5,\"source_mode\":\"生成视频\",\"full_prompt\":\"subject_definitions:\\n<Subject 1> is the adult man in <Picture 1>. Preserve his facial identity, eye shape, eyebrows, nose, lips, jawline, and hairstyle. He wears a tailored black suit jacket, a white shirt, black trousers, and black shoes.\\n\\nsummary:\\nA five-second continuous wide shot of one man standing in a neutral light-gray studio. His entire body is visible and occupies approximately 60 percent of the frame height.\\n\\nretention_analysis:\\n<Subject 1>: fully_preserved. Use <Picture 1> as the facial identity reference. Maintain his facial proportions and visual style at the specified distant framing.\\n\\ndetailed_description:\\n[Shot 1] 0.0–5.0 seconds:\\nA locked, eye-level camera shows the man from the top of his hair to the soles of his shoes. Leave visible space above his head, below his feet, and on both sides. Keep him centered at exactly the same size throughout.\\n\\nHe faces directly toward the camera. Soft, even frontal lighting illuminates his eyes and face without deep shadows. Keep the subject in focus, with facial features as well-defined as the image resolution permits. Preserve natural head-to-body proportions.\\n\\nHis arms rest at his sides. His lips remain gently closed. He maintains a calm expression, with subtle breathing and one natural blink around 2 seconds. His head remains nearly still.\\n\\nHold this wide composition through the final frame. No zooming in, camera movement, close-ups, cuts, walking, head turns, enlarged head, additional people, dialogue, or subtitles.\\n\\noverall_soundscape:\\nQuiet room ambience. No speech.\\n\\nnon_diegetic_music:\\nN/A\",\"image_slots\":[{\"slot\":1,\"token\":\"\",\"asset_id\":\"\",\"name\":\"男主｜脸部身份\",\"group_name\":\"人物库\",\"local_path\":\"E:\\\\Comfy-Desktop\\\\ComfyUI-Shared\\\\input\\\\AI_Video_Studio\\\\local_media\\\\a857b92146_c4454bff-2186-4894-8a47-c5855a01fac8.png\",\"local_filename\":\"a857b92146_c4454bff-2186-4894-8a47-c5855a01fac8.png\",\"local_subfolder\":\"AI_Video_Studio/local_media\",\"local_type\":\"input\",\"character_id\":\"2bef8df688e14b088f58f72f3292b651\"},{\"slot\":2,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":3,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":4,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":5,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":6,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":7,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":8,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":9,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"}],\"picture_binding_labels\":{},\"video_refs\":\"\",\"local_video_refs\":[],\"audio_refs\":\"\",\"continuity\":\"独立生成\",\"guide_frames\":22,\"guide_frame_idx\":0,\"inherit_previous_audio\":false,\"seed_mode\":\"随机\",\"seed\":2957051173213594000,\"existing_video_asset_id\":\"\",\"existing_video_name\":\"\",\"existing_video_path\":\"\",\"existing_video_filename\":\"\",\"existing_video_subfolder\":\"\",\"existing_video_type\":\"\",\"generation_mode\":\"single\",\"draw_count\":4,\"draw_seed_mode\":\"random\",\"draw_rounds\":[],\"selected_candidate_id\":\"\",\"result_video\":{\"filename\":\"S001_单人中景修脸测试_00001_.mp4\",\"subfolder\":\"AI_Video_Studio\\\\人脸修复测试\",\"type\":\"output\"},\"refined_video\":{\"filename\":\"S001_单人中景修脸测试_HD_00002_.mp4\",\"subfolder\":\"AI_Video_Studio\\\\人脸修复测试\",\"type\":\"output\"},\"result_status\":\"提示词已修改\",\"refine_status\":\"二采完成\",\"preview_variant\":\"compare\",\"generation_summary\":\"生成完成｜正式视频段｜864×480｜124帧（约5.17秒）\\n参考：图片1｜视频0｜音频0｜续写引导0帧\\n模型：minimax_h3_ref2va_pruned_int8_convrot.safetensors｜LoRA：不使用｜Steps 16｜CFG 1.0\\n｜总耗时 411.1秒\",\"generation_dims\":[864,480],\"refine_summary\":\"参考头像人脸局部修复（实验）｜修复 124/124 帧｜其余帧保留原样｜防重影合成 v2｜4个分段｜脸部处理 512｜实际降噪 0.130｜色彩稳定 0.25｜原分辨率/帧率/音频保留｜201.6秒\",\"refine_dims\":[864,480],\"character_selections\":[{\"character_id\":\"2bef8df688e14b088f58f72f3292b651\",\"wardrobe_id\":\"\",\"picture_slot\":1,\"previous_slot\":{\"slot\":1,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"}}]},{\"id\":\"segment-1792140331371-1\",\"name\":\"视频段2\",\"episode_id\":\"EP01\",\"episode_name\":\"第1集\",\"scene_id\":\"SC01\",\"scene_name\":\"未分场\",\"segment_role\":\"content\",\"include_in_final\":true,\"spatial_lock_id\":\"\",\"spatial_lock_source_id\":\"\",\"duration\":5,\"source_mode\":\"生成视频\",\"full_prompt\":\"subject_definitions:\\n<Subject 1> is defined by <Picture 1>.\\n\\nsummary:\\n[reference generation] Describe the complete target video segment and its internal [Shot N] sequence.\\n\\nretention_analysis:\\n<Subject 1>: fully_preserved - keep identity, appearance, clothing and fixed design unchanged.\\n\\ndetailed_description:\\n[Shot 1] Describe the opening action, camera, spatial relationship and exact ending state.\\n\\noverall_soundscape:\\nDiegetic sound only, synchronized to the picture.\\n\\nnon_diegetic_music:\\nN/A\",\"image_slots\":[{\"slot\":1,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":2,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":3,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":4,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":5,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":6,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":7,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":8,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":9,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"}],\"picture_binding_labels\":{},\"video_refs\":\"\",\"local_video_refs\":[],\"audio_refs\":\"\",\"continuity\":\"续写上一段\",\"guide_frames\":22,\"guide_frame_idx\":0,\"inherit_previous_audio\":true,\"seed_mode\":\"随机\",\"seed\":0,\"existing_video_asset_id\":\"\",\"existing_video_name\":\"\",\"existing_video_path\":\"\",\"existing_video_filename\":\"\",\"existing_video_subfolder\":\"\",\"existing_video_type\":\"\",\"generation_mode\":\"single\",\"draw_count\":4,\"draw_seed_mode\":\"random\",\"draw_rounds\":[],\"selected_candidate_id\":\"\",\"result_video\":{},\"refined_video\":{},\"result_status\":\"未生成\",\"refine_status\":\"未二采\",\"preview_variant\":\"best\",\"generation_summary\":\"\",\"generation_dims\":[],\"refine_summary\":\"\",\"refine_dims\":[]}],\"character_cast\":[{\"character_id\":\"2bef8df688e14b088f58f72f3292b651\",\"role\":\"配角\"}],\"timeline_edits\":[],\"pending_edit\":{\"start\":1.705,\"end\":1.705,\"mode\":\"动作重绘\",\"context\":0.85,\"prompt\":\"\",\"id\":\"edit-1792150416810\"}}",
+        0,
+        "时间轴局部重绘",
+        "中文",
+        "人脸修复测试",
+        "漫剧",
+        "电影级画面，主体清晰，光影自然，动作稳定",
+        "16:9",
+        "快速预览 480P",
+        "强",
+        "H3原生音频",
+        "AI_Video_Studio",
+        ""
+      ],
+      "widgets_values_named": {
+        "timeline_json": "{\"version\":9,\"shots\":[{\"id\":\"segment-1\",\"name\":\"单人中景修脸测试\",\"episode_id\":\"EP01\",\"episode_name\":\"第1集\",\"scene_id\":\"SC01\",\"scene_name\":\"未分场\",\"segment_role\":\"content\",\"include_in_final\":true,\"spatial_lock_id\":\"\",\"spatial_lock_source_id\":\"\",\"duration\":5,\"source_mode\":\"生成视频\",\"full_prompt\":\"subject_definitions:\\n<Subject 1> is the adult man in <Picture 1>. Preserve his facial identity, eye shape, eyebrows, nose, lips, jawline, and hairstyle. He wears a tailored black suit jacket, a white shirt, black trousers, and black shoes.\\n\\nsummary:\\nA five-second continuous wide shot of one man standing in a neutral light-gray studio. His entire body is visible and occupies approximately 60 percent of the frame height.\\n\\nretention_analysis:\\n<Subject 1>: fully_preserved. Use <Picture 1> as the facial identity reference. Maintain his facial proportions and visual style at the specified distant framing.\\n\\ndetailed_description:\\n[Shot 1] 0.0–5.0 seconds:\\nA locked, eye-level camera shows the man from the top of his hair to the soles of his shoes. Leave visible space above his head, below his feet, and on both sides. Keep him centered at exactly the same size throughout.\\n\\nHe faces directly toward the camera. Soft, even frontal lighting illuminates his eyes and face without deep shadows. Keep the subject in focus, with facial features as well-defined as the image resolution permits. Preserve natural head-to-body proportions.\\n\\nHis arms rest at his sides. His lips remain gently closed. He maintains a calm expression, with subtle breathing and one natural blink around 2 seconds. His head remains nearly still.\\n\\nHold this wide composition through the final frame. No zooming in, camera movement, close-ups, cuts, walking, head turns, enlarged head, additional people, dialogue, or subtitles.\\n\\noverall_soundscape:\\nQuiet room ambience. No speech.\\n\\nnon_diegetic_music:\\nN/A\",\"image_slots\":[{\"slot\":1,\"token\":\"\",\"asset_id\":\"\",\"name\":\"男主｜脸部身份\",\"group_name\":\"人物库\",\"local_path\":\"E:\\\\Comfy-Desktop\\\\ComfyUI-Shared\\\\input\\\\AI_Video_Studio\\\\local_media\\\\a857b92146_c4454bff-2186-4894-8a47-c5855a01fac8.png\",\"local_filename\":\"a857b92146_c4454bff-2186-4894-8a47-c5855a01fac8.png\",\"local_subfolder\":\"AI_Video_Studio/local_media\",\"local_type\":\"input\",\"character_id\":\"2bef8df688e14b088f58f72f3292b651\"},{\"slot\":2,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":3,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":4,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":5,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":6,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":7,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":8,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":9,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"}],\"picture_binding_labels\":{},\"video_refs\":\"\",\"local_video_refs\":[],\"audio_refs\":\"\",\"continuity\":\"独立生成\",\"guide_frames\":22,\"guide_frame_idx\":0,\"inherit_previous_audio\":false,\"seed_mode\":\"随机\",\"seed\":2957051173213594000,\"existing_video_asset_id\":\"\",\"existing_video_name\":\"\",\"existing_video_path\":\"\",\"existing_video_filename\":\"\",\"existing_video_subfolder\":\"\",\"existing_video_type\":\"\",\"generation_mode\":\"single\",\"draw_count\":4,\"draw_seed_mode\":\"random\",\"draw_rounds\":[],\"selected_candidate_id\":\"\",\"result_video\":{\"filename\":\"S001_单人中景修脸测试_00001_.mp4\",\"subfolder\":\"AI_Video_Studio\\\\人脸修复测试\",\"type\":\"output\"},\"refined_video\":{\"filename\":\"S001_单人中景修脸测试_HD_00002_.mp4\",\"subfolder\":\"AI_Video_Studio\\\\人脸修复测试\",\"type\":\"output\"},\"result_status\":\"提示词已修改\",\"refine_status\":\"二采完成\",\"preview_variant\":\"compare\",\"generation_summary\":\"生成完成｜正式视频段｜864×480｜124帧（约5.17秒）\\n参考：图片1｜视频0｜音频0｜续写引导0帧\\n模型：minimax_h3_ref2va_pruned_int8_convrot.safetensors｜LoRA：不使用｜Steps 16｜CFG 1.0\\n｜总耗时 411.1秒\",\"generation_dims\":[864,480],\"refine_summary\":\"参考头像人脸局部修复（实验）｜修复 124/124 帧｜其余帧保留原样｜防重影合成 v2｜4个分段｜脸部处理 512｜实际降噪 0.130｜色彩稳定 0.25｜原分辨率/帧率/音频保留｜201.6秒\",\"refine_dims\":[864,480],\"character_selections\":[{\"character_id\":\"2bef8df688e14b088f58f72f3292b651\",\"wardrobe_id\":\"\",\"picture_slot\":1,\"previous_slot\":{\"slot\":1,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"}}]},{\"id\":\"segment-1792140331371-1\",\"name\":\"视频段2\",\"episode_id\":\"EP01\",\"episode_name\":\"第1集\",\"scene_id\":\"SC01\",\"scene_name\":\"未分场\",\"segment_role\":\"content\",\"include_in_final\":true,\"spatial_lock_id\":\"\",\"spatial_lock_source_id\":\"\",\"duration\":5,\"source_mode\":\"生成视频\",\"full_prompt\":\"subject_definitions:\\n<Subject 1> is defined by <Picture 1>.\\n\\nsummary:\\n[reference generation] Describe the complete target video segment and its internal [Shot N] sequence.\\n\\nretention_analysis:\\n<Subject 1>: fully_preserved - keep identity, appearance, clothing and fixed design unchanged.\\n\\ndetailed_description:\\n[Shot 1] Describe the opening action, camera, spatial relationship and exact ending state.\\n\\noverall_soundscape:\\nDiegetic sound only, synchronized to the picture.\\n\\nnon_diegetic_music:\\nN/A\",\"image_slots\":[{\"slot\":1,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":2,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":3,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":4,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":5,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":6,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":7,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":8,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"},{\"slot\":9,\"token\":\"\",\"asset_id\":\"\",\"name\":\"\",\"group_name\":\"\",\"local_path\":\"\",\"local_filename\":\"\",\"local_subfolder\":\"\",\"local_type\":\"\"}],\"picture_binding_labels\":{},\"video_refs\":\"\",\"local_video_refs\":[],\"audio_refs\":\"\",\"continuity\":\"续写上一段\",\"guide_frames\":22,\"guide_frame_idx\":0,\"inherit_previous_audio\":true,\"seed_mode\":\"随机\",\"seed\":0,\"existing_video_asset_id\":\"\",\"existing_video_name\":\"\",\"existing_video_path\":\"\",\"existing_video_filename\":\"\",\"existing_video_subfolder\":\"\",\"existing_video_type\":\"\",\"generation_mode\":\"single\",\"draw_count\":4,\"draw_seed_mode\":\"random\",\"draw_rounds\":[],\"selected_candidate_id\":\"\",\"result_video\":{},\"refined_video\":{},\"result_status\":\"未生成\",\"refine_status\":\"未二采\",\"preview_variant\":\"best\",\"generation_summary\":\"\",\"generation_dims\":[],\"refine_summary\":\"\",\"refine_dims\":[]}],\"character_cast\":[{\"character_id\":\"2bef8df688e14b088f58f72f3292b651\",\"role\":\"配角\"}],\"timeline_edits\":[],\"pending_edit\":{\"start\":1.705,\"end\":1.705,\"mode\":\"动作重绘\",\"context\":0.85,\"prompt\":\"\",\"id\":\"edit-1792150416810\"}}",
+        "selected_index": 0,
+        "generation_scope": "时间轴局部重绘",
+        "language": "中文",
+        "project_name": "人脸修复测试",
+        "project_type": "漫剧",
+        "visual_style": "电影级画面，主体清晰，光影自然，动作稳定",
+        "aspect_ratio": "16:9",
+        "resolution": "快速预览 480P",
+        "consistency": "强",
+        "audio_mode": "H3原生音频",
+        "output_prefix": "AI_Video_Studio",
+        "avs_director_workbench_ui": ""
+      }
+    }
+  ],
+  "links": [
+    [
+      1,
+      4,
+      0,
+      7,
+      0,
+      "AVS_H3_MODEL_PROFILE"
+    ],
+    [
+      2,
+      4,
+      0,
+      5,
+      0,
+      "AVS_H3_MODEL_PROFILE"
+    ],
+    [
+      3,
+      5,
+      0,
+      7,
+      1,
+      "AVS_H3_MODEL_PROFILE"
+    ],
+    [
+      4,
+      5,
+      1,
+      7,
+      2,
+      "AVS_H3_REFINE_PROFILE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7150000000000073,
+      "offset": [
+        1508.7915918208569,
+        416.4964865981484
+      ]
+    },
+    "frontendVersion": "1.55.17",
+    "avs_profile_note": "v0.18.4 双配置节点：480P一采（8步，保存RAW latent，不跑人脸修复）→ H3潜空间×2二采（约960P，4步，denoise 0.12）"
+  },
+  "version": 0.4
+}

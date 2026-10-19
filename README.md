@@ -10,6 +10,7 @@
 
 ## 目录 / Contents
 
+- [新增：Python 插件、工作流安装与使用](#新增python-插件工作流安装与使用)
 - [01. 这套 Skills 能做什么](#01-这套-skills-能做什么)
 - [02. 五个 Skill：00–04](#02-五个-skill0004)
 - [03. 安装到 Codex](#03-安装到-codex)
@@ -24,6 +25,78 @@
 - [12. 输出清单和交付标准](#12-输出清单和交付标准)
 - [13. 常见问题与故障排查](#13-常见问题与故障排查)
 - [14. 限制、版本与声明](#14-限制版本与声明)
+
+---
+
+## 新增：Python 插件、工作流安装与使用
+
+本仓库现在同时提供 **五个 Skills + AVS Python 插件和网页前端 + ComfyUI 工作流**。Skills 负责剧情、分镜、图片提示词与 H3 文本；AVS 负责素材绑定、人物参考准备和视频调度；ComfyUI/H3 执行视频生成。实际图片生成工具仍需自行选择，本包没有新增自动生图服务。
+
+### 仓库里新增了什么
+
+```text
+ai-drama-skills-avs-refmod/
+├── 00_整体一键版/ … 04_一句话快速单段/    # 保持原来的五个同级 Skills
+├── integrations/
+│   └── ComfyUI-AI-Video-Studio/
+│       ├── __init__.py、nodes.py、director.py 等 Python 文件
+│       ├── character_library.py、character_store.py、wardrobe_store.py
+│       ├── web/                            # 必需的网页界面，不能漏复制
+│       ├── requirements.txt
+│       └── example_workflows/
+│           ├── AI_Video_Studio_480P一采_960P潜空间二采_双节点.json
+│           └── AVS_480P_960P_EMPTY.json
+├── WORKFLOW_SETUP.md                       # 完整安装、迁移及首次测试说明
+└── MODEL_REQUIREMENTS.md                   # 模型文件名、分类与来源
+```
+
+### 分别放到什么文件夹
+
+| 内容 | 从哪里取 | 放到哪里 |
+| --- | --- | --- |
+| 五个 Skills | 根目录的 00–04 五个完整文件夹 | 技能宿主支持的 Skills 目录，例如项目中的 `.agents/skills/`；具体见第03节 |
+| AVS Python 插件 | `integrations/ComfyUI-AI-Video-Studio/` 整个目录 | `ComfyUI/custom_nodes/ComfyUI-AI-Video-Studio/`，确保此目录直接包含 `__init__.py` 与 `web/` |
+| RefMod 依赖插件 | [ComfyUI-MiniMaxH3Mod](https://github.com/Luisacaotica/ComfyUI-MiniMaxH3Mod) | `ComfyUI/custom_nodes/ComfyUI-MiniMaxH3Mod/`，与 AVS 插件并列 |
+| 工作流 JSON | AVS 插件的 `example_workflows/` | 可直接拖进 ComfyUI 画布打开；也可复制到 `ComfyUI/user/default/workflows/` 后从工作流列表打开。使用其他用户配置时放在对应用户的 workflows 目录 |
+| 模型权重 | 已有模型或模型来源 | 按 [模型清单](MODEL_REQUIREMENTS.md) 放入 `diffusion_models`、`text_encoders`、`vae`、`loras` 等模型分类目录；已有共享路径可继续复用 |
+| 人物和服装图片 | 自己确认好的素材 | 在 AVS 人物库/造型库界面上传和绑定，无需放进插件源码目录 |
+
+本机仓库位置为 `E:\github\ai-drama-skills-avs-refmod`；它是源码目录，不能代替 ComfyUI 的插件安装目录。本机 ComfyUI 根目录为 `E:\Comfy-Desktop\ComfyUI-Installs\ComfyUI\ComfyUI`，因此插件目标位置为该目录下的 `custom_nodes\ComfyUI-AI-Video-Studio`。其他电脑使用自己的 ComfyUI 根目录。
+
+安装时保留整个 AVS 插件目录，不能只复制几个 `.py`。已有插件先备份，再更新同名目录，避免两个目录重复加载相同节点。使用**运行 ComfyUI 的那个 Python**安装两个插件各自的 `requirements.txt`，然后重启 ComfyUI；示意命令如下，尖括号内容需替换为实际路径：
+
+```text
+"<ComfyUI Python路径>" -m pip install -r "<ComfyUI根目录>/custom_nodes/ComfyUI-AI-Video-Studio/requirements.txt"
+"<ComfyUI Python路径>" -m pip install -r "<ComfyUI根目录>/custom_nodes/ComfyUI-MiniMaxH3Mod/requirements.txt"
+```
+
+已有可运行环境无需重复安装模型或更换 Python。新电脑还需支持 H3 的 ComfyUI、匹配的 PyTorch/CUDA 环境及 FFmpeg/ffprobe；本仓库不是包含这些环境的整机安装包。
+
+### 下载和打开工作流
+
+- **用户提供的原始双节点工作流：** [AI_Video_Studio_480P一采_960P潜空间二采_双节点.json](integrations/ComfyUI-AI-Video-Studio/example_workflows/AI_Video_Studio_480P一采_960P潜空间二采_双节点.json)。本仓库原样收录，不改变节点连接和采样设置。GitHub 中打开文件后使用下载原始文件按钮保存 `.json`，再拖入 ComfyUI。
+- **新项目空白模板：** [AVS_480P_960P_EMPTY.json](integrations/ComfyUI-AI-Video-Studio/example_workflows/AVS_480P_960P_EMPTY.json)。没有个人测试段和人物绑定，供重新导入 Skills 产出的 H3 使用。
+
+两份文件是不同快照：本次提供的原始 JSON 含三个节点（一采模型、二采配置、导演工作台），一采为8步且未启用匹配Turbo参数；先前空白模板另含4步Turbo LoRA节点。不要把它们当成完全相同参数的“有内容/无内容”版本，应按所选文件检查模型与 LoRA。
+
+**原始 JSON 的首次使用检查：**
+
+1. 它包含两个测试段、旧演员 ID 和 E 盘本地图片路径，这些引用不是随文件附带的图片。其他电脑必须重新选择人物、造型和素材；即使是同一台电脑，也要确认旧记录仍存在。
+2. 默认生成范围为“时间轴局部重绘”。首次生成新视频时切换为“当前视频段”，不能在没有视频结果时直接按旧的局部重绘设置运行。
+3. 其中旧测试提示词使用人物 `<Picture 1>`，不是当前 Skills 的 AVS_REFMOD 正式示例。制作新剧时用 Skills 生成的 FULL 14 栏替换测试内容，重新选择已准备的演员与造型，并清除旧的人脸 Picture 绑定；场景、道具和关键帧按实际需要绑定 Picture。
+4. 配置名称中保留“5090”，这不是对4060 Ti 8GB的适配证明。根据实际可用模型核对一采、文本编码器、视频/音频VAE和二采模型，先做单段测试。
+
+### 从 Skills 到视频怎么用
+
+1. **规划：** 整集使用00；分步使用01→02→03；首次短片测试使用04。提供真实人物、造型和场景素材位置，已有演员优先复用。
+2. **补图：** 按 Skills 的缺项提示词在选定的生图工具补图。正脸确认后再派生角度和表情；新服装优先用无头正背面参考。Skills 写了提示词并不表示图片已经生成。
+3. **人物参考：** 在 AVS 人物库上传正脸，按需补角度和表情；在造型区上传服装图。保存资料并执行“保存并准备人物参考”，等待 ComfyUI 队列完成，再核对可用状态。
+4. **导入文本：** 把 Skills 产出的中文或英文 H3 一键文件导入导演工作台，检查每段时长、场景、演员和当前造型。人物身份与服装由 RefMod 提供，不再额外占用人物 Picture。
+5. **一采：** 先选择一个5秒单人段，用“当前视频段”运行，检查脸、服装、动作和声音。一采保留 latent，供后续二采使用。
+6. **二采：** 一采满意且 latent 可用后，核对 latent 放大模型与二采配置，再选择“二采当前视频段”。二采依赖一采结果，并非从空时间线直接生成960P；显存不足时不要直接扩展到整集。
+7. **整集：** 单人通过后依次测试双人、换装、连续镜头，再批量生成与合成最终视频。
+
+当前交付只完成文件/语法与工作流节点检查，没有进行 GPU 生成或8GB性能验收。更完整的安装与私人素材迁移说明见 [WORKFLOW_SETUP.md](WORKFLOW_SETUP.md)。
 
 ---
 
