@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="legacy">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/00_整体一键版/legacy/V5.0_original.zip!/" />
+      <root url="jar://$PROJECT_DIR$/00_整体一键版/legacy/V4.4_original.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
