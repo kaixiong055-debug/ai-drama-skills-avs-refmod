@@ -1,0 +1,29 @@
+AI Video Studio v0.18.4｜双配置节点 + H3潜空间×2二采
+
+本版目标：把原来的三个配置节点简化成两个可见配置节点。
+
+1. 一采：H3 480P正式生成
+   - Steps 8
+   - CFG 1.0
+   - res_multistep / simple
+   - denoise 1.0
+   - 人脸修复默认关闭（避免一采后额外跑慢速局部修脸）
+   - 保留一采 RAW latent：开启
+   - 匹配Turbo参数：关闭（只有连接兼容Turbo LoRA时再开）
+
+2. 二采：H3潜空间×2｜约960P
+   - 输入直接连接一采模型配置
+   - 自动沿用一采 H3 / CLIP / VAE / 参考图逻辑
+   - 默认 H3 3D latent ×2
+   - 864×480 -> 1728×960
+   - 二采 4 steps
+   - CFG 1.0
+   - res_multistep / simple
+   - denoise 0.12
+   - 保留一采声音
+   - Seed沿用一采
+   - 保持一采参考尺寸
+
+二采节点会同时输出“二采模型配置”和“二采高清设置”，直接连接导演工作台的两个二采输入，因此不再需要单独摆放“二采可选模型”和“二采高清设置”两个节点。
+
+注意：H3潜空间×2需要已安装可用的 AICG3D_H3LatentUpscaler3D 或 MiniMaxH3EasyLatentUpscaler3D 节点，以及 models/latent_upscale_models 下对应 H3 latent upscaler 权重。

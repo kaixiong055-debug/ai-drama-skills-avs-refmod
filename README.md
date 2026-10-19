@@ -1,5 +1,7 @@
 # AI Drama Skills — MiniMax H3 & AVS RefMod
 
+> **2026-10-19 工作流交付更新：** 已加入人物库优先复用与缺图提示词规则。Python 插件源码位于 [`integrations/ComfyUI-AI-Video-Studio`](integrations/ComfyUI-AI-Video-Studio)，安装顺序、空工作流与首次5秒测试见 [WORKFLOW_SETUP.md](WORKFLOW_SETUP.md)，模型清单见 [MODEL_REQUIREMENTS.md](MODEL_REQUIREMENTS.md)。五个 Skills 的原目录结构、H3 FULL 14 栏与一采/二采逻辑保持不变。此包不包含模型权重和个人素材，也未完成8GB视频生成验收。
+
 > **中文 / English · V5.1.10 · 5 个独立 Skills · 整体一键 + 分步制作**
 >
 > 从小说、剧本到可导入 AI-Video-Studio 的 AI 短剧分镜、中文 H3 FULL 提示词与英文 H3 FULL 提示词。支持 MiniMax H3 的 REF2VA 工作方式，以及 AI-Video-Studio 的 **Identity RefMod / Clothing RefMod** 人物绑定方案。

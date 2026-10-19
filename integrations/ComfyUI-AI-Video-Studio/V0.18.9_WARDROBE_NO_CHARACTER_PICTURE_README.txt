@@ -1,0 +1,9 @@
+v0.18.9｜有造型时不自动绑定人物 Picture
+
+本版只修改 character_store.py 的 bind_shot()：
+- 选择造型时：Identity RefMod + Clothing RefMod 保持不变。
+- 选择造型时：Studio 不再把人物高清正脸自动塞进 Picture 槽。
+- 未选择造型时：保留原有的人物 Picture 绑定行为。
+- RefMod 强度、Skills、人物库、造型库、一采/二采均未改动。
+
+目的：减少巨大背景脸、重复人物、参考板构图泄露，以及人物 Picture 中服装与 Clothing RefMod 冲突。

@@ -1,0 +1,800 @@
+{
+  "id": "98f13a5f-2ecb-4535-9bf7-00aaed2e4fcf",
+  "revision": 0,
+  "last_node_id": 8,
+  "last_link_id": 5,
+  "nodes": [
+    {
+      "id": 4,
+      "type": "AVSH3ModelProfile",
+      "pos": [
+        -967.2502453634136,
+        -63.118559284051585
+      ],
+      "size": [
+        466.3158640714437,
+        665.7894233573762
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "LoRA堆栈",
+          "name": "LoRA堆栈",
+          "shape": 7,
+          "type": "AVS_LORA_STACK",
+          "link": 5
+        },
+        {
+          "localized_name": "配置名称",
+          "name": "配置名称",
+          "type": "STRING",
+          "widget": {
+            "name": "配置名称"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "FL2VA模型",
+          "name": "FL2VA模型",
+          "type": "COMBO",
+          "widget": {
+            "name": "FL2VA模型"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "REF2VA模型",
+          "name": "REF2VA模型",
+          "type": "COMBO",
+          "widget": {
+            "name": "REF2VA模型"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "CLIP模型",
+          "name": "CLIP模型",
+          "type": "COMBO",
+          "widget": {
+            "name": "CLIP模型"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "视频VAE",
+          "name": "视频VAE",
+          "type": "COMBO",
+          "widget": {
+            "name": "视频VAE"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "音频VAE",
+          "name": "音频VAE",
+          "type": "COMBO",
+          "widget": {
+            "name": "音频VAE"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "权重精度",
+          "name": "权重精度",
+          "type": "COMBO",
+          "widget": {
+            "name": "权重精度"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "Steps",
+          "name": "Steps",
+          "type": "INT",
+          "widget": {
+            "name": "Steps"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "CFG",
+          "name": "CFG",
+          "type": "FLOAT",
+          "widget": {
+            "name": "CFG"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "采样器",
+          "name": "采样器",
+          "type": "COMBO",
+          "widget": {
+            "name": "采样器"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "调度器",
+          "name": "调度器",
+          "type": "COMBO",
+          "widget": {
+            "name": "调度器"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "降噪",
+          "name": "降噪",
+          "type": "FLOAT",
+          "widget": {
+            "name": "降噪"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "视频Shift",
+          "name": "视频Shift",
+          "type": "FLOAT",
+          "widget": {
+            "name": "视频Shift"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "音频Shift",
+          "name": "音频Shift",
+          "type": "FLOAT",
+          "widget": {
+            "name": "音频Shift"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "参考图尺寸",
+          "name": "参考图尺寸",
+          "type": "COMBO",
+          "widget": {
+            "name": "参考图尺寸"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "生成模式",
+          "name": "生成模式",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "生成模式"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "人脸修复",
+          "name": "人脸修复",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "人脸修复"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "保留一采latent",
+          "name": "保留一采latent",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "保留一采latent"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "匹配Turbo参数",
+          "name": "匹配Turbo参数",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "匹配Turbo参数"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "H3模型配置",
+          "name": "H3模型配置",
+          "type": "AVS_H3_MODEL_PROFILE",
+          "links": [
+            1,
+            2
+          ]
+        },
+        {
+          "localized_name": "配置摘要",
+          "name": "配置摘要",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "一采：H3 480P正式生成",
+      "properties": {
+        "Node name for S&R": "AVSH3ModelProfile"
+      },
+      "widgets_values": [
+        "5090｜480P一采",
+        "自动检测",
+        "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+        "自动检测",
+        "自动检测",
+        "自动检测",
+        "default",
+        4,
+        1,
+        "res_multistep",
+        "simple",
+        1,
+        12,
+        3,
+        "match",
+        "多素材参考",
+        "关闭",
+        true,
+        true
+      ],
+      "widgets_values_named": {
+        "配置名称": "5090｜480P一采",
+        "FL2VA模型": "自动检测",
+        "REF2VA模型": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+        "CLIP模型": "自动检测",
+        "视频VAE": "自动检测",
+        "音频VAE": "自动检测",
+        "权重精度": "default",
+        "Steps": 4,
+        "CFG": 1,
+        "采样器": "res_multistep",
+        "调度器": "simple",
+        "降噪": 1,
+        "视频Shift": 12,
+        "音频Shift": 3,
+        "参考图尺寸": "match",
+        "生成模式": "多素材参考",
+        "人脸修复": "关闭",
+        "保留一采latent": true,
+        "匹配Turbo参数": true
+      }
+    },
+    {
+      "id": 5,
+      "type": "AVSH3SecondPassProfile",
+      "pos": [
+        -401.1565137273792,
+        -59.12772972536561
+      ],
+      "size": [
+        360,
+        620
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "一采模型配置",
+          "name": "一采模型配置",
+          "type": "AVS_H3_MODEL_PROFILE",
+          "link": 2
+        },
+        {
+          "localized_name": "二采方式",
+          "name": "二采方式",
+          "type": "COMBO",
+          "widget": {
+            "name": "二采方式"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "二采步数",
+          "name": "二采步数",
+          "type": "INT",
+          "widget": {
+            "name": "二采步数"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "二采CFG",
+          "name": "二采CFG",
+          "type": "FLOAT",
+          "widget": {
+            "name": "二采CFG"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "二采采样器",
+          "name": "二采采样器",
+          "type": "COMBO",
+          "widget": {
+            "name": "二采采样器"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "二采调度器",
+          "name": "二采调度器",
+          "type": "COMBO",
+          "widget": {
+            "name": "二采调度器"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "二采降噪",
+          "name": "二采降噪",
+          "type": "FLOAT",
+          "widget": {
+            "name": "二采降噪"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "显存自动保护",
+          "name": "显存自动保护",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "显存自动保护"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "保留一采声音",
+          "name": "保留一采声音",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "保留一采声音"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "Seed方式",
+          "name": "Seed方式",
+          "type": "COMBO",
+          "widget": {
+            "name": "Seed方式"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "Seed",
+          "name": "Seed",
+          "type": "INT",
+          "widget": {
+            "name": "Seed"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "latent放大模型",
+          "name": "latent放大模型",
+          "type": "COMBO",
+          "widget": {
+            "name": "latent放大模型"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "超分模型",
+          "name": "超分模型",
+          "type": "COMBO",
+          "widget": {
+            "name": "超分模型"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "保持一采参考尺寸",
+          "name": "保持一采参考尺寸",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "保持一采参考尺寸"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "二采模型配置",
+          "name": "二采模型配置",
+          "type": "AVS_H3_MODEL_PROFILE",
+          "links": [
+            3
+          ]
+        },
+        {
+          "localized_name": "二采高清设置",
+          "name": "二采高清设置",
+          "type": "AVS_H3_REFINE_PROFILE",
+          "links": [
+            4
+          ]
+        },
+        {
+          "localized_name": "配置摘要",
+          "name": "配置摘要",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "二采：H3潜空间×2｜约960P",
+      "properties": {
+        "Node name for S&R": "AVSH3SecondPassProfile"
+      },
+      "widgets_values": [
+        "H3潜空间×2（推荐）",
+        4,
+        1,
+        "res_multistep",
+        "simple",
+        0.12,
+        true,
+        true,
+        "沿用一采",
+        0,
+        "自动检测",
+        "自动检测",
+        true
+      ],
+      "widgets_values_named": {
+        "二采方式": "H3潜空间×2（推荐）",
+        "二采步数": 4,
+        "二采CFG": 1,
+        "二采采样器": "res_multistep",
+        "二采调度器": "simple",
+        "二采降噪": 0.12,
+        "显存自动保护": true,
+        "保留一采声音": true,
+        "Seed方式": "沿用一采",
+        "Seed": 0,
+        "latent放大模型": "自动检测",
+        "超分模型": "自动检测",
+        "保持一采参考尺寸": true
+      }
+    },
+    {
+      "id": 7,
+      "type": "AVSDirectorStudio",
+      "pos": [
+        74.91533260128244,
+        -99.49372941108425
+      ],
+      "size": [
+        1400,
+        1465
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "一采模型配置",
+          "name": "一采模型配置",
+          "type": "AVS_H3_MODEL_PROFILE",
+          "link": 1
+        },
+        {
+          "localized_name": "二采模型配置",
+          "name": "二采模型配置",
+          "shape": 7,
+          "type": "AVS_H3_MODEL_PROFILE",
+          "link": 3
+        },
+        {
+          "localized_name": "二采高清设置",
+          "name": "二采高清设置",
+          "shape": 7,
+          "type": "AVS_H3_REFINE_PROFILE",
+          "link": 4
+        },
+        {
+          "localized_name": "timeline_json",
+          "name": "timeline_json",
+          "type": "STRING",
+          "widget": {
+            "name": "timeline_json"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "selected_index",
+          "name": "selected_index",
+          "type": "INT",
+          "widget": {
+            "name": "selected_index"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "generation_scope",
+          "name": "generation_scope",
+          "type": "COMBO",
+          "widget": {
+            "name": "generation_scope"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "language",
+          "name": "language",
+          "type": "COMBO",
+          "widget": {
+            "name": "language"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "project_name",
+          "name": "project_name",
+          "type": "STRING",
+          "widget": {
+            "name": "project_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "project_type",
+          "name": "project_type",
+          "type": "COMBO",
+          "widget": {
+            "name": "project_type"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "visual_style",
+          "name": "visual_style",
+          "type": "STRING",
+          "widget": {
+            "name": "visual_style"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "aspect_ratio",
+          "name": "aspect_ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "aspect_ratio"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "resolution",
+          "name": "resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "resolution"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "consistency",
+          "name": "consistency",
+          "type": "COMBO",
+          "widget": {
+            "name": "consistency"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_mode",
+          "name": "audio_mode",
+          "type": "COMBO",
+          "widget": {
+            "name": "audio_mode"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "output_prefix",
+          "name": "output_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "output_prefix"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "最终视频（可选）",
+          "name": "最终视频（可选）",
+          "type": "VIDEO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AVSDirectorStudio"
+      },
+      "widgets_values": [
+        "{\"version\": 9, \"shots\": [], \"character_cast\": [], \"timeline_edits\": [], \"pending_edit\": null}",
+        0,
+        "当前视频段",
+        "中文",
+        "新短剧项目",
+        "漫剧",
+        "电影级画面，主体清晰，光影自然，动作稳定",
+        "16:9",
+        "快速预览 480P",
+        "强",
+        "H3原生音频",
+        "AI_Video_Studio",
+        ""
+      ],
+      "widgets_values_named": {
+        "timeline_json": "{\"version\": 9, \"shots\": [], \"character_cast\": [], \"timeline_edits\": [], \"pending_edit\": null}",
+        "selected_index": 0,
+        "generation_scope": "当前视频段",
+        "language": "中文",
+        "project_name": "新短剧项目",
+        "project_type": "漫剧",
+        "visual_style": "电影级画面，主体清晰，光影自然，动作稳定",
+        "aspect_ratio": "16:9",
+        "resolution": "快速预览 480P",
+        "consistency": "强",
+        "audio_mode": "H3原生音频",
+        "output_prefix": "AI_Video_Studio",
+        "avs_director_workbench_ui": ""
+      }
+    },
+    {
+      "id": 8,
+      "type": "AVSLoRAUnit",
+      "pos": [
+        -1529.6070934062932,
+        -40.88466394352905
+      ],
+      "size": [
+        507.63165547735866,
+        194.73685967466113
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "上一个LoRA",
+          "name": "上一个LoRA",
+          "shape": 7,
+          "type": "AVS_LORA_STACK",
+          "link": null
+        },
+        {
+          "localized_name": "LoRA",
+          "name": "LoRA",
+          "type": "COMBO",
+          "widget": {
+            "name": "LoRA"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "模型强度",
+          "name": "模型强度",
+          "type": "FLOAT",
+          "widget": {
+            "name": "模型强度"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "CLIP强度",
+          "name": "CLIP强度",
+          "type": "FLOAT",
+          "widget": {
+            "name": "CLIP强度"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "启用",
+          "name": "启用",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "启用"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "LoRA堆栈",
+          "name": "LoRA堆栈",
+          "type": "AVS_LORA_STACK",
+          "links": [
+            5
+          ]
+        },
+        {
+          "localized_name": "LoRA摘要",
+          "name": "LoRA摘要",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AVSLoRAUnit"
+      },
+      "widgets_values": [
+        "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors",
+        1,
+        1,
+        true
+      ],
+      "widgets_values_named": {
+        "LoRA": "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors",
+        "模型强度": 1,
+        "CLIP强度": 1,
+        "启用": true
+      }
+    }
+  ],
+  "links": [
+    [
+      2,
+      4,
+      0,
+      5,
+      0,
+      "AVS_H3_MODEL_PROFILE"
+    ],
+    [
+      5,
+      8,
+      0,
+      4,
+      0,
+      "AVS_LORA_STACK"
+    ],
+    [
+      1,
+      4,
+      0,
+      7,
+      0,
+      "AVS_H3_MODEL_PROFILE"
+    ],
+    [
+      3,
+      5,
+      0,
+      7,
+      1,
+      "AVS_H3_MODEL_PROFILE"
+    ],
+    [
+      4,
+      5,
+      1,
+      7,
+      2,
+      "AVS_H3_REFINE_PROFILE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.9516650000000118,
+      "offset": [
+        843.4952375661416,
+        -190.890386330995
+      ]
+    },
+    "frontendVersion": "1.55.17"
+  },
+  "version": 0.4
+}

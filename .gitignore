@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.idea/
+.vscode/
+.env
+.env.*
+!.env.example
+*.safetensors
+*.ckpt
+*.pth
+*.pt
+*.onnx
+*.gguf
+*.sqlite*
+*.db
+release-output/

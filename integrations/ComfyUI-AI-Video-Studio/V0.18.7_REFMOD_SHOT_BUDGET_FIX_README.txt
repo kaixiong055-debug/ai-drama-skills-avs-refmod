@@ -1,0 +1,12 @@
+v0.18.7｜RefMod 镜头总预算修复
+
+本版仅修复人物库自动 RefMod 的镜头总 token 预算，不改 Skills、人物库、全局造型库、一采/二采结构。
+
+修改：
+- 单个 Identity / Clothing RefMod 的准备上限仍保持 4096 tokens。
+- 同一镜头 Identity + Clothing + 多人物 RefMod 的总预算由 4096 提升到 32768。
+- Loader / Apply 默认总预算同步为 32768。
+- 兼容旧工作流：若旧工作流仍保存 4096，人物库自动绑定时会按本镜头实际所需 token 自动提升，最高 32768。
+- 仍保留最多 8 个 RefMod 的现有限制。
+
+无需重新准备已经生成的人物/造型 RefMod。覆盖插件并重启 ComfyUI 即可。

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI视频工作室｜素材中心</title>
+  <link rel="stylesheet" href="/avs/library/ui.css" />
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">AV</div>
+        <div class="brand-copy">
+          <div class="brand-title">AI视频工作室</div>
+          <div class="brand-sub" data-i18n="assetCenter">素材中心</div>
+        </div>
+      </div>
+
+      <button class="nav-item active" data-view="home"><span class="nav-icon">⌂</span><span data-i18n="home">资源主页</span></button>
+      <button class="nav-item" data-view="unassigned"><span class="nav-icon">◎</span><span data-i18n="unassigned">待整理</span><b id="unassignedCount" class="nav-count">0</b></button>
+
+      <div class="nav-section" data-i18n="assetGroups">资源组</div>
+      <button class="nav-item" data-view="groups" data-category="角色"><span class="nav-icon">♙</span><span data-i18n="characters">角色</span><b id="count角色" class="nav-count">0</b></button>
+      <button class="nav-item" data-view="groups" data-category="场景"><span class="nav-icon">▣</span><span data-i18n="scenes">场景</span><b id="count场景" class="nav-count">0</b></button>
+      <button class="nav-item" data-view="groups" data-category="道具"><span class="nav-icon">◇</span><span data-i18n="props">道具</span><b id="count道具" class="nav-count">0</b></button>
+      <button class="nav-item" data-view="groups" data-category="动作"><span class="nav-icon">↗</span><span data-i18n="motions">动作</span><b id="count动作" class="nav-count">0</b></button>
+      <button class="nav-item" data-view="groups" data-category="声音"><span class="nav-icon">◉</span><span data-i18n="voices">声音</span><b id="count声音" class="nav-count">0</b></button>
+
+      <div class="nav-section" data-i18n="library">资源库</div>
+      <button class="nav-item" data-view="files"><span class="nav-icon">▦</span><span data-i18n="allFiles">全部文件</span><b id="allCount" class="nav-count">0</b></button>
+
+      <div class="sidebar-bottom">
+        <div class="path-card">
+          <div class="path-label" data-i18n="currentLibrary">当前资源库</div>
+          <div id="sidePath" class="path-value">—</div>
+          <button id="chooseFolderBtnSide" class="link-btn" data-i18n="changeFolder">更换目录</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar">
+        <div class="topbar-copy">
+          <div id="breadcrumb" class="breadcrumb">资源主页</div>
+          <h1 id="pageTitle">素材中心</h1>
+          <p id="pageSubtitle">先把文件整理成“资源组”，以后导演台里直接 @角色、@场景，不需要记每一张图片。</p>
+        </div>
+        <div class="top-actions">
+          <select id="languageSelect" class="control compact">
+            <option value="zh-CN">中文</option>
+            <option value="en-US">English</option>
+          </select>
+          <button id="newGroupBtn" class="btn secondary">＋ <span data-i18n="newGroup">新建资源组</span></button>
+          <button id="scanBtn" class="btn primary" data-i18n="rescan">重新扫描</button>
+        </div>
+      </header>
+
+      <section id="libraryStrip" class="library-strip">
+        <div class="status-dot"></div>
+        <div class="library-strip-main">
+          <span data-i18n="libraryPath">资源库</span>
+          <strong id="libraryPath">—</strong>
+        </div>
+        <span id="scanState" class="status-pill" data-i18n="ready">就绪</span>
+      </section>
+
+      <section id="mainContent" class="main-content"></section>
+    </main>
+  </div>
+
+  <aside id="assetDrawer" class="drawer hidden">
+    <div class="drawer-backdrop" data-close-drawer></div>
+    <div class="drawer-panel">
+      <div class="drawer-head">
+        <div><div class="eyebrow" data-i18n="assetDetails">素材详情</div><h2 id="drawerTitle">—</h2></div>
+        <button class="icon-btn" data-close-drawer>×</button>
+      </div>
+      <div id="drawerContent" class="drawer-content"></div>
+    </div>
+  </aside>
+
+  <div id="groupModal" class="modal hidden">
+    <div class="modal-backdrop" data-close-group-modal></div>
+    <div class="modal-panel small-panel">
+      <div class="modal-head">
+        <div><div class="eyebrow" data-i18n="assetGroup">资源组</div><h2 id="groupModalTitle">新建资源组</h2></div>
+        <button class="icon-btn" data-close-group-modal>×</button>
+      </div>
+      <div class="modal-body form-stack">
+        <label><span data-i18n="groupName">名称</span><input id="groupName" class="form-input" placeholder="例如：苏甜柠" /></label>
+        <label><span data-i18n="groupAlias">@别名</span><div class="input-prefix"><b>@</b><input id="groupAlias" class="form-input" placeholder="苏甜柠" /></div></label>
+        <label><span data-i18n="groupCategory">类型</span><select id="groupCategory" class="form-input"></select></label>
+        <label><span data-i18n="description">说明</span><textarea id="groupDescription" class="form-input" rows="4" placeholder="这组素材以后会作为一个整体被引用"></textarea></label>
+      </div>
+      <div class="modal-actions"><button class="btn ghost" data-close-group-modal data-i18n="cancel">取消</button><button id="saveGroupBtn" class="btn primary" data-i18n="saveGroup">保存资源组</button></div>
+    </div>
+  </div>
+
+  <div id="assignModal" class="modal hidden">
+    <div class="modal-backdrop" data-close-assign-modal></div>
+    <div class="modal-panel small-panel">
+      <div class="modal-head"><div><div class="eyebrow" data-i18n="organizeAssets">整理素材</div><h2 data-i18n="addToGroup">加入资源组</h2></div><button class="icon-btn" data-close-assign-modal>×</button></div>
+      <div class="modal-body form-stack">
+        <div id="assignSummary" class="notice-card"></div>
+        <label><span data-i18n="chooseGroup">选择资源组</span><select id="assignGroupSelect" class="form-input"></select></label>
+        <button id="createWhileAssignBtn" class="btn ghost full">＋ <span data-i18n="createNewGroup">新建一个资源组</span></button>
+      </div>
+      <div class="modal-actions"><button class="btn ghost" data-close-assign-modal data-i18n="cancel">取消</button><button id="confirmAssignBtn" class="btn primary" data-i18n="confirmAdd">确认加入</button></div>
+    </div>
+  </div>
+
+  <div id="folderModal" class="modal hidden">
+    <div class="modal-backdrop" data-close-folder-modal></div>
+    <div class="modal-panel folder-panel">
+      <div class="modal-head"><div><div class="eyebrow" data-i18n="library">资源库</div><h2 data-i18n="chooseFolderTitle">选择永久资源库目录</h2></div><button class="icon-btn" data-close-folder-modal>×</button></div>
+      <div class="folder-tools"><select id="rootSelect" class="form-input compact"></select><button id="folderUpBtn" class="btn ghost" data-i18n="up">上一级</button><div id="folderPath" class="folder-path">—</div><button id="useFolderBtn" class="btn primary" data-i18n="useFolder">使用此目录</button></div>
+      <div id="folderGrid" class="folder-grid"></div>
+    </div>
+  </div>
+
+  <div id="toastHost" class="toast-host"></div>
+  <script type="module" src="/avs/library/ui.js"></script>
+</body>
+</html>

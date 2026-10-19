@@ -30,7 +30,7 @@ metadata:
 
 ## 核心执行顺序
 
-1. 核实实际人物图、身份和每套衣服，按MASTER/FACE4/BODY/WARDROBE/RUNTIME登记。
+1. 按[人物库复用与槽位提示词规则](references/refmod_identity.md#人物库复用与槽位提示词规则)先核实已有演员身份与造型，列出复用项及实际缺项，再按MASTER/FACE4/BODY/WARDROBE/RUNTIME登记真实资产；分层登记不等于全部重新生成。
 2. 区分稳定身份、默认发型与可变化剧情状态；建立资产版本依赖。
 3. 检查当前服装映射、2D/3D风格一致、实际图可用性后冻结02。
 

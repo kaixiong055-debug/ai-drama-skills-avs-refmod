@@ -39,6 +39,8 @@ metadata:
 
 本发行包默认与用户当前 AI-Video-Studio V0.18.10+ 配套。新规划项目必须写入 `project.character_binding_mode="AVS_REFMOD"`；只有用户明确要求旧式人物Picture工作流时才使用 `PICTURE`。这不会改变剧情、分镜、空间锁或道具Picture，仅改变人物身份/服装的视觉条件来源。
 
+规划人物图片提示词前，必须读取[人物库复用与槽位提示词规则](02_character_bible/references/refmod_identity.md#人物库复用与槽位提示词规则)。高频人物先核实已有身份和造型，仅为实际缺项编写补图提示词；不得每集重新设计 MASTER 或默认补齐全部槽位。此规则只调整素材规划与提示词内容，保留 FULL 14 栏、RefMod 绑定和现有内部资产契约。
+
 ## 核心执行顺序
 
 1. 完整读源文、全部参考文件和实际素材，识别已确认内容及授权范围。

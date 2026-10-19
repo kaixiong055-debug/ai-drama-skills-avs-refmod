@@ -1,0 +1,12 @@
+v0.18.10｜有造型时彻底忽略人物 Picture
+
+问题：
+v0.18.9 只停止“新自动注入”，但旧项目/Skills 导入的 P1 人物正脸仍保存在 image_slots，且 full_prompt 仍包含 <Picture 1>。Director 以 Prompt 为准收集 Picture，因此 H3 仍会收到正脸图，部分 Seed 会生成巨脸背景。
+
+修复：
+- 有 wardrobe_id 时，Identity RefMod + Clothing RefMod 保持不变。
+- 运行时清空该人物占用的 Picture 槽位。
+- 运行时把对应 <Picture N> 替换为 Identity RefMod 文字说明。
+- 删除运行时 Picture绑定中的该人物 Pn 项和 reference_map 对应行。
+- 只处理该人物自己的 Picture 槽；其他场景/道具 Picture 不动。
+- 不改用户保存的 Skills 原文，不改人物库，不改 RefMod，不改一采/二采。
