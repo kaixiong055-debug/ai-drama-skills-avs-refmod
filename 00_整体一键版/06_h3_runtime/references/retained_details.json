@@ -1,0 +1,775 @@
+{
+  "authority": "supplementary historical detail evidence; current contract/schema control execution",
+  "entries": [
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 2,
+      "text": "## 0. Authority\n本 Skill 是唯一允许创建或重编号 canonical：\n- character_id\n- speaker_id\n- wardrobe_variant_id\n- scene_family_id\n- transition_id\n- prop_id / weapon_id\n- storyboard placeholder id"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 3,
+      "text": "后续 Skill 只能复用，不得私自改号。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 21,
+      "text": "## 2. 5 秒段规则\n默认每段 5 秒。一个 5 秒段通常只承载一个清楚的 dramatic objective。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 22,
+      "text": "对话规划：\n- normal 3.5 中文字/秒；\n- suspense 3.0；\n- fast 4.0；\n- 正常目标 `estimated_spoken_s <= 4.2`；\n- 4.2–4.6 只允许近静态对白；\n- >4.6 必须压缩或拆分。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 23,
+      "text": "## 2.1 V3.9 Dialogue Capacity Gate｜5秒对白容量硬门（HARD RULE）\n这是整章批量生成的强制门槛。不得为了“少分段”把对白塞爆 5 秒。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 24,
+      "text": "每个 5 秒段必须计算：\n- `dialogue_line_count`：当前段对白句数；\n- `dialogue_char_count_zh`：中文对白字符数（不含标点）；\n- `estimated_spoken_s`：按当前语气速度估算；\n- `dialogue_capacity_status`: PASS / SPLIT_REQUIRED。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 30,
+      "text": "### MEDIUM\n同一场景内明显位置变化，例如厨房→沙发。必须在上一段结尾或下一段开头说明移动/出入路径，或使用空间建立镜头。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 33,
+      "text": "## 4. OFF_SCREEN_STATE_CHANGE\n以下默认不是 5 秒内连续表演动作：\n- 卸妆；\n- 完整洗澡/洗头/吹干；\n- 完整换装；\n- 收拾完整房间；\n- 做完整顿饭；\n- 长时间通勤；\n- 长距离移动；\n- 大量行李整理。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 37,
+      "text": "禁止每次都机械使用时钟。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 41,
+      "text": "## 7. Scene Image Budget｜每场景最多 9 张硬限制\nHard rule：\n`scene_image_count <= 9`"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 47,
+      "text": "服装变化不得导致重建人物身份。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 59,
+      "text": "禁止：\n- 为了追求近景数量，把进出门、跨区域移动、多人站位拍成脸部漂浮；\n- 为了强调空间，长期停留在中远景导致人物表情、嘴硬、尴尬、忍笑、暧昧反应不可读；\n- 为了凑所谓比例，机械分配近景/中景/远景；\n- 每句对白都无脑切说话者；\n- 场景已经建立后仍反复使用无必要的大全景。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 63,
+      "text": "### 14.4 对白覆盖规则：说话者优先，但“当前最有戏的人”优先级更高\n双人对白默认：\n1. 关键台词优先给当前说话者近景；\n2. 如果一句话的戏剧效果主要落在听者，镜头应切听者反应；\n3. 笑点、被戳穿、尴尬、暧昧、忍笑、沉默、心动等，优先拍最有表演价值的一方；\n4. 不得为了“谁说话切谁”而漏掉真正有戏的反应；\n5. 双人中景用于交代关系和空间，不应成为所有对白的默认主镜头。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 75,
+      "text": "## 14.8 V3.7 Dialogue / Carry-State / Screen-Direction Contract｜对白状态、关键状态持续、屏幕方向登记（HARD RULE）\n每个 5 秒 segment 在上游 manifest 阶段必须额外登记下列信息，供 Skill 3 生成稳定 H3 Prompt："
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 85,
+      "text": "### 15.3 固定设施空间关系写入 continuity state\n`incoming_state` / `end_state` 除人物与道具状态外，必要时必须包含固定设施相对关系，例如：\n- 顾言川站在固定洗衣区洗衣机前；\n- 墙钟位于洗衣区可见墙面；\n- 入户门方向保持在洗衣区既定右前方；\n- 行李箱轮卡在固定门槛外侧。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 86,
+      "text": "### 15.4 离散次数/节奏事件登记\n出现“一次/两次/三次/连续/急促/再次/立刻/突然”等事件时，segment 必须额外登记：\n```json\n\"discrete_beats\": [\n  {\"event\":\"DOORBELL\", \"count\":3, \"timing\":\"compact\", \"target_window_s\":\"~1.0\"}\n]\n```\n只登记真正需要节奏控制的离散事件；自然表演动作不机械计时。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 88,
+      "text": "## 16. V3.4 Segment Physical Integrity Contract｜每段物理完整性登记（HARD RULE）"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 89,
+      "text": "V3.4 不允许把物理约束全部推给 H3 阶段临时补救。每个 segment 在 project_manifest 中应尽可能提前登记以下信息；无相关内容时可为空，但不得凭空编造："
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 91,
+      "text": "### 16.1 Object provenance｜道具来源必须闭环\n凡出现“拿出、取出、拿起、放下、递给、拉、推、开、关、端、抓、握”等交互动作，必须能回答：物体开始在哪里、谁接触它、如何改变状态、动作后在哪里、是否允许任何辅助物件出现。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 92,
+      "text": "例如“从洗衣机取出白衬衫”应登记：白衬衫一开始是直接位于滚筒内的松散布料，由顾言川直接用手取出，结束时仍是松散布料；`authorized_support_objects=[]`；禁止衣架、晾衣架、夹子、洗衣篮等未授权辅助物件。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 93,
+      "text": "### 16.2 Limb-action contract｜高风险手部动作必须指定动作手\n当动作涉及伸手进容器、抓取小物体、端碗、拉杆、开门、拿手机、递物、双人接触时，`anatomy_risk` 至少 MEDIUM，并应明确 active hand、inactive hand 的位置，以及 exactly two hands / exactly two arms。普通低风险镜头不要机械堆叠此约束。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 94,
+      "text": "### 16.3 Discrete event termination｜离散事件必须有终止条件\n`count` 只说明发生几次，`termination` 说明第 N 次结束后不得再次发生。三声门铃应登记为 compact timing + after third ring completely silent for remainder of segment。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 98,
+      "text": "每个 5 秒 segment manifest 必须新增/明确：\n- `current_segment_dialogue`: 当前段对白数组；无对白时为空数组。\n- `off_frame_targets`: 画外目标数组。每个目标至少包含 `target` 与唯一 `screen_direction`，值只能是 `screen-left` 或 `screen-right`。\n- `critical_carry_states`: 关键道具状态数组，记录 `object`, `state`, `holder/location`, `valid_until_changed`。\n- `discrete_sound_events`: 每个离散声音至少记录 `event`, `count`, `window_start`, `window_end`, `clear_separation=true`, `no_sustained_tail=true`, `no_retrigger_after=true`。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 100,
+      "text": "## 17. V3.9 Batch Execution Consistency Contract｜整章执行一致性（HARD RULE）"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 102,
+      "text": "例如行李箱：\n- 同一段内：握住拉杆接近门槛为 `PREPARE`；随后两次短拉拽分别为 `COUNTED_1/COUNTED_2`；\n- 只有真实动作容量不足时才拆段，不为每个计数阶段默认分配独立5秒；\n不得在准备段写 `once`、`first pull` 等会被模型计数的措辞。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 105,
+      "text": "### 17.4 Text-bearing prop policy｜文字型道具策略\n对门牌、工牌、纸箱印字、手机屏幕、时钟数字等：\n- 若剧情必须“可读且准确”，必须登记 `text_reference_required=true` 并由 Skill 2 生成/绑定专用参考资产；\n- 若不需要准确可读，Prompt 必须写 `text need not be readable / do not rely on legible text`；\n- 禁止让 H3 临时生成关键品牌名、部门名、门牌号而又要求绝对准确。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 106,
+      "text": "### 17.5 Hand-intensive automatic risk promotion｜手部高风险自动升级\n出现以下任一动作，`anatomy_risk` 自动至少 MEDIUM：开门/关门、拉箱、拿包、端碗、拿手机、整理衣领/镜子、挥手、递物、抓拉杆、翻箱、拿钥匙、进入电梯时按按钮等。\nMEDIUM/HIGH 必须登记 active hand / inactive hand / held props / exactly-two-hands 约束。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 107,
+      "text": "### 17.6 Negative event continuity｜本段明确“不会发生”的事件也要继承\n若上一段有离散声音/动作，但本段应停止，manifest 应登记 `forbidden_retrigger_events`，例如 `DOORBELL`。\n这样 Skill 3 必须写 `No doorbell in this segment.`，防止模型把上一段声音续进来。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 108,
+      "text": "### 17.7 Clock/text continuity｜剧情关键显示值必须锁定\n若时间显示是剧情信息（如 20:47），必须登记 `display_state_contract`，并在所有需要可读的镜头中保持同一数值；不需要可读时只要求位置/形状可见，避免与浅景深冲突。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 114,
+      "text": "## 18. Full Production Mode HARD RULE"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 116,
+      "text": "必须自动进入 `FULL_PRODUCTION_MODE`。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 117,
+      "text": "本 Skill 禁止退化为普通剧本改写。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 118,
+      "text": "禁止输出：\n- 示例版\n- Demo\n- 模板展示\n- 片段展示\n- 简略版\n- 概要说明\n- “以下为示例”\n- “H3执行片段示例”"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 122,
+      "text": "完整制作模式必须生成以下交付结构："
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 125,
+      "text": "不得只生成其中一个说明文档。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 128,
+      "text": "DOCX必须包含："
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 130,
+      "text": "每个segment必须包含："
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 137,
+      "text": "每个视频片段必须包含："
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 139,
+      "text": "必须保留：\n- MASTER身份锁定\n- 场景空间锁定\n- 服装状态锁定\n- 道具状态锁定\n- 禁止人物瞬移\n- 禁止自动改变空间\n- 禁止自动新增物体"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 142,
+      "text": "生成完成前必须自检："
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 151,
+      "text": "但禁止降低详细程度。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 153,
+      "text": "不得使用“为了长度限制，以下省略”。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/detail_fidelity_contract.md",
+      "paragraph": 5,
+      "text": "Every EXACT and VISUAL_EQUIVALENT beat must be referenced by at least one final segment."
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/detail_fidelity_contract.md",
+      "paragraph": 7,
+      "text": "## Runtime\nFor new adaptations, default to BATCH_COMPACT: target 180 seconds, hard maximum 240 seconds (36/48 five-second segments). Full production packages use the same budget. See [runtime budget contract](runtime_budget_contract.md). Never expand automatically to preserve minor details. If the core cannot fit, report the specific conflict and obtain a user-selected longer budget or reduced scope. Downstream optimizers preserve the dialogue and segment plan frozen by the upstream adaptation.\n"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/project_manifest_contract_v3.md",
+      "paragraph": 3,
+      "text": "`project.segment_duration_s=5`; `project.final_segment_count` and `project.final_runtime_s` must equal the actual segment count and sum of durations. `project.runtime_budget` is generated by `scripts/plan_runtime_budget.py` and includes:"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/project_manifest_contract_v3.md",
+      "paragraph": 6,
+      "text": "## Scene family\n```json\n{\n  \"scene_family_id\": \"SCN_APARTMENT_INTERIOR\",\n  \"name\": \"合租公寓室内\",\n  \"tier\": \"A\",\n  \"max_images\": 9,\n  \"planned_images\": 8,\n  \"required_assets\": [\"MASTER\",\"SHEET9\",\"ENTRY\",\"SOFA\",\"KITCHEN\",\"BALCONY\",\"BEDROOM_CORRIDOR\",\"DOOR_HALF_OPEN\"]\n}\n```\n`planned_images` MUST be <= 9."
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/project_manifest_contract_v3.md",
+      "paragraph": 14,
+      "text": "## V3.8 required execution fields\nFor each segment:\n```json\n{\n  \"current_segment_dialogue\": [],\n  \"off_frame_targets\": [{\"target\":\"apartment_entry\",\"screen_direction\":\"screen-right\"}],\n  \"critical_carry_states\": [{\"object\":\"white_shirt\",\"state\":\"held\",\"holder\":\"S1.right_hand\",\"valid_until_changed\":true}],\n  \"discrete_sound_events\": [{\"event\":\"doorbell\",\"count\":3,\"window_start\":1.2,\"window_end\":2.0,\"clear_separation\":true,\"no_sustained_tail\":true,\"no_retrigger_after\":true}]\n}\n```\n`screen_direction` accepts only `screen-left` or `screen-right`."
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/project_manifest_contract_v3.md",
+      "paragraph": 15,
+      "text": "## V3.9 execution fields\nEach 5-second segment may/should include:\n```json\n{\n  \"dialogue_line_count\": 0,\n  \"dialogue_char_count_zh\": 0,\n  \"estimated_spoken_s\": 0.0,\n  \"dialogue_capacity_status\": \"PASS\",\n  \"counted_action_sequence\": [],\n  \"forbidden_retrigger_events\": [],\n  \"text_bearing_props\": [],\n  \"display_state_contracts\": [],\n  \"hand_interaction_risk\": \"LOW\"\n}\n```\n`dialogue_capacity_status=SPLIT_REQUIRED` forbids downstream H3 generation until the segment is split.\n`counted_action_sequence` must distinguish PREPARE from COUNTED_1/2/... so setup motion is never accidentally counted as a completed repetition.\n"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/runtime_budget_contract.md",
+      "paragraph": 2,
+      "text": "## 默认值与优先级"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/temporal_continuity_contract.md",
+      "paragraph": 2,
+      "text": "HIGH risk pairs must not remain unresolved."
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/temporal_continuity_contract.md",
+      "paragraph": 5,
+      "text": "Never encode a long real-world routine as one five-second continuous action merely to save segment count.\n"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/v41_shot_language_selection_contract.md",
+      "paragraph": 3,
+      "text": "## 上游输出要求\n若某段依赖：\n- 关键手部动作 → `framing_goal` 必须保证 active hand 可见\n- 空间方向 → 必须记录 `screen_direction_anchor`\n- 画外目标 → 必须记录 `off_frame_target_direction`\n- 插入细节镜头 → 必须在 `cut_policy` 中显式说明\n"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+      "paragraph": 19,
+      "text": "禁止：\n- 关键对白；\n- 关键剧情动作；\n- 走位、交叉穿行、换边；\n- 快速转身；\n- 复杂手势；\n- 摄影机环绕、大幅推拉、快速变焦；\n- 为了“电影感”制造空间不确定性。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+      "paragraph": 21,
+      "text": "制作资料中必须先登记："
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+      "paragraph": 25,
+      "text": "正式首段可直接从近景开始。必须表达："
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+      "paragraph": 27,
+      "text": "“谁说话切谁”继续成立，但必须服从已锁空间。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+      "paragraph": 33,
+      "text": "详细格式必须读取 `AVS隐藏空间预热_V4.4导入协议.md`。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+      "paragraph": 36,
+      "text": "1. 先生成并校验 **正式版 MD**（只含 SEG）；\n2. 再用 `spatial_locks.json` + `inject_spatial_locks.py` 生成 **工作台版 MD**；\n3. 用 `validate_workbench_md.py` 校验生产卡链路；\n4. 实际导入 AI Video Studio 使用工作台版。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+      "paragraph": 37,
+      "text": "## 禁止误解"
+    },
+    {
+      "source_file": "02_剧本转人物场景道具提示词/SKILL.md",
+      "paragraph": 14,
+      "text": "九宫格/四宫格文件只计 1 张。\nSkill 2 禁止擅自突破 Skill 1 的 `planned_images`。"
+    },
+    {
+      "source_file": "02_剧本转人物场景道具提示词/SKILL.md",
+      "paragraph": 24,
+      "text": "## 6. Props / Weapons\n关键道具、武器独立单物件图。凡是影响：\n- 手持姿态\n- 动作轨迹\n- 攻防距离\n- 连续性\n就必须资产化。"
+    },
+    {
+      "source_file": "02_剧本转人物场景道具提示词/SKILL.md",
+      "paragraph": 26,
+      "text": "### Phase B 正式 Storyboard\n只有 Phase A 所需资产 READY 后才允许生成。\nStoryboard 必须基于己方正式素材，不得用参考视频截图当最终板。"
+    },
+    {
+      "source_file": "02_剧本转人物场景道具提示词/SKILL.md",
+      "paragraph": 43,
+      "text": "不得生成含糊的 `scene_detail_01.png` 让下游无法判断职责。"
+    },
+    {
+      "source_file": "02_剧本转人物场景道具提示词/SKILL.md",
+      "paragraph": 45,
+      "text": "## 13. V3.4 Asset Necessity & Prop Authorization Gate｜资产必要性与道具授权（HARD RULE）"
+    },
+    {
+      "source_file": "02_剧本转人物场景道具提示词/SKILL.md",
+      "paragraph": 50,
+      "text": "对未绑定的普通包、电脑包等长期剧情道具：若跨多个 segment 持续出现或参与交互，必须升级为 PROP 资产；仅背景性一次出现可用简洁无 logo 描述。\n"
+    },
+    {
+      "source_file": "02_剧本转人物场景道具提示词/references/asset_manifest_contract_v3.md",
+      "paragraph": 3,
+      "text": "Hard rule: no scene family may contain more than 9 image-file assets.\n"
+    },
+    {
+      "source_file": "02_剧本转人物场景道具提示词/references/character_family_contract.md",
+      "paragraph": 2,
+      "text": "Changing clothes must not redesign face/hair/body identity.\n"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/SKILL.md",
+      "paragraph": 2,
+      "text": "这是一个自包含 skill。只需调用本 skill；官方 H3 写作规则已经随包提供，无需另装或手动调用另一个 skill。默认用于文戏，多参考模式 Ref2VA。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/SKILL.md",
+      "paragraph": 16,
+      "text": "存在本地图片时追加 `--asset-root <素材根目录>`，检查声明路径的文件是否真实存在；素材仅规划时可以导出 MD，但报告必须明确“素材未核实，不能标记 READY”。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/SKILL.md",
+      "paragraph": 18,
+      "text": "- 脚本校验只是结构与可确定的数据约束检查；AI 语义复核和视频成片验收是另外两层，不能把 `PASS` 当成视频质量保证。\n- 如果能访问用户实际 AVS 前端导入器，用它进行只读解析复核；否则标记“按已知导入合同检查，未在当前前端实测”。不要自动提交视频任务。\n- 交付最终 MD、与它一致的 `segments.json`、实际校验报告；完整制作还交付剧本分镜、剧情清单、资产清单和资产提示词。\n- 初稿及 `optimized_prompts.json` 留在工作目录供追踪，面向用户明确指出最终 MD。\n- 失败时只修复失败段，重跑受影响检查；没有检查通过不宣称“全部可用 / 零缺失 / READY”。缺乏真实资产导致的未知项不阻止独立的文本制作，但必须如实写入报告。\n- 如果 AI 环境无法执行 Python，仍完成两个写作阶段、手动逐段回填并对照外壳与清单，交付最终 MD；报告明确 `script_validation=NOT_EXECUTED`，不得伪称已运行脚本或已通过实际导入器。包内脚本只依赖 Python 标准库。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/01-story-and-shots.md",
+      "paragraph": 9,
+      "text": "检查相邻段的位置、服装、妆容、湿干、道具持有、昼夜和关系变化。长时间换装、洗漱、做饭、通勤以合理画外时间或必要桥接交代。跨 scene family 默认独立生成；真实需要承接上一段尾帧/尾音时才选择续写，不能因为段号大于 1 就续写。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/01-story-and-shots.md",
+      "paragraph": 13,
+      "text": "- 对话、表情和反应：优先单人近景、中近景、双人近景或肩后镜头，让当前最有戏的人可读。\n- 开门、跨区移动、多人关系、完整身体动作：保留足够身体和空间，不能为近景裁掉关键动作。\n- 空间已交代后，减少重复大全景。需要建立空间时只展示相关区域，不强迫一次展示整个公寓。\n- 多人场景优先借单人/双人覆盖表达关系。群像确有剧情作用再使用，不声称每个人都能达到单人近景的细节。\n- 默认一个连续镜头，允许剧情必要的切镜；H3 官方支持多镜头，不禁止特定镜头数量。短段多次切镜需复核动作是否有执行时间。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/02-assets-and-binding.md",
+      "paragraph": 11,
+      "text": "每个实际绑定名对应唯一 `output_filename`。别名先在阶段 A 解析成真实文件名；禁止模糊匹配后直接确认。文件路径由 `relative_dir` + `output_filename` 组成，或清单明确给出的 `path`。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/02-assets-and-binding.md",
+      "paragraph": 13,
+      "text": "- 文本计划阶段：清单中的文件名存在，但图片未生成，可导出规划用途 MD，报告标记 `ASSETS_UNVERIFIED`。\n- 有图片根目录：精确检查每张实际绑定图是否存在；缺失/多义返回失败，不能声称零缺失。\n- 图像语义复核：检查角色身份、服装、光线和场景几何；在 `semantic_review.json` 中记录。机器存在性检查无法替代这一项。\n- 优化阶段不得增删绑定或改 Picture 来源；需要更换素材时返回阶段 A，更新资产清单与初稿后重新锁定。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/04-official-optimization.md",
+      "paragraph": 13,
+      "text": "完成真实对照后填写，不能预填 PASS。每段必须逐项检查："
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/AVS隐藏空间预热_V4.4导入协议.md",
+      "paragraph": 37,
+      "text": "先按原流程完成正式版、官方 H3 优化、语义复核和结构校验，然后生成 `spatial_locks.json`，最后运行："
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/AVS隐藏空间预热_V4.4导入协议.md",
+      "paragraph": 38,
+      "text": "```text\npython scripts/inject_spatial_locks.py \\\n  --formal <项目_H3批量导入_正式版.md> \\\n  --locks <spatial_locks.json> \\\n  --output <项目_H3批量导入_工作台版.md>"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/AVS隐藏空间预热_V4.4导入协议.md",
+      "paragraph": 40,
+      "text": "`spatial_locks.json` 示例："
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/SKILL.md",
+      "paragraph": 0,
+      "text": "---\nname: h3-3d-drama-batch\ndescription: 将故事创意、小说、剧本或已有 AVS 批量 MD 制作为 H3 一键导入提示词。使用包内 3d-animation-short-generator 的故事、角色场景卡、真实多镜头六列表和逐镜文本分镜流程，将多个真实镜头编入每个 AVS 段落，再按官方 h3-prompt-writing 优化正文并校验回填。默认风格化 3D 动画，尊重指定风格；适用于批量剧情制作资料，不自动生成视频。\nmetadata:\n  version: \"6.1\"\n---"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/SKILL.md",
+      "paragraph": 10,
+      "text": "本 AVS 适配采用“5 秒动态镜头数”，严禁把“多镜头版”理解为“每段固定 2 镜头”。每个 5 秒段先判断剧情信息量、对白长度、动作连续性、反应价值和 H3 稳定性，再决定 1 / 2 / 3 个真实镜头；通常不超过 3 个。镜头数服务剧情与生成稳定性，而不是服务数量指标。单镜头能够完整表达时就保持单镜头；出现明确的信息切点、反应切点、动作峰值或视角反打时再增加镜头。不得为了“看起来像多镜头”而机械切镜。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/SKILL.md",
+      "paragraph": 20,
+      "text": "- `1 镜头`：一个核心动作/一句短对白/一个情绪变化即可完整表达。\n- `2 镜头`：存在两个明确视觉节点，例如“说话者 → 听者反应”“动作 → 结果”“关系镜头 → 关键细节”。\n- `3 镜头`：仅当存在三个不可合并的信息节点，而且每镜至少约 1 秒并能自然完成。\n- **不得默认 2 镜头；不得要求所有段镜头数一致。** 同一集应自然出现 1、2、3 镜头混合分布。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/SKILL.md",
+      "paragraph": 27,
+      "text": "有实际图片时追加 `--asset-root <素材根目录>`。只有规划资产时可以完成文本，但必须标记 `TEXT_COMPLETE_ASSETS_UNVERIFIED`。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/01-story-and-shots.md",
+      "paragraph": 13,
+      "text": "- 对话、表情和反应：优先单人近景、中近景、双人近景或肩后镜头，让当前最有戏的人可读。\n- 开门、跨区移动、多人关系、完整身体动作：保留足够身体和空间，不能为近景裁掉关键动作。\n- 空间已交代后，减少重复大全景。需要建立空间时只展示相关区域，不强迫一次展示整个公寓。\n- 多人场景优先借单人/双人覆盖表达关系。群像确有剧情作用再使用，不声称每个人都能达到单人近景的细节。\n- 默认按多镜头优先设计：动作/对白的承担镜头 → 反应、细节或反打镜头。5 秒通常组织 2 镜，必要且可执行才组织 3 镜；这是本包的 AVS 导演策略，不是模型硬限制。单镜头必须有具体例外，不再默认一个连续镜头。短段多次切镜需复核动作、对白是否有执行时间。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/02-assets-and-binding.md",
+      "paragraph": 18,
+      "text": "仅规划时资产提示词完整交付但 status=PLANNED；没有图片不得写 generated/verified。实图生成属于用户另行授权的图片任务。\n"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/05-3d-production-adapter.md",
+      "paragraph": 8,
+      "text": "用户指定写实、半写实 3D、已有定妆图或其他风格时，将其记入 `visual_style`；保留故事/镜头流程，覆盖不相容的默认风格和夸张/斜镜头建议。禁止同时写 live-action realism 与 Q-version cartoon 两套相冲突要求。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/05-3d-production-adapter.md",
+      "paragraph": 17,
+      "text": "标注角色设定卡有助于制作管理，运行参考优先选择清楚人物/当前造型的干净图。使用拼板必须核实工作流和实际内容；不能承诺四视图总比单张好，也不能说所有拼板都不可用。不要仅在文字写 remove labels 就声称带标注资产已经清理；需要时准备干净参考并在阶段 A 更正绑定。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/07-adaptive-5s-shot-language.md",
+      "paragraph": 2,
+      "text": "## 核心\n- 允许 1 / 2 / 3 镜头混合。\n- 禁止默认固定 2 镜头。\n- 禁止为了多镜头而切镜。\n- 单镜头不是例外。\n- 通常每镜至少约 1 秒；复杂动作宜更长。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/07-adaptive-5s-shot-language.md",
+      "paragraph": 5,
+      "text": "## 不继承参考中的规则\n- 不采用 15 秒视频段。\n- 不采用每段固定 3–8 镜头。\n- 不要求最后一镜必须特写/钩子。\n- 不采用“镜头越多越丰富”的评价方式。\n- 不覆盖 H3 官方提示词结构和 Picture/Subject 绑定规则。\n"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 2,
+      "text": "当用户想把一句话创意做成完整的故事优先动画短片流程时使用本 Skill。流程从创意开发到最终剪辑，所有主要产物都必须按生产顺序放到画布上，并在高成本或关键创意节点用选项卡让用户确认。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 5,
+      "text": "除非用户明确指定其他视觉风格，所有角色卡、场景卡、镜头表格、文本分镜、可选铅笔分镜、单镜头视频片段（无论使用哪个视频模型）、拼接正片和最终合成都必须使用以下视觉风格："
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 6,
+      "text": "- 渲染风格：皮克斯感 3D 卡通渲染，C4D + Octane 渲染器质感，高级动画电影质量。\n- 角色造型：夸张几何概括与极佳材质质感的平衡。不追求 100% 真人解剖结构，而是使用高概括度几何形体、强剪影和高辨识度设计。\n- 比例语言：亲和的风格化比例，适合可爱或幼态角色时采用 2.5–3 头身 Q 版比例，大头小身、体块清晰、轮廓易读。\n- 发丝 / 毛发：整体造型有清晰块面结构，同时边缘保留精细发丝或绒毛细节；在光照下既硬朗有形，又有细腻触感。\n- 皮肤 / 材质：使用温润次表面散射（SSS）质感，耳朵、脸颊、鼻尖、指尖可有微红透光效果；避免生硬塑料感。\n- 表演风格：夸张灵动的迪士尼 / 皮克斯式角色动画表演，运用挤压与伸展，强化眉毛、眼角、瞳孔、嘴唇、脸颊形变。\n- 动态风格：高能量态势、清晰动作线、前倾势能、强预备动作、快速但可读的节奏、弹性身体机制和丰富微表情。\n- 情绪尺度：在可爱与爆发力之间取得平衡；强情绪可以有戏剧性面部变形，但必须保留角色魅力。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 11,
+      "text": "捕捉完用户输入后，在项目简报或任何下一步之前，必须先展示选项卡确认生产规格："
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 18,
+      "text": "1. 项目简报文本节点\n2. 故事大纲文本节点\n3. 带标注的角色卡图片节点\n4. 无人物的场景卡图片节点\n5. 六列标准镜头信息表节点，每行必须在 `镜头描述` 内含每秒指令\n6. **单文本分镜文档** — 一个画布文本节点，命名 `<title> text storyboards`，每镜一节（对齐半解说短剧分镜结构）。用户标记需要重点迭代的镜时，把该节抽取成独立节点，原位置留占位。可视化模式下的铅笔分镜图是独立图片节点。\n7. 单镜头视频片段节点（用 Step 7 选定的视频模型渲染 — H3 默认，Seedance 2.0 回退）\n8. 拼接主视频节点\n9. 匹配的 BGM 音频节点与最终 BGM 合成视频节点"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 19,
+      "text": "不要把长篇生产内容只丢在对话里。耐用产物必须以文本、图片、视频或音频节点形式落到画布。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 38,
+      "text": "每张角色卡在可能时为 16:9 生产参考图。与最终渲染视频不同，角色卡必须包含清晰可读的标注，让下游生成能正确绑定人物与道具："
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 47,
+      "text": "- 主环境总览\n- 关键光态：日景 / 夜景\n- 情绪子空间\n- 连续性地标（同场景跨镜头必须保持屏幕位置的固定物体，如厨房中岛、沙发、门框、树、邮筒）\n- 环境中的重要道具"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 52,
+      "text": "表格必须严格按以下顺序包含六列："
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 61,
+      "text": "进入铅笔分镜前，必须对已批准的镜头表跑硬性自检。任何一项不通过必须先修订表格再重跑，通过后才向用户申请进入分镜。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 67,
+      "text": "## STEP 6：单文本分镜文档（默认）+ 多宫格铅笔分镜图（opt-in）"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 69,
+      "text": "- **单文本分镜文档（默认，推荐）** — 整个短片一份画布文本节点，所有分镜作为文档内章节。对齐半解说短剧分镜结构：每镜字段（标题/hook/场景/角色/空间锚点/连续性/表演备注）加 Pixar 的每面板四象限内容 + 可选 ASCII 布局。承载完整质控载荷，成本几乎为零。Step 7 选定的视频模型直接读取作为该镜渲染参考。\n- **单文本分镜文档 + 多宫格铅笔图（可视化模式，opt-in）** — 单文本分镜文档照常作为权威产物，并额外为每镜生成一张多宫格铅笔图供人眼审稿。成本更高，适合用户想在付视频成本前要一次视觉预演，或弹性表演 / 姿态剪影是高风险项想先可视化检查的情况。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 71,
+      "text": "### 默认路径：单文本分镜文档"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 75,
+      "text": "每镜章节结构（每个 `##` 标题对应一镜，按镜头顺序）。每个章节必须按以下顺序包含这些字段 —— 直接对应半解说短剧的分镜字段："
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 84,
+      "text": "### ASCII 布局（可选）\n[0-1s]  Grandma (R, fg)        door-frame (R, bg)\n        ——lifts basket——        Mia (L, mid)\n        cam: locked | silent\n[1-2s]  ...\n```"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 85,
+      "text": "所有章节写完后，把文档放到画布，直接进入 Step 7。默认模式下不要调用任何图像生成模型。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 87,
+      "text": "默认的单文档形态针对阅读和跨镜连续性做了优化。当用户标记某镜需要重点迭代（通常是 climax / 追逐 / 闹剧节拍，每面板内容需要多轮修订），就把该章节从文档中抽取成独立文本节点，让迭代局部化："
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 95,
+      "text": "所有文本分镜章节（和可视化模式下的铅笔图）产出后，按镜头顺序放到画布，归组为：\n- `<title> text storyboards`（默认模式，单文档），或\n- `<title> text storyboards + multi-panel pencil storyboards`（可视化模式，文本文档和铅笔图分两类各自归组，因为铅笔图含双绑定标签、ASCII 标签和镜头号，文本文档没有这些）。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 101,
+      "text": "默认文本模式没有这套回退 —— 文本分镜失败只发生在模型无法产出连贯结构化文本时，遇到就直接回到 Step 5 修订该行表格。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 104,
+      "text": "任何片段渲染前必须先展示视频模型选项卡。选择写入项目简报，本项目所有片段沿用，除非用户后续修改。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 106,
+      "text": "- **H3（推荐默认）** — 强项是视觉包装、动效图形、文字/UI 清晰度、多模态上下文理解、性价比（2K 约同类旗舰 1/3 价格，768P 约 1/2）。原生双声道音视频，单片段最长 15s @ 2K。最适合：设计语言强的皮克斯 3D 动画短片、文字 / 字幕 / UI 元素、动效转场、对话驱动且音频就是交付物一部分的镜头。\n- **Seedance 2.0（高强度动画表演的回退）** — 强项是电影感镜头、复杂运镜、皮克斯弹性表演、动作张力。适合追逐、闹剧节拍、以动画本身为卖点的 climax 镜头。\n- **逐镜混合（高级）** — 在镜头表某行的 `镜头描述` 列加 `video_model: H3` 或 `video_model: Seedance2` 字段，本项目同时混用。未标记的行默认走 H3。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 109,
+      "text": "- 768P（H3 首推，性价比高）\n- 2K（H3 默认质量，成本更高，画质更清）\n- 1080p（Seedance 2.0 推荐）\n- 720p（Seedance 2.0 草稿，最低成本）\n- 匹配项目 / 自定义分辨率"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 110,
+      "text": "首条片段渲染前用户必须先确认分辨率。后续用户可针对单条 hero 镜头临时改分辨率。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 112,
+      "text": "每行批准后调用选定的视频模型生成对应独立视频片段。每条片段必须严格使用单文本分镜文档中匹配的章节（若该章节已抽取成独立节点则从独立节点取）、角色卡和场景卡。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 121,
+      "text": "1. 第一次重试：用直接引用表格中 `参考锚点` 块的强化 H3 prompt 重渲染。\n2. 第二次重试：把该镜缩到 ≤6s，把砍掉的秒拆到 Step 5 的新相邻行，重跑 Step 5.5 自检再重渲。\n3. 第三次重试：把失败这一镜切到 Seedance 2.0（这正是混合模式存在的意义 — 表演回退是一键切换，不是重构流程）。\n4. 同一镜连续 3 次失败：暂停并用选项卡问用户：\n   - 单独把这一镜切到 Seedance 2.0。\n   - 放宽要求（去掉一个道具、简化动作、降低 hook 强度）。\n   - 跳过该镜，下游加 `placeholder: missing clip` 标记。\n   - 手动提供参考视频代替生成。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 146,
+      "text": "默认推荐项放最前。始终允许用户自定义输入。用户说\"继续\"时按选了推荐项处理。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 148,
+      "text": "用户重做或修订任何产物时，下游步骤必须用最新批准的产物，不能用旧的。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.md",
+      "paragraph": 2,
+      "text": "Use this Skill when the user wants a complete story-first animated short workflow, from one-line idea to final edited video. The workflow must place every major artifact on the canvas in production order and pause at creative gates with user choice cards before expensive or high-impact steps."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.md",
+      "paragraph": 4,
+      "text": "## Global Visual Style Lock"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.md",
+      "paragraph": 6,
+      "text": "- Rendering style: Pixar-inspired 3D cartoon rendering, C4D + Octane renderer look, high-end animated feature quality.\n- Character design: exaggerated geometric simplification balanced with excellent material detail. Avoid 100% realistic human anatomy; use high-level shape language, large readable silhouettes, and Q-version proportions when appropriate.\n- Proportion language: friendly stylized proportions, often 2.5–3 head-tall for cute or childlike characters, with big heads, compact bodies, clear silhouettes, and high recognizability.\n- Hair / fur: combine strong sculpted clumps and clean block shapes with fine edge flyaway hairs or fuzzy rim details, so hair/fur feels designed but tactile under light.\n- Skin / material: warm subsurface scattering skin quality, soft translucent reddish light through ears, cheeks, nose, and fingertips; avoid hard plastic skin.\n- Acting style: exaggerated, lively Disney/Pixar-style character animation performance with squash and stretch, strong brows, eye corners, pupils, lips, and cheek shape changes.\n- Motion style: high-energy poses, clear line of action, forward lean, strong anticipation, fast but readable timing, elastic body mechanics, and vivid micro-expressions.\n- Emotional range: balance cuteness and explosive expressiveness; intense emotions may use dramatic facial deformation while preserving character appeal."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.md",
+      "paragraph": 32,
+      "text": "- Protagonist is active\n- Crisis is intensified by protagonist flaw\n- Coincidence never solves the problem\n- Ending reuses an earlier emotional anchor\n- Antagonistic pressure is not a flat villain\n- Dialogue reveals relationship change instead of explaining the theme"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.md",
+      "paragraph": 39,
+      "text": "- Character name label in English and/or the project language\n- Role label, such as protagonist, grandma, thief, sidekick, pressure character\n- Main 3/4 view\n- Front / side / back views\n- Expressions\n- Material / costume / prop details\n- Important prop labels, such as handbag, wallet, skateboard, apple basket, scarf, shoes, glasses\n- Identity lock repeated in the prompt\n- A short visual-ID note listing age range, body type, hairstyle, outfit colors, signature props, and do-not-change traits"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.md",
+      "paragraph": 42,
+      "text": "- Lock character designs and continue (recommended)\n- Regenerate protagonist card\n- Adjust specific visual details\n- Add another character card"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.md",
+      "paragraph": 49,
+      "text": "- Lock scene design and continue (recommended)\n- Regenerate scene card\n- Add another scene angle\n- Adjust lighting or layout"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/references/model-selection.md",
+      "paragraph": 7,
+      "text": "Once the video model is locked, show the resolution choice card:"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/references/model-selection.md",
+      "paragraph": 11,
+      "text": "For each approved table row, call the chosen video model to generate the corresponding independent video clip. Each clip must use exactly the matching section from the text storyboards document (extracted standalone node if that section was extracted, otherwise the in-document section), character card(s), and scene card from that row."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/references/qc-checklist.md",
+      "paragraph": 12,
+      "text": "Whenever a durable artifact is created, write it to the canvas immediately in the sequence defined in STEP 0. If a generation tool automatically adds outputs to canvas, do not duplicate them."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/references/qc-checklist.md",
+      "paragraph": 21,
+      "text": "When the user regenerates or revises any artifact, all downstream steps must use the newest approved artifact, not the older one."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/references/shot-table-spec.md",
+      "paragraph": 3,
+      "text": "The table must have exactly six columns in this order:"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/references/storyboard-guidelines.md",
+      "paragraph": 7,
+      "text": "Document top matter (header block at the top of the document):"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/references/storyboard-guidelines.md",
+      "paragraph": 18,
+      "text": "### ASCII layout (optional)\n[0-1s]  Grandma (R, fg)        door-frame (R, bg)\n        ──lifts basket──        Mia (L, mid)\n        cam: locked | silent\n[1-2s]  ...\n```"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-镜头版/SKILL.md",
+      "paragraph": 0,
+      "text": "---\nname: h3-3d-drama-batch\ndescription: 将故事创意、小说、剧本或已有 AVS 批量 MD 制作为 H3 一键导入提示词。使用包内 3d-animation-short-generator 的故事、角色场景卡、六列逐秒镜头表和文本分镜流程，再按官方 h3-prompt-writing 优化正文并校验回填。默认风格化 3D 动画，尊重指定风格；适用于批量剧情制作资料，不自动生成视频。\nmetadata:\n  version: \"6.0\"\n---"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-镜头版/SKILL.md",
+      "paragraph": 20,
+      "text": "交付最终导入 MD、同步 segments、清单、角色场景提示词、六列镜头表、文本分镜及实际检查报告，清楚指出最终 MD。可访问实际 AVS 导入器时作只读解析，不自动提交生成任务。脚本 PASS 只证明确定性结构/数据检查，AI 复核另算；未渲染视频必须写 `video_quality_status=NOT_TESTED`。"
+    },
+    {
+      "source_file": "04_H3素材自动绑定/SKILL.md",
+      "paragraph": 3,
+      "text": "## 2. Matching policy\n自动确认只允许：\n1. manifest `output_filename` exact；\n2. canonical asset_id exact normalized stem；\n3. exact alias。"
+    },
+    {
+      "source_file": "04_H3素材自动绑定/SKILL.md",
+      "paragraph": 4,
+      "text": "模糊匹配只能列 suggestions，禁止自动确认。"
+    },
+    {
+      "source_file": "04_H3素材自动绑定/SKILL.md",
+      "paragraph": 11,
+      "text": "## 7.1 Runtime Reference Minimization Gate\nSkill 4 在最终写入 AVS Picture 槽位前必须再次执行 Skill 3 的 `Reference Necessity Test` 与 `Reference Role Conflict Check`。"
+    },
+    {
+      "source_file": "04_H3素材自动绑定/SKILL.md",
+      "paragraph": 14,
+      "text": "## 8. Door/Transition Gate\n若 segment 标记 door transition：\n必须检查项目要求的：\n- inside MASTER\n- outside MASTER\n- transition asset\n是否齐全。\n缺少则 `TRANSITION_NOT_READY`。"
+    },
+    {
+      "source_file": "04_H3素材自动绑定/SKILL.md",
+      "paragraph": 15,
+      "text": "## 9. Storyboard Ready Gate\n只有人物、场景、服装、关键道具/武器齐全后，Storyboard 才可 READY。\nBoard A/B/C 顺序必须与 manifest 一致。"
+    },
+    {
+      "source_file": "04_H3素材自动绑定/SKILL.md",
+      "paragraph": 16,
+      "text": "## 10. Temporal Gate\n若 segment 仍有 unresolved HIGH jump：\n`TEMPORAL_CONTINUITY_NOT_READY`\n不得报告整项目 READY。"
+    },
+    {
+      "source_file": "04_H3素材自动绑定/SKILL.md",
+      "paragraph": 17,
+      "text": "## 11. No-person Gate\n无人镜头不得绑定 character h3 asset。"
+    },
+    {
+      "source_file": "04_H3素材自动绑定/SKILL.md",
+      "paragraph": 27,
+      "text": "### 13.4 离散节奏完整性检查\n若 H3 MD 中声明 exactly N 次离散事件，绑定阶段不得改写 Prompt 或合并段落导致次数丢失。\n检查报告增加：\n- `discrete_event_count_locked`\n- `fixed_facility_area_required`\n- `fixed_facility_area_bound`"
+    },
+    {
+      "source_file": "04_H3素材自动绑定/SKILL.md",
+      "paragraph": 28,
+      "text": "## 14. V3.4 Final Ready Integrity Gate｜最终 Ready 完整性门（HARD RULE）"
+    },
+    {
+      "source_file": "04_H3素材自动绑定/SKILL.md",
+      "paragraph": 31,
+      "text": "## V3.9 Text-bearing / Persistent Prop Binding Gate\n- `text_reference_required=true` 的门牌、工牌、纸箱标签、手机界面、时钟面必须命中专用资产，否则 READY=false，并报 `TEXT_REFERENCE_ASSET_MISSING`。\n- 跨多个段持续出现或参与手部交互的包、电脑包、手机、钥匙等应绑定 PROP；不得因其“看起来普通”而在每段临时重新设计。\n- 若 `legibility_required=false`，禁止为了文字而额外堆参考图。\n"
+    },
+    {
+      "source_file": "04_H3素材自动绑定/references/matching_contract_v3.md",
+      "paragraph": 1,
+      "text": "Authoritative automatic matches are exact-only.\nFuzzy candidates are suggestions, never confirmed bindings.\nCanonical IDs must remain stable across all four skills.\n"
+    },
+    {
+      "source_file": "05_2D漫画专用/SKILL.md",
+      "paragraph": 0,
+      "text": "---\nname: h3-2d-comic-batch\ndescription: 将小说、剧本或已有2D参考图制作成2D漫画分镜、人物场景道具图片提示词和H3批量视频提示词；统一线稿、上色与人物比例，检查3D或真人摄影风格混入。支持静态漫画和动态漫剧，动态版默认目标3分钟、最多4分钟。\nmetadata:\n  version: \"1.0\"\n---"
+    },
+    {
+      "source_file": "05_2D漫画专用/SKILL.md",
+      "paragraph": 7,
+      "text": "有参考图时先查看，登记参考来源及可见的线条、上色、比例、背景画法，沿用其特点；没有图时采用清晰统一线稿、赛璐璐上色、协调色板、正常成年人比例、绘制背景。不能声称已匹配未查看的“上次画风”。用户指定水彩、黑白网点、国漫或其他2D画法时，以用户要求替换默认细节，仍保持2D。"
+    },
+    {
+      "source_file": "05_2D漫画专用/SKILL.md",
+      "paragraph": 10,
+      "text": "新改编默认目标 **180秒/36段**，上限 **240秒/48段**，每段5秒。短文可以更短；所有开场、旁白、转场和结尾都计入。制作包完整性不代表逐句扩镜，长文不自动扩容或拆集。"
+    },
+    {
+      "source_file": "05_2D漫画专用/SKILL.md",
+      "paragraph": 21,
+      "text": "读取 [优化与复核流程](references/04-h3-optimization.md)和包内 [H3写作入口](references/official/h3-prompt-writing.md)。默认Ref2VA读取完整 [参考模式指南](references/official/references/ref-en.txt)；首帧/首尾帧任务读取 [基础模式指南](references/official/references/base-en.txt)，按实际AVS模式使用对应正文。"
+    },
+    {
+      "source_file": "05_2D漫画专用/references/01-2d-style-contract.md",
+      "paragraph": 4,
+      "text": "默认画法只是缺省值。已有参考图、用户指定的水彩/厚涂/黑白网点/国漫/日漫优先；不把所有2D都变成平涂，也不因“漫画”自动幼童化或改变既有人物比例。参考未看过时写UNVERIFIED，不虚称已沿用。"
+    },
+    {
+      "source_file": "05_2D漫画专用/references/03-avs-envelope.md",
+      "paragraph": 18,
+      "text": "上面的JSON展示AVS字段；实际2D项目还必须按[画风合同](01-2d-style-contract.md)登记production_mode、visual_medium、style_id、visual_style、style_contract，以及动态版runtime_budget/实长。资产和每段登记相同style字段；完整可运行数据见包内assets/example/project_manifest.json。"
+    },
+    {
+      "source_file": "05_2D漫画专用/references/04-h3-optimization.md",
+      "paragraph": 2,
+      "text": "优化每段时读取原剧本、状态、对应逐镜分镜、style_contract和真实参考图。参考图的身份、服装、比例、背景绘画体系与位置继承各自职责；禁止把图片标签换成另一个实体或借优化重设计背景。人物穿的衣服与手持衣服分别描述。"
+    },
+    {
+      "source_file": "06_H3多人对话防乱位/SKILL.md",
+      "paragraph": 3,
+      "text": "执行时必须读取："
+    },
+    {
+      "source_file": "ACTION_SOURCE_CONTRACT.md",
+      "paragraph": 2,
+      "text": "V3.6: Every 5-second segment must preserve a continuous visible action/state chain while audio events overlap it, and must carry a complete cinematography plan derived from the segment manifest.\n"
+    },
+    {
+      "source_file": "README.md",
+      "paragraph": 13,
+      "text": "## 自动选择总原则\nAI 必须先判断当前 5 秒段的**主要任务**，再选择镜头：\n- 交代空间 → wide / establishing wide\n- 呈现单人/双人连续动作 → medium\n- 对话、轻表情、上半身互动 → medium_close\n- 强反应、微表情、关键视线 → close_up\n- 关键细节（门铃、门把、轮子卡门槛、挂钟、工牌、白衬衫细节）→ detail_close_up"
+    },
+    {
+      "source_file": "README.md",
+      "paragraph": 21,
+      "text": "新增独立文件夹 [05_2D漫画专用](05_2D漫画专用/SKILL.md)，调用名 `$h3-2d-comic-batch`。一个入口完成2D剧本/漫画分镜、人物场景道具图片提示词和H3批量MD；已有2D参考图优先，无参考时默认清晰线稿与赛璐璐上色。专用校验检查画风继承和正向3D/真人摄影描述混入。"
+    },
+    {
+      "source_file": "README.md",
+      "paragraph": 22,
+      "text": "动态漫剧沿用目标3分钟、最多4分钟（36/48个5秒片段）；仅静态漫画使用独立页/格流程。制作提示词不会自动提交图片或视频生成任务。使用本入口时不再调用两个默认3D的镜头版入口。"
+    }
+  ]
+}

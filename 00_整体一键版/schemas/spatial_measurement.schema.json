@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "measurement_mode": {
+      "enum": [
+        "RELATIVE",
+        "METRIC",
+        "UNKNOWN"
+      ]
+    },
+    "confidence": {
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW",
+        "UNKNOWN"
+      ]
+    },
+    "source_measurement_mode": {
+      "enum": [
+        "RELATIVE",
+        "METRIC",
+        "UNKNOWN"
+      ]
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "source_type": {
+          "enum": [
+            "USER_SPECIFIED",
+            "DIMENSIONED_FLOORPLAN",
+            "BLENDER_3D",
+            "CAD",
+            "VERIFIABLE_SCALE",
+            "CANONICAL_SCENE"
+          ]
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "source_type",
+        "source_id",
+        "evidence"
+      ]
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "subject_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reference_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "distance_m": {
+            "type": "number",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "subject_id",
+          "reference_id",
+          "distance_m"
+        ]
+      }
+    },
+    "relative_descriptions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "cn": {
+            "type": "string",
+            "minLength": 1
+          },
+          "en": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "cn",
+          "en"
+        ]
+      }
+    }
+  },
+  "required": [
+    "measurement_mode",
+    "confidence"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "measurement_mode": {
+            "const": "METRIC"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "provenance"
+        ]
+      }
+    }
+  ]
+}

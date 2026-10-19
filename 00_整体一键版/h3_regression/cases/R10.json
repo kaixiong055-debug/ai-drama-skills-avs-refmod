@@ -1,0 +1,78 @@
+{
+  "case_id": "R10",
+  "name": {
+    "cn": "餐桌多人对话",
+    "en": "Group dialogue around a dining table"
+  },
+  "protocol": {
+    "participants": 4,
+    "procedure": "Use fixed seating around a dining table with foreground and background speakers; cut only when dialogue or reaction requires it.",
+    "inspect": [
+      "table scale/geometry",
+      "depth order",
+      "seating persistence"
+    ]
+  },
+  "scenario_review": "NOT_RUN",
+  "status": "NOT_RUN",
+  "metrics": {
+    "identity_drift": null,
+    "position_drift": null,
+    "left_right_swap": null,
+    "axis_flip": null,
+    "eyeline_error": null,
+    "scene_geometry_drift": null,
+    "prop_drift": null,
+    "end_frame_deformation": null
+  },
+  "variants": {
+    "A": {
+      "prompt_family": "5.0",
+      "hidden_lock": false,
+      "status": "NOT_RUN",
+      "runs": [],
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      }
+    },
+    "B": {
+      "prompt_family": "5.0",
+      "hidden_lock": true,
+      "status": "NOT_RUN",
+      "runs": [],
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      }
+    },
+    "C": {
+      "prompt_family": "5.1",
+      "hidden_lock": true,
+      "status": "NOT_RUN",
+      "runs": [],
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      }
+    }
+  }
+}

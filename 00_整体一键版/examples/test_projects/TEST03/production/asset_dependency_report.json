@@ -1,0 +1,89 @@
+{
+  "schema_version": "5.1",
+  "status": "PASS",
+  "errors": [],
+  "warnings": [
+    "ASSET_PROVENANCE_UNVERIFIED:CHAR_A_H3_OFFICE",
+    "ASSET_PROVENANCE_UNVERIFIED:CHAR_B_H3_OFFICE",
+    "ASSET_PROVENANCE_UNVERIFIED:CHAR_C_H3_OFFICE",
+    "ASSET_PROVENANCE_UNVERIFIED:CHAR_D_H3_OFFICE",
+    "ASSET_PROVENANCE_UNVERIFIED:SCN_LIVING_MASTER"
+  ],
+  "allow_stale_asset": false,
+  "counts": {
+    "UNVERIFIED": 5
+  },
+  "assets": [
+    {
+      "asset_id": "CHAR_A_H3_OFFICE",
+      "version": null,
+      "derived_from": [],
+      "source_versions": {},
+      "generated_from_version": {},
+      "status": "UNVERIFIED",
+      "declared_status": "UNVERIFIED",
+      "dependency_metadata_origin": "LEGACY_UNVERIFIED",
+      "bound": true,
+      "reasons": [
+        "VERSION_UNVERIFIED"
+      ]
+    },
+    {
+      "asset_id": "CHAR_B_H3_OFFICE",
+      "version": null,
+      "derived_from": [],
+      "source_versions": {},
+      "generated_from_version": {},
+      "status": "UNVERIFIED",
+      "declared_status": "UNVERIFIED",
+      "dependency_metadata_origin": "LEGACY_UNVERIFIED",
+      "bound": true,
+      "reasons": [
+        "VERSION_UNVERIFIED"
+      ]
+    },
+    {
+      "asset_id": "CHAR_C_H3_OFFICE",
+      "version": null,
+      "derived_from": [],
+      "source_versions": {},
+      "generated_from_version": {},
+      "status": "UNVERIFIED",
+      "declared_status": "UNVERIFIED",
+      "dependency_metadata_origin": "LEGACY_UNVERIFIED",
+      "bound": true,
+      "reasons": [
+        "VERSION_UNVERIFIED"
+      ]
+    },
+    {
+      "asset_id": "CHAR_D_H3_OFFICE",
+      "version": null,
+      "derived_from": [],
+      "source_versions": {},
+      "generated_from_version": {},
+      "status": "UNVERIFIED",
+      "declared_status": "UNVERIFIED",
+      "dependency_metadata_origin": "LEGACY_UNVERIFIED",
+      "bound": true,
+      "reasons": [
+        "VERSION_UNVERIFIED"
+      ]
+    },
+    {
+      "asset_id": "SCN_LIVING_MASTER",
+      "version": null,
+      "derived_from": [],
+      "source_versions": {},
+      "generated_from_version": {},
+      "status": "UNVERIFIED",
+      "declared_status": "UNVERIFIED",
+      "dependency_metadata_origin": "LEGACY_UNVERIFIED",
+      "bound": true,
+      "reasons": [
+        "VERSION_UNVERIFIED"
+      ]
+    }
+  ],
+  "meaning": "Dependency and version checks only; image identity/content review is separate."
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "ai-drama-asset-bible"
+  short_description: "维护MASTER、AREA、场景家族、道具、Transition与文字资产职责，复用真实素材。"
+  default_prompt: "使用 $ai-drama-asset-bible 按 V5.1 的单一权威数据合同完成本层工作。"

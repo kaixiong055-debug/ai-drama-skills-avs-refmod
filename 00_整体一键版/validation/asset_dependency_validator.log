@@ -1,0 +1,326 @@
+{
+  "schema_version": "5.1",
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "allow_stale_asset": false,
+  "counts": {
+    "VALID": 17
+  },
+  "assets": [
+    {
+      "asset_id": "CHAR_A_H3_OFFICE",
+      "version": 3,
+      "derived_from": [
+        "CHAR_A_MASTER",
+        "CHAR_A_WARDROBE_OFFICE"
+      ],
+      "source_versions": {
+        "CHAR_A_MASTER": 3,
+        "CHAR_A_WARDROBE_OFFICE": 3
+      },
+      "generated_from_version": {
+        "CHAR_A_MASTER": 3,
+        "CHAR_A_WARDROBE_OFFICE": 3
+      },
+      "status": "VALID",
+      "declared_status": "VALID",
+      "dependency_metadata_origin": "DECLARED",
+      "bound": true,
+      "reasons": []
+    },
+    {
+      "asset_id": "CHAR_B_H3_OFFICE",
+      "version": 3,
+      "derived_from": [
+        "CHAR_B_MASTER",
+        "CHAR_B_WARDROBE_OFFICE"
+      ],
+      "source_versions": {
+        "CHAR_B_MASTER": 3,
+        "CHAR_B_WARDROBE_OFFICE": 3
+      },
+      "generated_from_version": {
+        "CHAR_B_MASTER": 3,
+        "CHAR_B_WARDROBE_OFFICE": 3
+      },
+      "status": "VALID",
+      "declared_status": "VALID",
+      "dependency_metadata_origin": "DECLARED",
+      "bound": true,
+      "reasons": []
+    },
+    {
+      "asset_id": "SCN_LIVING_MASTER",
+      "version": 3,
+      "derived_from": [],
+      "source_versions": {},
+      "generated_from_version": {},
+      "status": "VALID",
+      "declared_status": "VALID",
+      "dependency_metadata_origin": "DECLARED",
+      "bound": true,
+      "reasons": []
+    },
+    {
+      "asset_id": "CHAR_A_MASTER",
+      "version": 3,
+      "derived_from": [],
+      "source_versions": {},
+      "generated_from_version": {},
+      "status": "VALID",
+      "declared_status": "VALID",
+      "dependency_metadata_origin": "DECLARED",
+      "bound": false,
+      "reasons": []
+    },
+    {
+      "asset_id": "CHAR_A_FACE4",
+      "version": 3,
+      "derived_from": [
+        "CHAR_A_MASTER"
+      ],
+      "source_versions": {
+        "CHAR_A_MASTER": 3
+      },
+      "generated_from_version": {
+        "CHAR_A_MASTER": 3
+      },
+      "status": "VALID",
+      "declared_status": "VALID",
+      "dependency_metadata_origin": "DECLARED",
+      "bound": false,
+      "reasons": []
+    },
+    {
+      "asset_id": "CHAR_A_BODY",
+      "version": 3,
+      "derived_from": [
+        "CHAR_A_FACE4"
+      ],
+      "source_versions": {
+        "CHAR_A_FACE4": 3
+      },
+      "generated_from_version": {
+        "CHAR_A_FACE4": 3
+      },
+      "status": "VALID",
+      "declared_status": "VALID",
+      "dependency_metadata_origin": "DECLARED",
+      "bound": false,
+      "reasons": []
+    },
+    {
+      "asset_id": "CHAR_A_WARDROBE_OFFICE",
+      "version": 3,
+      "derived_from": [
+        "CHAR_A_BODY"
+      ],
+      "source_versions": {
+        "CHAR_A_BODY": 3
+      },
+      "generated_from_version": {
+        "CHAR_A_BODY": 3
+      },
+      "status": "VALID",
+      "declared_status": "VALID",
+      "dependency_metadata_origin": "DECLARED",
+      "bound": false,
+      "reasons": []
+    },
+    {
+      "asset_id": "CHAR_B_MASTER",
+      "version": 3,
+      "derived_from": [],
+      "source_versions": {},
+      "generated_from_version": {},
+      "status": "VALID",
+      "declared_status": "VALID",
+      "dependency_metadata_origin": "DECLARED",
+      "bound": false,
+      "reasons": []
+    },
+    {
+      "asset_id": "CHAR_B_FACE4",
+      "version": 3,
+      "derived_from": [
+        "CHAR_B_MASTER"
+      ],
+      "source_versions": {
+        "CHAR_B_MASTER": 3
+      },
+      "generated_from_version": {
+        "CHAR_B_MASTER": 3
+      },
+      "status": "VALID",
+      "declared_status": "VALID",
+      "dependency_metadata_origin": "DECLARED",
+      "bound": false,
+      "reasons": []
+    },
+    {
+      "asset_id": "CHAR_B_BODY",
+      "version": 3,
+      "derived_from": [
+        "CHAR_B_FACE4"
+      ],
+      "source_versions": {
+        "CHAR_B_FACE4": 3
+      },
+      "generated_from_version": {
+        "CHAR_B_FACE4": 3
+      },
+      "status": "VALID",
+      "declared_status": "VALID",
+      "dependency_metadata_origin": "DECLARED",
+      "bound": false,
+      "reasons": []
+    },
+    {
+      "asset_id": "CHAR_B_WARDROBE_OFFICE",
+      "version": 3,
+      "derived_from": [
+        "CHAR_B_BODY"
+      ],
+      "source_versions": {
+        "CHAR_B_BODY": 3
+      },
+      "generated_from_version": {
+        "CHAR_B_BODY": 3
+      },
+      "status": "VALID",
+      "declared_status": "VALID",
+      "dependency_metadata_origin": "DECLARED",
+      "bound": false,
+      "reasons": []
+    },
+    {
+      "asset_id": "SCN_LIVING_ENTRY",
+      "version": 1,
+      "derived_from": [
+        "SCN_LIVING_MASTER"
+      ],
+      "source_versions": {
+        "SCN_LIVING_MASTER": 3
+      },
+      "generated_from_version": {
+        "SCN_LIVING_MASTER": 3
+      },
+      "status": "VALID",
+      "declared_status": "VALID",
+      "dependency_metadata_origin": "DECLARED",
+      "bound": true,
+      "reasons": []
+    },
+    {
+      "asset_id": "PROP_LUGGAGE_MASTER",
+      "version": 2,
+      "derived_from": [],
+      "source_versions": {},
+      "generated_from_version": {},
+      "status": "VALID",
+      "declared_status": "VALID",
+      "dependency_metadata_origin": "DECLARED",
+      "bound": false,
+      "reasons": []
+    },
+    {
+      "asset_id": "PROP_LUGGAGE_CLOSED",
+      "version": 1,
+      "derived_from": [
+        "PROP_LUGGAGE_MASTER"
+      ],
+      "source_versions": {
+        "PROP_LUGGAGE_MASTER": 2
+      },
+      "generated_from_version": {
+        "PROP_LUGGAGE_MASTER": 2
+      },
+      "status": "VALID",
+      "declared_status": "VALID",
+      "dependency_metadata_origin": "DECLARED",
+      "bound": true,
+      "reasons": []
+    },
+    {
+      "asset_id": "PROP_LUGGAGE_OPEN",
+      "version": 1,
+      "derived_from": [
+        "PROP_LUGGAGE_MASTER"
+      ],
+      "source_versions": {
+        "PROP_LUGGAGE_MASTER": 2
+      },
+      "generated_from_version": {
+        "PROP_LUGGAGE_MASTER": 2
+      },
+      "status": "VALID",
+      "declared_status": "VALID",
+      "dependency_metadata_origin": "DECLARED",
+      "bound": false,
+      "reasons": []
+    },
+    {
+      "asset_id": "KF_SH001_SPATIAL_ANCHOR_KEYFRAME",
+      "version": 1,
+      "derived_from": [
+        "CHAR_A_H3_OFFICE",
+        "CHAR_B_H3_OFFICE",
+        "SCN_LIVING_MASTER",
+        "SCN_LIVING_ENTRY",
+        "PROP_LUGGAGE_CLOSED"
+      ],
+      "source_versions": {
+        "CHAR_A_H3_OFFICE": 3,
+        "CHAR_B_H3_OFFICE": 3,
+        "SCN_LIVING_MASTER": 3,
+        "SCN_LIVING_ENTRY": 1,
+        "PROP_LUGGAGE_CLOSED": 1
+      },
+      "generated_from_version": {
+        "CHAR_A_H3_OFFICE": 3,
+        "CHAR_B_H3_OFFICE": 3,
+        "SCN_LIVING_MASTER": 3,
+        "SCN_LIVING_ENTRY": 1,
+        "PROP_LUGGAGE_CLOSED": 1
+      },
+      "status": "VALID",
+      "declared_status": "VALID",
+      "dependency_metadata_origin": "DECLARED",
+      "bound": true,
+      "reasons": []
+    },
+    {
+      "asset_id": "KF_SH001_SHOT_KEYFRAME",
+      "version": 1,
+      "derived_from": [
+        "CHAR_A_H3_OFFICE",
+        "CHAR_B_H3_OFFICE",
+        "SCN_LIVING_MASTER",
+        "SCN_LIVING_ENTRY",
+        "PROP_LUGGAGE_CLOSED"
+      ],
+      "source_versions": {
+        "CHAR_A_H3_OFFICE": 3,
+        "CHAR_B_H3_OFFICE": 3,
+        "SCN_LIVING_MASTER": 3,
+        "SCN_LIVING_ENTRY": 1,
+        "PROP_LUGGAGE_CLOSED": 1
+      },
+      "generated_from_version": {
+        "CHAR_A_H3_OFFICE": 3,
+        "CHAR_B_H3_OFFICE": 3,
+        "SCN_LIVING_MASTER": 3,
+        "SCN_LIVING_ENTRY": 1,
+        "PROP_LUGGAGE_CLOSED": 1
+      },
+      "status": "VALID",
+      "declared_status": "VALID",
+      "dependency_metadata_origin": "DECLARED",
+      "bound": true,
+      "reasons": []
+    }
+  ],
+  "meaning": "Dependency and version checks only; image identity/content review is separate."
+}
+Failed to find real location of C:\Python313\python.exe

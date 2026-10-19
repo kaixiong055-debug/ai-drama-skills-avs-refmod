@@ -1,0 +1,7 @@
+{
+  "url": "http://127.0.0.1:8000/v1/chat/completions",
+  "model": "your-configured-vision-planner",
+  "api_key_env": "H3_PLANNER_API_KEY",
+  "timeout_s": 240,
+  "character_binding_mode": "AVS_REFMOD"
+}

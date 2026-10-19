@@ -1,0 +1,4 @@
+interface:
+  display_name: "ai-drama-h3-runtime"
+  short_description: "从权威生产、空间、绑定JSON完整渲染独立中文版与英文版H3导入MD。"
+  default_prompt: "使用 $ai-drama-h3-runtime 按 V5.1 的单一权威数据合同完成本层工作。"

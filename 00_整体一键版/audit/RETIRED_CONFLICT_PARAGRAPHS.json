@@ -1,0 +1,44 @@
+[
+  {
+    "file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+    "paragraph": 72,
+    "reason": "V5 renderer / production_profile / canonical ownership supersedes this paragraph",
+    "text": "每个 segment 必须写入以下字段：\n- `camera_angle`：正面 / 侧前方 / 侧面 / 后侧 / 俯拍 / 仰拍等，必须说明相对人物与关键设施的位置；\n- `camera_height`：眼平 / 胸口高度 / 腰部高度 / 低机位 / 高机位等；\n- `lens_mm`：全画幅等效焦段，使用合理数值，例如 28/35/40/50/65/85/100mm；\n- `camera_movement`：locked_off / slow_push / slow_pull / pan / tilt / side_follow / handheld_subtle 等；\n- `composition`：人物在画面左/中/右、关键设施/道具/第二锚点位于哪里；\n- `lighting_direction`：主光来源与方向，必须继承 Scene MASTER 的照明逻辑；\n- `depth_of_field`：deep / moderate / shallow，并说明关键锚点是否需要可读；\n- `axis_and_screen_direction`：180°轴线、人物朝向、移动方向和入口方向的连续性；\n- `cut_policy`：默认 `single_continuous_shot`。只有 source beat 明确需要视角切换/反应切镜时才允许切一次，并写清切点。"
+  },
+  {
+    "file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+    "paragraph": 112,
+    "reason": "V5 renderer / production_profile / canonical ownership supersedes this paragraph",
+    "text": "### 强制原则\n1. 每段必须有主景别，不得留空。\n2. 默认单镜头；除非明确需要插入镜头，否则 `cut_policy=single_continuous_shot`。\n3. 需要画外目标时，必须预先解析 `screen-left` 或 `screen-right`。\n4. 手部关键动作必须保证 active hand 可读，不得被构图遮挡。"
+  },
+  {
+    "file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+    "paragraph": 23,
+    "reason": "V5 renderer / production_profile / canonical ownership supersedes this paragraph",
+    "text": "这张空间卡属于制作数据，不直接塞进 H3 顶层字段；应翻译成 LOCK 的 `detailed_description` 和正式段的续写约束。"
+  },
+  {
+    "file": "03_剧本转H3一键导入MD/SKILL.md",
+    "paragraph": 14,
+    "reason": "V5 renderer / production_profile / canonical ownership supersedes this paragraph",
+    "text": "1. 读取 [两阶段优化流程](references/04-official-optimization.md)。\n2. 读取 [官方入口](references/official/h3-prompt-writing.md)。默认 Ref2VA 必须读取完整 [官方参考模式指南](references/official/references/ref-en.txt)；首帧/首尾帧任务读 [官方基础模式指南](references/official/references/base-en.txt)。\n3. 逐段优化 H3 正文：落实 reference 标签、逐项保留关系、具体人物外观、服装与手持道具区别、场景光线、动作顺序、镜头和同步声音。已有正确细节保留；词数不足优先补有用信息，不加新事件凑字数。\n4. 阶段 B 只输出 `optimized_prompts.json` 中的 `segment_id` 和 `prompt`。段头、时长、绑定、对白原文、主体标签及其来源保持与锁定初稿一致；不允许优化器重新设计 AVS 外壳。\n5. 对照源合同逐段进行语义复核，写 `semantic_review.json`。检查剧情、人物/服装、道具状态、昼夜、声音计数、连续性和镜头负担；标记具体问题，修复后再组装。\n6. 用包内脚本组装最终文件。脚本原样保留初稿外壳、一次性替换各段正文，检查所有段都优化且没有遗漏或重复，成功后输出最终 MD 和同步的 `segments.json`。"
+  },
+  {
+    "file": "03_剧本转H3一键导入MD/references/03-avs-envelope.md",
+    "paragraph": 6,
+    "reason": "V5 renderer / production_profile / canonical ownership supersedes this paragraph",
+    "text": "正式版 MD 的第一段默认独立生成；若工作台版在它前面插入同场景隐藏 LOCK，则后处理会将该正式段改为“续写上一段”并写入 `空间锁来源`。这只改变生产链，不改变正式剧情段编号或时长。时长与真实工作流相容，当前 AVS 导入范围 0.2–15.1 秒；官方写作入口通常建议 4–15 秒，不在优化时偷偷钳制或改时长。默认 5 秒。"
+  },
+  {
+    "file": "03_剧本转H3一键导入MD/references/AVS隐藏空间预热_V4.4导入协议.md",
+    "paragraph": 41,
+    "reason": "V5 renderer / production_profile / canonical ownership supersedes this paragraph",
+    "text": "```json\n{\n  \"locks\": [\n    {\n      \"lock_id\": \"LOCK_SC03_V01\",\n      \"before_segment_id\": 12,\n      \"name\": \"客厅四人空间锁\",\n      \"duration_s\": 1.0,\n      \"episode\": \"EP01｜第一章\",\n      \"scene\": \"SC03｜客厅夜晚\",\n      \"h3_mode\": \"REF2VA\",\n      \"picture_bindings\": {\n        \"P1\": \"CHAR_A.png\",\n        \"P2\": \"CHAR_B.png\",\n        \"P3\": \"CHAR_C.png\",\n        \"P4\": \"CHAR_D.png\",\n        \"P5\": \"SCENE_MASTER.png\"\n      },\n      \"prompt\": \"subject_definitions:\\n...完整六段式正文...\"\n    }\n  ]\n}\n```"
+  },
+  {
+    "file": "03_剧本转H3一键导入MD-多镜头版/references/06-multi-shot-mapping.md",
+    "paragraph": 16,
+    "reason": "V5 renderer / production_profile / canonical ownership supersedes this paragraph",
+    "text": "六字段沿用官方完整 Ref2VA 写法。style 在 Shot 1 前，Shot 1 无时间戳，其后每个 Shot 用段内 start_s 写 `At MM:SS.mmm, the shot cuts to ...`，描述新构图和连续动作。retention_analysis 的 appears in 列实际适用的镜头，环境只约束本镜可见部分，不为保留参考而硬展示全户型。第一次出现的人物说明可见身份/服装及 Subject 标签，后来沿用；不要在近景重复要求必须看见鞋和洗衣机全貌。"
+  }
+]

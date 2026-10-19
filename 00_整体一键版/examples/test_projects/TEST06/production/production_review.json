@@ -1,0 +1,253 @@
+{
+  "schema_version": "5.1",
+  "status": "READY",
+  "validation": "PASS",
+  "errors": [],
+  "asset_content_review": "UNVERIFIED",
+  "video_quality": "NOT_RUN",
+  "production_hash": "8c89fb576215be68637529de6e972936604787165e315a62d4e1a284bc669abf",
+  "asset_dependency_status": "PASS",
+  "asset_dependency_warnings": [
+    "ASSET_PROVENANCE_UNVERIFIED:CHAR_A_H3_OFFICE",
+    "ASSET_PROVENANCE_UNVERIFIED:CHAR_B_H3_OFFICE",
+    "ASSET_PROVENANCE_UNVERIFIED:CHAR_C_H3_OFFICE",
+    "ASSET_PROVENANCE_UNVERIFIED:SCN_LIVING_MASTER"
+  ],
+  "runtime_prompt_budget": {
+    "runtime_prompt_budget": {
+      "cn": {
+        "target_min": 2500,
+        "target_max": 5000
+      },
+      "en": {
+        "target_min": 3500,
+        "target_max": 8000
+      },
+      "ordinary_two_person_warning": 15000,
+      "semantic_completeness_first": true
+    },
+    "compression": "OWNERSHIP_AND_EXACT_DEDUPLICATION; NO_TRUNCATION",
+    "warnings": [],
+    "units": {
+      "LOCK_SC01_A01": {
+        "cn_characters": 2820,
+        "cn_before_dedup_characters": 2821,
+        "cn_removed_repeated_characters": 1,
+        "en_characters": 5850,
+        "en_before_dedup_characters": 5851,
+        "en_removed_repeated_characters": 1
+      },
+      "SEG001": {
+        "cn_characters": 3477,
+        "cn_before_dedup_characters": 3478,
+        "cn_removed_repeated_characters": 1,
+        "en_characters": 7361,
+        "en_before_dedup_characters": 7362,
+        "en_removed_repeated_characters": 1
+      },
+      "LOCK_SC01_A02": {
+        "cn_characters": 2427,
+        "cn_before_dedup_characters": 2428,
+        "cn_removed_repeated_characters": 1,
+        "en_characters": 5019,
+        "en_before_dedup_characters": 5020,
+        "en_removed_repeated_characters": 1
+      },
+      "SEG002": {
+        "cn_characters": 3304,
+        "cn_before_dedup_characters": 3305,
+        "cn_removed_repeated_characters": 1,
+        "en_characters": 6891,
+        "en_before_dedup_characters": 6892,
+        "en_removed_repeated_characters": 1
+      },
+      "SEG003": {
+        "cn_characters": 3054,
+        "cn_before_dedup_characters": 3055,
+        "cn_removed_repeated_characters": 1,
+        "en_characters": 6457,
+        "en_before_dedup_characters": 6458,
+        "en_removed_repeated_characters": 1
+      }
+    }
+  },
+  "keyframe_requests": [
+    {
+      "shot_id": "SH001",
+      "keyframe_type": "SHOT_KEYFRAME",
+      "segment_id": "SEG001",
+      "keyframe_required": false,
+      "keyframe_recommended": false,
+      "source_assets": [
+        "CHAR_A_H3_OFFICE",
+        "CHAR_B_H3_OFFICE",
+        "CHAR_C_H3_OFFICE",
+        "SCN_LIVING_MASTER"
+      ],
+      "output": null,
+      "status": "NOT_REQUIRED",
+      "reasons": [],
+      "reference_authority": {
+        "controls": [
+          "composition",
+          "current_blocking",
+          "shot_scale",
+          "spatial_relations"
+        ],
+        "cannot_override": [
+          "character_identity_master",
+          "current_wardrobe",
+          "scene_master_geometry"
+        ]
+      },
+      "generation_status": "NOT_RUN"
+    },
+    {
+      "shot_id": "SH002",
+      "keyframe_type": "SHOT_KEYFRAME",
+      "segment_id": "SEG001",
+      "keyframe_required": false,
+      "keyframe_recommended": false,
+      "source_assets": [
+        "CHAR_A_H3_OFFICE",
+        "CHAR_B_H3_OFFICE",
+        "CHAR_C_H3_OFFICE",
+        "SCN_LIVING_MASTER"
+      ],
+      "output": null,
+      "status": "NOT_REQUIRED",
+      "reasons": [],
+      "reference_authority": {
+        "controls": [
+          "composition",
+          "current_blocking",
+          "shot_scale",
+          "spatial_relations"
+        ],
+        "cannot_override": [
+          "character_identity_master",
+          "current_wardrobe",
+          "scene_master_geometry"
+        ]
+      },
+      "generation_status": "NOT_RUN"
+    },
+    {
+      "shot_id": "SH003",
+      "keyframe_type": "SHOT_KEYFRAME",
+      "segment_id": "SEG002",
+      "keyframe_required": false,
+      "keyframe_recommended": false,
+      "source_assets": [
+        "CHAR_A_H3_OFFICE",
+        "CHAR_B_H3_OFFICE",
+        "SCN_LIVING_MASTER"
+      ],
+      "output": null,
+      "status": "NOT_REQUIRED",
+      "reasons": [],
+      "reference_authority": {
+        "controls": [
+          "composition",
+          "current_blocking",
+          "shot_scale",
+          "spatial_relations"
+        ],
+        "cannot_override": [
+          "character_identity_master",
+          "current_wardrobe",
+          "scene_master_geometry"
+        ]
+      },
+      "generation_status": "NOT_RUN"
+    },
+    {
+      "shot_id": "SH004",
+      "keyframe_type": "SHOT_KEYFRAME",
+      "segment_id": "SEG002",
+      "keyframe_required": false,
+      "keyframe_recommended": false,
+      "source_assets": [
+        "CHAR_A_H3_OFFICE",
+        "CHAR_B_H3_OFFICE",
+        "SCN_LIVING_MASTER"
+      ],
+      "output": null,
+      "status": "NOT_REQUIRED",
+      "reasons": [],
+      "reference_authority": {
+        "controls": [
+          "composition",
+          "current_blocking",
+          "shot_scale",
+          "spatial_relations"
+        ],
+        "cannot_override": [
+          "character_identity_master",
+          "current_wardrobe",
+          "scene_master_geometry"
+        ]
+      },
+      "generation_status": "NOT_RUN"
+    },
+    {
+      "shot_id": "SH005",
+      "keyframe_type": "SHOT_KEYFRAME",
+      "segment_id": "SEG003",
+      "keyframe_required": false,
+      "keyframe_recommended": false,
+      "source_assets": [
+        "CHAR_A_H3_OFFICE",
+        "CHAR_B_H3_OFFICE",
+        "SCN_LIVING_MASTER"
+      ],
+      "output": null,
+      "status": "NOT_REQUIRED",
+      "reasons": [],
+      "reference_authority": {
+        "controls": [
+          "composition",
+          "current_blocking",
+          "shot_scale",
+          "spatial_relations"
+        ],
+        "cannot_override": [
+          "character_identity_master",
+          "current_wardrobe",
+          "scene_master_geometry"
+        ]
+      },
+      "generation_status": "NOT_RUN"
+    },
+    {
+      "shot_id": "SH006",
+      "keyframe_type": "SHOT_KEYFRAME",
+      "segment_id": "SEG003",
+      "keyframe_required": false,
+      "keyframe_recommended": false,
+      "source_assets": [
+        "CHAR_A_H3_OFFICE",
+        "CHAR_B_H3_OFFICE",
+        "SCN_LIVING_MASTER"
+      ],
+      "output": null,
+      "status": "NOT_REQUIRED",
+      "reasons": [],
+      "reference_authority": {
+        "controls": [
+          "composition",
+          "current_blocking",
+          "shot_scale",
+          "spatial_relations"
+        ],
+        "cannot_override": [
+          "character_identity_master",
+          "current_wardrobe",
+          "scene_master_geometry"
+        ]
+      },
+      "generation_status": "NOT_RUN"
+    }
+  ],
+  "meaning": "Canonical prompts and local references validated; rendered video quality requires QC."
+}

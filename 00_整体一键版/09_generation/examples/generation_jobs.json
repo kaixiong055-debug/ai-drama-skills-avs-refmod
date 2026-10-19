@@ -1,0 +1,257 @@
+{
+  "jobs": [
+    {
+      "generation_id": null,
+      "segment_id": "LOCK_SC01_A01",
+      "shot_id": null,
+      "shot_ids": [],
+      "take_id": "TAKE01",
+      "language": "en",
+      "prompt_version": "5.1:90eb563dd446ae9d8d3050092d5cf184b85c5297f33a6408fbb22f63c6d4af43",
+      "model": "H3",
+      "mode": "REF2VA",
+      "model_version": null,
+      "workflow": null,
+      "resolution": null,
+      "steps": null,
+      "seed": null,
+      "hidden_lock": true,
+      "continuation": null,
+      "reference_assets": [
+        "CHAR_A_H3_OFFICE",
+        "CHAR_B_H3_OFFICE",
+        "SCN_LIVING_MASTER"
+      ],
+      "runtime_seconds": null,
+      "output_file": null,
+      "scenario_signature": "c218b313da858010d6df9e427da03478d873a3483f9aee1b9e57823f52a9008f",
+      "picture_bindings": {
+        "P1": {
+          "asset_id": "CHAR_A_H3_OFFICE",
+          "file": "CHAR_A_H3_OFFICE.png",
+          "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+        },
+        "P2": {
+          "asset_id": "CHAR_B_H3_OFFICE",
+          "file": "CHAR_B_H3_OFFICE.png",
+          "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+        },
+        "P3": {
+          "asset_id": "SCN_LIVING_MASTER",
+          "file": "SCN_LIVING_MASTER.png",
+          "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+        }
+      },
+      "spatial_anchor": "LOCK_SC01_A01",
+      "continuation_source": null,
+      "output": null,
+      "status": "PENDING",
+      "reject_reason": [],
+      "include_in_final": false,
+      "requested_frames": 24,
+      "delivery_frames": 0,
+      "prompt": "[Spatial Warm-up LOCK_SC01_A01 | 1s | Hidden spatial warm-up]\n[Scene] SCN_LIVING_NIGHT | the living room at night\n[Episode] EP01 | Chapter 1\n[H3 Mode] REF2VA\n[Include In Final] NO\n[Continuity] INDEPENDENT\n\nsubject_definitions:\n<Subject 1> is Gu Yanchuan (CHAR_A); an adult approximately 28 years old with consistent facial features and body proportions; hairstyle=neatly styled black hair; wardrobe=a black office suit; hair_state=dry; clothing_state=dry and intact; pose=standing naturally.\n<Subject 2> is Lin Wanqing (CHAR_B); an adult approximately 28 years old with consistent facial features and body proportions; hairstyle=neatly styled black hair; wardrobe=a black office suit; hair_state=dry; clothing_state=dry and intact; pose=standing naturally.\n<Subject 3>: the living room at night; All scene references describe one environment subject.\n\nsummary:\nA natural cinematic drama with consistent characters and stable indoor lighting\nEstablish a spatial anchor without executing the formal story.\nspatial_state:\nspatial_measurement: RELATIVE; confidence=UNKNOWN\narea=main area; scene_variant=master location; present_count=2\nGu Yanchuan (CHAR_A): screen_position=screen left; depth=foreground; facing=screen right; eyeline=Lin Wanqing.\nLin Wanqing (CHAR_B): screen_position=screen right; depth=foreground; facing=screen left; eyeline=Gu Yanchuan.\nGu Yanchuan, Lin Wanqing: Adjacent, maintaining the established relative spacing; metric scale is unspecified\ngeometry.fixed_architecture.walls=rectangular living room; fixed north wall\ngeometry.door_positions.ENTRY_DOOR=rear left\ngeometry.window_positions.WINDOW=rear right\ngeometry.furniture_positions.SOFA=behind the characters on the right\ngeometry.furniture_positions.TABLE=foreground center\ngeometry.furniture_positions.CHAIR=midground left\ngeometry.entrance_positions.ENTRY_DOOR=enter from rear left\ngeometry.exit_positions.ENTRY_DOOR=exit toward rear left\ndialogue_group=Gu Yanchuan, Lin Wanqing\n\ncontinuity_state:\nincoming_state: Initialize the declared scene independently.\ncurrent_state:\nvalid_until_changed=true; The declared baseline persists to the end unless an explicit event changes it.\nNo props are currently held or registered.\ndoor_states: ENTRY_DOOR=closed\ncompleted_actions: none\ncompleted_sounds: none\nend_state: Hold the baseline and finish in a stable pose; complete no story action or sound event.\nfrom_previous: No dynamic input.\nto_next: SEG001\n\ncamera_plan:\ncamera_side=south; dialogue_axis=locked east-west axis\nWhen cutting from a group shot to a character close-up, only the camera framing, focal length, and composition change. The character's physical position in the scene does not change. Off-screen characters remain in their previously established spatial positions.\nStable wide shot; locked-off camera; show all present characters and key fixed structures.\n\nshot_timeline:\n[Shot 1 | 0.000–1.000s]\nOnly natural breathing and tiny head movements; no walking, crossing, swaps or complex actions; finish on a clean stable frame.\n\ndialogue_and_audio:\nNo dialogue or key sound events.\nAmbience: quiet indoor room tone and subtle breathing\nnon_diegetic_music=N/A\n\nreference_map:\nP1=CHAR_A_H3_OFFICE.png; <Picture 1> → <Subject 1>; asset_id=CHAR_A_H3_OFFICE; Controls this character’s identity, face, apparent age, proportions, hairstyle and specified wardrobe; does not control blocking or camera. wardrobe=OFFICE\nP2=CHAR_B_H3_OFFICE.png; <Picture 2> → <Subject 2>; asset_id=CHAR_B_H3_OFFICE; Controls this character’s identity, face, apparent age, proportions, hairstyle and specified wardrobe; does not control blocking or camera. wardrobe=OFFICE\nP3=SCN_LIVING_MASTER.png; <Picture 3> → <Subject 3>; asset_id=SCN_LIVING_MASTER; Controls fixed architecture, doors, windows, furniture and real scene geometry; does not lock the source camera; story lighting, time and weather take precedence.\nHidden LOCK: LOCK_SC01_A01; Provides the spatial anchor and is excluded from the formal 5s and final assembly.\ncontinuation_source=NONE; Supply the last 22 frames to AddGuide for the following formal segment.\n\nnegative_rules:\nDo not change faces, apparent age, identity, or body proportions.\nDo not change wardrobe, hairstyle, or wet/dry hair states without a scripted cause.\nDo not randomly swap left/right positions, teleport characters in close-ups, or rearrange off-screen characters.\nDo not cross the dialogue axis without authorization, mirror the image, or reverse left/right roads.\nDo not move doors or windows, add doors, remove fixed furniture, or redesign the location.\nDo not spawn or remove props, switch holding hands, or change holders without a scripted transfer.\nNo extra hands or arms, fused limbs, or deformed hands; each person has exactly two hands.\nDo not repeat completed actions or retrigger completed sound events.\nNo random deformation during the final second, excessive motion blur, added text, or watermarks; scripted readable text must match the bound asset exactly.\nDo not automatically add background music.\n\n"
+    },
+    {
+      "generation_id": null,
+      "segment_id": "SEG001",
+      "shot_id": null,
+      "shot_ids": [
+        "SH001",
+        "SH002"
+      ],
+      "take_id": "TAKE01",
+      "language": "en",
+      "prompt_version": "5.1:e316c1ed5b967f63a968f88e9e9f0d55edf038976e179086f3935e0dae3d63c5",
+      "model": "H3",
+      "mode": "REF2VA",
+      "model_version": null,
+      "workflow": null,
+      "resolution": null,
+      "steps": null,
+      "seed": null,
+      "hidden_lock": true,
+      "continuation": {
+        "unit_id": "LOCK_SC01_A01",
+        "tail_frames": 22,
+        "fps": 24,
+        "guide_frame_idx": 0,
+        "inherit_audio": false
+      },
+      "reference_assets": [
+        "CHAR_A_H3_OFFICE",
+        "CHAR_B_H3_OFFICE",
+        "SCN_LIVING_MASTER"
+      ],
+      "runtime_seconds": null,
+      "output_file": null,
+      "scenario_signature": "c218b313da858010d6df9e427da03478d873a3483f9aee1b9e57823f52a9008f",
+      "picture_bindings": {
+        "P1": {
+          "asset_id": "CHAR_A_H3_OFFICE",
+          "file": "CHAR_A_H3_OFFICE.png",
+          "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+        },
+        "P2": {
+          "asset_id": "CHAR_B_H3_OFFICE",
+          "file": "CHAR_B_H3_OFFICE.png",
+          "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+        },
+        "P3": {
+          "asset_id": "SCN_LIVING_MASTER",
+          "file": "SCN_LIVING_MASTER.png",
+          "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+        }
+      },
+      "spatial_anchor": "LOCK_SC01_A01",
+      "continuation_source": {
+        "unit_id": "LOCK_SC01_A01",
+        "tail_frames": 22,
+        "fps": 24,
+        "guide_frame_idx": 0,
+        "inherit_audio": false
+      },
+      "output": null,
+      "status": "PENDING",
+      "reject_reason": [],
+      "include_in_final": true,
+      "requested_frames": 142,
+      "delivery_frames": 120,
+      "prompt": "[Video Segment 1 | 5s | Night | A short exchange between roommates]\n[Scene] SCN_LIVING_NIGHT | the living room at night\n[Episode] EP01 | Chapter 1\n[H3 Mode] REF2VA\n[Include In Final] YES\n[Continuity] CONTINUATION\n\nsubject_definitions:\n<Subject 1> is Gu Yanchuan (CHAR_A); an adult approximately 28 years old with consistent facial features and body proportions; hairstyle=neatly styled black hair; wardrobe=a black office suit; hair_state=dry; clothing_state=dry and intact; pose=standing naturally.\n<Subject 2> is Lin Wanqing (CHAR_B); an adult approximately 28 years old with consistent facial features and body proportions; hairstyle=neatly styled black hair; wardrobe=a black office suit; hair_state=dry; clothing_state=dry and intact; pose=standing naturally.\n<Subject 3>: the living room at night; All scene references describe one environment subject.\n\nsummary:\nA natural cinematic drama with consistent characters and stable indoor lighting\nThe characters exchange a question and answer from their fixed living-room positions\nspatial_state:\nspatial_measurement: RELATIVE; confidence=UNKNOWN\narea=main area; scene_variant=master location; present_count=2\nGu Yanchuan (CHAR_A): screen_position=screen left; depth=foreground; facing=screen right; eyeline=Lin Wanqing.\nLin Wanqing (CHAR_B): screen_position=screen right; depth=foreground; facing=screen left; eyeline=Gu Yanchuan.\nGu Yanchuan, Lin Wanqing: Adjacent, maintaining the established relative spacing; metric scale is unspecified\ngeometry.fixed_architecture.walls=rectangular living room; fixed north wall\ngeometry.door_positions.ENTRY_DOOR=rear left\ngeometry.window_positions.WINDOW=rear right\ngeometry.furniture_positions.SOFA=behind the characters on the right\ngeometry.furniture_positions.TABLE=foreground center\ngeometry.furniture_positions.CHAIR=midground left\ngeometry.entrance_positions.ENTRY_DOOR=enter from rear left\ngeometry.exit_positions.ENTRY_DOOR=exit toward rear left\ndialogue_group=Gu Yanchuan, Lin Wanqing\nprimary_listener=none; secondary_listeners=none\n\ncontinuity_state:\nincoming_state: SEG001_INCOMING\nThe entry state equals this segment’s declared baseline; no additional state transition is pending.\ncurrent_state: SEG001_CURRENT\nvalid_until_changed=true; The declared baseline persists to the end unless an explicit event changes it.\nNo props are currently held or registered.\ndoor_states: ENTRY_DOOR=closed\ncompleted_actions: none\ncompleted_sounds: none\nend_state: SEG001_END\nAt 5s there is no state change; every field of the current baseline remains valid.\nfrom_previous: Continue visual motion only; do not inherit completed audio tails.\nto_next: SEG002 receives this segment’s end state; rebuild a LOCK if the spatial anchor is invalidated.\n\ncamera_plan:\ncamera_side=south; dialogue_axis=locked east-west axis\nWhen cutting from a group shot to a character close-up, only the camera framing, focal length, and composition change. The character's physical position in the scene does not change. Off-screen characters remain in their previously established spatial positions.\nSettings shared by all shots: shot_scale=close-up; lens=85mm; planned camera height=1.5m; camera_movement=locked-off camera; camera_angle=a three-quarter reverse angle on the same side of the dialogue axis; composition=Frame the current speaker’s face and shoulders; all others remain off-screen in their established positions; lighting=soft window-side key light and consistent indoor fill; depth_of_field=shallow depth of field with a clearly readable face\nShot 1 (SH001): Apply the shared shot settings declared in this segment. Cut purpose: show the current speaker’s subtle reaction\nShot 2 (SH002): Apply the shared shot settings declared in this segment. Cut purpose: show the current speaker’s subtle reaction\n\nshot_timeline:\n[Shot 1 | 0.000–2.500s]\nSH001: The speaker breathes subtly and keeps the eyeline toward the listener\nPerform beats: B001 (Gu Yanchuan)\nB001: Remain in the established position and deliver the short line\n[Shot 2 | 2.500–5.000s]\nSH002: The speaker breathes subtly and keeps the eyeline toward the listener\nPerform beats: B002 (Lin Wanqing)\nB002: Remain in the established position and deliver the short line\nUse natural, restrained expressions and subtle movements. Off-screen characters do not move.\n\ndialogue_and_audio:\nB001 | 0.200–2.200s | Gu Yanchuan | restrained and natural: <d>[Chinese] 你笑了？</d>\nB002 | 2.700–4.500s | Lin Wanqing | restrained and natural: <d>[Chinese] 没有。</d>\nAmbience: quiet indoor room tone and subtle breathing\nnon_diegetic_music=N/A\n\nreference_map:\nP1=CHAR_A_H3_OFFICE.png; <Picture 1> → <Subject 1>; asset_id=CHAR_A_H3_OFFICE; Controls this character’s identity, face, apparent age, proportions, hairstyle and specified wardrobe; does not control blocking or camera. wardrobe=OFFICE\nP2=CHAR_B_H3_OFFICE.png; <Picture 2> → <Subject 2>; asset_id=CHAR_B_H3_OFFICE; Controls this character’s identity, face, apparent age, proportions, hairstyle and specified wardrobe; does not control blocking or camera. wardrobe=OFFICE\nP3=SCN_LIVING_MASTER.png; <Picture 3> → <Subject 3>; asset_id=SCN_LIVING_MASTER; Controls fixed architecture, doors, windows, furniture and real scene geometry; does not lock the source camera; story lighting, time and weather take precedence.\nHidden LOCK: LOCK_SC01_A01; Provides the spatial anchor and is excluded from the formal 5s and final assembly.\ncontinuation_source=LOCK_SC01_A01; tail_frames=22; fps=24; AddGuide.frame_idx=0; inherit_audio=false; Deliver a full 5s of formal content; generate 142 frames and trim only the 22-frame overlap.\n\nnegative_rules:\nDo not change faces, apparent age, identity, or body proportions.\nDo not change wardrobe, hairstyle, or wet/dry hair states without a scripted cause.\nDo not randomly swap left/right positions, teleport characters in close-ups, or rearrange off-screen characters.\nDo not cross the dialogue axis without authorization, mirror the image, or reverse left/right roads.\nDo not move doors or windows, add doors, remove fixed furniture, or redesign the location.\nDo not spawn or remove props, switch holding hands, or change holders without a scripted transfer.\nNo extra hands or arms, fused limbs, or deformed hands; each person has exactly two hands.\nDo not repeat completed actions or retrigger completed sound events.\nNo random deformation during the final second, excessive motion blur, added text, or watermarks; scripted readable text must match the bound asset exactly.\nDo not automatically add background music.\n\n"
+    },
+    {
+      "generation_id": null,
+      "segment_id": "SEG002",
+      "shot_id": null,
+      "shot_ids": [
+        "SH003",
+        "SH004"
+      ],
+      "take_id": "TAKE01",
+      "language": "en",
+      "prompt_version": "5.1:6b2a4bd0e7aedfd7ff65382b7b18ebcb035ddf33160b98849a6169068c005e1d",
+      "model": "H3",
+      "mode": "REF2VA",
+      "model_version": null,
+      "workflow": null,
+      "resolution": null,
+      "steps": null,
+      "seed": null,
+      "hidden_lock": true,
+      "continuation": {
+        "unit_id": "SEG001",
+        "tail_frames": 22,
+        "fps": 24,
+        "guide_frame_idx": 0,
+        "inherit_audio": false
+      },
+      "reference_assets": [
+        "CHAR_A_H3_OFFICE",
+        "CHAR_B_H3_OFFICE",
+        "SCN_LIVING_MASTER"
+      ],
+      "runtime_seconds": null,
+      "output_file": null,
+      "scenario_signature": "c218b313da858010d6df9e427da03478d873a3483f9aee1b9e57823f52a9008f",
+      "picture_bindings": {
+        "P1": {
+          "asset_id": "CHAR_A_H3_OFFICE",
+          "file": "CHAR_A_H3_OFFICE.png",
+          "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+        },
+        "P2": {
+          "asset_id": "CHAR_B_H3_OFFICE",
+          "file": "CHAR_B_H3_OFFICE.png",
+          "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+        },
+        "P3": {
+          "asset_id": "SCN_LIVING_MASTER",
+          "file": "SCN_LIVING_MASTER.png",
+          "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+        }
+      },
+      "spatial_anchor": "LOCK_SC01_A01",
+      "continuation_source": {
+        "unit_id": "SEG001",
+        "tail_frames": 22,
+        "fps": 24,
+        "guide_frame_idx": 0,
+        "inherit_audio": false
+      },
+      "output": null,
+      "status": "PENDING",
+      "reject_reason": [],
+      "include_in_final": true,
+      "requested_frames": 142,
+      "delivery_frames": 120,
+      "prompt": "[Video Segment 2 | 5s | Night | A short exchange between roommates]\n[Scene] SCN_LIVING_NIGHT | the living room at night\n[Episode] EP01 | Chapter 1\n[H3 Mode] REF2VA\n[Include In Final] YES\n[Continuity] CONTINUATION\n\nsubject_definitions:\n<Subject 1> is Gu Yanchuan (CHAR_A); an adult approximately 28 years old with consistent facial features and body proportions; hairstyle=neatly styled black hair; wardrobe=a black office suit; hair_state=dry; clothing_state=dry and intact; pose=standing naturally.\n<Subject 2> is Lin Wanqing (CHAR_B); an adult approximately 28 years old with consistent facial features and body proportions; hairstyle=neatly styled black hair; wardrobe=a black office suit; hair_state=dry; clothing_state=dry and intact; pose=standing naturally.\n<Subject 3>: the living room at night; All scene references describe one environment subject.\n\nsummary:\nA natural cinematic drama with consistent characters and stable indoor lighting\nThe characters exchange a question and answer from their fixed living-room positions\nspatial_state:\nspatial_measurement: RELATIVE; confidence=UNKNOWN\narea=main area; scene_variant=master location; present_count=2\nGu Yanchuan (CHAR_A): screen_position=screen left; depth=foreground; facing=screen right; eyeline=Lin Wanqing.\nLin Wanqing (CHAR_B): screen_position=screen right; depth=foreground; facing=screen left; eyeline=Gu Yanchuan.\nGu Yanchuan, Lin Wanqing: Adjacent, maintaining the established relative spacing; metric scale is unspecified\ngeometry.fixed_architecture.walls=rectangular living room; fixed north wall\ngeometry.door_positions.ENTRY_DOOR=rear left\ngeometry.window_positions.WINDOW=rear right\ngeometry.furniture_positions.SOFA=behind the characters on the right\ngeometry.furniture_positions.TABLE=foreground center\ngeometry.furniture_positions.CHAIR=midground left\ngeometry.entrance_positions.ENTRY_DOOR=enter from rear left\ngeometry.exit_positions.ENTRY_DOOR=exit toward rear left\ndialogue_group=Gu Yanchuan, Lin Wanqing\nprimary_listener=none; secondary_listeners=none\n\ncontinuity_state:\nincoming_state: SEG002_INCOMING\nThe entry state equals this segment’s declared baseline; no additional state transition is pending.\ncurrent_state: SEG002_CURRENT\nvalid_until_changed=true; The declared baseline persists to the end unless an explicit event changes it.\nNo props are currently held or registered.\ndoor_states: ENTRY_DOOR=closed\ncompleted_actions: none\ncompleted_sounds: none\nend_state: SEG002_END\nAt 5s there is no state change; every field of the current baseline remains valid.\nfrom_previous: Continue visual motion only; do not inherit completed audio tails.\nto_next: SEG003 receives this segment’s end state; rebuild a LOCK if the spatial anchor is invalidated.\n\ncamera_plan:\ncamera_side=south; dialogue_axis=locked east-west axis\nWhen cutting from a group shot to a character close-up, only the camera framing, focal length, and composition change. The character's physical position in the scene does not change. Off-screen characters remain in their previously established spatial positions.\nSettings shared by all shots: shot_scale=close-up; lens=85mm; planned camera height=1.5m; camera_movement=locked-off camera; camera_angle=a three-quarter reverse angle on the same side of the dialogue axis; composition=Frame the current speaker’s face and shoulders; all others remain off-screen in their established positions; lighting=soft window-side key light and consistent indoor fill; depth_of_field=shallow depth of field with a clearly readable face\nShot 1 (SH003): Apply the shared shot settings declared in this segment. Cut purpose: show the current speaker’s subtle reaction\nShot 2 (SH004): Apply the shared shot settings declared in this segment. Cut purpose: show the current speaker’s subtle reaction\n\nshot_timeline:\n[Shot 1 | 0.000–2.500s]\nSH003: The speaker breathes subtly and keeps the eyeline toward the listener\nPerform beats: B003 (Gu Yanchuan)\nB003: Remain in the established position and deliver the short line\n[Shot 2 | 2.500–5.000s]\nSH004: The speaker breathes subtly and keeps the eyeline toward the listener\nPerform beats: B004 (Lin Wanqing)\nB004: Remain in the established position and deliver the short line\nUse natural, restrained expressions and subtle movements. Off-screen characters do not move.\n\ndialogue_and_audio:\nB003 | 0.200–2.200s | Gu Yanchuan | restrained and natural: <d>[Chinese] 你笑了？</d>\nB004 | 2.700–4.500s | Lin Wanqing | restrained and natural: <d>[Chinese] 没有。</d>\nAmbience: quiet indoor room tone and subtle breathing\nnon_diegetic_music=N/A\n\nreference_map:\nP1=CHAR_A_H3_OFFICE.png; <Picture 1> → <Subject 1>; asset_id=CHAR_A_H3_OFFICE; Controls this character’s identity, face, apparent age, proportions, hairstyle and specified wardrobe; does not control blocking or camera. wardrobe=OFFICE\nP2=CHAR_B_H3_OFFICE.png; <Picture 2> → <Subject 2>; asset_id=CHAR_B_H3_OFFICE; Controls this character’s identity, face, apparent age, proportions, hairstyle and specified wardrobe; does not control blocking or camera. wardrobe=OFFICE\nP3=SCN_LIVING_MASTER.png; <Picture 3> → <Subject 3>; asset_id=SCN_LIVING_MASTER; Controls fixed architecture, doors, windows, furniture and real scene geometry; does not lock the source camera; story lighting, time and weather take precedence.\nHidden LOCK: LOCK_SC01_A01; Provides the spatial anchor and is excluded from the formal 5s and final assembly.\ncontinuation_source=SEG001; tail_frames=22; fps=24; AddGuide.frame_idx=0; inherit_audio=false; Deliver a full 5s of formal content; generate 142 frames and trim only the 22-frame overlap.\n\nnegative_rules:\nDo not change faces, apparent age, identity, or body proportions.\nDo not change wardrobe, hairstyle, or wet/dry hair states without a scripted cause.\nDo not randomly swap left/right positions, teleport characters in close-ups, or rearrange off-screen characters.\nDo not cross the dialogue axis without authorization, mirror the image, or reverse left/right roads.\nDo not move doors or windows, add doors, remove fixed furniture, or redesign the location.\nDo not spawn or remove props, switch holding hands, or change holders without a scripted transfer.\nNo extra hands or arms, fused limbs, or deformed hands; each person has exactly two hands.\nDo not repeat completed actions or retrigger completed sound events.\nNo random deformation during the final second, excessive motion blur, added text, or watermarks; scripted readable text must match the bound asset exactly.\nDo not automatically add background music.\n\n"
+    },
+    {
+      "generation_id": null,
+      "segment_id": "SEG003",
+      "shot_id": null,
+      "shot_ids": [
+        "SH005",
+        "SH006"
+      ],
+      "take_id": "TAKE01",
+      "language": "en",
+      "prompt_version": "5.1:2a37bc38cc28eca231b4b66aa1f32d87532cb7bf784dfd711623856591581b15",
+      "model": "H3",
+      "mode": "REF2VA",
+      "model_version": null,
+      "workflow": null,
+      "resolution": null,
+      "steps": null,
+      "seed": null,
+      "hidden_lock": true,
+      "continuation": {
+        "unit_id": "SEG002",
+        "tail_frames": 22,
+        "fps": 24,
+        "guide_frame_idx": 0,
+        "inherit_audio": false
+      },
+      "reference_assets": [
+        "CHAR_A_H3_OFFICE",
+        "CHAR_B_H3_OFFICE",
+        "SCN_LIVING_MASTER"
+      ],
+      "runtime_seconds": null,
+      "output_file": null,
+      "scenario_signature": "c218b313da858010d6df9e427da03478d873a3483f9aee1b9e57823f52a9008f",
+      "picture_bindings": {
+        "P1": {
+          "asset_id": "CHAR_A_H3_OFFICE",
+          "file": "CHAR_A_H3_OFFICE.png",
+          "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+        },
+        "P2": {
+          "asset_id": "CHAR_B_H3_OFFICE",
+          "file": "CHAR_B_H3_OFFICE.png",
+          "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+        },
+        "P3": {
+          "asset_id": "SCN_LIVING_MASTER",
+          "file": "SCN_LIVING_MASTER.png",
+          "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+        }
+      },
+      "spatial_anchor": "LOCK_SC01_A01",
+      "continuation_source": {
+        "unit_id": "SEG002",
+        "tail_frames": 22,
+        "fps": 24,
+        "guide_frame_idx": 0,
+        "inherit_audio": false
+      },
+      "output": null,
+      "status": "PENDING",
+      "reject_reason": [],
+      "include_in_final": true,
+      "requested_frames": 142,
+      "delivery_frames": 120,
+      "prompt": "[Video Segment 3 | 5s | Night | A short exchange between roommates]\n[Scene] SCN_LIVING_NIGHT | the living room at night\n[Episode] EP01 | Chapter 1\n[H3 Mode] REF2VA\n[Include In Final] YES\n[Continuity] CONTINUATION\n\nsubject_definitions:\n<Subject 1> is Gu Yanchuan (CHAR_A); an adult approximately 28 years old with consistent facial features and body proportions; hairstyle=neatly styled black hair; wardrobe=a black office suit; hair_state=dry; clothing_state=dry and intact; pose=standing naturally.\n<Subject 2> is Lin Wanqing (CHAR_B); an adult approximately 28 years old with consistent facial features and body proportions; hairstyle=neatly styled black hair; wardrobe=a black office suit; hair_state=dry; clothing_state=dry and intact; pose=standing naturally.\n<Subject 3>: the living room at night; All scene references describe one environment subject.\n\nsummary:\nA natural cinematic drama with consistent characters and stable indoor lighting\nThe characters exchange a question and answer from their fixed living-room positions\nspatial_state:\nspatial_measurement: RELATIVE; confidence=UNKNOWN\narea=main area; scene_variant=master location; present_count=2\nGu Yanchuan (CHAR_A): screen_position=screen left; depth=foreground; facing=screen right; eyeline=Lin Wanqing.\nLin Wanqing (CHAR_B): screen_position=screen right; depth=foreground; facing=screen left; eyeline=Gu Yanchuan.\nGu Yanchuan, Lin Wanqing: Adjacent, maintaining the established relative spacing; metric scale is unspecified\ngeometry.fixed_architecture.walls=rectangular living room; fixed north wall\ngeometry.door_positions.ENTRY_DOOR=rear left\ngeometry.window_positions.WINDOW=rear right\ngeometry.furniture_positions.SOFA=behind the characters on the right\ngeometry.furniture_positions.TABLE=foreground center\ngeometry.furniture_positions.CHAIR=midground left\ngeometry.entrance_positions.ENTRY_DOOR=enter from rear left\ngeometry.exit_positions.ENTRY_DOOR=exit toward rear left\ndialogue_group=Gu Yanchuan, Lin Wanqing\nprimary_listener=none; secondary_listeners=none\n\ncontinuity_state:\nincoming_state: SEG003_INCOMING\nThe entry state equals this segment’s declared baseline; no additional state transition is pending.\ncurrent_state: SEG003_CURRENT\nvalid_until_changed=true; The declared baseline persists to the end unless an explicit event changes it.\nNo props are currently held or registered.\ndoor_states: ENTRY_DOOR=closed\ncompleted_actions: none\ncompleted_sounds: none\nend_state: SEG003_END\nAt 5s there is no state change; every field of the current baseline remains valid.\nfrom_previous: Continue visual motion only; do not inherit completed audio tails.\nto_next: This segment closes the project.\n\ncamera_plan:\ncamera_side=south; dialogue_axis=locked east-west axis\nWhen cutting from a group shot to a character close-up, only the camera framing, focal length, and composition change. The character's physical position in the scene does not change. Off-screen characters remain in their previously established spatial positions.\nSettings shared by all shots: shot_scale=close-up; lens=85mm; planned camera height=1.5m; camera_movement=locked-off camera; camera_angle=a three-quarter reverse angle on the same side of the dialogue axis; composition=Frame the current speaker’s face and shoulders; all others remain off-screen in their established positions; lighting=soft window-side key light and consistent indoor fill; depth_of_field=shallow depth of field with a clearly readable face\nShot 1 (SH005): Apply the shared shot settings declared in this segment. Cut purpose: show the current speaker’s subtle reaction\nShot 2 (SH006): Apply the shared shot settings declared in this segment. Cut purpose: show the current speaker’s subtle reaction\n\nshot_timeline:\n[Shot 1 | 0.000–2.500s]\nSH005: The speaker breathes subtly and keeps the eyeline toward the listener\nPerform beats: B005 (Gu Yanchuan)\nB005: Remain in the established position and deliver the short line\n[Shot 2 | 2.500–5.000s]\nSH006: The speaker breathes subtly and keeps the eyeline toward the listener\nPerform beats: B006 (Lin Wanqing)\nB006: Remain in the established position and deliver the short line\nUse natural, restrained expressions and subtle movements. Off-screen characters do not move.\n\ndialogue_and_audio:\nB005 | 0.200–2.200s | Gu Yanchuan | restrained and natural: <d>[Chinese] 你笑了？</d>\nB006 | 2.700–4.500s | Lin Wanqing | restrained and natural: <d>[Chinese] 没有。</d>\nAmbience: quiet indoor room tone and subtle breathing\nnon_diegetic_music=N/A\n\nreference_map:\nP1=CHAR_A_H3_OFFICE.png; <Picture 1> → <Subject 1>; asset_id=CHAR_A_H3_OFFICE; Controls this character’s identity, face, apparent age, proportions, hairstyle and specified wardrobe; does not control blocking or camera. wardrobe=OFFICE\nP2=CHAR_B_H3_OFFICE.png; <Picture 2> → <Subject 2>; asset_id=CHAR_B_H3_OFFICE; Controls this character’s identity, face, apparent age, proportions, hairstyle and specified wardrobe; does not control blocking or camera. wardrobe=OFFICE\nP3=SCN_LIVING_MASTER.png; <Picture 3> → <Subject 3>; asset_id=SCN_LIVING_MASTER; Controls fixed architecture, doors, windows, furniture and real scene geometry; does not lock the source camera; story lighting, time and weather take precedence.\nHidden LOCK: LOCK_SC01_A01; Provides the spatial anchor and is excluded from the formal 5s and final assembly.\ncontinuation_source=SEG002; tail_frames=22; fps=24; AddGuide.frame_idx=0; inherit_audio=false; Deliver a full 5s of formal content; generate 142 frames and trim only the 22-frame overlap.\n\nnegative_rules:\nDo not change faces, apparent age, identity, or body proportions.\nDo not change wardrobe, hairstyle, or wet/dry hair states without a scripted cause.\nDo not randomly swap left/right positions, teleport characters in close-ups, or rearrange off-screen characters.\nDo not cross the dialogue axis without authorization, mirror the image, or reverse left/right roads.\nDo not move doors or windows, add doors, remove fixed furniture, or redesign the location.\nDo not spawn or remove props, switch holding hands, or change holders without a scripted transfer.\nNo extra hands or arms, fused limbs, or deformed hands; each person has exactly two hands.\nDo not repeat completed actions or retrigger completed sound events.\nNo random deformation during the final second, excessive motion blur, added text, or watermarks; scripted readable text must match the bound asset exactly.\nDo not automatically add background music.\n\n"
+    }
+  ]
+}

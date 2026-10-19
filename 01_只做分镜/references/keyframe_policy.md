@@ -1,0 +1,7 @@
+# V5.1 Keyframe 接口
+
+shot_keyframes 登记shot_id、keyframe_required、keyframe_type、source_assets、output、status。类型为SPATIAL_ANCHOR_KEYFRAME、SHOT_KEYFRAME、ACTION_KEYFRAME、END_STATE_KEYFRAME。旧SHOT_REFERENCE称呼不作为新增枚举。
+
+AUTO推荐复杂群像/特殊机位/易漂几何/固定设施交互/历史位置或场景漂移/机甲武器特殊动作/首次复杂空间。普通简单单人近景可不生成。推荐任务MISSING但非required可以交付待办；显式required或ALWAYS缺图必须阻止READY。NEVER不能把用户已明确要求的图片偷偷取消。
+
+source_assets指向真实已登记身份、服装、场景与道具；图片生成由宿主接入，当前引擎不假装已调用模型。图片存在且验证后进入Picture/reference_map，负责构图、当前站位、景别和空间关系；人物身份MASTER、当前衣服和Scene MASTER几何仍为上级权威。

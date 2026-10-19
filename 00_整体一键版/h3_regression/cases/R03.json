@@ -1,0 +1,78 @@
+{
+  "case_id": "R03",
+  "name": {
+    "cn": "三人对白插话",
+    "en": "Three-person dialogue with an interruption"
+  },
+  "protocol": {
+    "participants": 3,
+    "procedure": "Establish a fixed triangular group; C interrupts an A/B exchange while all listeners remain present.",
+    "inspect": [
+      "speaker/listener assignment",
+      "off-screen positions",
+      "gaze targets"
+    ]
+  },
+  "scenario_review": "NOT_RUN",
+  "status": "NOT_RUN",
+  "metrics": {
+    "identity_drift": null,
+    "position_drift": null,
+    "left_right_swap": null,
+    "axis_flip": null,
+    "eyeline_error": null,
+    "scene_geometry_drift": null,
+    "prop_drift": null,
+    "end_frame_deformation": null
+  },
+  "variants": {
+    "A": {
+      "prompt_family": "5.0",
+      "hidden_lock": false,
+      "status": "NOT_RUN",
+      "runs": [],
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      }
+    },
+    "B": {
+      "prompt_family": "5.0",
+      "hidden_lock": true,
+      "status": "NOT_RUN",
+      "runs": [],
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      }
+    },
+    "C": {
+      "prompt_family": "5.1",
+      "hidden_lock": true,
+      "status": "NOT_RUN",
+      "runs": [],
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      }
+    }
+  }
+}

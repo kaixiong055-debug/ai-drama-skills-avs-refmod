@@ -1,0 +1,118 @@
+{
+  "schema_version": "5.1",
+  "kind": "production",
+  "lineage": {
+    "storyboard": "151be5f4365404634d23e3ba73c140cb865657bd965cc590b6c70151389b544d",
+    "assets": "a89c966803064e8588c596215bafa921909f0879129942ca530774f209f3c0d3"
+  },
+  "units": [
+    {
+      "unit_id": "SEG001",
+      "segment_id": "SEG001",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "duration_s": 5.0,
+      "include_in_final": true,
+      "spatial_anchor": "LOCK_SC01_A01",
+      "state_ids": {
+        "incoming": "SEG001_INCOMING",
+        "current": "SEG001_CURRENT",
+        "end": "SEG001_END"
+      },
+      "continuation_source": {
+        "unit_id": "LOCK_SC01_A01",
+        "tail_frames": 22,
+        "fps": 24,
+        "guide_frame_idx": 0,
+        "inherit_audio": false
+      },
+      "shot_ids": [
+        "SH001",
+        "SH002"
+      ],
+      "events": [],
+      "active_speakers": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "primary_listener": "CHAR_C",
+      "secondary_listeners": [
+        "CHAR_D",
+        "CHAR_E"
+      ],
+      "h3_mode": "REF2VA"
+    },
+    {
+      "unit_id": "SEG002",
+      "segment_id": "SEG002",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "duration_s": 5.0,
+      "include_in_final": true,
+      "spatial_anchor": "LOCK_SC01_A01",
+      "state_ids": {
+        "incoming": "SEG002_INCOMING",
+        "current": "SEG002_CURRENT",
+        "end": "SEG002_END"
+      },
+      "continuation_source": {
+        "unit_id": "SEG001",
+        "tail_frames": 22,
+        "fps": 24,
+        "guide_frame_idx": 0,
+        "inherit_audio": false
+      },
+      "shot_ids": [
+        "SH003",
+        "SH004"
+      ],
+      "events": [],
+      "active_speakers": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "primary_listener": "CHAR_C",
+      "secondary_listeners": [
+        "CHAR_D",
+        "CHAR_E"
+      ],
+      "h3_mode": "REF2VA"
+    },
+    {
+      "unit_id": "SEG003",
+      "segment_id": "SEG003",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "duration_s": 5.0,
+      "include_in_final": true,
+      "spatial_anchor": "LOCK_SC01_A01",
+      "state_ids": {
+        "incoming": "SEG003_INCOMING",
+        "current": "SEG003_CURRENT",
+        "end": "SEG003_END"
+      },
+      "continuation_source": {
+        "unit_id": "SEG002",
+        "tail_frames": 22,
+        "fps": 24,
+        "guide_frame_idx": 0,
+        "inherit_audio": false
+      },
+      "shot_ids": [
+        "SH005",
+        "SH006"
+      ],
+      "events": [],
+      "active_speakers": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "primary_listener": "CHAR_C",
+      "secondary_listeners": [
+        "CHAR_D",
+        "CHAR_E"
+      ],
+      "h3_mode": "REF2VA"
+    }
+  ],
+  "production_profile": "DRAMA_DIALOGUE",
+  "final_runtime_s": 15,
+  "final_segment_count": 3
+}

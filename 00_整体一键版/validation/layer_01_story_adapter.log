@@ -1,0 +1,11 @@
+Failed to find real location of C:\Python313\python.exe
+test_dialogue_overtime (tests.test_pipeline.ProductionTests.test_dialogue_overtime) ... ok
+test_script_cannot_contain_camera (tests.test_pipeline.ProductionTests.test_script_cannot_contain_camera) ... ok
+test_explicit_operator_config_preserved (test_provider_v51.PlannerAuthorityTests.test_explicit_operator_config_preserved) ... ok
+test_model_cannot_authorize_stale_assets (test_provider_v51.PlannerAuthorityTests.test_model_cannot_authorize_stale_assets) ... ok
+test_model_cannot_fabricate_asset_versions (test_provider_v51.PlannerAuthorityTests.test_model_cannot_fabricate_asset_versions) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.711s
+
+OK

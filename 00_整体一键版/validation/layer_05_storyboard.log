@@ -1,0 +1,22 @@
+Failed to find real location of C:\Python313\python.exe
+test_TEST02_three_person_interruption (tests.test_pipeline.ProductionTests.test_TEST02_three_person_interruption) ... ok
+test_duplicate_shot_and_gap (tests.test_pipeline.ProductionTests.test_duplicate_shot_and_gap) ... ok
+test_all_auto_risk_conditions (test_keyframes_v51.KeyframeTests.test_all_auto_risk_conditions) ... ok
+test_always_missing_blocks_ready_and_never_conflict_is_explicit (test_keyframes_v51.KeyframeTests.test_always_missing_blocks_ready_and_never_conflict_is_explicit) ... ok
+test_auto_complex_scene_is_honest_optional_missing_interface (test_keyframes_v51.KeyframeTests.test_auto_complex_scene_is_honest_optional_missing_interface) ... ok
+test_auto_simple_closeups_do_not_require_images (test_keyframes_v51.KeyframeTests.test_auto_simple_closeups_do_not_require_images) ... ok
+test_available_image_uses_actual_decoder (test_keyframes_v51.KeyframeTests.test_available_image_uses_actual_decoder) ... ok
+test_binding_keyframe_authority_metadata_tampering_rejected (test_keyframes_v51.KeyframeTests.test_binding_keyframe_authority_metadata_tampering_rejected) ... ok
+test_entry_wardrobe_is_used_by_keyframe_sources (test_keyframes_v51.KeyframeTests.test_entry_wardrobe_is_used_by_keyframe_sources) ... ok
+test_four_types_and_existing_images_are_references_with_authority (test_keyframes_v51.KeyframeTests.test_four_types_and_existing_images_are_references_with_authority) ... ok
+test_input_not_mutated_and_unknown_shot_rejected (test_keyframes_v51.KeyframeTests.test_input_not_mutated_and_unknown_shot_rejected) ... ok
+test_integrated_keyframe_runtime_authority_and_separate_lock (test_keyframes_v51.KeyframeTests.test_integrated_keyframe_runtime_authority_and_separate_lock) ... ok
+test_no_fabricated_available_image (test_keyframes_v51.KeyframeTests.test_no_fabricated_available_image) ... ok
+test_saved_plan_source_tampering_rejected (test_keyframes_v51.KeyframeTests.test_saved_plan_source_tampering_rejected) ... ok
+test_segment_policy_override_is_executed (test_keyframes_v51.KeyframeTests.test_segment_policy_override_is_executed) ... ok
+test_unknown_sources_and_authority_override_blocked (test_keyframes_v51.KeyframeTests.test_unknown_sources_and_authority_override_blocked) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.941s
+
+OK

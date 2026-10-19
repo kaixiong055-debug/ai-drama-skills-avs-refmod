@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ai-drama:v5:assets",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "5.0",
+        "5.1"
+      ]
+    },
+    "kind": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lineage": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "asset_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "file": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "direct_bindable": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "object",
+            "properties": {
+              "cn": {
+                "type": "string",
+                "minLength": 1
+              },
+              "en": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "cn",
+              "en"
+            ],
+            "additionalProperties": false
+          },
+          "version": {
+            "type": [
+              "integer",
+              "string",
+              "null"
+            ]
+          },
+          "derived_from": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "source_versions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": [
+                "integer",
+                "string",
+                "null"
+              ]
+            }
+          },
+          "source_version": {
+            "oneOf": [
+              {
+                "type": [
+                  "integer",
+                  "string",
+                  "null"
+                ]
+              },
+              {
+                "type": "object",
+                "additionalProperties": {
+                  "type": [
+                    "integer",
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            ]
+          },
+          "generated_from_version": {
+            "oneOf": [
+              {
+                "type": [
+                  "integer",
+                  "string",
+                  "null"
+                ]
+              },
+              {
+                "type": "object",
+                "additionalProperties": {
+                  "type": [
+                    "integer",
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            ]
+          },
+          "status": {
+            "enum": [
+              "VALID",
+              "STALE",
+              "MISSING",
+              "UNVERIFIED"
+            ]
+          }
+        },
+        "required": [
+          "asset_id",
+          "file",
+          "role",
+          "direct_bindable",
+          "description"
+        ],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "lineage",
+    "assets"
+  ],
+  "additionalProperties": true
+}

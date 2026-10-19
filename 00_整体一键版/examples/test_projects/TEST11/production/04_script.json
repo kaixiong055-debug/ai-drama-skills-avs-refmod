@@ -1,0 +1,131 @@
+{
+  "schema_version": "5.1",
+  "kind": "script",
+  "lineage": {
+    "story": "6bfd71b48b9db20ae6c0c1383d0490e389caef27f078ac7c8b3c4bbfc29b4e7e",
+    "cast": "e52cd7145effc2da38f3d4ef9deb2c692e28f6f413da575013698d72fdd72900",
+    "assets": "8cf1167a909c2f90510db758ac56a5d70e0cfaa7be640f048388d647292e7158"
+  },
+  "beats": [
+    {
+      "beat_id": "B001",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "speaker": "CHAR_A",
+      "dialogue": "你笑了？",
+      "spoken_language": "Chinese",
+      "start_s": 0.2,
+      "end_s": 2.2,
+      "emotion": {
+        "cn": "克制、自然",
+        "en": "restrained and natural"
+      },
+      "action": {
+        "cn": "保持原位，说完短句",
+        "en": "Remain in the established position and deliver the short line"
+      },
+      "source_beat_ids": [
+        "SRC_B001"
+      ]
+    },
+    {
+      "beat_id": "B002",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "speaker": "CHAR_B",
+      "dialogue": "没有。",
+      "spoken_language": "Chinese",
+      "start_s": 2.7,
+      "end_s": 4.5,
+      "emotion": {
+        "cn": "克制、自然",
+        "en": "restrained and natural"
+      },
+      "action": {
+        "cn": "保持原位，说完短句",
+        "en": "Remain in the established position and deliver the short line"
+      },
+      "source_beat_ids": [
+        "SRC_B002"
+      ]
+    },
+    {
+      "beat_id": "B003",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "speaker": "CHAR_A",
+      "dialogue": "你笑了？",
+      "spoken_language": "Chinese",
+      "start_s": 0.2,
+      "end_s": 2.2,
+      "emotion": {
+        "cn": "克制、自然",
+        "en": "restrained and natural"
+      },
+      "action": {
+        "cn": "保持原位，说完短句",
+        "en": "Remain in the established position and deliver the short line"
+      },
+      "source_beat_ids": [
+        "SRC_B003"
+      ]
+    },
+    {
+      "beat_id": "B004",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "speaker": "CHAR_B",
+      "dialogue": "没有。",
+      "spoken_language": "Chinese",
+      "start_s": 2.7,
+      "end_s": 4.5,
+      "emotion": {
+        "cn": "克制、自然",
+        "en": "restrained and natural"
+      },
+      "action": {
+        "cn": "保持原位，说完短句",
+        "en": "Remain in the established position and deliver the short line"
+      },
+      "source_beat_ids": [
+        "SRC_B004"
+      ]
+    },
+    {
+      "beat_id": "B005",
+      "scene_id": "SCN_LIVING_MORNING",
+      "speaker": "CHAR_A",
+      "dialogue": "你笑了？",
+      "spoken_language": "Chinese",
+      "start_s": 0.2,
+      "end_s": 2.2,
+      "emotion": {
+        "cn": "克制、自然",
+        "en": "restrained and natural"
+      },
+      "action": {
+        "cn": "保持原位，说完短句",
+        "en": "Remain in the established position and deliver the short line"
+      },
+      "source_beat_ids": [
+        "SRC_B005"
+      ]
+    },
+    {
+      "beat_id": "B006",
+      "scene_id": "SCN_LIVING_MORNING",
+      "speaker": "CHAR_B",
+      "dialogue": "没有。",
+      "spoken_language": "Chinese",
+      "start_s": 2.7,
+      "end_s": 4.5,
+      "emotion": {
+        "cn": "克制、自然",
+        "en": "restrained and natural"
+      },
+      "action": {
+        "cn": "保持原位，说完短句",
+        "en": "Remain in the established position and deliver the short line"
+      },
+      "source_beat_ids": [
+        "SRC_B006"
+      ]
+    }
+  ]
+}

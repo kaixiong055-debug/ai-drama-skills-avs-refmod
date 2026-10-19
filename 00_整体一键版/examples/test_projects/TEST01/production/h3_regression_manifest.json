@@ -1,0 +1,1185 @@
+{
+  "schema_version": "5.1",
+  "status": "NOT_RUN",
+  "metric_definition": "Observed error rates [0,1], lower is better; null means not evaluated.",
+  "comparison_policy": "Pair A/B/C by comparison_id; keep model, workflow, resolution, steps, seed, source, assets and durations constant. LOCK and prompt family are experimental variables.",
+  "cases": [
+    {
+      "case_id": "R01",
+      "name": {
+        "cn": "双人连续3段对白",
+        "en": "Two-person dialogue across three segments"
+      },
+      "protocol": {
+        "participants": 2,
+        "minimum_formal_segments": 3,
+        "procedure": "Keep both characters in fixed positions for three consecutive 5-second dialogue segments; alternate speaking close-ups.",
+        "inspect": [
+          "identity across cuts",
+          "screen side",
+          "eyelines",
+          "tail-22 handoff"
+        ]
+      },
+      "scenario_review": "NOT_RUN",
+      "status": "NOT_RUN",
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      },
+      "variants": {
+        "A": {
+          "prompt_family": "5.0",
+          "hidden_lock": false,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "B": {
+          "prompt_family": "5.0",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "C": {
+          "prompt_family": "5.1",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        }
+      }
+    },
+    {
+      "case_id": "R02",
+      "name": {
+        "cn": "双人8轮对白",
+        "en": "Two-person dialogue across eight exchanges"
+      },
+      "protocol": {
+        "participants": 2,
+        "minimum_dialogue_exchanges": 8,
+        "procedure": "Perform eight complete question-response exchanges across consecutive segments, preserving each speaker and occurrence.",
+        "inspect": [
+          "long-chain identity/position drift",
+          "dialogue occurrence",
+          "accumulating end-frame deformation"
+        ]
+      },
+      "scenario_review": "NOT_RUN",
+      "status": "NOT_RUN",
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      },
+      "variants": {
+        "A": {
+          "prompt_family": "5.0",
+          "hidden_lock": false,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "B": {
+          "prompt_family": "5.0",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "C": {
+          "prompt_family": "5.1",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        }
+      }
+    },
+    {
+      "case_id": "R03",
+      "name": {
+        "cn": "三人对白插话",
+        "en": "Three-person dialogue with an interruption"
+      },
+      "protocol": {
+        "participants": 3,
+        "procedure": "Establish a fixed triangular group; C interrupts an A/B exchange while all listeners remain present.",
+        "inspect": [
+          "speaker/listener assignment",
+          "off-screen positions",
+          "gaze targets"
+        ]
+      },
+      "scenario_review": "NOT_RUN",
+      "status": "NOT_RUN",
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      },
+      "variants": {
+        "A": {
+          "prompt_family": "5.0",
+          "hidden_lock": false,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "B": {
+          "prompt_family": "5.0",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "C": {
+          "prompt_family": "5.1",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        }
+      }
+    },
+    {
+      "case_id": "R04",
+      "name": {
+        "cn": "四人客厅群聊",
+        "en": "Four-person living-room conversation"
+      },
+      "protocol": {
+        "participants": 4,
+        "procedure": "Keep four characters around the living-room seating; alternate close-ups and one motivated group reaction.",
+        "inspect": [
+          "sofa/door geometry",
+          "group left-right order",
+          "off-screen persistence"
+        ]
+      },
+      "scenario_review": "NOT_RUN",
+      "status": "NOT_RUN",
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      },
+      "variants": {
+        "A": {
+          "prompt_family": "5.0",
+          "hidden_lock": false,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "B": {
+          "prompt_family": "5.0",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "C": {
+          "prompt_family": "5.1",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        }
+      }
+    },
+    {
+      "case_id": "R05",
+      "name": {
+        "cn": "五人会议式小群戏",
+        "en": "Five-person meeting scene"
+      },
+      "protocol": {
+        "participants": 5,
+        "procedure": "Use five stable seating positions in a meeting-style conversation; cover all speakers without moving their physical positions.",
+        "inspect": [
+          "identity separation",
+          "foreground/midground/background",
+          "axis"
+        ]
+      },
+      "scenario_review": "NOT_RUN",
+      "status": "NOT_RUN",
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      },
+      "variants": {
+        "A": {
+          "prompt_family": "5.0",
+          "hidden_lock": false,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "B": {
+          "prompt_family": "5.0",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "C": {
+          "prompt_family": "5.1",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        }
+      }
+    },
+    {
+      "case_id": "R06",
+      "name": {
+        "cn": "角色进场",
+        "en": "Character entrance"
+      },
+      "protocol": {
+        "participants": 3,
+        "procedure": "Begin with two characters, show a third entering through the known entrance along a readable path, then re-anchor before the next formal segment.",
+        "inspect": [
+          "entry direction",
+          "existing-character persistence",
+          "LOCK invalidation"
+        ]
+      },
+      "scenario_review": "NOT_RUN",
+      "status": "NOT_RUN",
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      },
+      "variants": {
+        "A": {
+          "prompt_family": "5.0",
+          "hidden_lock": false,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "B": {
+          "prompt_family": "5.0",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "C": {
+          "prompt_family": "5.1",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        }
+      }
+    },
+    {
+      "case_id": "R07",
+      "name": {
+        "cn": "角色退场",
+        "en": "Character exit"
+      },
+      "protocol": {
+        "participants": 3,
+        "procedure": "One character exits through the known exit; retain the remaining two and re-anchor the changed layout before the next formal segment.",
+        "inspect": [
+          "exit path",
+          "no respawn",
+          "group reconstruction"
+        ]
+      },
+      "scenario_review": "NOT_RUN",
+      "status": "NOT_RUN",
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      },
+      "variants": {
+        "A": {
+          "prompt_family": "5.0",
+          "hidden_lock": false,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "B": {
+          "prompt_family": "5.0",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "C": {
+          "prompt_family": "5.1",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        }
+      }
+    },
+    {
+      "case_id": "R08",
+      "name": {
+        "cn": "角色换位",
+        "en": "Characters change positions"
+      },
+      "protocol": {
+        "participants": 2,
+        "procedure": "Show an explicit authorized crossing or position exchange with a readable path; record new positions and rebuild the subsequent anchor.",
+        "inspect": [
+          "no unmotivated swap",
+          "correct final positions",
+          "camera-side consistency"
+        ]
+      },
+      "scenario_review": "NOT_RUN",
+      "status": "NOT_RUN",
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      },
+      "variants": {
+        "A": {
+          "prompt_family": "5.0",
+          "hidden_lock": false,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "B": {
+          "prompt_family": "5.0",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "C": {
+          "prompt_family": "5.1",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        }
+      }
+    },
+    {
+      "case_id": "R09",
+      "name": {
+        "cn": "门口对话",
+        "en": "Doorway dialogue"
+      },
+      "protocol": {
+        "participants": 2,
+        "procedure": "Place two speakers on documented sides of one doorway, preserve the door frame/opening axis and inside/outside scene authorities.",
+        "inspect": [
+          "door geometry",
+          "inside/outside direction",
+          "eyelines"
+        ]
+      },
+      "scenario_review": "NOT_RUN",
+      "status": "NOT_RUN",
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      },
+      "variants": {
+        "A": {
+          "prompt_family": "5.0",
+          "hidden_lock": false,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "B": {
+          "prompt_family": "5.0",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "C": {
+          "prompt_family": "5.1",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        }
+      }
+    },
+    {
+      "case_id": "R10",
+      "name": {
+        "cn": "餐桌多人对话",
+        "en": "Group dialogue around a dining table"
+      },
+      "protocol": {
+        "participants": 4,
+        "procedure": "Use fixed seating around a dining table with foreground and background speakers; cut only when dialogue or reaction requires it.",
+        "inspect": [
+          "table scale/geometry",
+          "depth order",
+          "seating persistence"
+        ]
+      },
+      "scenario_review": "NOT_RUN",
+      "status": "NOT_RUN",
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      },
+      "variants": {
+        "A": {
+          "prompt_family": "5.0",
+          "hidden_lock": false,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "B": {
+          "prompt_family": "5.0",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "C": {
+          "prompt_family": "5.1",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        }
+      }
+    },
+    {
+      "case_id": "R11",
+      "name": {
+        "cn": "道具右手持续持有",
+        "en": "Persistent prop held in the right hand"
+      },
+      "protocol": {
+        "participants": 2,
+        "minimum_formal_segments": 3,
+        "procedure": "The same character holds the same prop in the right hand across three segments; include a readable medium shot and close-ups.",
+        "inspect": [
+          "right-hand holder",
+          "prop appearance",
+          "no swap/spawn/disappearance"
+        ]
+      },
+      "scenario_review": "NOT_RUN",
+      "status": "NOT_RUN",
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      },
+      "variants": {
+        "A": {
+          "prompt_family": "5.0",
+          "hidden_lock": false,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "B": {
+          "prompt_family": "5.0",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "C": {
+          "prompt_family": "5.1",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        }
+      }
+    },
+    {
+      "case_id": "R12",
+      "name": {
+        "cn": "门半开连续性",
+        "en": "Continuity of a half-open door"
+      },
+      "protocol": {
+        "participants": 2,
+        "minimum_formal_segments": 3,
+        "procedure": "Maintain a known half-open door through three dialogue segments without a door-change event.",
+        "inspect": [
+          "door openness",
+          "hinge direction",
+          "unchanged fixed geometry"
+        ]
+      },
+      "scenario_review": "NOT_RUN",
+      "status": "NOT_RUN",
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      },
+      "variants": {
+        "A": {
+          "prompt_family": "5.0",
+          "hidden_lock": false,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "B": {
+          "prompt_family": "5.0",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "C": {
+          "prompt_family": "5.1",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        }
+      }
+    },
+    {
+      "case_id": "R13",
+      "name": {
+        "cn": "连续近景",
+        "en": "Consecutive close-ups"
+      },
+      "protocol": {
+        "participants": 2,
+        "minimum_formal_segments": 3,
+        "procedure": "Render consecutive alternating close-ups without visible establishing shots or character move events.",
+        "inspect": [
+          "camera crop versus blocking",
+          "off-screen listeners",
+          "screen direction"
+        ]
+      },
+      "scenario_review": "NOT_RUN",
+      "status": "NOT_RUN",
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      },
+      "variants": {
+        "A": {
+          "prompt_family": "5.0",
+          "hidden_lock": false,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "B": {
+          "prompt_family": "5.0",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "C": {
+          "prompt_family": "5.1",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        }
+      }
+    },
+    {
+      "case_id": "R14",
+      "name": {
+        "cn": "Hidden LOCK → 正式近景",
+        "en": "Hidden LOCK followed by a formal close-up"
+      },
+      "protocol": {
+        "participants": 3,
+        "procedure": "For B/C render an independent 0.8–1.5-second hidden group anchor, feed its tail 22 frames, then start the full 5-second formal segment directly in close-up. A omits the anchor as the control.",
+        "inspect": [
+          "tail-frame transfer",
+          "full formal duration",
+          "no visible LOCK in final"
+        ]
+      },
+      "scenario_review": "NOT_RUN",
+      "status": "NOT_RUN",
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      },
+      "variants": {
+        "A": {
+          "prompt_family": "5.0",
+          "hidden_lock": false,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "B": {
+          "prompt_family": "5.0",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "C": {
+          "prompt_family": "5.1",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        }
+      }
+    },
+    {
+      "case_id": "R15",
+      "name": {
+        "cn": "无 LOCK 对照组",
+        "en": "No-LOCK control against locked variants"
+      },
+      "protocol": {
+        "participants": 3,
+        "minimum_formal_segments": 3,
+        "procedure": "Repeat the same three-segment dialogue plan with A explicitly omitting LOCK and B/C enabling LOCK. Preserve all other controls.",
+        "inspect": [
+          "difference attributable to LOCK/prompt family",
+          "position and geometry drift",
+          "end-frame deformation"
+        ]
+      },
+      "scenario_review": "NOT_RUN",
+      "status": "NOT_RUN",
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      },
+      "variants": {
+        "A": {
+          "prompt_family": "5.0",
+          "hidden_lock": false,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "B": {
+          "prompt_family": "5.0",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        },
+        "C": {
+          "prompt_family": "5.1",
+          "hidden_lock": true,
+          "status": "NOT_RUN",
+          "runs": [],
+          "metrics": {
+            "identity_drift": null,
+            "position_drift": null,
+            "left_right_swap": null,
+            "axis_flip": null,
+            "eyeline_error": null,
+            "scene_geometry_drift": null,
+            "prop_drift": null,
+            "end_frame_deformation": null
+          }
+        }
+      }
+    }
+  ]
+}

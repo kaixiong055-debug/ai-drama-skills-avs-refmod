@@ -1,0 +1,78 @@
+{
+  "case_id": "R07",
+  "name": {
+    "cn": "角色退场",
+    "en": "Character exit"
+  },
+  "protocol": {
+    "participants": 3,
+    "procedure": "One character exits through the known exit; retain the remaining two and re-anchor the changed layout before the next formal segment.",
+    "inspect": [
+      "exit path",
+      "no respawn",
+      "group reconstruction"
+    ]
+  },
+  "scenario_review": "NOT_RUN",
+  "status": "NOT_RUN",
+  "metrics": {
+    "identity_drift": null,
+    "position_drift": null,
+    "left_right_swap": null,
+    "axis_flip": null,
+    "eyeline_error": null,
+    "scene_geometry_drift": null,
+    "prop_drift": null,
+    "end_frame_deformation": null
+  },
+  "variants": {
+    "A": {
+      "prompt_family": "5.0",
+      "hidden_lock": false,
+      "status": "NOT_RUN",
+      "runs": [],
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      }
+    },
+    "B": {
+      "prompt_family": "5.0",
+      "hidden_lock": true,
+      "status": "NOT_RUN",
+      "runs": [],
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      }
+    },
+    "C": {
+      "prompt_family": "5.1",
+      "hidden_lock": true,
+      "status": "NOT_RUN",
+      "runs": [],
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      }
+    }
+  }
+}

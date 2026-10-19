@@ -1,0 +1,57 @@
+{
+  "schema_version": "5.1",
+  "status": "PENDING_GENERATION",
+  "exclude_units": [
+    "LOCK_SC01_A01",
+    "LOCK_SC01_A02"
+  ],
+  "segments": [
+    {
+      "segment_id": "SEG001",
+      "duration_s": 5,
+      "selected_take": null,
+      "continuation_source": {
+        "unit_id": "LOCK_SC01_A01",
+        "tail_frames": 22,
+        "fps": 24,
+        "guide_frame_idx": 0,
+        "inherit_audio": false
+      },
+      "trim_guide_frames": 22,
+      "delivery_frames": 120,
+      "required_generation_frames": 142
+    },
+    {
+      "segment_id": "SEG002",
+      "duration_s": 5,
+      "selected_take": null,
+      "continuation_source": {
+        "unit_id": "LOCK_SC01_A02",
+        "tail_frames": 22,
+        "fps": 24,
+        "guide_frame_idx": 0,
+        "inherit_audio": false
+      },
+      "trim_guide_frames": 22,
+      "delivery_frames": 120,
+      "required_generation_frames": 142
+    },
+    {
+      "segment_id": "SEG003",
+      "duration_s": 5,
+      "selected_take": null,
+      "continuation_source": {
+        "unit_id": "SEG002",
+        "tail_frames": 22,
+        "fps": 24,
+        "guide_frame_idx": 0,
+        "inherit_audio": false
+      },
+      "trim_guide_frames": 22,
+      "delivery_frames": 120,
+      "required_generation_frames": 142
+    }
+  ],
+  "fps": 24,
+  "final_runtime_s": 15
+}

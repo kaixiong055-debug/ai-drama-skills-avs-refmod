@@ -1,0 +1,79 @@
+{
+  "case_id": "R02",
+  "name": {
+    "cn": "双人8轮对白",
+    "en": "Two-person dialogue across eight exchanges"
+  },
+  "protocol": {
+    "participants": 2,
+    "minimum_dialogue_exchanges": 8,
+    "procedure": "Perform eight complete question-response exchanges across consecutive segments, preserving each speaker and occurrence.",
+    "inspect": [
+      "long-chain identity/position drift",
+      "dialogue occurrence",
+      "accumulating end-frame deformation"
+    ]
+  },
+  "scenario_review": "NOT_RUN",
+  "status": "NOT_RUN",
+  "metrics": {
+    "identity_drift": null,
+    "position_drift": null,
+    "left_right_swap": null,
+    "axis_flip": null,
+    "eyeline_error": null,
+    "scene_geometry_drift": null,
+    "prop_drift": null,
+    "end_frame_deformation": null
+  },
+  "variants": {
+    "A": {
+      "prompt_family": "5.0",
+      "hidden_lock": false,
+      "status": "NOT_RUN",
+      "runs": [],
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      }
+    },
+    "B": {
+      "prompt_family": "5.0",
+      "hidden_lock": true,
+      "status": "NOT_RUN",
+      "runs": [],
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      }
+    },
+    "C": {
+      "prompt_family": "5.1",
+      "hidden_lock": true,
+      "status": "NOT_RUN",
+      "runs": [],
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      }
+    }
+  }
+}

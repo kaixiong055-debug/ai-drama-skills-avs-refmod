@@ -1,0 +1,92 @@
+{
+  "schema_version": "5.1",
+  "kind": "binding",
+  "lineage": {
+    "spatial_locks": "c6db08d82fcaf8a285c9cb7df0b5f10e6173efca44758e766fa62551e78f7e5d",
+    "assets": "cf863ec0c50e818f11c9a8938bb472f3d98084bee7d64daa788622e48bb8f720"
+  },
+  "units": {
+    "LOCK_SC01_A01": {
+      "P1": {
+        "asset_id": "CHAR_A_H3_OFFICE",
+        "file": "CHAR_A_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P2": {
+        "asset_id": "CHAR_B_H3_OFFICE",
+        "file": "CHAR_B_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P3": {
+        "asset_id": "SCN_LIVING_MASTER",
+        "file": "SCN_LIVING_MASTER.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      }
+    },
+    "SEG001": {
+      "P1": {
+        "asset_id": "CHAR_A_H3_OFFICE",
+        "file": "CHAR_A_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P2": {
+        "asset_id": "CHAR_B_H3_OFFICE",
+        "file": "CHAR_B_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P3": {
+        "asset_id": "SCN_LIVING_MASTER",
+        "file": "SCN_LIVING_MASTER.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      }
+    },
+    "SEG002": {
+      "P1": {
+        "asset_id": "CHAR_A_H3_OFFICE",
+        "file": "CHAR_A_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P2": {
+        "asset_id": "CHAR_B_H3_OFFICE",
+        "file": "CHAR_B_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P3": {
+        "asset_id": "SCN_LIVING_MASTER",
+        "file": "SCN_LIVING_MASTER.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      }
+    },
+    "SEG003": {
+      "P1": {
+        "asset_id": "CHAR_A_H3_OFFICE",
+        "file": "CHAR_A_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P2": {
+        "asset_id": "CHAR_B_H3_OFFICE",
+        "file": "CHAR_B_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P3": {
+        "asset_id": "SCN_LIVING_MASTER",
+        "file": "SCN_LIVING_MASTER.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      }
+    }
+  },
+  "asset_files": {
+    "CHAR_A_H3_OFFICE": {
+      "file": "CHAR_A_H3_OFFICE.png",
+      "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+    },
+    "CHAR_B_H3_OFFICE": {
+      "file": "CHAR_B_H3_OFFICE.png",
+      "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+    },
+    "SCN_LIVING_MASTER": {
+      "file": "SCN_LIVING_MASTER.png",
+      "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+    }
+  }
+}

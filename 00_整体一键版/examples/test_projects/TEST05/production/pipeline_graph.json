@@ -1,0 +1,258 @@
+{
+  "schema_version": "5.1",
+  "authority": "sole_execution_dependency_contract",
+  "directory_numbers": "compatibility identifiers, never execution order",
+  "external_inputs": [
+    "source",
+    "asset_files"
+  ],
+  "stages": [
+    {
+      "id": "story_adapter",
+      "depends_on": [],
+      "requires": [
+        "source",
+        "asset_files"
+      ],
+      "produces": [
+        "01_story.json"
+      ],
+      "validator": "engine.validator.validate_request",
+      "blocking_failures": [
+        "SOURCE_BEAT_UNCOVERED",
+        "RUNTIME_BUDGET_EXCEEDED"
+      ]
+    },
+    {
+      "id": "character_bible",
+      "depends_on": [
+        "story_adapter"
+      ],
+      "requires": [
+        "01_story.json",
+        "asset_files"
+      ],
+      "produces": [
+        "02_cast.json"
+      ],
+      "validator": "engine.validator.validate_request",
+      "blocking_failures": [
+        "CHARACTER_ID_INVALID",
+        "WARDROBE_UNKNOWN"
+      ]
+    },
+    {
+      "id": "asset_bible",
+      "depends_on": [
+        "character_bible"
+      ],
+      "requires": [
+        "01_story.json",
+        "02_cast.json",
+        "asset_files"
+      ],
+      "produces": [
+        "03_assets.json"
+      ],
+      "validator": "engine.asset_dependencies.validate_asset_dependencies",
+      "blocking_failures": [
+        "ASSET_DEPENDENCY_INVALID",
+        "STALE_ASSET_BOUND",
+        "ASSET_FILE_MISSING"
+      ]
+    },
+    {
+      "id": "script",
+      "depends_on": [
+        "asset_bible"
+      ],
+      "requires": [
+        "01_story.json",
+        "02_cast.json",
+        "03_assets.json"
+      ],
+      "produces": [
+        "04_script.json"
+      ],
+      "validator": "engine.validator.validate_request",
+      "blocking_failures": [
+        "SCRIPT_CAMERA_FIELD",
+        "DIALOGUE_CAPACITY_EXCEEDED"
+      ]
+    },
+    {
+      "id": "storyboard",
+      "depends_on": [
+        "script"
+      ],
+      "requires": [
+        "04_script.json",
+        "02_cast.json",
+        "03_assets.json"
+      ],
+      "produces": [
+        "05_storyboard.json"
+      ],
+      "validator": "engine.validator.validate_request",
+      "blocking_failures": [
+        "TIMELINE_GAP",
+        "SOURCE_BEAT_UNCOVERED",
+        "KEYFRAME_REQUIRED_MISSING"
+      ]
+    },
+    {
+      "id": "production_state",
+      "depends_on": [
+        "storyboard"
+      ],
+      "requires": [
+        "05_storyboard.json",
+        "03_assets.json"
+      ],
+      "produces": [
+        "06_production.json"
+      ],
+      "validator": "engine.validator.validate_pack",
+      "blocking_failures": [
+        "STATE_TRANSITION_INVALID",
+        "HOLDER_CONFLICT"
+      ]
+    },
+    {
+      "id": "spatial_lock",
+      "depends_on": [
+        "production_state"
+      ],
+      "requires": [
+        "06_production.json"
+      ],
+      "produces": [
+        "07_spatial_locks.json"
+      ],
+      "validator": "engine.validator.validate_pack",
+      "blocking_failures": [
+        "SPATIAL_ANCHOR_INVALID",
+        "METRIC_PROVENANCE_MISSING"
+      ]
+    },
+    {
+      "id": "binding",
+      "depends_on": [
+        "spatial_lock",
+        "asset_bible"
+      ],
+      "requires": [
+        "07_spatial_locks.json",
+        "03_assets.json",
+        "02_cast.json",
+        "06_production.json"
+      ],
+      "produces": [
+        "08_binding.json",
+        "asset_dependency_report.json"
+      ],
+      "validator": "engine.validator.validate_pack",
+      "blocking_failures": [
+        "PICTURE_MISSING",
+        "STALE_ASSET_BOUND",
+        "WARDROBE_MISMATCH"
+      ],
+      "note": "Asset creation performs internal dependency preflight. The published dependency report is recomputed after binding and records which assets are actually bound."
+    },
+    {
+      "id": "h3_export",
+      "depends_on": [
+        "binding"
+      ],
+      "requires": [
+        "01_story.json",
+        "02_cast.json",
+        "03_assets.json",
+        "04_script.json",
+        "05_storyboard.json",
+        "06_production.json",
+        "07_spatial_locks.json",
+        "08_binding.json",
+        "asset_dependency_report.json"
+      ],
+      "produces": [
+        "H3_PROMPTS_FULL_CN.md",
+        "H3_PROMPTS_FULL_EN.md",
+        "H3_RUNTIME_CN.md",
+        "H3_RUNTIME_EN.md",
+        "h3_regression_manifest.json",
+        "runtime_prompt_budget_report.json",
+        "README.md",
+        "CHANGELOG_V5.1.md"
+      ],
+      "validator": "engine.validator.validate_directory",
+      "blocking_failures": [
+        "BILINGUAL_MISMATCH",
+        "RUNTIME_FACT_CONFLICT",
+        "PROMPT_REDUNDANCY"
+      ],
+      "note": "Export initializes h3_regression_manifest as NOT_RUN and empty generation/assembly manifests. Initial production_review is structural preflight only; generation, actual video QC and assembly execute later."
+    },
+    {
+      "id": "generation",
+      "depends_on": [
+        "h3_export"
+      ],
+      "requires": [
+        "H3_RUNTIME_CN.md",
+        "H3_RUNTIME_EN.md",
+        "08_binding.json"
+      ],
+      "produces": [
+        "generation_ledger.json"
+      ],
+      "validator": "engine.generation.record_take",
+      "blocking_failures": [
+        "TAKE_CANONICAL_CONTRACT_CHANGED",
+        "TAKE_OUTPUT_MISSING"
+      ]
+    },
+    {
+      "id": "qc",
+      "depends_on": [
+        "generation"
+      ],
+      "requires": [
+        "generation_ledger.json",
+        "06_production.json"
+      ],
+      "produces": [
+        "production_review.json"
+      ],
+      "validator": "engine.validator.validate_directory",
+      "blocking_failures": [
+        "QC_EVIDENCE_MISSING",
+        "SPATIAL_DRIFT",
+        "TAKE_NOT_ACCEPTED"
+      ]
+    },
+    {
+      "id": "assembly",
+      "depends_on": [
+        "qc"
+      ],
+      "requires": [
+        "production_review.json",
+        "generation_ledger.json",
+        "06_production.json"
+      ],
+      "produces": [
+        "assembly_manifest.json"
+      ],
+      "validator": "engine.generation.assembly",
+      "blocking_failures": [
+        "ASSEMBLY_TAKE_NOT_READY",
+        "ASSEMBLY_FRAME_WINDOW_UNVERIFIED"
+      ]
+    }
+  ],
+  "notes": [
+    "Generation, video QC and assembly remain pending until actual output is registered. Export writes their empty manifests and structural preflight status; that is not execution of video generation or acceptance.",
+    "Both renderers consume the same eight canonical documents after spatial lock and binding."
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "case_id": "R01",
+  "variant": "C",
+  "comparison_id": "REPLACE_WITH_CONTROLLED_RUN_ID",
+  "generation_id": null,
+  "segment_id": null,
+  "take_id": null,
+  "model": null,
+  "model_version": null,
+  "workflow": null,
+  "resolution": null,
+  "steps": null,
+  "seed": null,
+  "prompt_version": null,
+  "hidden_lock": null,
+  "continuation": null,
+  "reference_assets": null,
+  "runtime_seconds": null,
+  "output_file": null,
+  "metrics": {
+    "identity_drift": null,
+    "position_drift": null,
+    "left_right_swap": null,
+    "axis_flip": null,
+    "eyeline_error": null,
+    "scene_geometry_drift": null,
+    "prop_drift": null,
+    "end_frame_deformation": null
+  },
+  "evidence": {
+    "reviewer": null,
+    "method": null,
+    "observations": {
+      "identity_drift": null,
+      "position_drift": null,
+      "left_right_swap": null,
+      "axis_flip": null,
+      "eyeline_error": null,
+      "scene_geometry_drift": null,
+      "prop_drift": null,
+      "end_frame_deformation": null
+    }
+  },
+  "scenario_signature": null
+}

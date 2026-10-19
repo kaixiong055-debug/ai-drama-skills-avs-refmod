@@ -1,0 +1,1282 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ai-drama:v5:storyboard",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "5.0",
+        "5.1"
+      ]
+    },
+    "kind": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lineage": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "segments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "segment_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scene_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "duration_s": {
+            "const": 5
+          },
+          "participants": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "beat_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "shots": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "shot_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "start_s": {
+                  "type": "number"
+                },
+                "end_s": {
+                  "type": "number"
+                },
+                "beat_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "shot_scale": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "lens_mm": {
+                  "type": "number"
+                },
+                "camera_height_m": {
+                  "type": "number"
+                },
+                "camera_movement": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "camera_angle": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false
+                },
+                "composition": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false
+                },
+                "lighting": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false
+                },
+                "depth_of_field": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false
+                },
+                "action": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false
+                },
+                "cut_reason": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false
+                },
+                "performance": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false,
+                  "description": "Authored bilingual shot-level facial acting, gaze, blink and quiet breathing within existing timing."
+                },
+                "face_visible": {
+                  "type": "boolean",
+                  "description": "False for prop/text inserts or other shots without a visible face."
+                }
+              },
+              "required": [
+                "shot_id",
+                "start_s",
+                "end_s",
+                "beat_ids",
+                "shot_scale",
+                "lens_mm",
+                "camera_height_m",
+                "camera_movement",
+                "camera_angle",
+                "composition",
+                "lighting",
+                "depth_of_field",
+                "action",
+                "cut_reason"
+              ],
+              "additionalProperties": true
+            }
+          },
+          "title": {
+            "type": "object",
+            "properties": {
+              "cn": {
+                "type": "string",
+                "minLength": 1
+              },
+              "en": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "cn",
+              "en"
+            ],
+            "additionalProperties": false
+          },
+          "summary": {
+            "type": "object",
+            "properties": {
+              "cn": {
+                "type": "string",
+                "minLength": 1
+              },
+              "en": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "cn",
+              "en"
+            ],
+            "additionalProperties": false
+          },
+          "detailed_description": {
+            "type": "object",
+            "properties": {
+              "cn": {
+                "type": "string",
+                "minLength": 1
+              },
+              "en": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "cn",
+              "en"
+            ],
+            "additionalProperties": false
+          },
+          "events": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "op": {
+                  "enum": [
+                    "enter",
+                    "exit",
+                    "move",
+                    "axis",
+                    "group",
+                    "area",
+                    "appearance",
+                    "prop",
+                    "door",
+                    "action",
+                    "sound"
+                  ]
+                },
+                "description": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "op",
+                "description"
+              ],
+              "additionalProperties": true,
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "enter"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "character_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "position": {
+                        "type": "object",
+                        "properties": {
+                          "x_m": {
+                            "type": "number"
+                          },
+                          "y_m": {
+                            "type": "number"
+                          },
+                          "depth": {
+                            "enum": [
+                              "foreground",
+                              "midground",
+                              "background"
+                            ]
+                          },
+                          "facing": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "eyeline_target": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        },
+                        "required": [
+                          "x_m",
+                          "y_m",
+                          "depth",
+                          "facing",
+                          "eyeline_target"
+                        ],
+                        "additionalProperties": true
+                      }
+                    },
+                    "required": [
+                      "character_id",
+                      "position"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "exit"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "character_id": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "character_id"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "move"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "character_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "position": {
+                        "type": "object",
+                        "minProperties": 1
+                      },
+                      "path": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    },
+                    "required": [
+                      "character_id",
+                      "position",
+                      "path"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "axis"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "camera_side": {
+                        "enum": [
+                          "north",
+                          "south",
+                          "east",
+                          "west"
+                        ]
+                      },
+                      "authorized": {
+                        "const": true
+                      }
+                    },
+                    "required": [
+                      "camera_side",
+                      "authorized"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "group"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "members": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    },
+                    "required": [
+                      "members"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "area"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "area": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "path": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    },
+                    "required": [
+                      "area",
+                      "path"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "appearance"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "character_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "cause": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "character_id",
+                      "cause"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "prop"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "prop_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "holder": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "state": {
+                        "type": "object",
+                        "properties": {
+                          "cn": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "en": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        },
+                        "required": [
+                          "cn",
+                          "en"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "prop_id",
+                      "holder",
+                      "state"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "door"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "door_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "state": {
+                        "enum": [
+                          "closed",
+                          "open",
+                          "half_open"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "door_id",
+                      "state"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "action"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "event_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "at_s": {
+                        "type": "number"
+                      },
+                      "count": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "phase": {
+                        "const": "complete"
+                      }
+                    },
+                    "required": [
+                      "event_id",
+                      "at_s",
+                      "count",
+                      "phase"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "sound"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "event_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "at_s": {
+                        "type": "number"
+                      },
+                      "count": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "window_start": {
+                        "type": "number"
+                      },
+                      "window_end": {
+                        "type": "number"
+                      },
+                      "termination": {
+                        "type": "object",
+                        "properties": {
+                          "cn": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "en": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        },
+                        "required": [
+                          "cn",
+                          "en"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "event_id",
+                      "at_s",
+                      "count",
+                      "window_start",
+                      "window_end",
+                      "termination"
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "before_events": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "op": {
+                  "enum": [
+                    "enter",
+                    "exit",
+                    "move",
+                    "axis",
+                    "group",
+                    "area",
+                    "appearance",
+                    "prop",
+                    "door",
+                    "action",
+                    "sound"
+                  ]
+                },
+                "description": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "op",
+                "description"
+              ],
+              "additionalProperties": true,
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "enter"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "character_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "position": {
+                        "type": "object",
+                        "properties": {
+                          "x_m": {
+                            "type": "number"
+                          },
+                          "y_m": {
+                            "type": "number"
+                          },
+                          "depth": {
+                            "enum": [
+                              "foreground",
+                              "midground",
+                              "background"
+                            ]
+                          },
+                          "facing": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "eyeline_target": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        },
+                        "required": [
+                          "x_m",
+                          "y_m",
+                          "depth",
+                          "facing",
+                          "eyeline_target"
+                        ],
+                        "additionalProperties": true
+                      }
+                    },
+                    "required": [
+                      "character_id",
+                      "position"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "exit"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "character_id": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "character_id"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "move"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "character_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "position": {
+                        "type": "object",
+                        "minProperties": 1
+                      },
+                      "path": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    },
+                    "required": [
+                      "character_id",
+                      "position",
+                      "path"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "axis"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "camera_side": {
+                        "enum": [
+                          "north",
+                          "south",
+                          "east",
+                          "west"
+                        ]
+                      },
+                      "authorized": {
+                        "const": true
+                      }
+                    },
+                    "required": [
+                      "camera_side",
+                      "authorized"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "group"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "members": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    },
+                    "required": [
+                      "members"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "area"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "area": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "path": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    },
+                    "required": [
+                      "area",
+                      "path"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "appearance"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "character_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "cause": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "character_id",
+                      "cause"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "prop"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "prop_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "holder": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "state": {
+                        "type": "object",
+                        "properties": {
+                          "cn": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "en": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        },
+                        "required": [
+                          "cn",
+                          "en"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "prop_id",
+                      "holder",
+                      "state"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "door"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "door_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "state": {
+                        "enum": [
+                          "closed",
+                          "open",
+                          "half_open"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "door_id",
+                      "state"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "action"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "event_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "at_s": {
+                        "type": "number"
+                      },
+                      "count": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "phase": {
+                        "const": "complete"
+                      }
+                    },
+                    "required": [
+                      "event_id",
+                      "at_s",
+                      "count",
+                      "phase"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "sound"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "event_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "at_s": {
+                        "type": "number"
+                      },
+                      "count": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "window_start": {
+                        "type": "number"
+                      },
+                      "window_end": {
+                        "type": "number"
+                      },
+                      "termination": {
+                        "type": "object",
+                        "properties": {
+                          "cn": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "en": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        },
+                        "required": [
+                          "cn",
+                          "en"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "event_id",
+                      "at_s",
+                      "count",
+                      "window_start",
+                      "window_end",
+                      "termination"
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "shot_keyframes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "shot_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "keyframe_required": {
+                  "type": "boolean"
+                },
+                "keyframe_recommended": {
+                  "type": "boolean"
+                },
+                "keyframe_type": {
+                  "enum": [
+                    "SPATIAL_ANCHOR_KEYFRAME",
+                    "SHOT_KEYFRAME",
+                    "ACTION_KEYFRAME",
+                    "END_STATE_KEYFRAME"
+                  ]
+                },
+                "source_assets": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "output": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "status": {
+                  "enum": [
+                    "VALID",
+                    "STALE",
+                    "MISSING",
+                    "UNVERIFIED",
+                    "NOT_REQUIRED",
+                    "PLANNED",
+                    "AVAILABLE"
+                  ]
+                }
+              },
+              "required": [
+                "shot_id",
+                "keyframe_required",
+                "keyframe_type",
+                "source_assets",
+                "output",
+                "status"
+              ]
+            }
+          },
+          "keyframe_policy": {
+            "enum": [
+              "AUTO",
+              "ALWAYS",
+              "NEVER"
+            ]
+          }
+        },
+        "required": [
+          "segment_id",
+          "scene_id",
+          "duration_s",
+          "participants",
+          "beat_ids",
+          "shots",
+          "title",
+          "summary",
+          "detailed_description"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "shot_keyframes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "shot_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "keyframe_required": {
+            "type": "boolean"
+          },
+          "keyframe_recommended": {
+            "type": "boolean"
+          },
+          "keyframe_type": {
+            "enum": [
+              "SPATIAL_ANCHOR_KEYFRAME",
+              "SHOT_KEYFRAME",
+              "ACTION_KEYFRAME",
+              "END_STATE_KEYFRAME"
+            ]
+          },
+          "source_assets": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "output": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "enum": [
+              "VALID",
+              "STALE",
+              "MISSING",
+              "UNVERIFIED",
+              "NOT_REQUIRED",
+              "PLANNED",
+              "AVAILABLE"
+            ]
+          }
+        },
+        "required": [
+          "shot_id",
+          "keyframe_required",
+          "keyframe_type",
+          "source_assets",
+          "output",
+          "status"
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "lineage",
+    "segments"
+  ],
+  "additionalProperties": true
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": "5.1",
+  "kind": "assets",
+  "lineage": {
+    "story": "bc461851f03b4f819b3b35661ed99f6e7338786c916ac90425a1516e455fb35c",
+    "cast": "ef0259f908299c94d5a97050e340ac15e0eefc601d032b9d7bcb2d27eacda417"
+  },
+  "assets": [
+    {
+      "asset_id": "CHAR_A_H3_OFFICE",
+      "file": "CHAR_A_H3_OFFICE.png",
+      "role": "H3_RUNTIME",
+      "character_id": "CHAR_A",
+      "wardrobe": "OFFICE",
+      "direct_bindable": true,
+      "description": {
+        "cn": "顾言川的身份与黑色通勤西装",
+        "en": "Gu Yanchuan's identity and black office suit"
+      },
+      "dependency_metadata_origin": "LEGACY_UNVERIFIED",
+      "version": null,
+      "derived_from": [],
+      "source_versions": {},
+      "generated_from_version": {},
+      "status": "UNVERIFIED"
+    },
+    {
+      "asset_id": "CHAR_B_H3_OFFICE",
+      "file": "CHAR_B_H3_OFFICE.png",
+      "role": "H3_RUNTIME",
+      "character_id": "CHAR_B",
+      "wardrobe": "OFFICE",
+      "direct_bindable": true,
+      "description": {
+        "cn": "林晚晴的身份与黑色通勤西装",
+        "en": "Lin Wanqing's identity and black office suit"
+      },
+      "dependency_metadata_origin": "LEGACY_UNVERIFIED",
+      "version": null,
+      "derived_from": [],
+      "source_versions": {},
+      "generated_from_version": {},
+      "status": "UNVERIFIED"
+    },
+    {
+      "asset_id": "SCN_LIVING_MASTER",
+      "file": "SCN_LIVING_MASTER.png",
+      "role": "MASTER",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "scene_family_id": "LIVING",
+      "direct_bindable": true,
+      "description": {
+        "cn": "客厅建筑、门窗、沙发、茶几及固定空间几何",
+        "en": "the living-room architecture, doors, windows, sofa, coffee table, and fixed spatial geometry"
+      },
+      "dependency_metadata_origin": "LEGACY_UNVERIFIED",
+      "version": null,
+      "derived_from": [],
+      "source_versions": {},
+      "generated_from_version": {},
+      "status": "UNVERIFIED"
+    }
+  ]
+}

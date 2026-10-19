@@ -1,0 +1,82 @@
+{
+  "schema_version": "5.1",
+  "kind": "assets",
+  "lineage": {
+    "story": "36bc283852099c789bbb843de84eaa0cc3e3c8898397cf58e9c95a04e9d01fdb",
+    "cast": "dc68df78fe3a65fed6cd5bce5139343ffb2af0e441a588fee4db4988bda50a87"
+  },
+  "assets": [
+    {
+      "asset_id": "CHAR_A_H3_OFFICE",
+      "file": "CHAR_A_H3_OFFICE.png",
+      "role": "H3_RUNTIME",
+      "character_id": "CHAR_A",
+      "wardrobe": "OFFICE",
+      "direct_bindable": true,
+      "description": {
+        "cn": "顾言川的身份与黑色通勤西装",
+        "en": "Gu Yanchuan's identity and black office suit"
+      },
+      "dependency_metadata_origin": "LEGACY_UNVERIFIED",
+      "version": null,
+      "derived_from": [],
+      "source_versions": {},
+      "generated_from_version": {},
+      "status": "UNVERIFIED"
+    },
+    {
+      "asset_id": "CHAR_B_H3_OFFICE",
+      "file": "CHAR_B_H3_OFFICE.png",
+      "role": "H3_RUNTIME",
+      "character_id": "CHAR_B",
+      "wardrobe": "OFFICE",
+      "direct_bindable": true,
+      "description": {
+        "cn": "林晚晴的身份与黑色通勤西装",
+        "en": "Lin Wanqing's identity and black office suit"
+      },
+      "dependency_metadata_origin": "LEGACY_UNVERIFIED",
+      "version": null,
+      "derived_from": [],
+      "source_versions": {},
+      "generated_from_version": {},
+      "status": "UNVERIFIED"
+    },
+    {
+      "asset_id": "CHAR_C_H3_OFFICE",
+      "file": "CHAR_C_H3_OFFICE.png",
+      "role": "H3_RUNTIME",
+      "character_id": "CHAR_C",
+      "wardrobe": "OFFICE",
+      "direct_bindable": true,
+      "description": {
+        "cn": "陈悦的身份与黑色通勤西装",
+        "en": "Chen Yue's identity and black office suit"
+      },
+      "dependency_metadata_origin": "LEGACY_UNVERIFIED",
+      "version": null,
+      "derived_from": [],
+      "source_versions": {},
+      "generated_from_version": {},
+      "status": "UNVERIFIED"
+    },
+    {
+      "asset_id": "SCN_LIVING_MASTER",
+      "file": "SCN_LIVING_MASTER.png",
+      "role": "MASTER",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "scene_family_id": "LIVING",
+      "direct_bindable": true,
+      "description": {
+        "cn": "客厅建筑、门窗、沙发、茶几及固定空间几何",
+        "en": "the living-room architecture, doors, windows, sofa, coffee table, and fixed spatial geometry"
+      },
+      "dependency_metadata_origin": "LEGACY_UNVERIFIED",
+      "version": null,
+      "derived_from": [],
+      "source_versions": {},
+      "generated_from_version": {},
+      "status": "UNVERIFIED"
+    }
+  ]
+}

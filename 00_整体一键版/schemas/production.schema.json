@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ai-drama:v5:production",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "5.0",
+        "5.1"
+      ]
+    },
+    "kind": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lineage": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "units": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "unit_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scene_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "duration_s": {
+            "type": "number"
+          },
+          "include_in_final": {
+            "type": "boolean"
+          },
+          "spatial_anchor": {
+            "type": "string",
+            "minLength": 1
+          },
+          "state_ids": {
+            "type": "object",
+            "properties": {
+              "incoming": {
+                "type": "string",
+                "minLength": 1
+              },
+              "current": {
+                "type": "string",
+                "minLength": 1
+              },
+              "end": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "incoming",
+              "current",
+              "end"
+            ],
+            "additionalProperties": true
+          },
+          "continuation_source": {
+            "type": "object",
+            "properties": {
+              "unit_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "tail_frames": {
+                "const": 22
+              },
+              "fps": {
+                "const": 24
+              },
+              "inherit_audio": {
+                "const": false
+              }
+            },
+            "required": [
+              "unit_id",
+              "tail_frames",
+              "fps",
+              "inherit_audio"
+            ],
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "unit_id",
+          "scene_id",
+          "duration_s",
+          "include_in_final",
+          "spatial_anchor",
+          "state_ids",
+          "continuation_source"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "production_profile": {
+      "type": "string",
+      "minLength": 1
+    },
+    "final_runtime_s": {
+      "type": "number"
+    },
+    "final_segment_count": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "lineage",
+    "units",
+    "production_profile",
+    "final_runtime_s",
+    "final_segment_count"
+  ],
+  "additionalProperties": true
+}

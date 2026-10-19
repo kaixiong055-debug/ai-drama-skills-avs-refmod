@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ai-drama:v5:script",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "5.0",
+        "5.1"
+      ]
+    },
+    "kind": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lineage": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "beats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "beat_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scene_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "action": {
+            "type": "object",
+            "properties": {
+              "cn": {
+                "type": "string",
+                "minLength": 1
+              },
+              "en": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "cn",
+              "en"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "beat_id",
+          "scene_id",
+          "action"
+        ],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "lineage",
+    "beats"
+  ],
+  "additionalProperties": true
+}

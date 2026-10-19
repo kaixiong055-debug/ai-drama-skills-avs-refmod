@@ -1,0 +1,37 @@
+Failed to find real location of C:\Python313\python.exe
+test_ambiguous_asset_is_not_ready (tests.test_pipeline.ProductionTests.test_ambiguous_asset_is_not_ready) ... ok
+test_missing_asset_is_not_ready (tests.test_pipeline.ProductionTests.test_missing_asset_is_not_ready) ... ok
+test_current_wardrobe_dependency_must_match (test_assets_v51.AssetDependencyTests.test_current_wardrobe_dependency_must_match) ... ok
+test_declared_family_valid_and_idempotent (test_assets_v51.AssetDependencyTests.test_declared_family_valid_and_idempotent) ... ok
+test_explicit_stale_exception_only (test_assets_v51.AssetDependencyTests.test_explicit_stale_exception_only) ... ok
+test_integrated_ready_gate_blocks_changed_master (test_assets_v51.AssetDependencyTests.test_integrated_ready_gate_blocks_changed_master) ... ok
+test_legacy_marker_cannot_hide_new_metadata (test_assets_v51.AssetDependencyTests.test_legacy_marker_cannot_hide_new_metadata) ... ok
+test_legacy_no_fake_versions_or_validity (test_assets_v51.AssetDependencyTests.test_legacy_no_fake_versions_or_validity) ... ok
+test_master_update_invalidates_all_descendants (test_assets_v51.AssetDependencyTests.test_master_update_invalidates_all_descendants) ... ok
+test_missing_cannot_be_overridden (test_assets_v51.AssetDependencyTests.test_missing_cannot_be_overridden) ... ok
+test_missing_parent_and_cycle_rejected (test_assets_v51.AssetDependencyTests.test_missing_parent_and_cycle_rejected) ... ok
+test_missing_runtime_master_cannot_silently_validate (test_assets_v51.AssetDependencyTests.test_missing_runtime_master_cannot_silently_validate) ... ok
+test_real_binding_blocks_stale_and_missing_without_exceptions (test_assets_v51.AssetDependencyTests.test_real_binding_blocks_stale_and_missing_without_exceptions) ... ok
+test_scene_area_and_prop_variant_stale (test_assets_v51.AssetDependencyTests.test_scene_area_and_prop_variant_stale) ... ok
+test_source_version_alias_and_generation_mismatch (test_assets_v51.AssetDependencyTests.test_source_version_alias_and_generation_mismatch) ... ok
+test_all_auto_risk_conditions (test_keyframes_v51.KeyframeTests.test_all_auto_risk_conditions) ... ok
+test_always_missing_blocks_ready_and_never_conflict_is_explicit (test_keyframes_v51.KeyframeTests.test_always_missing_blocks_ready_and_never_conflict_is_explicit) ... ok
+test_auto_complex_scene_is_honest_optional_missing_interface (test_keyframes_v51.KeyframeTests.test_auto_complex_scene_is_honest_optional_missing_interface) ... ok
+test_auto_simple_closeups_do_not_require_images (test_keyframes_v51.KeyframeTests.test_auto_simple_closeups_do_not_require_images) ... ok
+test_available_image_uses_actual_decoder (test_keyframes_v51.KeyframeTests.test_available_image_uses_actual_decoder) ... ok
+test_binding_keyframe_authority_metadata_tampering_rejected (test_keyframes_v51.KeyframeTests.test_binding_keyframe_authority_metadata_tampering_rejected) ... ok
+test_entry_wardrobe_is_used_by_keyframe_sources (test_keyframes_v51.KeyframeTests.test_entry_wardrobe_is_used_by_keyframe_sources) ... ok
+test_four_types_and_existing_images_are_references_with_authority (test_keyframes_v51.KeyframeTests.test_four_types_and_existing_images_are_references_with_authority) ... ok
+test_input_not_mutated_and_unknown_shot_rejected (test_keyframes_v51.KeyframeTests.test_input_not_mutated_and_unknown_shot_rejected) ... ok
+test_integrated_keyframe_runtime_authority_and_separate_lock (test_keyframes_v51.KeyframeTests.test_integrated_keyframe_runtime_authority_and_separate_lock) ... ok
+test_no_fabricated_available_image (test_keyframes_v51.KeyframeTests.test_no_fabricated_available_image) ... ok
+test_saved_plan_source_tampering_rejected (test_keyframes_v51.KeyframeTests.test_saved_plan_source_tampering_rejected) ... ok
+test_segment_policy_override_is_executed (test_keyframes_v51.KeyframeTests.test_segment_policy_override_is_executed) ... ok
+test_unknown_sources_and_authority_override_blocked (test_keyframes_v51.KeyframeTests.test_unknown_sources_and_authority_override_blocked) ... ok
+test_unbound_wardrobe_cannot_replace_current_wardrobe (test_binding_replay_v51.BindingReplayTests.test_unbound_wardrobe_cannot_replace_current_wardrobe) ... ok
+test_valid_file_of_wrong_character_not_accepted (test_binding_replay_v51.BindingReplayTests.test_valid_file_of_wrong_character_not_accepted) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 1.479s
+
+OK

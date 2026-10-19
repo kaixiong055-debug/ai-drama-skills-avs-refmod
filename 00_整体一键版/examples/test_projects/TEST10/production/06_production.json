@@ -1,0 +1,131 @@
+{
+  "schema_version": "5.1",
+  "kind": "production",
+  "lineage": {
+    "storyboard": "30faf0d3368c1459d105dec508cd1d54a89b84eada2168f515b6176e93a41235",
+    "assets": "cf863ec0c50e818f11c9a8938bb472f3d98084bee7d64daa788622e48bb8f720"
+  },
+  "units": [
+    {
+      "unit_id": "SEG001",
+      "segment_id": "SEG001",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "duration_s": 5.0,
+      "include_in_final": true,
+      "spatial_anchor": "LOCK_SC01_A01",
+      "state_ids": {
+        "incoming": "SEG001_INCOMING",
+        "current": "SEG001_CURRENT",
+        "end": "SEG001_END"
+      },
+      "continuation_source": {
+        "unit_id": "LOCK_SC01_A01",
+        "tail_frames": 22,
+        "fps": 24,
+        "guide_frame_idx": 0,
+        "inherit_audio": false
+      },
+      "shot_ids": [
+        "SH001",
+        "SH002"
+      ],
+      "events": [
+        {
+          "at_s": 1.2,
+          "event": {
+            "op": "sound",
+            "at_s": 1.2,
+            "event_id": "BELL01",
+            "count": 3,
+            "window_start": 0.2,
+            "window_end": 1.2,
+            "description": {
+              "cn": "门铃三声分离响起",
+              "en": "The doorbell rings three distinctly separated times"
+            },
+            "termination": {
+              "cn": "第三声后完全安静，余下时间不再触发",
+              "en": "Complete silence after the third ring; no retrigger for the remainder"
+            }
+          },
+          "before_state_id": "SEG001_T1_BEFORE",
+          "after_state_id": "SEG001_T1_AFTER"
+        }
+      ],
+      "active_speakers": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "primary_listener": null,
+      "secondary_listeners": [],
+      "h3_mode": "REF2VA"
+    },
+    {
+      "unit_id": "SEG002",
+      "segment_id": "SEG002",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "duration_s": 5.0,
+      "include_in_final": true,
+      "spatial_anchor": "LOCK_SC01_A01",
+      "state_ids": {
+        "incoming": "SEG002_INCOMING",
+        "current": "SEG002_CURRENT",
+        "end": "SEG002_END"
+      },
+      "continuation_source": {
+        "unit_id": "SEG001",
+        "tail_frames": 22,
+        "fps": 24,
+        "guide_frame_idx": 0,
+        "inherit_audio": false
+      },
+      "shot_ids": [
+        "SH003",
+        "SH004"
+      ],
+      "events": [],
+      "active_speakers": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "primary_listener": null,
+      "secondary_listeners": [],
+      "h3_mode": "REF2VA"
+    },
+    {
+      "unit_id": "SEG003",
+      "segment_id": "SEG003",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "duration_s": 5.0,
+      "include_in_final": true,
+      "spatial_anchor": "LOCK_SC01_A01",
+      "state_ids": {
+        "incoming": "SEG003_INCOMING",
+        "current": "SEG003_CURRENT",
+        "end": "SEG003_END"
+      },
+      "continuation_source": {
+        "unit_id": "SEG002",
+        "tail_frames": 22,
+        "fps": 24,
+        "guide_frame_idx": 0,
+        "inherit_audio": false
+      },
+      "shot_ids": [
+        "SH005",
+        "SH006"
+      ],
+      "events": [],
+      "active_speakers": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "primary_listener": null,
+      "secondary_listeners": [],
+      "h3_mode": "REF2VA"
+    }
+  ],
+  "production_profile": "DRAMA_DIALOGUE",
+  "final_runtime_s": 15,
+  "final_segment_count": 3
+}

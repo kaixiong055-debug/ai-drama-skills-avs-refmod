@@ -1,0 +1,683 @@
+{
+  "schema_version": "5.1",
+  "kind": "storyboard",
+  "lineage": {
+    "script": "b96ff27dd61bcd1ad2958d97cbe1a1e4c432bc8e8972725ab27b88059f9f2dd0"
+  },
+  "segments": [
+    {
+      "segment_id": "SEG001",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "duration_s": 5,
+      "participants": [
+        "CHAR_A",
+        "CHAR_B",
+        "CHAR_C"
+      ],
+      "beat_ids": [
+        "B001",
+        "B002"
+      ],
+      "shots": [
+        {
+          "shot_id": "SH001",
+          "start_s": 0.0,
+          "end_s": 2.5,
+          "beat_ids": [
+            "B001"
+          ],
+          "shot_scale": "close_up",
+          "lens_mm": 85,
+          "camera_height_m": 1.5,
+          "camera_movement": "locked_off",
+          "camera_angle": {
+            "cn": "同轴线侧的侧前方反打",
+            "en": "a three-quarter reverse angle on the same side of the dialogue axis"
+          },
+          "composition": {
+            "cn": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+            "en": "Frame the current speaker’s face and shoulders; all others remain off-screen in their established positions"
+          },
+          "lighting": {
+            "cn": "窗侧柔光，室内补光，方向保持稳定",
+            "en": "soft window-side key light and consistent indoor fill"
+          },
+          "depth_of_field": {
+            "cn": "浅景深但面部清晰",
+            "en": "shallow depth of field with a clearly readable face"
+          },
+          "action": {
+            "cn": "说话人轻微呼吸，视线保持指向听者",
+            "en": "The speaker breathes subtly and keeps the eyeline toward the listener"
+          },
+          "cut_reason": {
+            "cn": "呈现当前说话人的细微反应",
+            "en": "show the current speaker’s subtle reaction"
+          }
+        },
+        {
+          "shot_id": "SH002",
+          "start_s": 2.5,
+          "end_s": 5.0,
+          "beat_ids": [
+            "B002"
+          ],
+          "shot_scale": "close_up",
+          "lens_mm": 85,
+          "camera_height_m": 1.5,
+          "camera_movement": "locked_off",
+          "camera_angle": {
+            "cn": "同轴线侧的侧前方反打",
+            "en": "a three-quarter reverse angle on the same side of the dialogue axis"
+          },
+          "composition": {
+            "cn": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+            "en": "Frame the current speaker’s face and shoulders; all others remain off-screen in their established positions"
+          },
+          "lighting": {
+            "cn": "窗侧柔光，室内补光，方向保持稳定",
+            "en": "soft window-side key light and consistent indoor fill"
+          },
+          "depth_of_field": {
+            "cn": "浅景深但面部清晰",
+            "en": "shallow depth of field with a clearly readable face"
+          },
+          "action": {
+            "cn": "说话人轻微呼吸，视线保持指向听者",
+            "en": "The speaker breathes subtly and keeps the eyeline toward the listener"
+          },
+          "cut_reason": {
+            "cn": "呈现当前说话人的细微反应",
+            "en": "show the current speaker’s subtle reaction"
+          }
+        }
+      ],
+      "title": {
+        "cn": "室友短句对白",
+        "en": "A short exchange between roommates"
+      },
+      "summary": {
+        "cn": "角色在固定客厅位置完成一问一答",
+        "en": "The characters exchange a question and answer from their fixed living-room positions"
+      },
+      "detailed_description": {
+        "cn": "表情自然克制，动作保持轻微；画外人物不移动。",
+        "en": "Use natural, restrained expressions and subtle movements. Off-screen characters do not move."
+      },
+      "before_events": [],
+      "events": [],
+      "shot_keyframes": [
+        {
+          "shot_id": "SH001",
+          "keyframe_type": "SHOT_KEYFRAME",
+          "segment_id": "SEG001",
+          "keyframe_required": false,
+          "keyframe_recommended": false,
+          "source_assets": [
+            "CHAR_A_H3_OFFICE",
+            "CHAR_B_H3_OFFICE",
+            "CHAR_C_H3_OFFICE",
+            "SCN_LIVING_MASTER"
+          ],
+          "output": null,
+          "status": "NOT_REQUIRED",
+          "reasons": [],
+          "reference_authority": {
+            "controls": [
+              "composition",
+              "current_blocking",
+              "shot_scale",
+              "spatial_relations"
+            ],
+            "cannot_override": [
+              "character_identity_master",
+              "current_wardrobe",
+              "scene_master_geometry"
+            ]
+          },
+          "generation_status": "NOT_RUN"
+        },
+        {
+          "shot_id": "SH002",
+          "keyframe_type": "SHOT_KEYFRAME",
+          "segment_id": "SEG001",
+          "keyframe_required": false,
+          "keyframe_recommended": false,
+          "source_assets": [
+            "CHAR_A_H3_OFFICE",
+            "CHAR_B_H3_OFFICE",
+            "CHAR_C_H3_OFFICE",
+            "SCN_LIVING_MASTER"
+          ],
+          "output": null,
+          "status": "NOT_REQUIRED",
+          "reasons": [],
+          "reference_authority": {
+            "controls": [
+              "composition",
+              "current_blocking",
+              "shot_scale",
+              "spatial_relations"
+            ],
+            "cannot_override": [
+              "character_identity_master",
+              "current_wardrobe",
+              "scene_master_geometry"
+            ]
+          },
+          "generation_status": "NOT_RUN"
+        }
+      ]
+    },
+    {
+      "segment_id": "SEG002",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "duration_s": 5,
+      "participants": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "beat_ids": [
+        "B003",
+        "B004"
+      ],
+      "shots": [
+        {
+          "shot_id": "SH003",
+          "start_s": 0.0,
+          "end_s": 2.5,
+          "beat_ids": [
+            "B003"
+          ],
+          "shot_scale": "close_up",
+          "lens_mm": 85,
+          "camera_height_m": 1.5,
+          "camera_movement": "locked_off",
+          "camera_angle": {
+            "cn": "同轴线侧的侧前方反打",
+            "en": "a three-quarter reverse angle on the same side of the dialogue axis"
+          },
+          "composition": {
+            "cn": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+            "en": "Frame the current speaker’s face and shoulders; all others remain off-screen in their established positions"
+          },
+          "lighting": {
+            "cn": "窗侧柔光，室内补光，方向保持稳定",
+            "en": "soft window-side key light and consistent indoor fill"
+          },
+          "depth_of_field": {
+            "cn": "浅景深但面部清晰",
+            "en": "shallow depth of field with a clearly readable face"
+          },
+          "action": {
+            "cn": "说话人轻微呼吸，视线保持指向听者",
+            "en": "The speaker breathes subtly and keeps the eyeline toward the listener"
+          },
+          "cut_reason": {
+            "cn": "呈现当前说话人的细微反应",
+            "en": "show the current speaker’s subtle reaction"
+          }
+        },
+        {
+          "shot_id": "SH004",
+          "start_s": 2.5,
+          "end_s": 5.0,
+          "beat_ids": [
+            "B004"
+          ],
+          "shot_scale": "close_up",
+          "lens_mm": 85,
+          "camera_height_m": 1.5,
+          "camera_movement": "locked_off",
+          "camera_angle": {
+            "cn": "同轴线侧的侧前方反打",
+            "en": "a three-quarter reverse angle on the same side of the dialogue axis"
+          },
+          "composition": {
+            "cn": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+            "en": "Frame the current speaker’s face and shoulders; all others remain off-screen in their established positions"
+          },
+          "lighting": {
+            "cn": "窗侧柔光，室内补光，方向保持稳定",
+            "en": "soft window-side key light and consistent indoor fill"
+          },
+          "depth_of_field": {
+            "cn": "浅景深但面部清晰",
+            "en": "shallow depth of field with a clearly readable face"
+          },
+          "action": {
+            "cn": "说话人轻微呼吸，视线保持指向听者",
+            "en": "The speaker breathes subtly and keeps the eyeline toward the listener"
+          },
+          "cut_reason": {
+            "cn": "呈现当前说话人的细微反应",
+            "en": "show the current speaker’s subtle reaction"
+          }
+        }
+      ],
+      "title": {
+        "cn": "室友短句对白",
+        "en": "A short exchange between roommates"
+      },
+      "summary": {
+        "cn": "角色在固定客厅位置完成一问一答",
+        "en": "The characters exchange a question and answer from their fixed living-room positions"
+      },
+      "detailed_description": {
+        "cn": "表情自然克制，动作保持轻微；画外人物不移动。",
+        "en": "Use natural, restrained expressions and subtle movements. Off-screen characters do not move."
+      },
+      "before_events": [
+        {
+          "op": "exit",
+          "character_id": "CHAR_C",
+          "exit_direction": "left",
+          "description": {
+            "cn": "陈悦通过固定门口离开",
+            "en": "Chen Yue leaves through the fixed doorway"
+          }
+        }
+      ],
+      "events": [],
+      "shot_keyframes": [
+        {
+          "shot_id": "SH003",
+          "keyframe_type": "SHOT_KEYFRAME",
+          "segment_id": "SEG002",
+          "keyframe_required": false,
+          "keyframe_recommended": false,
+          "source_assets": [
+            "CHAR_A_H3_OFFICE",
+            "CHAR_B_H3_OFFICE",
+            "SCN_LIVING_MASTER"
+          ],
+          "output": null,
+          "status": "NOT_REQUIRED",
+          "reasons": [],
+          "reference_authority": {
+            "controls": [
+              "composition",
+              "current_blocking",
+              "shot_scale",
+              "spatial_relations"
+            ],
+            "cannot_override": [
+              "character_identity_master",
+              "current_wardrobe",
+              "scene_master_geometry"
+            ]
+          },
+          "generation_status": "NOT_RUN"
+        },
+        {
+          "shot_id": "SH004",
+          "keyframe_type": "SHOT_KEYFRAME",
+          "segment_id": "SEG002",
+          "keyframe_required": false,
+          "keyframe_recommended": false,
+          "source_assets": [
+            "CHAR_A_H3_OFFICE",
+            "CHAR_B_H3_OFFICE",
+            "SCN_LIVING_MASTER"
+          ],
+          "output": null,
+          "status": "NOT_REQUIRED",
+          "reasons": [],
+          "reference_authority": {
+            "controls": [
+              "composition",
+              "current_blocking",
+              "shot_scale",
+              "spatial_relations"
+            ],
+            "cannot_override": [
+              "character_identity_master",
+              "current_wardrobe",
+              "scene_master_geometry"
+            ]
+          },
+          "generation_status": "NOT_RUN"
+        }
+      ]
+    },
+    {
+      "segment_id": "SEG003",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "duration_s": 5,
+      "participants": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "beat_ids": [
+        "B005",
+        "B006"
+      ],
+      "shots": [
+        {
+          "shot_id": "SH005",
+          "start_s": 0.0,
+          "end_s": 2.5,
+          "beat_ids": [
+            "B005"
+          ],
+          "shot_scale": "close_up",
+          "lens_mm": 85,
+          "camera_height_m": 1.5,
+          "camera_movement": "locked_off",
+          "camera_angle": {
+            "cn": "同轴线侧的侧前方反打",
+            "en": "a three-quarter reverse angle on the same side of the dialogue axis"
+          },
+          "composition": {
+            "cn": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+            "en": "Frame the current speaker’s face and shoulders; all others remain off-screen in their established positions"
+          },
+          "lighting": {
+            "cn": "窗侧柔光，室内补光，方向保持稳定",
+            "en": "soft window-side key light and consistent indoor fill"
+          },
+          "depth_of_field": {
+            "cn": "浅景深但面部清晰",
+            "en": "shallow depth of field with a clearly readable face"
+          },
+          "action": {
+            "cn": "说话人轻微呼吸，视线保持指向听者",
+            "en": "The speaker breathes subtly and keeps the eyeline toward the listener"
+          },
+          "cut_reason": {
+            "cn": "呈现当前说话人的细微反应",
+            "en": "show the current speaker’s subtle reaction"
+          }
+        },
+        {
+          "shot_id": "SH006",
+          "start_s": 2.5,
+          "end_s": 5.0,
+          "beat_ids": [
+            "B006"
+          ],
+          "shot_scale": "close_up",
+          "lens_mm": 85,
+          "camera_height_m": 1.5,
+          "camera_movement": "locked_off",
+          "camera_angle": {
+            "cn": "同轴线侧的侧前方反打",
+            "en": "a three-quarter reverse angle on the same side of the dialogue axis"
+          },
+          "composition": {
+            "cn": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+            "en": "Frame the current speaker’s face and shoulders; all others remain off-screen in their established positions"
+          },
+          "lighting": {
+            "cn": "窗侧柔光，室内补光，方向保持稳定",
+            "en": "soft window-side key light and consistent indoor fill"
+          },
+          "depth_of_field": {
+            "cn": "浅景深但面部清晰",
+            "en": "shallow depth of field with a clearly readable face"
+          },
+          "action": {
+            "cn": "说话人轻微呼吸，视线保持指向听者",
+            "en": "The speaker breathes subtly and keeps the eyeline toward the listener"
+          },
+          "cut_reason": {
+            "cn": "呈现当前说话人的细微反应",
+            "en": "show the current speaker’s subtle reaction"
+          }
+        }
+      ],
+      "title": {
+        "cn": "室友短句对白",
+        "en": "A short exchange between roommates"
+      },
+      "summary": {
+        "cn": "角色在固定客厅位置完成一问一答",
+        "en": "The characters exchange a question and answer from their fixed living-room positions"
+      },
+      "detailed_description": {
+        "cn": "表情自然克制，动作保持轻微；画外人物不移动。",
+        "en": "Use natural, restrained expressions and subtle movements. Off-screen characters do not move."
+      },
+      "before_events": [],
+      "events": [],
+      "shot_keyframes": [
+        {
+          "shot_id": "SH005",
+          "keyframe_type": "SHOT_KEYFRAME",
+          "segment_id": "SEG003",
+          "keyframe_required": false,
+          "keyframe_recommended": false,
+          "source_assets": [
+            "CHAR_A_H3_OFFICE",
+            "CHAR_B_H3_OFFICE",
+            "SCN_LIVING_MASTER"
+          ],
+          "output": null,
+          "status": "NOT_REQUIRED",
+          "reasons": [],
+          "reference_authority": {
+            "controls": [
+              "composition",
+              "current_blocking",
+              "shot_scale",
+              "spatial_relations"
+            ],
+            "cannot_override": [
+              "character_identity_master",
+              "current_wardrobe",
+              "scene_master_geometry"
+            ]
+          },
+          "generation_status": "NOT_RUN"
+        },
+        {
+          "shot_id": "SH006",
+          "keyframe_type": "SHOT_KEYFRAME",
+          "segment_id": "SEG003",
+          "keyframe_required": false,
+          "keyframe_recommended": false,
+          "source_assets": [
+            "CHAR_A_H3_OFFICE",
+            "CHAR_B_H3_OFFICE",
+            "SCN_LIVING_MASTER"
+          ],
+          "output": null,
+          "status": "NOT_REQUIRED",
+          "reasons": [],
+          "reference_authority": {
+            "controls": [
+              "composition",
+              "current_blocking",
+              "shot_scale",
+              "spatial_relations"
+            ],
+            "cannot_override": [
+              "character_identity_master",
+              "current_wardrobe",
+              "scene_master_geometry"
+            ]
+          },
+          "generation_status": "NOT_RUN"
+        }
+      ]
+    }
+  ],
+  "shot_keyframes": [
+    {
+      "shot_id": "SH001",
+      "keyframe_type": "SHOT_KEYFRAME",
+      "segment_id": "SEG001",
+      "keyframe_required": false,
+      "keyframe_recommended": false,
+      "source_assets": [
+        "CHAR_A_H3_OFFICE",
+        "CHAR_B_H3_OFFICE",
+        "CHAR_C_H3_OFFICE",
+        "SCN_LIVING_MASTER"
+      ],
+      "output": null,
+      "status": "NOT_REQUIRED",
+      "reasons": [],
+      "reference_authority": {
+        "controls": [
+          "composition",
+          "current_blocking",
+          "shot_scale",
+          "spatial_relations"
+        ],
+        "cannot_override": [
+          "character_identity_master",
+          "current_wardrobe",
+          "scene_master_geometry"
+        ]
+      },
+      "generation_status": "NOT_RUN"
+    },
+    {
+      "shot_id": "SH002",
+      "keyframe_type": "SHOT_KEYFRAME",
+      "segment_id": "SEG001",
+      "keyframe_required": false,
+      "keyframe_recommended": false,
+      "source_assets": [
+        "CHAR_A_H3_OFFICE",
+        "CHAR_B_H3_OFFICE",
+        "CHAR_C_H3_OFFICE",
+        "SCN_LIVING_MASTER"
+      ],
+      "output": null,
+      "status": "NOT_REQUIRED",
+      "reasons": [],
+      "reference_authority": {
+        "controls": [
+          "composition",
+          "current_blocking",
+          "shot_scale",
+          "spatial_relations"
+        ],
+        "cannot_override": [
+          "character_identity_master",
+          "current_wardrobe",
+          "scene_master_geometry"
+        ]
+      },
+      "generation_status": "NOT_RUN"
+    },
+    {
+      "shot_id": "SH003",
+      "keyframe_type": "SHOT_KEYFRAME",
+      "segment_id": "SEG002",
+      "keyframe_required": false,
+      "keyframe_recommended": false,
+      "source_assets": [
+        "CHAR_A_H3_OFFICE",
+        "CHAR_B_H3_OFFICE",
+        "SCN_LIVING_MASTER"
+      ],
+      "output": null,
+      "status": "NOT_REQUIRED",
+      "reasons": [],
+      "reference_authority": {
+        "controls": [
+          "composition",
+          "current_blocking",
+          "shot_scale",
+          "spatial_relations"
+        ],
+        "cannot_override": [
+          "character_identity_master",
+          "current_wardrobe",
+          "scene_master_geometry"
+        ]
+      },
+      "generation_status": "NOT_RUN"
+    },
+    {
+      "shot_id": "SH004",
+      "keyframe_type": "SHOT_KEYFRAME",
+      "segment_id": "SEG002",
+      "keyframe_required": false,
+      "keyframe_recommended": false,
+      "source_assets": [
+        "CHAR_A_H3_OFFICE",
+        "CHAR_B_H3_OFFICE",
+        "SCN_LIVING_MASTER"
+      ],
+      "output": null,
+      "status": "NOT_REQUIRED",
+      "reasons": [],
+      "reference_authority": {
+        "controls": [
+          "composition",
+          "current_blocking",
+          "shot_scale",
+          "spatial_relations"
+        ],
+        "cannot_override": [
+          "character_identity_master",
+          "current_wardrobe",
+          "scene_master_geometry"
+        ]
+      },
+      "generation_status": "NOT_RUN"
+    },
+    {
+      "shot_id": "SH005",
+      "keyframe_type": "SHOT_KEYFRAME",
+      "segment_id": "SEG003",
+      "keyframe_required": false,
+      "keyframe_recommended": false,
+      "source_assets": [
+        "CHAR_A_H3_OFFICE",
+        "CHAR_B_H3_OFFICE",
+        "SCN_LIVING_MASTER"
+      ],
+      "output": null,
+      "status": "NOT_REQUIRED",
+      "reasons": [],
+      "reference_authority": {
+        "controls": [
+          "composition",
+          "current_blocking",
+          "shot_scale",
+          "spatial_relations"
+        ],
+        "cannot_override": [
+          "character_identity_master",
+          "current_wardrobe",
+          "scene_master_geometry"
+        ]
+      },
+      "generation_status": "NOT_RUN"
+    },
+    {
+      "shot_id": "SH006",
+      "keyframe_type": "SHOT_KEYFRAME",
+      "segment_id": "SEG003",
+      "keyframe_required": false,
+      "keyframe_recommended": false,
+      "source_assets": [
+        "CHAR_A_H3_OFFICE",
+        "CHAR_B_H3_OFFICE",
+        "SCN_LIVING_MASTER"
+      ],
+      "output": null,
+      "status": "NOT_REQUIRED",
+      "reasons": [],
+      "reference_authority": {
+        "controls": [
+          "composition",
+          "current_blocking",
+          "shot_scale",
+          "spatial_relations"
+        ],
+        "cannot_override": [
+          "character_identity_master",
+          "current_wardrobe",
+          "scene_master_geometry"
+        ]
+      },
+      "generation_status": "NOT_RUN"
+    }
+  ]
+}

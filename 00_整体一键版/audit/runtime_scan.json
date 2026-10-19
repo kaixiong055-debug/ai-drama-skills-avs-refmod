@@ -1,0 +1,522 @@
+[
+  {
+    "path": "06_h3_runtime\\SKILL.md",
+    "chars": 934,
+    "sha256": "8440ceba92b460342c3371b57c5d79878a4b07a58d13d28c7b5287423f755389"
+  },
+  {
+    "path": "tests\\test_operations.py",
+    "chars": 11194,
+    "sha256": "7e7992d37e55eb84d41b5b170dd02c7100a518481fc8c433c141045b83c7dc6f"
+  },
+  {
+    "path": "tests\\test_pipeline.py",
+    "chars": 8761,
+    "sha256": "be03bb3874810d572fc25e253880b58dd5c3d49126050e94be65a9012a24240b"
+  },
+  {
+    "path": "tests\\test_regressions.py",
+    "chars": 4154,
+    "sha256": "2d2fe79bfc080951aec80e34386c9dee69c3452b949e3b949c6735c0f80921a6"
+  },
+  {
+    "path": "tests\\__init__.py",
+    "chars": 41,
+    "sha256": "368ec79e4d9b2c98d908173e30453486b4da491ec43c3a890386d2ed45d41f1d"
+  },
+  {
+    "path": "examples\\test_projects\\TEST12\\production\\06_production.json",
+    "chars": 2749,
+    "sha256": "ffcb1a56c0af7a9150f7ad57d435e2e30f4544f768e6ebdbdf419770de9b7a04"
+  },
+  {
+    "path": "examples\\test_projects\\TEST12\\production\\07_spatial_locks.json",
+    "chars": 32050,
+    "sha256": "1b972b48676e8c12f617cf2186f6529c09b490500f2120526f925be7dc63ab44"
+  },
+  {
+    "path": "examples\\test_projects\\TEST12\\production\\08_binding.json",
+    "chars": 3196,
+    "sha256": "21aef800dd34241278f26a8fde4f6b23ca1375d09862c017420cf5fd335a42df"
+  },
+  {
+    "path": "examples\\test_projects\\TEST12\\production\\H3_PROMPTS_CN.md",
+    "chars": 25607,
+    "sha256": "71c3d1b9608d3aad9c8a70a0fb61259c5e8f3f1750c31e330934a3b4f23bf92e"
+  },
+  {
+    "path": "examples\\test_projects\\TEST12\\production\\H3_PROMPTS_EN.md",
+    "chars": 68704,
+    "sha256": "d104ece8c4441c3b7e6a72f44ccb82eb7f4d81b4f3b2505a85b25a320874c884"
+  },
+  {
+    "path": "examples\\test_projects\\TEST12\\production\\H3_WORKBENCH_EN_AVS.md",
+    "chars": 67806,
+    "sha256": "2674818c78eb8423844118c4cc4476a0c0339c5f9b30516cc974236337f713e8"
+  },
+  {
+    "path": "examples\\test_projects\\TEST11\\production\\06_production.json",
+    "chars": 2758,
+    "sha256": "66f4dd9e6041ff2ed747d1ec09dbce78bbbb8decdde1650a217d7c2811240936"
+  },
+  {
+    "path": "examples\\test_projects\\TEST11\\production\\07_spatial_locks.json",
+    "chars": 35561,
+    "sha256": "81ee949eafba588af833723c5fe7920e1f5c6b3769a9b15c1b94e47bdc8105c5"
+  },
+  {
+    "path": "examples\\test_projects\\TEST11\\production\\08_binding.json",
+    "chars": 3808,
+    "sha256": "06e64ea76e0bf3b9494ae78fcf0408cb3be7fa3bcff38d75494cbe8cc4ac9382"
+  },
+  {
+    "path": "examples\\test_projects\\TEST11\\production\\H3_PROMPTS_CN.md",
+    "chars": 30833,
+    "sha256": "f964c650f9ddf6e6309f069cdd7ec2832dd98e7d210dad19f4fe2e42e2a1c0d4"
+  },
+  {
+    "path": "examples\\test_projects\\TEST11\\production\\H3_PROMPTS_EN.md",
+    "chars": 82263,
+    "sha256": "e686b9a952857db8122c5590f17969d124730162d42d235e484eb7a8ef748fe5"
+  },
+  {
+    "path": "examples\\test_projects\\TEST11\\production\\H3_WORKBENCH_EN_AVS.md",
+    "chars": 81152,
+    "sha256": "7fe1ea6609f97615e6b70ec4f581ca68804d04793bac6cdd12cbbb66bee1762a"
+  },
+  {
+    "path": "examples\\test_projects\\TEST10\\production\\06_production.json",
+    "chars": 3450,
+    "sha256": "dc26f1a49dbe4e8b663b12a12610442f025ead08e9a380a35b198b0e13df5dbb"
+  },
+  {
+    "path": "examples\\test_projects\\TEST10\\production\\07_spatial_locks.json",
+    "chars": 38561,
+    "sha256": "d0da27483849ab588f0fab3a33e783f4e005786fa1599b3fe0e0aa1b2dbf1041"
+  },
+  {
+    "path": "examples\\test_projects\\TEST10\\production\\08_binding.json",
+    "chars": 3196,
+    "sha256": "d82bd95b54c06094749719b9b94b8f91ccafa11912f1559a0f4070ac20fb2a6b"
+  },
+  {
+    "path": "examples\\test_projects\\TEST10\\production\\H3_PROMPTS_CN.md",
+    "chars": 26995,
+    "sha256": "e350b12ce4dee6ac049490442fa4fc347d5cd842edf413670e62e01c06a337a2"
+  },
+  {
+    "path": "examples\\test_projects\\TEST10\\production\\H3_PROMPTS_EN.md",
+    "chars": 72532,
+    "sha256": "55ae4c42cfbde2bfe94dc187dd7c07574111b9d6baa0ae71d6f8866ead6909ff"
+  },
+  {
+    "path": "examples\\test_projects\\TEST10\\production\\H3_WORKBENCH_EN_AVS.md",
+    "chars": 71634,
+    "sha256": "1f3cdeca4ba5098a4b3dfd18d8c7b26dc3d88dcce81eb6932417f4672c60d07e"
+  },
+  {
+    "path": "examples\\test_projects\\TEST09\\production\\06_production.json",
+    "chars": 3379,
+    "sha256": "b76100d4aeddecd4a9eba3f308a6c9518fd598d96c70208e1ff141cc318a2f66"
+  },
+  {
+    "path": "examples\\test_projects\\TEST09\\production\\07_spatial_locks.json",
+    "chars": 40973,
+    "sha256": "98a87d6f6dbbd5a9d4f36b0651d2adc0023974fe1f768cb0c574baa4bc8f5399"
+  },
+  {
+    "path": "examples\\test_projects\\TEST09\\production\\08_binding.json",
+    "chars": 4066,
+    "sha256": "58e0505bbd0e8b42bc7ab4585ab9a367431beecd060e7e6b6f35b346460f3b10"
+  },
+  {
+    "path": "examples\\test_projects\\TEST09\\production\\H3_PROMPTS_CN.md",
+    "chars": 28219,
+    "sha256": "ffa3655f972366903771892eadd87b4ef716f137b9246e85e2a355d43f6490fc"
+  },
+  {
+    "path": "examples\\test_projects\\TEST09\\production\\H3_PROMPTS_EN.md",
+    "chars": 74983,
+    "sha256": "436f0e14b1ac286e98aa68f146a32f620b2974ad106dbc1841a5e7e6d5440315"
+  },
+  {
+    "path": "examples\\test_projects\\TEST09\\production\\H3_WORKBENCH_EN_AVS.md",
+    "chars": 74085,
+    "sha256": "c35a55c491449660d8e9a34b4a05592142c7c1377f9e53c7afab29563b7404a5"
+  },
+  {
+    "path": "examples\\test_projects\\TEST08\\production\\06_production.json",
+    "chars": 2749,
+    "sha256": "ffcb1a56c0af7a9150f7ad57d435e2e30f4544f768e6ebdbdf419770de9b7a04"
+  },
+  {
+    "path": "examples\\test_projects\\TEST08\\production\\07_spatial_locks.json",
+    "chars": 32050,
+    "sha256": "1b972b48676e8c12f617cf2186f6529c09b490500f2120526f925be7dc63ab44"
+  },
+  {
+    "path": "examples\\test_projects\\TEST08\\production\\08_binding.json",
+    "chars": 3196,
+    "sha256": "21aef800dd34241278f26a8fde4f6b23ca1375d09862c017420cf5fd335a42df"
+  },
+  {
+    "path": "examples\\test_projects\\TEST08\\production\\H3_PROMPTS_CN.md",
+    "chars": 25607,
+    "sha256": "71c3d1b9608d3aad9c8a70a0fb61259c5e8f3f1750c31e330934a3b4f23bf92e"
+  },
+  {
+    "path": "examples\\test_projects\\TEST08\\production\\H3_PROMPTS_EN.md",
+    "chars": 68704,
+    "sha256": "d104ece8c4441c3b7e6a72f44ccb82eb7f4d81b4f3b2505a85b25a320874c884"
+  },
+  {
+    "path": "examples\\test_projects\\TEST08\\production\\H3_WORKBENCH_EN_AVS.md",
+    "chars": 67806,
+    "sha256": "2674818c78eb8423844118c4cc4476a0c0339c5f9b30516cc974236337f713e8"
+  },
+  {
+    "path": "examples\\test_projects\\TEST07\\production\\06_production.json",
+    "chars": 2756,
+    "sha256": "33dc3d2d87eadc99e2b554a4a43cd04d4213754d348fc778d062d921a68fb2cb"
+  },
+  {
+    "path": "examples\\test_projects\\TEST07\\production\\07_spatial_locks.json",
+    "chars": 35577,
+    "sha256": "e6086063144d0a91e98f255a10d8993b1f4801a2a63954a096ec987a8fc753fc"
+  },
+  {
+    "path": "examples\\test_projects\\TEST07\\production\\08_binding.json",
+    "chars": 3808,
+    "sha256": "fdff153c34f1deaad9b54a0efdde9fa87381b12d40b6d14451b38dcbebaa753d"
+  },
+  {
+    "path": "examples\\test_projects\\TEST07\\production\\H3_PROMPTS_CN.md",
+    "chars": 30788,
+    "sha256": "e954f97d66c9e415354470245bb230d0371b54e6dad17b929941e340588f7e81"
+  },
+  {
+    "path": "examples\\test_projects\\TEST07\\production\\H3_PROMPTS_EN.md",
+    "chars": 82275,
+    "sha256": "ed374e59aad6de8ff8bc63eaf7304cce067c9d3c81ea81c1dfd70aa9fe0c66e6"
+  },
+  {
+    "path": "examples\\test_projects\\TEST07\\production\\H3_WORKBENCH_EN_AVS.md",
+    "chars": 81178,
+    "sha256": "6b8372945bc45bb9d0440ce591e770f7e72b9695f6b4389554f9f90a41b39b68"
+  },
+  {
+    "path": "examples\\test_projects\\TEST06\\production\\06_production.json",
+    "chars": 2760,
+    "sha256": "ffca7d6c865062bd1b0983158b779c5767561b39e01633696a3867c8db3c6ebd"
+  },
+  {
+    "path": "examples\\test_projects\\TEST06\\production\\07_spatial_locks.json",
+    "chars": 39088,
+    "sha256": "55b1c88ffeda4752ef73ff72c58c828647e96f71d7ac4e4bce9847ae0f9df643"
+  },
+  {
+    "path": "examples\\test_projects\\TEST06\\production\\08_binding.json",
+    "chars": 4352,
+    "sha256": "7fb04becc3037c1b2028b5b363bda07de64b34b57ac41e03ce210c23f835108b"
+  },
+  {
+    "path": "examples\\test_projects\\TEST06\\production\\H3_PROMPTS_CN.md",
+    "chars": 33271,
+    "sha256": "5ba511cd2a713545336a56904927842a66b8c3c852cd5c152151e4cff18c948e"
+  },
+  {
+    "path": "examples\\test_projects\\TEST06\\production\\H3_PROMPTS_EN.md",
+    "chars": 89792,
+    "sha256": "7f6dbbc266c56f5b683cb719153ebfe04250d9f55b5a7360ec24267952032a4d"
+  },
+  {
+    "path": "examples\\test_projects\\TEST06\\production\\H3_WORKBENCH_EN_AVS.md",
+    "chars": 88695,
+    "sha256": "bd305c6e6a557cdf7c384a52d30faf7e86da2d9e9269764ee93aa6c9c31aa624"
+  },
+  {
+    "path": "examples\\test_projects\\TEST05\\production\\06_production.json",
+    "chars": 2764,
+    "sha256": "757ffe285713be17d73f6ee7126764400b7ad1b31713ff372bf20a7a45f2560f"
+  },
+  {
+    "path": "examples\\test_projects\\TEST05\\production\\07_spatial_locks.json",
+    "chars": 39789,
+    "sha256": "4a8bfb9f96b87b563d384b54dacf27e70b04b565505b62e52b467277041e2592"
+  },
+  {
+    "path": "examples\\test_projects\\TEST05\\production\\08_binding.json",
+    "chars": 4545,
+    "sha256": "b26926b1c6cad669ba8c69afd958caff28b79f6dec9c386411e2c95c01d1282e"
+  },
+  {
+    "path": "examples\\test_projects\\TEST05\\production\\H3_PROMPTS_CN.md",
+    "chars": 34275,
+    "sha256": "c5936a682e3ef49377b6c24941ff9dd6201adf737bcf4b6f6568d4b81d7b4a4f"
+  },
+  {
+    "path": "examples\\test_projects\\TEST05\\production\\H3_PROMPTS_EN.md",
+    "chars": 92840,
+    "sha256": "0c532b652cdf68cdfb2c605fc8a3aeb7d222a6c50858c80ac3c85081a711b893"
+  },
+  {
+    "path": "examples\\test_projects\\TEST05\\production\\H3_WORKBENCH_EN_AVS.md",
+    "chars": 91743,
+    "sha256": "2921912588c87d79b6ecb5099031f57e1bae72cde1e82182eef2e52af1bdc2f2"
+  },
+  {
+    "path": "examples\\test_projects\\TEST04\\production\\06_production.json",
+    "chars": 2896,
+    "sha256": "9440604bfa224fb2d3c0adc277978e8ba1ece0fbf99f03fd358d243f1978c391"
+  },
+  {
+    "path": "examples\\test_projects\\TEST04\\production\\07_spatial_locks.json",
+    "chars": 53970,
+    "sha256": "db0e4f9949c055a1817983e0f56b095de392bd2baf5600054349ebd746c26145"
+  },
+  {
+    "path": "examples\\test_projects\\TEST04\\production\\08_binding.json",
+    "chars": 5986,
+    "sha256": "74b46f136d4d428e9d903ae99ad26b025258dea622c09f5acb294abb019fb4a9"
+  },
+  {
+    "path": "examples\\test_projects\\TEST04\\production\\H3_PROMPTS_CN.md",
+    "chars": 41624,
+    "sha256": "e3baf1f0bf879775307397ac6eda50b3ae4a2c5ec0863887bef9f949a13cd90a"
+  },
+  {
+    "path": "examples\\test_projects\\TEST04\\production\\H3_PROMPTS_EN.md",
+    "chars": 117604,
+    "sha256": "4ceca8dfddc478804c285443a4e9907a9519d0fb2538e9706c51d0be46ed6313"
+  },
+  {
+    "path": "examples\\test_projects\\TEST04\\production\\H3_WORKBENCH_EN_AVS.md",
+    "chars": 116706,
+    "sha256": "296d3910d72bbbe18baee06a029c8096a493152b1e96ba0f3d3cf8d868e0528d"
+  },
+  {
+    "path": "examples\\test_projects\\TEST03\\production\\06_production.json",
+    "chars": 2839,
+    "sha256": "1e408c8b60bb3f93856797b86336cb4bdfd0c4f181206e4eee40dabdfc42944a"
+  },
+  {
+    "path": "examples\\test_projects\\TEST03\\production\\07_spatial_locks.json",
+    "chars": 46300,
+    "sha256": "99d50d0c9211d5858f154ddbe85d041e6b4bef229c74a420cf5b258667a8a386"
+  },
+  {
+    "path": "examples\\test_projects\\TEST03\\production\\08_binding.json",
+    "chars": 5056,
+    "sha256": "74ad93d0276a28254dfba144194b89da8bae7dc51b12d47cf427a2aa665c5dd0"
+  },
+  {
+    "path": "examples\\test_projects\\TEST03\\production\\H3_PROMPTS_CN.md",
+    "chars": 35840,
+    "sha256": "43715c7c6691a208055090be8ed3ebda44dfe84e17c92d8ea912543c40794cd1"
+  },
+  {
+    "path": "examples\\test_projects\\TEST03\\production\\H3_PROMPTS_EN.md",
+    "chars": 100299,
+    "sha256": "ba027e5cf193c882802c23b9e92f17ab61d7d6719d1e6b508f659241752fb406"
+  },
+  {
+    "path": "examples\\test_projects\\TEST03\\production\\H3_WORKBENCH_EN_AVS.md",
+    "chars": 99401,
+    "sha256": "da32237f6d98d04e13fb3640558ba70ec339de13218937b8fcf3f1da767f9765"
+  },
+  {
+    "path": "examples\\test_projects\\TEST02\\production\\06_production.json",
+    "chars": 2761,
+    "sha256": "921670436d5938d2b846435cffea495eccc51d51ec3eec8c27b013a0128a4897"
+  },
+  {
+    "path": "examples\\test_projects\\TEST02\\production\\07_spatial_locks.json",
+    "chars": 39050,
+    "sha256": "9bd3fd1f6c9706e8b382718a9b5cb27eac67b58cf608a57c484fa7352fded074"
+  },
+  {
+    "path": "examples\\test_projects\\TEST02\\production\\08_binding.json",
+    "chars": 4126,
+    "sha256": "05ad987bb8914313c0b9a1f10e078cd068a128832764a16d6e9fdf2d812ff70a"
+  },
+  {
+    "path": "examples\\test_projects\\TEST02\\production\\H3_PROMPTS_CN.md",
+    "chars": 30518,
+    "sha256": "f261e2acdd6ba17947bb887688b0ac6de27f8f4780941fad2e9551d5b975bafa"
+  },
+  {
+    "path": "examples\\test_projects\\TEST02\\production\\H3_PROMPTS_EN.md",
+    "chars": 83786,
+    "sha256": "3df48808b857ac100c83dcece456ed5cb49af63b03900732fb91e8573e5b35ea"
+  },
+  {
+    "path": "examples\\test_projects\\TEST02\\production\\H3_WORKBENCH_EN_AVS.md",
+    "chars": 82890,
+    "sha256": "4695e1a6abfc2588e5fddd3816319f4a18f009933ed5dd91a2ab3debc1528e52"
+  },
+  {
+    "path": "examples\\test_projects\\TEST01\\production\\06_production.json",
+    "chars": 2749,
+    "sha256": "ffcb1a56c0af7a9150f7ad57d435e2e30f4544f768e6ebdbdf419770de9b7a04"
+  },
+  {
+    "path": "examples\\test_projects\\TEST01\\production\\07_spatial_locks.json",
+    "chars": 32050,
+    "sha256": "1b972b48676e8c12f617cf2186f6529c09b490500f2120526f925be7dc63ab44"
+  },
+  {
+    "path": "examples\\test_projects\\TEST01\\production\\08_binding.json",
+    "chars": 3196,
+    "sha256": "21aef800dd34241278f26a8fde4f6b23ca1375d09862c017420cf5fd335a42df"
+  },
+  {
+    "path": "examples\\test_projects\\TEST01\\production\\H3_PROMPTS_CN.md",
+    "chars": 25607,
+    "sha256": "71c3d1b9608d3aad9c8a70a0fb61259c5e8f3f1750c31e330934a3b4f23bf92e"
+  },
+  {
+    "path": "examples\\test_projects\\TEST01\\production\\H3_PROMPTS_EN.md",
+    "chars": 68704,
+    "sha256": "d104ece8c4441c3b7e6a72f44ccb82eb7f4d81b4f3b2505a85b25a320874c884"
+  },
+  {
+    "path": "examples\\test_projects\\TEST01\\production\\H3_WORKBENCH_EN_AVS.md",
+    "chars": 67806,
+    "sha256": "2674818c78eb8423844118c4cc4476a0c0339c5f9b30516cc974236337f713e8"
+  },
+  {
+    "path": "examples\\demo_five_people\\production\\06_production.json",
+    "chars": 2896,
+    "sha256": "9440604bfa224fb2d3c0adc277978e8ba1ece0fbf99f03fd358d243f1978c391"
+  },
+  {
+    "path": "examples\\demo_five_people\\production\\07_spatial_locks.json",
+    "chars": 53970,
+    "sha256": "db0e4f9949c055a1817983e0f56b095de392bd2baf5600054349ebd746c26145"
+  },
+  {
+    "path": "examples\\demo_five_people\\production\\08_binding.json",
+    "chars": 5986,
+    "sha256": "74b46f136d4d428e9d903ae99ad26b025258dea622c09f5acb294abb019fb4a9"
+  },
+  {
+    "path": "examples\\demo_five_people\\production\\H3_PROMPTS_CN.md",
+    "chars": 41624,
+    "sha256": "e3baf1f0bf879775307397ac6eda50b3ae4a2c5ec0863887bef9f949a13cd90a"
+  },
+  {
+    "path": "examples\\demo_five_people\\production\\H3_PROMPTS_EN.md",
+    "chars": 117604,
+    "sha256": "4ceca8dfddc478804c285443a4e9907a9519d0fb2538e9706c51d0be46ed6313"
+  },
+  {
+    "path": "examples\\demo_five_people\\production\\H3_WORKBENCH_EN_AVS.md",
+    "chars": 116706,
+    "sha256": "296d3910d72bbbe18baee06a029c8096a493152b1e96ba0f3d3cf8d868e0528d"
+  },
+  {
+    "path": "11_assembly\\tests\\selftest.py",
+    "chars": 653,
+    "sha256": "6e706a41c18514707b40d79e6680196ff86d487226ff04db54df6f942ecd11d1"
+  },
+  {
+    "path": "10_qc\\tests\\selftest.py",
+    "chars": 673,
+    "sha256": "85898bb7be5f133d8f037d38707e16b6fc5cb3db7f7a84cbb06ef7cc3580a5dd"
+  },
+  {
+    "path": "09_generation\\tests\\selftest.py",
+    "chars": 662,
+    "sha256": "eec7a2483ae08563470f6a0093cf245fc81dd3c745f874bf1e7d5425ae38f13d"
+  },
+  {
+    "path": "08_binding\\examples\\08_binding.json",
+    "chars": 3196,
+    "sha256": "21aef800dd34241278f26a8fde4f6b23ca1375d09862c017420cf5fd335a42df"
+  },
+  {
+    "path": "08_binding\\tests\\selftest.py",
+    "chars": 670,
+    "sha256": "5f4993a1c70f372c99e0d26a667ae3f9c67fad7cb02e9ad47830338e90f78623"
+  },
+  {
+    "path": "07_spatial_lock\\examples\\07_spatial_locks.json",
+    "chars": 32050,
+    "sha256": "1b972b48676e8c12f617cf2186f6529c09b490500f2120526f925be7dc63ab44"
+  },
+  {
+    "path": "07_spatial_lock\\tests\\selftest.py",
+    "chars": 696,
+    "sha256": "42c85f4398fdaf88ee9108e2d94419d93319375c6c5c8f1cbb6906d0a9db5fcc"
+  },
+  {
+    "path": "06_h3_runtime\\agents\\openai.yaml",
+    "chars": 180,
+    "sha256": "d7dc4d8489519270faef064fa04e970a7158ac15d7e5eba0079e5f9687e5b9db"
+  },
+  {
+    "path": "06_h3_runtime\\examples\\06_production.json",
+    "chars": 2749,
+    "sha256": "ffcb1a56c0af7a9150f7ad57d435e2e30f4544f768e6ebdbdf419770de9b7a04"
+  },
+  {
+    "path": "06_h3_runtime\\examples\\H3_PROMPTS_CN.md",
+    "chars": 25607,
+    "sha256": "71c3d1b9608d3aad9c8a70a0fb61259c5e8f3f1750c31e330934a3b4f23bf92e"
+  },
+  {
+    "path": "06_h3_runtime\\examples\\H3_PROMPTS_EN.md",
+    "chars": 68704,
+    "sha256": "d104ece8c4441c3b7e6a72f44ccb82eb7f4d81b4f3b2505a85b25a320874c884"
+  },
+  {
+    "path": "06_h3_runtime\\references\\contract.md",
+    "chars": 852,
+    "sha256": "11dc73d3dfb335e1457dfb16ad2785b0104e6143b4acf5ee846e3088e052617b"
+  },
+  {
+    "path": "06_h3_runtime\\references\\retained_details.json",
+    "chars": 42284,
+    "sha256": "249a0804d158e9bc9074d528554576f1fa3af0ec7d29eec8b1a7d1676253d04d"
+  },
+  {
+    "path": "06_h3_runtime\\scripts\\run.py",
+    "chars": 188,
+    "sha256": "e61bf3ac25e9586b58be2025e67d2f0b360302a98021579c7c5a2d2ea263ec0e"
+  },
+  {
+    "path": "06_h3_runtime\\tests\\selftest.py",
+    "chars": 666,
+    "sha256": "c2ad4e7e9654e8003857c288c990f3456b93c2f2d82be8cebacd041308acbf37"
+  },
+  {
+    "path": "05_storyboard\\tests\\selftest.py",
+    "chars": 669,
+    "sha256": "15c8cf256ccf6b7aaee304493896df440e15200368f58df613d23760af32e21e"
+  },
+  {
+    "path": "04_script\\tests\\selftest.py",
+    "chars": 668,
+    "sha256": "894411cd3db558e7b0dc88d2286cc06175ec297cb96d1d11b1189504ef4188c0"
+  },
+  {
+    "path": "03_asset_bible\\tests\\selftest.py",
+    "chars": 670,
+    "sha256": "5f4993a1c70f372c99e0d26a667ae3f9c67fad7cb02e9ad47830338e90f78623"
+  },
+  {
+    "path": "02_character_bible\\tests\\selftest.py",
+    "chars": 667,
+    "sha256": "9f2d24a0e7f562c6677275e813f1adce3b70ab76b910e31ce0185399d716bb3c"
+  },
+  {
+    "path": "01_story_adapter\\tests\\selftest.py",
+    "chars": 668,
+    "sha256": "894411cd3db558e7b0dc88d2286cc06175ec297cb96d1d11b1189504ef4188c0"
+  },
+  {
+    "path": "00_router\\tests\\selftest.py",
+    "chars": 666,
+    "sha256": "072ce9b1fe85716c9cf4043c6210047a429c59513c9e115c6e5b3b64f33b6cfb"
+  }
+]

@@ -1,0 +1,20 @@
+Failed to find real location of C:\Python313\python.exe
+test_TEST12_bilingual_parity_and_export (tests.test_pipeline.ProductionTests.test_TEST12_bilingual_parity_and_export) ... ok
+test_atomic_export_rejects_without_partial_pack (tests.test_pipeline.ProductionTests.test_atomic_export_rejects_without_partial_pack) ... ok
+test_controlled_abc_comparison_and_seed_confounds (test_graph_regression_v51.GraphRegressionTests.test_controlled_abc_comparison_and_seed_confounds) ... ok
+test_different_story_or_output_duration_is_not_comparable (test_graph_regression_v51.GraphRegressionTests.test_different_story_or_output_duration_is_not_comparable) ... ok
+test_english_runtime_jobs_can_record_a_take (test_graph_regression_v51.GraphRegressionTests.test_english_runtime_jobs_can_record_a_take) ... ok
+test_graph_cycle_and_unproduced_artifact_rejected (test_graph_regression_v51.GraphRegressionTests.test_graph_cycle_and_unproduced_artifact_rejected) ... ok
+test_graph_export_cannot_skip_binding (test_graph_regression_v51.GraphRegressionTests.test_graph_export_cannot_skip_binding) ... ok
+test_graph_respects_export_dependencies (test_graph_regression_v51.GraphRegressionTests.test_graph_respects_export_dependencies) ... ok
+test_real_registration_links_ledger_and_preserves_unknown_cases (test_graph_regression_v51.GraphRegressionTests.test_real_registration_links_ledger_and_preserves_unknown_cases) ... ok
+test_registration_metrics_and_variants_not_guessed (test_graph_regression_v51.GraphRegressionTests.test_registration_metrics_and_variants_not_guessed) ... ok
+test_registration_missing_video_or_ledger_mismatch_rejected (test_graph_regression_v51.GraphRegressionTests.test_registration_missing_video_or_ledger_mismatch_rejected) ... ok
+test_registry_has_45_unrun_variants_and_null_metrics (test_graph_regression_v51.GraphRegressionTests.test_registry_has_45_unrun_variants_and_null_metrics) ... ok
+test_registry_tampered_metrics_and_probe_rejected (test_graph_regression_v51.GraphRegressionTests.test_registry_tampered_metrics_and_probe_rejected) ... ok
+test_unrun_zero_is_fabrication (test_graph_regression_v51.GraphRegressionTests.test_unrun_zero_is_fabrication) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 1.528s
+
+OK

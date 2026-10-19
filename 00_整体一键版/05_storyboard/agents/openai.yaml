@@ -1,0 +1,4 @@
+interface:
+  display_name: "ai-drama-storyboard"
+  short_description: "把冻结Beat映射到5秒段与真实镜头，设计景别、机位、运镜、动作时间与状态事件。"
+  default_prompt: "使用 $ai-drama-storyboard 按 V5.1 的单一权威数据合同完成本层工作。"

@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ai-drama:v5:cast",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "5.0",
+        "5.1"
+      ]
+    },
+    "kind": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lineage": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "characters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "character_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "object",
+            "properties": {
+              "cn": {
+                "type": "string",
+                "minLength": 1
+              },
+              "en": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "cn",
+              "en"
+            ],
+            "additionalProperties": false
+          },
+          "identity": {
+            "type": "object",
+            "properties": {
+              "cn": {
+                "type": "string",
+                "minLength": 1
+              },
+              "en": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "cn",
+              "en"
+            ],
+            "additionalProperties": false
+          },
+          "hairstyle": {
+            "type": "object",
+            "properties": {
+              "cn": {
+                "type": "string",
+                "minLength": 1
+              },
+              "en": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "cn",
+              "en"
+            ],
+            "additionalProperties": false
+          },
+          "default_wardrobe": {
+            "type": "string",
+            "minLength": 1
+          },
+          "wardrobes": {
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false
+                },
+                "runtime_asset_id": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "description",
+                "runtime_asset_id"
+              ],
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "character_id",
+          "name",
+          "identity",
+          "hairstyle",
+          "default_wardrobe",
+          "wardrobes"
+        ],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "lineage",
+    "characters"
+  ],
+  "additionalProperties": true
+}

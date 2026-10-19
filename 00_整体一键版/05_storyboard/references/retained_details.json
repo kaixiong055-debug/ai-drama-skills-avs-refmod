@@ -1,0 +1,405 @@
+{
+  "authority": "supplementary historical detail evidence; current contract/schema control execution",
+  "entries": [
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 44,
+      "text": "### A级默认预算顺序\n1. MASTER\n2. SHEET9\n3. 高频区域 A\n4. 高频区域 B\n5. 高频区域 C\n6. 高频区域 D\n7. 特殊/高频机位\n8. 关键连接\n9. 第二连接或真正必要的特殊状态"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 53,
+      "text": "## 11. Final runtime rule\n**关键剧情准确 + 可理解连续性 + 总时长预算同时满足。** 默认目标36段，最多48段；所有开场、收尾旁白、转场与生活桥接均计入。禁止将长旁白拆成多个短句各占5秒空镜，禁止为了不同景别而重复播放同一事件。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 57,
+      "text": "运行：\n`python scripts/validate_project_manifest_v3.py project_manifest.json`\n## 14. Adaptive Shot Scale Decision｜自适应景别决策（V3 必须执行）\n景别**不得按固定比例机械分配**，也不得要求用户配置“近景优先模式”。\nSkill 必须先读懂当前 5 秒段的叙事任务，再自行判断最合适的景别。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 58,
+      "text": "### 14.1 总原则\n**人物表演信息比空间信息更重要时，使用更近的景别；空间/动作/位置关系更重要时，必须退到足够大的景别。**\n目标是“选最小但足够讲清楚这一镜的信息量的景别”。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 60,
+      "text": "### 14.2 Shot Function 分类\n每个 segment 在决定景别之前，必须先填写 `shot_function`，从以下选择一个主功能，必要时可有一个 secondary：\n- `PERFORMANCE`：表演/情绪/微反应\n- `DIALOGUE`：对白承载\n- `REACTION`：听者反应、被击中、忍笑、尴尬、心动\n- `SPATIAL`：空间关系/人物与环境位置\n- `MOVEMENT`：人物跨区域移动、进出场\n- `ACTION`：完整身体动作、打斗、肢体因果\n- `ESTABLISHING`：场景首次建立\n- `INSERT`：道具/手部/眼神/局部信息特写\n- `TRANSITION`：时间、空间、状态桥接"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 62,
+      "text": "这些是**判断倾向，不是比例目标**。最终景别必须由文字内容决定。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 66,
+      "text": "规则：\n1. 场景首次出现且观众尚不知道人物位置时，应先用足够大的景别建立空间；\n2. 空间一旦建立，后续同区域对话可大量使用近景/反打，不必反复回大全景；\n3. 人物发生跨区域移动（如 ENTRY→LIVING、SOFA→KITCHEN、BEDROOM→LIVING）时，必须至少有一个镜头让移动路径可读；\n4. 禁止 `A区域近景 → B区域近景` 无中间空间迁移，造成瞬移感；\n5. 到达新区域后，如空间已清楚，可重新进入近景体系。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 67,
+      "text": "### 14.6 最小充分景别原则\n每镜必须回答：\n1. 这一镜最重要的信息是什么？\n2. 信息主要在“脸/表演”还是“空间/身体/动作”？\n3. 人物是否跨区域？\n4. 观众是否已经知道人物在哪里？\n5. 说话者与反应者谁更有戏？\n6. 用多大的最小景别才能把以上信息完整讲清楚？"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 70,
+      "text": "`shot_scale_reason` 必须是剧情理由，例如：\n- “对白与被戳穿反应为核心，空间已建立，因此使用单人近景反打”；\n- “人物从玄关进入客厅，需要看清门口、行李箱和移动路径，因此使用中景跟拍”；\n不得写“为了增加近景比例”。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 71,
+      "text": "## 14.7 Cinematography Plan Contract｜完整镜头语言规划（V3.6 HARD RULE）\n每个 5 秒 segment 在完成 `shot_function / shot_scale` 后，必须继续生成完整的镜头语言计划。该计划不是装饰性元数据，而是下游 H3 Prompt 的强制输入。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 74,
+      "text": "### 连续漫剧优先规则\n- 单个 5 秒段默认一个连续镜头，不切镜；\n- 相邻段若在同一区域，应维持可理解的屏幕方向；\n- 摄像机可以换位，但不能导致门、洗衣机、沙发、餐桌、入口方向等固定锚点在画面逻辑上反转；\n- 构图必须服务于当前动作：若要看清“人物手部 + 洗衣机 + 挂钟”，就必须选择能同时容纳这些信息的景别、机位和焦段。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 99,
+      "text": "若镜头需要转向画外入口但无法从场景拓扑/构图确定左右，manifest 必须标记 `screen_direction_unresolved=true`，下游禁止猜测并停止出稿。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 110,
+      "text": "## V4.1｜景别 + 镜头语言自动选择规则（新增）\n生成每个 5 秒段时，必须先判断当前段的主任务，并在 manifest 中显式写出：\n- `shot_function`\n- `shot_scale`\n- `framing_goal`\n- `emotional_priority`\n- `selection_reason`\n- `camera_height`\n- `camera_angle`\n- `lens_feel`\n- `camera_movement`\n- `cut_policy`"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/adaptive_shot_scale_contract.md",
+      "paragraph": 1,
+      "text": "1. 不使用固定近景/中景/远景比例。\n2. 不要求用户配置“近景优先模式”。\n3. 先判定 shot_function，再选择最小但足够讲清信息的 shot_scale。\n4. 表演/对白/反应通常更近；空间/走位/完整动作必须足够远。\n5. 谁说话通常优先给谁，但如果戏剧落点在听者，应切听者反应。\n6. 场景首次出现先建立空间；空间已建立后允许大量近景。\n7. 跨区域移动必须有可读的移动路径，禁止 A 区域近景直接跳 B 区域近景。\n8. 中远景只在叙事需要时出现，但一旦需要，必须完整保住空间感。\n9. 近景不能以牺牲空间连续性为代价。\n10. 每段输出 shot_function / shot_scale / shot_scale_reason / spatial fields。\n"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/project_manifest_contract_v3.md",
+      "paragraph": 12,
+      "text": "景别字段不得来自固定比例；必须来自当前 segment 的叙事功能与空间状态。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/project_manifest_contract_v3.md",
+      "paragraph": 13,
+      "text": "## V3.6 cinematography fields (required for every generated 5s segment)\n`camera_angle`, `camera_height`, `lens_mm`, `camera_movement`, `composition`, `lighting_direction`, `depth_of_field`, `axis_and_screen_direction`, `cut_policy`.\nThese fields must be derived from story function and fixed spatial anchors, not random style decoration."
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/v41_shot_language_selection_contract.md",
+      "paragraph": 1,
+      "text": "在生成 `project_manifest.json` 时，每个 segment 必须提前判断并记录：\n- `shot_function`\n- `shot_scale`\n- `framing_goal`\n- `emotional_priority`\n- `selection_reason`\n- `camera_height`\n- `camera_angle`\n- `lens_feel`\n- `camera_movement`\n- `use_conditions`\n- `avoid_conditions`\n- `cut_policy`"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/SKILL.md",
+      "paragraph": 9,
+      "text": "从小说/创意新建分段时，默认目标180秒、硬上限240秒，5秒一段：目标36段、最多48段；允许更短，不补镜凑时长。完整制作包、3D镜头表和多镜头设计都遵守此预算。先登记 `project.runtime_budget`，再展开分镜与正文；字段及压缩方法见 [剧情与分镜](references/01-story-and-shots.md)。按关键戏剧事件归组，合并次要动作/反应、缩短非关键对白和重复旁白；桥接优先融入现有段首尾。多镜头是在同段内组织机位，不等于新增视频任务。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/01-story-and-shots.md",
+      "paragraph": 18,
+      "text": "画外目标方向来自已知构图/场景几何；未知就登记问题，选择不依赖未知左右的机位或解决参考，不臆造。关键文字/时钟值必须登记准确值和是否需要可读；无需可读时避免要求模型临时拼写。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/AVS隐藏空间预热_V4.4导入协议.md",
+      "paragraph": 12,
+      "text": "detailed_description:\n[Shot 1] A stable wide or medium-wide group shot. Show every participant together. Lock the exact left-to-right order, foreground/midground/background depth, interpersonal spacing, body facing, mutual eyelines, 180-degree dialogue axis and fixed furniture/doors. Only natural breathing, tiny head/eye movement and minimal idle motion. No important dialogue, no walking, no crossing, no position swap, no fast turn, no camera orbit, no push/pull, no zoom, no complex hand action. End in a clean stable pose suitable for 22-frame continuation."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/SKILL.md",
+      "paragraph": 4,
+      "text": "- 接受故事创意、小说、文戏剧本、既有清单或批量 MD。复用已确认角色、对白、分段、时长、素材、风格及连续性要求；不要重新猜文件名或擅自重写剧情。\n- 用户要求完整批量 MD 时，从上游计划到完整初稿、官方优化、回填与检查连续执行。阶段中间资料也保存；不得停在镜头表或初稿询问是否继续优化。已有资料只补缺项。\n- 本版本默认输出文本制作资料。图片、视频、配乐或合成只有属于用户当前要求的范围时才执行；没有 Hub 工具也能完整制作 MD。原文的画布、选择卡和昂贵渲染步骤按 [AVS 适配规则](references/05-3d-production-adapter.md)处理。\n- 用户要求和源剧本优先；AVS 合同决定外壳；官方 H3 指南决定正文；3D 来源决定制作流程与默认风格。逐秒表、检查项和导演标签留在制作资料，不作为 H3 顶层字段。\n- 注意来源：本地 3D skill 的 `meta.yaml` 标记 `source: community`，不是 H3 官方模型规范；官方 H3 写作来源单独保留于 [来源记录](references/official/SOURCE.json)。不要将社区的景别、钩子或人数建议称为模型硬限制。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/SKILL.md",
+      "paragraph": 11,
+      "text": "单镜头不是例外，而是动态镜头设计的正常结果。以下情况优先 1 镜头：单一动作、单句短对白、情绪停顿、空间建立、需要连续完成的接触动作、镜头运动本身已经足够表达信息。以下情况优先 2 镜头：动作+反应、问答双方、信息揭示+反应、关系镜头+关键特写。只有在 5 秒内确有三个清晰且可执行的信息节点时才使用 3 镜头。禁止把推近、摇镜、跟拍或同一连续机位中的景别变化伪装成新增真实镜头。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/SKILL.md",
+      "paragraph": 12,
+      "text": "必须读取 [多镜头分组与冻结合同](references/06-multi-shot-mapping.md)。固定段数/时长保持原值，改变段内机位组织；真实镜头总数单独统计。切镜仍保留对白、声音次数、道具持有、动作进度和人物空间轴线。推近、摇镜和逐秒条目不算新增真实镜头。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/SKILL.md",
+      "paragraph": 14,
+      "text": "1. 读取 [3D 原始入口](references/animation/3d-animation-short-generator.md)、[适配规则](references/05-3d-production-adapter.md)和 [剧情与分镜状态](references/01-story-and-shots.md)。新创意按原版 Project Brief → Story Outline 的因果结构创作；已有剧本保留剧情和对白，用其故事检查定位问题，不能硬塞八个新事件。\n2. 保存 `project_brief.md`、`story_outline.md`、`project_manifest.json`。指定参数优先；缺省 16:9、H3、文本分镜，已有分段沿用时长；新改编在上述180/240秒预算内规划。默认风格化 3D；有明确指定风格则全文、资产、分镜统一沿用，不强制 Q 版比例或新增滑稽动作。\n3. 按 [资产与绑定](references/02-assets-and-binding.md)制作角色卡、无人物场景卡的完整提示词与清单。分清制作设定卡和出镜参考；实际图片没有生成/查看时标记 UNVERIFIED。\n4. 必须读取 [六列逐秒镜头表原文](references/animation/references/shot-table-spec.md)，生成 `standard-shot-table.md` 和同源的 `animation_plan.json`。每行对应一个真实镜头 SH001、SH002……：完整动作、机位、空间、声音及交接；按该镜头局部时间逐秒覆盖，关键动作可细分。保持六列名称与顺序。将镜头分组到 AVS segment，并记录段内起止秒及 `[Shot N]`。先设计不同机位/景别的真实剪辑，再检查时间是否足够；不能让整段一行掩盖未设计切镜。\n5. 完成原版 Step 5.5 六项制作复核并保存 `production_review.json`。可确定的时序/映射用包内脚本检查；钩子、表演、空间继承和跨镜连续性另由 AI 对照源稿复核。遵循用户已锁剧情的例外写明理由，不为满足钩子配额加剧情。\n6. 必须读取 [文本分镜原文](references/animation/references/storyboard-guidelines.md)，生成一个 `text_storyboards.md`：每个真实镜头一个节，写明所属 AVS 段、段内 Shot 号、局部时间与段内时间的换算，含空间卡、前后交接、精确资产绑定、逐秒四象限内容。铅笔分镜只在用户要求时生成，不能代替文本分镜或直接喂入最终视频。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/SKILL.md",
+      "paragraph": 18,
+      "text": "- **景别**：大全景/全景用于首次建立空间或关系；中景用于人物动作与双人关系；近景用于对白与表演；特写用于关键表情、手部、道具和信息揭示。\n- **角度**：平视保持客观；轻俯强调弱势、拘谨或空间关系；轻仰强调压迫或主动；倾斜角仅在剧情确有不稳定感时使用，禁止滥用。\n- **运动**：固定、极轻微手持、缓推、缓拉、平移、跟随、轻摇为主。H3 的 5 秒段优先“小运动、清楚动作”，避免无必要的大幅甩镜、极速推焦和复杂组合运镜。\n- **对话**：两人对白根据需要使用双人关系镜头、肩后 OTS、正反打、反应近景；不是每句台词都切一次。先保证对白在 5 秒内自然说完，再决定切点。\n- **切点**：优先切在动作峰值、视线转移、人物反应、信息揭示、声音事件或动作完成后的短停顿；禁止无信息价值的机械切镜。\n- **构图**：避免长期纯正面证件照式构图；优先三分法、肩后前景、引导线和前后景层次，但不得为了构图改变人物真实站位。\n- **轴线**：双人和多人场景遵守 180° 轴线；切镜时保持左右关系、视线方向和人物距离连续。\n- **连续性**：镜头运动 ≠ 人物位移。除剧本明确写出移动，人物不得因换机位瞬移；道具持有、门的开合、坐站状态、视线方向、动作进度必须跨镜继承。\n- **首次场景**：必要时先用 0.8–1.5 秒关系/建立镜头，但若上一段已建立空间，则不重复浪费 5 秒。\n- **H3 优先级**：生成稳定性 > 镜头花哨程度。复杂动作优先减少切镜、明确单一动作路径；文戏可按反应和信息节点增加切镜。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/SKILL.md",
+      "paragraph": 23,
+      "text": "检查每张参考的实际职责，处理动作超载、错名或未知素材。完成后冻结段号、标题、时长、分类、Picture/Speaker 来源、主体标签、对白、起止状态，以及 `shot_plan` 中真实镜头数量、切点、景别、机位和交接。阶段 A 初稿正文就必须含这些 `[Shot N]`，不能把切镜留给 B 阶段临时猜测。已确认时长或段数不能在优化时悄悄改变。返回上游修改时更新镜头表、分镜、清单和初稿后再冻结。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/SKILL.md",
+      "paragraph": 29,
+      "text": "交付最终导入 MD、同步 segments、清单、角色场景提示词、真实镜头六列表、逐镜文本分镜、`segment_shot_map.json` 与实际检查报告，清楚指出最终 MD。报告同时列视频段数、真实镜头数、多镜头段数、单镜头例外清单；禁止仅以“支持多镜头”代替实际产出。可访问实际 AVS 导入器时作只读解析，不自动提交生成任务。脚本 PASS 只证明确定性结构/数据检查，AI 复核另算；未渲染视频必须写 `video_quality_status=NOT_TESTED`。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/03-avs-envelope.md",
+      "paragraph": 13,
+      "text": "项目 manifest 与初稿必须具有相同段号顺序和时长；若有 title、集数、场景、连续性、Picture/Speaker 绑定，也必须对应。源 beat、状态和对白保持不变。`shot_plan` 与 `planned_cut_times_s` 属于冻结合同；逐镜正文数量、切镜毫秒与此计划一致。`【生成模式】单张生成` 是 AVS 的素材选择模式，不代表只能写一个镜头，不能擅自改成未知的“多镜头生成”选项。对白对象使用 `{\"speaker_id\":\"S1\", \"text\":\"原文\"}`；不同 occurrence 分开列，最终正文的 `<d>[Chinese] 原文</d>` 与列表顺序一致。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/03-avs-envelope.md",
+      "paragraph": 16,
+      "text": "保留 V3/V4 的 canonical ID 和素材名。缺少段号、时长、对白或 reference 职责时依据实际剧本与图片补齐，并记录补齐依据，不由文件名猜剧情。确认初稿后冻结 manifest。旧版没有 `shot_plan` 可作兼容解析，但本版重新生成时必须建立真实镜头计划；旧的单镜头默认值不能覆盖用户当前的多镜头要求。旧 MD 在冻结前的修复与冻结后的正文优化要区分记录。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/04-official-optimization.md",
+      "paragraph": 25,
+      "text": "阶段 B 必须读取本段所有 SH 镜头节，按同一顺序回填，不能只取第一节。校验会拒绝镜头数减少、时间戳漂移、初稿与最终切点不一致、segments.json 中计划与 manifest 不一致。脚本能核对切点数字，不能证明实际成片真的切镜；AI 还需逐镜对照机位、景别、轴线及参考出现范围。若一句对白跨切镜，阅读官方 base-en 的 `<scenetrans>` 及连续音频规则，不截断、重复或换 Speaker ID。\n"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/05-3d-production-adapter.md",
+      "paragraph": 12,
+      "text": "- `columns`：六个原文列名；`visual_style`：本项目明确风格；`shots`：全片真实镜头序列，与各 segment 的 `shot_plan` 展平后同序、同数量，通常多于 segments 数量。\n- 每行 `shot_id`（SH001……）、`segment_id`、`shot_number`（段内编号）、`segment_start_s`、`segment_end_s`、`duration_s`（本镜头时长）；`continuity_handoff` 包含 `incoming_state`、`end_state`、`from_previous`、`to_next`。这些起止状态与项目清单中的对应真实镜头相同。首镜入态与段入态一致，尾镜出态与段出态一致；段内相邻镜头在切点继承同一动作/持物状态，切镜本身不是人物移动。\n- `reference_anchors`：`fixed_landmarks`、`characters`、`exited_character_status`、`lighting_baseline`、`scene_asset`。场景/人物资产名称与当前段的 Picture 绑定一致；人物写 screen position、朝向、初姿，固定锚点写画面位置。画外人物仍记录去向，不能把裁出画面当作已离开房间。\n- `hook_type`：原文词汇；`description`：景别/运镜/表演风格及 `per_second_directives`；`audio_track`：逐时段对白/SFX/旁白及口型状态，未发生的音轨写无。\n- 逐秒条目：`start_s`、`end_s`、`action`、`camera`、`spatial`、`audio`、`handoff`，必须按镜头局部时间完整覆盖 0 到本镜头尾部；段内时间 = segment_start_s + 局部时间，无缝无重叠，每条不超过 1 秒；关键小动作可细分。每条交代本次姿态/表情、手持物、锚点、声音和承接。静止/无声也写具体状态，不以省略代替。\n- `production_review.json` 按真实镜头保存，另附 AVS 段内切点汇总；每镜有 shot_id 和 segment_id，记录 `hook_density`、`single_shot_duration`、`character_count`、`spatial_anchor_inheritance`、`per_second_coverage`、`cross_shot_continuity` 六项复核，附证据、问题及例外理由。通过真实复核才填 PASS；对用户固定剧情不适用的钩子密度可填 NOT_APPLICABLE 并解释，不能写虚假 PASS。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/06-multi-shot-mapping.md",
+      "paragraph": 3,
+      "text": "本版“多镜头”表示“支持并正确设计段内真实切镜”，不表示每段必须多于 1 镜头。`project.shot_design_policy=multi_shot_first` 保留为兼容字段，但实际执行语义为 `adaptive_1_to_3_shots_per_5s`。已有段号/总长锁定时照旧，只重新设计段内覆盖，不自动增加视频任务或改剧本。`【生成模式】单张生成/多素材参考` 沿用用户工作流选项，与 Shot 数量无关。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/06-multi-shot-mapping.md",
+      "paragraph": 8,
+      "text": "SH 编号全局唯一；每个 AVS 段内 Shot 从 1 重新开始。所有 start/end/cut 时间须能以毫秒表达。表格单行 duration 是真实镜头时长，段内镜头时长之和等于段总长。镜头局部时间用于逐秒动作，段内时间用于 H3 切点和全段音轨；必须写清二者，不能把 SH002 的局部 0 秒当全段 0 秒。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/06-multi-shot-mapping.md",
+      "paragraph": 14,
+      "text": "允许 category：`empty_transition` 空镜过渡、`continuous_contact_action` 必须不切的连续接触动作、`unbroken_dialogue_performance` 明确有必要的一次完整对白表演、`explicit_user_lock` 用户明确锁定单镜头。例外段写 `cut_policy=single_continuous_shot`、`planned_cut_times_s=[]`、只有一条 shot_plan，以及 `single_shot_exception={category, reason}`，reason 必须写本段具体依据。不能以“更稳”“文戏”“5秒”泛泛豁免所有段落。用户明确要求该段多镜头时另设 `multi_shot_required=true`，例外也不能覆盖。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/07-adaptive-5s-shot-language.md",
+      "paragraph": 4,
+      "text": "## 镜头语言\n景别：大全景、全景、中景、近景、特写。\n角度：平视、轻俯、轻仰，倾斜角谨慎。\n运动：固定、轻手持、缓推、缓拉、平移、跟随、轻摇。\n对白：双人关系镜头、OTS、正反打、反应近景按需要使用。\n切点：动作峰值、视线转移、反应、信息揭示、声音事件、动作完成停顿。\n连续性：遵守 180° 轴线；人物左右、距离、道具持有、动作进度必须继承。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 55,
+      "text": "- **镜头编号 & 时长**：镜头号加计划时长，例如 `S03 / 6s`。\n- **连续性衔接**：本镜如何自然承接上一镜的结束画面、道具位置、眼神、人物姿态、声桥或情绪状态；以及本镜如何为下一镜开篇铺好钩子。这是跨镜连续性主链。\n- **参考锚点（空间+身份）**：四个子字段，全部必填。\n  - `固定地标` — 来自场景卡的确切命名地标，及其相对画面的位置（如 `door-frame: 右侧 1/3`、`kitchen-island: 底部居中`）。\n  - `人物位置（机位视角）` — 镜头中每个角色相对画面的位置（左/中/右、上/中/下、前/中/后景）、朝向、初始姿态。\n  - `退场人物状态` — 上一镜有但本镜没有的角色，记录其离屏位置和原因（如 `Mia — 离屏左侧，最后出现于门框旁手持苹果筐`）。\n  - `光位基线` — 从场景卡继承的主光/补光/轮廓光方向，加本镜调整项（如 `主光：温暖顶光，补光：右侧冷反光，调整：窗光背身剪影`）。\n  - 加上身份绑定：已批准的角色卡名（精确）和场景卡名（精确）。\n- **Hook 类型**：从受控词表中挑一个短标签，如 `visual-joke`、`reversal`、`suspense`、`tender`、`chase`、`reveal`、`callback`、`expression-beat`。用于整片 hook 分布自检。\n- **镜头描述**：景别、镜头运动、荷兰角设计、表演风格、音效、负向提示、**视频模型生成备注**（Step 7 选定的模型 — H3 或 Seedance 2.0 — 接收的 prompt 形态略不同；H3 强调包装关键词和文字/UI/动效清晰度，Seedance 2.0 强调电影感镜头和弹性表演），并强制包含 `Per-Second Directives` 子节。子节必须按秒拆解为 `0–1s`、`1–2s`、`2–3s` 等指令；亚秒关键节拍用 `2.0–2.5s` 风格标记。每条每秒指令必须覆盖全部 5 个必填要素：\n  1. 动作 / 姿态 / 表情（适用时含 squash-and-stretch、anticipation、overshoot、follow-through）\n  2. 镜头运动（推 / 拉 / 摇 / 倾 / 手持晃动 / 锁定 / 环绕）\n  3. 空间位置（人物在哪、持有什么、地标在画面哪里）\n  4. 音频线索（旁白 / 对白 / 音效 / 呼吸 / 沉默 — 或 `silent` 表示有意静默）\n  5. 与下一秒或下一镜的交接（这一秒锁定的状态如何递给下一秒）\n- **音频与对白轨**：本镜完整音频脚本，按时间顺序，独立于每秒指令。字段：\n  - `旁白` — 旁白文本及时间范围（无旁白则省略）。\n  - `对白` — 台词、说话人、语气、时间范围。\n  - `音效` — 关键音效，按时间锚定。\n  - `表演备注` — 主角离屏旁白时标记 `narrator-mouth-closed: true`；描述旁白期间表情路径；描述每条对白的具体眼神和身体动作变化。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 57,
+      "text": "- 每镜必须通过 `连续性衔接` 列自然继承上一镜画面状态，并为下一镜做铺垫。\n- 每镜必须含覆盖整个时长的每秒指令，包含动作、姿态、表情、镜头运动、空间位置、音频线索和连续性交接。\n- 每秒指令必须具体到可直接生成分镜面板；避免\"继续移动\"这类缺少身体/镜头/道具细节的模糊描述。\n- 表演必须夸张弹性，符合迪士尼式 squash-and-stretch、anticipation、overshoot、follow-through、overlap、弧线、快速姿态变化和清晰喜剧剪影。\n- 景别必须在特写 / 大特写与其他必要景别间交替；避免重复景别。\n- 荷兰角构图必须为追逐、失衡、惊吓或闹剧节拍设计。\n- 台词语言仅在用户明确要求时使用；否则用最小化非语言特定反应或将台词标记为可选 / 待确认。\n- 含旁白或对白的镜头，每一秒人物说话时都必须记录嘴部开合；默认离屏旁白为闭，对面对白为开。\n- 已离屏角色在 `退场人物状态` 至少记录 1 镜，连续 2 镜明确不在场后再移除。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 76,
+      "text": "1. **镜头标题 & 时长** — 简短可读的本镜标题，加 `S<N> / <duration>s`（如 `S03 / 6s`）。\n2. **Hook 类型** — 受控词：`setup` / `visual-joke` / `reversal` / `reveal` / `callback` / `suspense` / `tender` / `chase` / `expression-beat` / `climax`。用于整片 hook 分布自检。\n3. **场景 & 角色** — 精确场景卡名、精确在屏角色名（绑定到角色卡）。\n4. **空间锚点卡**（强制，四个子字段 —— 直接对齐半解说短剧）：\n   - `固定地标` — 命名地标及其画面相对位置（如 `door-frame: 右侧 1/3`、`kitchen-island: 底部居中`）。\n   - `人物位置（机位视角）` — 每个在屏角色，画面相对位置、朝向、初始姿态。\n   - `退场人物状态` — 上一镜有但本镜没有的角色，记录其离屏位置和原因。\n   - `光位基线` — 从场景卡继承的主光/补光/轮廓光方向，加本镜调整项。\n5. **连续性**（对齐半解说短剧的 handoff 字段）：\n   - `承接 S(N-1)` — 一两句话交代上一镜结束状态。\n   - `交接 S(N+1)` — 一句话铺好下一镜开场。\n6. **双绑定** — `[char:角色名-01] [char:角色名-02] ... [scene:场景名] [hook: visual-joke]` — 精确角色卡名、场景卡名、hook 类型。这些是分镜专用参考标记，视频模型渲染时剥离。\n7. **每面板四象限内容**（按时间顺序；这就是 Pixar 的每秒指令，从表格行原样保留）：\n   - `时间码` — 如 `0–1s`。\n   - `姿态 + 表情` — 具体身体姿态、剪影、关键持握、眼神、表情路径；弹性节拍明确写出 squash / stretch / anticipation / overshoot。这是每面板最大块内容，也是视频模型读取的视觉节拍。\n   - `镜头` — 景别、镜头运动（推/拉/摇/倾/手持晃动/锁定/环绕）、荷兰角备注。\n   - `音频 + 锚点` — 音频线索（`♪ 旁白: ...` / `对白: ...` / `SFX: ...` / `silent`）和空间锚点备注（`door-frame: 右侧 1/3` / `Mia: 中央中景面朝镜头`）。\n   - 表演备注（对齐半解说短剧）：旁白秒标 `narrator-mouth-closed: true`；面对白秒标 `mouth-open: speaker` 并描述表情路径 / 眼神 / 身体动作变化。\n8. **布局规则**（逐镜适用）：\n   - 3 秒镜 → 3 面板（每秒 1 个）。\n   - 4 秒镜 → 4 面板。\n   - 5 秒镜 → 5 面板。\n   - 6 秒镜 → 6 面板。\n   - 7 秒及以上 → 每秒 1 面板；亚秒关键节拍按需加迷你面板如 `2.0–2.5s`，仅当该节拍是本镜核心 hook 时。\n   - 面板必须覆盖整镜时长，从首帧到尾帧无时间空隙。\n9. **每面板绑定**：\n   - 绑定表格行中列出的精确角色卡，锁定外观、脸、发型、身材、服装、签名道具、角色身份。使用与表格相同的角色名。\n   - 绑定表格行中列出的精确场景卡，保留环境、道具、地标、运动路径、空间逻辑。\n10. **可选 ASCII 布局块（强烈推荐，零成本）**：\n    - 每面板附一小段 ASCII 草图（或整镜一张组合草图），让用户秒扫空间布局而不必渲染图。例：\n      ```\n      [0-1s]  Mia (L, mid)         door-frame (R)\n              ——跪下，双手按苹果筐——\n              cam: low push-in, locked\n              audio: silent | anchor: basket center-bottom\n      [1-2s]  ...\n      ```\n    - ASCII 块仅供参考；视频模型读取上面结构化的 `每面板四象限内容`，不读 ASCII。\n11. **分镜专用标记**：\n    - 关键节拍在面板时间码后加 `[BEAT]`。\n    - 某面板必须交接特定状态到下个面板或下个镜头时，加 `[HANDOFF → ...]` 短标签，如 `[HANDOFF → S04 opening]`。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 81,
+      "text": "#### 0–1s\n- 姿态 + 表情：奶奶弯腰双手持筐；Mia 左侧站姿，眼神好奇\n- 镜头：locked medium shot, eye-level\n- 音频 + 锚点：silent | Mia: L midground | basket: center bottom\n- 表演备注：[BEAT]"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 82,
+      "text": "#### 1–2s\n- 姿态 + 表情：奶奶手臂伸向 Mia，筐倾斜；Mia 双手前伸准备接\n- 镜头：locked medium shot, eye-level\n- 音频 + 锚点：♪ SFX: basket rustle | anchor: door-frame: 右侧 1/3\n- 表演备注：[HANDOFF → S04 opening]"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 114,
+      "text": "- 单文本分镜文档是权威的逐镜参考：叙事、构图、镜头运动、动作编排、每秒时间、镜头号都从这里取。已抽取的镜从独立节点取。若同时存在铅笔分镜图，仅用于人眼侧的姿态/剪影预检；不得让铅笔图覆盖文本分镜。\n- 角色卡为权威身份源。\n- 场景卡为权威环境源。\n- **剥离所有分镜双绑定标签**（`[char:…]`、`[scene:…]`、`[shot:…]`、`[dur:…]`、`[hook:…]`）再渲染视频 — 这些是分镜专用参考标记，不能出现在最终片段里。铅笔分镜图还自带镜头号、镜头图标、箭头和备注，渲染时也要一并移除。\n- 渲染片段只能包含干净的皮克斯感全彩 3D 动画内容。\n- 不要分镜线稿、不要手绘草图质感、不要标签、不要字幕（除非要求）、不要水印。\n- 保持已批准的画面尺寸 / 比例和已批准的分辨率。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 117,
+      "text": "- **H3 prompt 前缀**（默认）：强调包装关键词、设计语言、动效清晰度、文字/UI 元素（如果相关）、双声道音频意图。H3 强在指令遵循，每秒指令可以几乎原文送入。追加：`Pixar-inspired 3D cartoon rendering, C4D + Octane look, stylized Q-version proportions, warm SSS skin, designed-with-detail hair, strong character design language, clean motion, on-brand color palette`。\n- **Seedance 2.0 prompt 前缀**（表演回退）：强调电影感镜头语言、弹性 squash-and-stretch、anticipation、follow-through、光位戏剧性、镜头选择。追加：`cinematic Pixar-quality 3D animation, elastic squash-and-stretch performance, Disney-style anticipation and overshoot, dramatic key lighting, lens-specific depth of field`。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 131,
+      "text": "- 严格按已批准表格的镜头顺序。\n- BGM 匹配拼接视频的实际节奏、情绪弧、喜剧节拍、追逐节奏和结尾氛围。\n- 在对白、非语言反应和重要音效下 duck BGM。\n- 保留原片段音频和音效（除非用户要求替换）。\n- 不要逐镜生成 BGM。\n- 不要加字幕或文字（除非用户明确要求）。\n- 最终视频必须保持干净动画视觉、无任何分镜痕迹，包括没有 `[char:…] [scene:…] [shot:…]` 双绑定标签。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 141,
+      "text": "- 项目简报与故事大纲在都有时归组为 `<title> story planning`。\n- 角色卡归组为 `<title> character cards`。\n- 场景卡归组为 `<title> scene cards`。\n- 标准镜头表归组为 `<title> shot table`。\n- 单文本分镜文档归组为 `<title> text storyboards`（默认模式，单文档）。抽取的独立文本分镜节点和铅笔分镜（可视化模式）各自分组：`<title> extracted text storyboards` 和 `<title> multi-panel pencil storyboards`。所有分镜组与渲染片段组分开，因为分镜含双绑定标签、镜头号、镜头图标、箭头和铅笔线。\n- 单镜头视频片段归组为 `<title> shot clips`（标签不再硬编码单一模型名，因为项目可能混用 H3 和 Seedance 2.0）。\n- 拼接主视频、匹配 BGM 和最终合成视频在都有时归组为 `<title> final delivery`。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 150,
+      "text": "- 角色卡重做后，未来的镜头表、单文本分镜文档（含抽取的独立节点；可视化模式下还含铅笔分镜）、单镜头视频片段、拼接视频、最终合成必须按精确角色名引用新的带标注角色卡。\n- 场景卡重做后，未来的镜头表、单文本分镜文档（含抽取的独立节点；可视化模式下还含铅笔分镜）、单镜头视频片段、拼接视频、最终合成必须按精确场景名引用新场景卡。\n- 镜头表修订后，未来的分镜（文档+抽取节点）、单镜头视频片段、拼接必须用新表。Step 5.5 的自检必须在分镜恢复前重跑。\n- 单文本分镜文档中某章节修订后，对应单镜头视频片段必须用新章节内容。若该章节已抽取成独立节点，则独立节点为权威。\n- 抽取的独立文本分镜节点修订后，用户满意时回填到文档（占位换成最新内容），独立节点归档。\n- 可视化模式下铅笔分镜重画后，对应视频片段仍以单文本分镜文档（或抽取的独立节点）为准；铅笔图仅供人眼参考，可独立重画而无需强制重渲视频。\n- 单镜头视频片段重渲染后，拼接、BGM 匹配和最终合成必须用新片段。片段原用 H3 渲染，用户想切到 Seedance 2.0 重渲（或反向）按模型切换处理 — 在项目简报记入新模型，重检 per-shot 规则。\n- BGM 重新生成后，最终合成必须用新 BGM。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.md",
+      "paragraph": 3,
+      "text": "Core rule: **story first, ask screen size and total duration with choice cards immediately after user intake, ordered canvas artifacts, every required confirmation via choice card, fixed order after character/scene cards: six-column standardized shot table with per-second directives + audio cues + spatial anchor chain → shot-table self-check gate → one single text storyboards document with one section per shot (multi-panel pencil image only when user explicitly opts into visualization mode; any shot flagged for heavy iteration is extracted to a standalone text storyboard node) → video-model choice card (H3 default, Seedance 2.0 fallback) + resolution choice card → single-shot clips rendered by the chosen video model → full-film assembly with BGM; final video must remove all storyboard artifacts**."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.md",
+      "paragraph": 5,
+      "text": "Unless the user explicitly requests another visual style, all character cards, scene cards, shot tables, text storyboards, optional pencil storyboards, single-shot video clips (regardless of which video model is selected), assembled videos, and final composites must use this visual style:"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.md",
+      "paragraph": 18,
+      "text": "1. Project Brief text node\n2. Story Outline text node\n3. Labeled Character Card image nodes\n4. Environment-only Scene Card image nodes\n5. Standardized Shot Information Table node with six columns; each row must include per-second directives inside `Shot Description`\n6. **Single text storyboards document** — one canvas text node named `<title> text storyboards` containing one section per shot (mirrors the half-narrated-drama storyboard structure). When the user flags a shot for heavy iteration, that section is extracted to a standalone text node and a `(extracted)` marker is left in the document. Pencil image storyboards, if opted in, are separate image nodes.\n7. Single-Shot Video Clip nodes (rendered by the video model selected in Step 7 — H3 default, Seedance 2.0 fallback)\n8. Assembled Main Video node\n9. Matched BGM audio node and Final BGM-Composited Video node"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.md",
+      "paragraph": 43,
+      "text": "Warn the user that changing locked character designs later may require regenerating the shot table, single-shot storyboards, single-shot video clips, assembled main video, and final composite."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.md",
+      "paragraph": 45,
+      "text": "Generate scene reference cards and place them on canvas after character cards. Scene cards must show environments only: do not include characters, people, crowd figures, silhouettes, hands, faces, or character cameos. Character action belongs in the shot table, single-shot multi-panel pencil storyboards, and single-shot video clips, not scene cards."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.md",
+      "paragraph": 47,
+      "text": "- Main environment overview\n- Key light states, such as day / night\n- Emotional sub-spaces\n- Continuity landmarks (fixed objects whose screen position must persist across shots in the same scene, e.g. kitchen island, sofa, door frame, tree, mailbox)\n- Important props in the environment"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.md",
+      "paragraph": 51,
+      "text": "After character cards and scene cards are locked, output standardized video prompts as a shot information table. This step is mandatory and cannot be swapped with storyboard or video generation."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.md",
+      "paragraph": 54,
+      "text": "- Create a canvas table node named `标准镜头信息表` or `standard-shot-table`.\n- Use exactly six columns: `Shot ID & Duration`, `Continuity Handoff`, `Reference Anchors (Spatial + Identity)`, `Hook Type`, `Shot Description (Per-Second Directives)`, `Audio & Dialogue Track`.\n- Every row must include complete per-second directives, continuity handoff, reference anchors, hook type, and audio/dialogue timing.\n- Run the Step 5.5 self-check from `references/shot-table-spec.md` before storyboarding. Do not enter Step 6 until the self-check passes."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.md",
+      "paragraph": 60,
+      "text": "- Default mode is one authoritative text storyboards document containing one section per shot.\n- Pencil storyboard images are opt-in visualization artifacts only; they never override the text storyboard.\n- Extract a shot into a standalone text node only when the user flags that shot for heavy iteration.\n- Step 7 must read the matching text storyboard section or extracted standalone node, not the pencil image."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.md",
+      "paragraph": 73,
+      "text": "- Preserve the exact shot order from the approved table.\n- Use only approved latest assets.\n- Duck BGM under dialogue, reactions, and important SFX.\n- Do not add subtitles or text unless explicitly requested.\n- Final video must contain no storyboard traces, labels, arrows, timing marks, panel borders, or double-binding labels."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/references/fallback-policy.md",
+      "paragraph": 3,
+      "text": "1. First retry: regenerate the same clip with the H3 prompt prefix strengthened by quoting the exact `Reference Anchors` block from the table.\n2. Second retry: shorten the shot to ≤6s and split the dropped seconds into a new adjacent row in Step 5; re-run Step 5.5 self-check, then re-render.\n3. Third retry: switch the failing shot to Seedance 2.0 (this is exactly why the mixed mode exists — performance fallback is one click, not a re-architecture).\n4. After three failed attempts on the same shot: pause and ask the user with a choice card:\n   - Switch just this shot to Seedance 2.0.\n   - Loosen the request (drop a prop, simplify the action, reduce the hook).\n   - Skip the shot and add a `placeholder: missing clip` note for downstream review.\n   - Manually supply a reference video to bind instead of generating."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/references/fallback-policy.md",
+      "paragraph": 5,
+      "text": "1. First retry: regenerate with a strengthened prompt that quotes the `Reference Anchors` block.\n2. Second retry: drop reference images and use text-only generation.\n3. Third retry: shorten the shot to ≤6s and split the dropped seconds into a new row.\n4. After three failed attempts: ask the user — switch to H3 for this shot, loosen the request, skip the shot, or supply a reference video."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/references/fallback-policy.md",
+      "paragraph": 9,
+      "text": "If a rendered clip drifts from the approved `Reference Anchors` (e.g. door-frame lands on the wrong side, character exits from the wrong edge, lighting flipped), re-render with a strengthened prompt that quotes the exact `Reference Anchors` block from the table. If the drift persists, switch that one shot to the other video model in the mixed-mode path; do not silently mix corrected and uncorrected clips into assembly."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/references/fallback-policy.md",
+      "paragraph": 13,
+      "text": "1. **First retry**: regenerate the same shot storyboard with a tightened prompt that explicitly mentions the four-quadrant layout, the `[char:…] [scene:…] [shot:…]` labels, and the per-panel content rules.\n2. **Second retry**: drop the bottom-right audio/anchor quadrant text (keep it as a blank cell with a tiny `♪` mark) to reduce text load; this usually fixes illegible labels without losing the visual beat.\n3. **Third retry**: reduce panel count by one (e.g. 6 panels → 5 panels by merging the two least-actionable seconds) and simplify camera icons to single arrows.\n4. **After three failed attempts on the same shot**: pause and ask the user with a choice card:\n   - Switch to a block-color storyboard (gray boxes for poses, no pencil lines) for the failing shot only.\n   - Drop the pencil image for the failing shot and rely on the text storyboards document alone for that row.\n   - Split the failing shot into two shorter shots in Step 5 and re-run Step 5.5.\n   - Manually supply a reference image to bind instead of generating."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/references/model-selection.md",
+      "paragraph": 9,
+      "text": "The user must confirm a resolution before the first clip renders. Resolution can be changed per clip later if the user wants a hero shot at higher detail."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/references/model-selection.md",
+      "paragraph": 13,
+      "text": "- Use the text storyboards document as the authoritative per-shot reference for narrative, composition, camera movement, action staging, per-second timing, and shot number. For shots that have been extracted to a standalone node, read the extracted node instead. If a pencil image storyboard also exists, use it only for human-side pose / silhouette pre-check; do not let it override the text storyboard.\n- Use character cards as the authoritative identity source.\n- Use scene cards as the authoritative environment source.\n- **Strip all storyboard double-binding labels** (`[char:…]`, `[scene:…]`, `[shot:…]`, `[dur:…]`, `[hook:…]`) before video render — these labels are storyboard-only reference markers and must NOT appear in the final clip. Pencil image storyboards additionally have their own shot numbers, camera icons, arrows, and notes that must be removed at render time.\n- The rendered clip must contain only clean full-color Pixar-inspired 3D animation content.\n- No storyboard line art, no hand-drawn sketch texture, no labels, no subtitles unless requested, no watermarks.\n- Maintain the approved screen size / aspect ratio and the approved video resolution from the resolution choice card."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/references/qc-checklist.md",
+      "paragraph": 23,
+      "text": "- If a character card is regenerated, future shot tables, the text storyboards document (plus any extracted standalone text storyboard nodes), pencil storyboards (if visualization mode is on), single-shot video clips, assembled videos, and final composites must reference the regenerated labeled character card by exact character name.\n- If a scene card is regenerated, future shot tables, the text storyboards document (plus any extracted standalone text storyboard nodes), pencil storyboards (if visualization mode is on), single-shot video clips, assembled videos, and final composites must reference the regenerated scene card by exact scene name.\n- If the shot table is revised, future text storyboards document (or extracted nodes), single-shot video clips, and assembly must use the revised table. The self-check in Step 5.5 must be re-run before storyboarding resumes.\n- If a section in the text storyboards document is revised, the matching single-shot video clip must use the revised section. If that section has been extracted to a standalone node, that node is the source of truth; otherwise the document section is.\n- If a standalone extracted text storyboard is revised, after the user is satisfied, re-integrate it back into the text storyboards document (replace the placeholder with the latest content) and archive the standalone node.\n- In visualization mode, if a pencil storyboard is redrawn, the matching video clip is still bound to the text storyboards document (or extracted node); the pencil image is human-review-only and may be redrawn without forcing a video re-render.\n- If a single-shot video clip is re-rendered, assembly, BGM matching, and final composite must use the new clip. If the clip was rendered with H3 and the user wants to re-render with Seedance 2.0 (or vice versa), treat that as a model switch — record the new model in the Project Brief and re-check per-shot rules.\n- If BGM is regenerated, the final composite must use the regenerated BGM."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/references/shot-table-spec.md",
+      "paragraph": 2,
+      "text": "After character cards and scene cards are locked, output standardized video prompts as a shot information table. This step is mandatory and cannot be swapped with storyboard or video generation. Create a canvas table node or markdown table named `标准镜头信息表` or `standard-shot-table`."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/references/shot-table-spec.md",
+      "paragraph": 6,
+      "text": "- **Shot ID & Duration**: shot number plus planned duration, e.g. `S03 / 6s`.\n- **Continuity Handoff**: how this shot naturally continues from the previous shot’s ending image, prop position, eyeline, character posture, sound bridge, or emotional state, AND how it sets up the next shot’s opening. This is the cross-shot continuity spine.\n- **Reference Anchors (Spatial + Identity)**: four sub-fields, all mandatory.\n  - `Fixed Landmarks` — exact named landmarks from the scene card, with their screen-relative positions (e.g. `door-frame: right third`, `kitchen-island: center bottom`).\n  - `Character Positions (camera view)` — for every character in the shot, screen-relative position (left/center/right, top/mid/bottom, foreground/midground/background), facing direction, and initial pose.\n  - `Exited Character Status` — for any character who was in the previous shot but is not in this shot, state their off-screen position and reason (e.g. `Mia — exited frame-left, last seen holding apple basket at door-frame`).\n  - `Lighting Baseline` — inherited key/fill/rim direction from the scene card, plus any per-shot modifier (e.g. `key: warm overhead, fill: cool bounce right, modifier: window-backlit silhouette`).\n  - Plus identity bindings: exact approved character card names and exact approved scene card name.\n- **Hook Type**: one short label from a controlled vocabulary, e.g. `visual-joke`, `reversal`, `suspense`, `tender`, `chase`, `reveal`, `callback`, `expression-beat`. Used for the per-episode hook distribution self-check.\n- **Shot Description**: shot size, camera movement, Dutch-angle design, performance style, SFX, negative prompt, **video-model generation notes** (the model chosen in Step 7 — H3 or Seedance 2.0 — receives slightly different prompt shapes; for H3 emphasize packaging keywords and text/UI/motion-graphics clarity, for Seedance 2.0 emphasize cinematic camera and elastic performance), and a required `Per-Second Directives` subsection. The subsection must break the shot into second-by-second instructions such as `0–1s`, `1–2s`, `2–3s`; for sub-second critical beats, use `2.0–2.5s` style markers. Each per-second directive MUST cover all five required elements:\n  1. Action / pose / expression (squash-and-stretch, anticipation, overshoot, follow-through where applicable)\n  2. Camera movement (push / pull / pan / tilt / handheld-shake / locked / orbit)\n  3. Spatial position (where the character is, what they hold, what landmark is in frame)\n  4. Audio cue (narration / dialogue / SFX / breath / silence — or `silent` if intentional)\n  5. Handoff to the next second or next shot (what state this second locks in for the next one)\n- **Audio & Dialogue Track**: full audio script for the shot in time order, separate from per-second cues. Fields:\n  - `Narration` — voiceover text with time range (omit if no narration).\n  - `Dialogue` — line, speaker, tone, time range.\n  - `SFX` — keyed sound effects, time-anchored.\n  - `Performance Note` — when the protagonist is narrating off-screen, mark `narrator-mouth-closed: true`; describe expression path during narration; describe concrete eye-line and body-action changes for each dialogue line."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/references/shot-table-spec.md",
+      "paragraph": 8,
+      "text": "- Each shot must naturally inherit the previous shot’s image state through the `Continuity Handoff` column and set up the next shot in the same column.\n- Each shot row must include per-second directives that cover the entire shot duration from first frame to last frame, including action, pose, expression, camera movement, spatial position, sound cue, and continuity handoff.\n- Per-second directives must be specific enough to generate storyboard panels directly; avoid vague timing such as “continues moving” without body, camera, or prop detail.\n- Performance must be exaggerated and elastic, matching Disney-style squash-and-stretch, anticipation, overshoot, follow-through, overlap, arcs, fast pose changes, and clear comedic silhouettes.\n- Shot sizes must alternate close-up / extreme close-up with other necessary framing; avoid repetitive framing.\n- Dutch-angle tilted compositions must be designed into chase, imbalance, surprise, or slapstick beats.\n- Dialogue language only if explicitly requested by the user; otherwise use minimal non-language-specific reactions or mark dialogue as optional / pending confirmation.\n- For shots containing narration or dialogue, every second where the character is speaking must record whether the mouth is open or closed; the default is closed for off-screen narrator, open for on-screen dialogue.\n- A character who left the frame must still be tracked in `Exited Character Status` for at least one shot, then dropped after they are explicitly off-stage for two consecutive shots."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/references/shot-table-spec.md",
+      "paragraph": 14,
+      "text": "1. **Hook density**: every shot has a `Hook Type`; at least one of every three consecutive shots uses a `reveal`/`reversal`/`callback`; the opening shot and the closing shot each carry a strong hook (`visual-joke` / `reversal` / `reveal` / `suspense` / `tender`).\n2. **Single-shot duration**: no shot exceeds 15 seconds. If a beat needs more, split it.\n3. **Character count per shot**: no shot contains more than three important characters (defined as characters with on-screen action or dialogue).\n4. **Spatial anchor inheritance**: for every interior scene with two or more shots, the `Fixed Landmarks` and `Lighting Baseline` of the next shot must either match the previous shot or include an explicit continuity note (e.g. `door-frame moves from right third to center as camera orbits left`).\n5. **Per-second directive coverage**: every second from `0s` to the shot duration is covered by a `Per-Second Directives` entry, and each entry contains all five required elements (action/pose/expression, camera, spatial, audio cue, handoff). Sub-second beats like `2.0–2.5s` are allowed but must not leave any time gap.\n6. **Cross-shot continuity**: reading the `Continuity Handoff` column row by row produces a continuous chain — no shot starts from a state that contradicts the previous shot’s ending. Any shot that flips eyeline, character position, prop state, or lighting must mark the flip explicitly (e.g. `HARD CUT — time skip: 2h`)."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/references/storyboard-guidelines.md",
+      "paragraph": 10,
+      "text": "1. **Shot title & duration** — short human-readable title for the shot, plus `S<N> / <duration>s` (e.g. `S03 / 6s`).\n2. **Hook type** — one of the controlled vocabulary: `setup` / `visual-joke` / `reversal` / `reveal` / `callback` / `suspense` / `tender` / `chase` / `expression-beat` / `climax`. Used by the per-episode hook distribution self-check.\n3. **Scene & characters** — exact scene card name and exact on-screen character names (binding to character cards).\n4. **Spatial anchor card** (mandatory, four sub-fields — directly adapted from half-narrated):\n   - `Fixed landmarks` — named landmarks and their screen-relative positions (e.g. `door-frame: right third`, `kitchen-island: center bottom`).\n   - `Character positions (camera view)` — for every on-screen character, screen-relative position, facing direction, and initial pose.\n   - `Exited character status` — characters who were on screen in the previous shot but not in this one, with their off-screen position and reason.\n   - `Lighting baseline` — inherited key/fill/rim direction from the scene card, plus per-shot modifier.\n5. **Continuity** (mirrors half-narrated's handoff fields):\n   - `Continuity from S(N-1)` — one or two sentences referencing the previous shot’s ending state.\n   - `Continuity to S(N+1)` — one sentence setting up the next shot’s opening.\n6. **Double-binding** — `[char:角色名-01] [char:角色名-02] ... [scene:场景名] [hook: visual-joke]` — exact character card names, scene card name, hook type. These are storyboard-only reference markers; the video model strips them at render time.\n7. **Per-panel four-quadrant content** (one block per panel, in time order; this is the Pixar per-second directive, kept verbatim from the table row):\n   - `Timecode` — e.g. `0–1s`.\n   - `Pose + Expression` — concrete body posture, silhouette, key prop grip, eye-line, facial expression path; for elastic beats, explicitly call out squash / stretch / anticipation / overshoot. This is the largest section per panel and is what the video model reads as the visual beat.\n   - `Camera` — shot size, camera movement (push / pull / pan / tilt / handheld-shake / locked / orbit), Dutch angle note when applicable.\n   - `Audio + Anchor` — audio cue (`♪ narration: ...` / `dialogue: ...` / `SFX: ...` / `silent`) and spatial anchor note (`door-frame: right third` / `Mia: center midground facing camera`).\n   - Performance notes (mirrors half-narrated): for narration seconds, mark `narrator-mouth-closed: true`; for on-screen dialogue, mark `mouth-open: speaker` and describe expression path / eye-line / body-action changes.\n8. **Layout rules** (apply per shot):\n   - 3-second shot → 3 panels (1 per second).\n   - 4-second shot → 4 panels.\n   - 5-second shot → 5 panels.\n   - 6-second shot → 6 panels.\n   - 7+ second shot → one panel per second; for sub-second critical beats, add an extra mini-panel such as `2.0–2.5s` only when the beat is the hook of the shot.\n   - Panels must cover the full shot duration from first frame to last frame with no time gaps.\n9. **Per-panel binding**:\n   - Bind the exact character cards listed in the table row to lock appearance, face, hairstyle, body proportions, costume, signature props, and role identity. Use the same character names as the table.\n   - Bind the exact scene card listed in the row to preserve environment, props, landmarks, movement paths, and spatial logic.\n10. **Optional ASCII layout block (highly recommended, free)**:\n    - Append a small ASCII sketch per panel (or one combined sketch for the whole shot) so the user can scan the spatial layout in seconds without rendering an image. Example:\n      ```\n      [0-1s]  Mia (L, mid)         door-frame (R)\n              ──kneels, hands on apple basket──\n              cam: low push-in, locked\n              audio: silent | anchor: basket center-bottom\n      [1-2s]  ...\n      ```\n    - The ASCII block is informational only; the video model reads the structured `Per-panel four-quadrant content` above, not the ASCII.\n11. **Storyboard-only markers**:\n    - When a beat is critical, append `[BEAT]` after the panel timecode.\n    - When a panel must handoff a specific state to the next panel or the next shot, append `[HANDOFF → ...]` with a short label such as `[HANDOFF → S04 opening]`."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/references/storyboard-guidelines.md",
+      "paragraph": 15,
+      "text": "#### 0–1s\n- Pose + Expression: 奶奶弯腰双手持筐；Mia 左侧站姿，眼神好奇\n- Camera: locked medium shot, eye-level\n- Audio + Anchor: silent | Mia: L midground | basket: center bottom\n- Performance: [BEAT]"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/references/storyboard-guidelines.md",
+      "paragraph": 16,
+      "text": "#### 1–2s\n- Pose + Expression: 奶奶手臂伸向 Mia，筐倾斜；Mia 双手前伸准备接\n- Camera: locked medium shot, eye-level\n- Audio + Anchor: ♪ SFX: basket rustle | anchor: door-frame: right third\n- Performance: [HANDOFF → S04 opening]"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/references/storyboard-guidelines.md",
+      "paragraph": 22,
+      "text": "- User signal: at any time after Step 6, the user says things like \"let me focus on S05\", \"S05 needs rework\", \"extract S05\", or selects a shot during the storyboard approval choice card.\n- Extraction mechanics:\n  1. Create a new canvas text node named `<title> S05 text storyboard (extracted)`.\n  2. Move the full content of the `## S05` section from the document into the new node.\n  3. In the document, replace the `## S05` section with a one-line placeholder: `> S05 — extracted to standalone node (see `<title> S05 text storyboard (extracted)`)`.\n  4. Step 7 reads from the extracted node for S05; all other shots still read from the document.\n- Re-integration: when the user is satisfied, the standalone node is folded back into the document (replace the placeholder with the latest content) and the standalone node is archived.\n- Multiple extracted shots: each shot gets its own standalone node; the document tracks them with placeholders."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/references/storyboard-guidelines.md",
+      "paragraph": 23,
+      "text": "The extraction mechanism exists because independent nodes are best used by need, not by default — but they remain available whenever iteration pressure is high on a specific shot."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/references/storyboard-guidelines.md",
+      "paragraph": 27,
+      "text": "- **Double-binding labels (top-right corner, mandatory on image)**:\n  - `[char:角色名-01] [char:角色名-02] ...` — exact character card names used in this row.\n  - `[scene:场景名]` — exact scene card name.\n  - `[shot: S03] [dur: 6s] [hook: visual-joke]` — shot ID, duration, and hook type.\n  - These labels are storyboard-only reference markers; they are stripped at video render time.\n- Bind the exact character cards listed in that row to lock character appearance, face, hairstyle, body proportions, costume, signature props, and role identity.\n- Bind the exact scene card listed in that row to preserve environment, props, landmarks, movement paths, and spatial logic.\n- Convert every per-second directive in the row into one storyboard panel or one clearly labeled beat panel; for a 4-second shot, normally create 4 panels; for a 6-second shot, normally create 6 panels; for sub-second critical beats, add extra mini-panels only when needed.\n- **Panel physical layout (mandatory)**:\n  - 3-second shot → 1×3 strip.\n  - 4-second shot → 2×2 grid.\n  - 5-second shot → top row 3 + bottom row 2.\n  - 6-second shot → 2×3 grid.\n  - 7+ second shot → 3 rows, balanced panels.\n  - Each panel occupies the same canvas area; do not let one panel dominate.\n- **Per-panel four-quadrant content (mandatory)**:\n  - Top-left: timecode (e.g. `0–1s`).\n  - Top-right: pose + expression sketch (the largest area; the actual visual beat).\n  - Bottom-left: camera icon + movement arrow (push/pull/pan/orbit/locked) and a tiny note for Dutch angle.\n  - Bottom-right: audio cue (e.g. `♪ narration: \"I knew it.\"` / `SFX: door creak` / `silent`) and anchor note (e.g. `door-frame: right third`).\n- Arrange panels in reading order inside the same single-shot storyboard image; do not merge multiple different shots into one image.\n- Each panel must mark its timecode, such as `0–1s`, `1–2s`, and show the corresponding pose, expression, action, camera movement, prop position, SFX cue, and continuity handoff.\n- Output pure black-and-white pencil line-art only: no color, no final-render lighting, no polished 3D render.\n- Mark the storyboard image with the shot number and include camera-movement icon / marker per panel when useful.\n- Include storyboard-only marks when useful: pencil construction lines, action arrows, camera-path icon, timing marks, and small notes.\n- Keep the draft as a video-render reference asset only, not final art."
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-镜头版/SKILL.md",
+      "paragraph": 9,
+      "text": "1. 读取 [3D 原始入口](references/animation/3d-animation-short-generator.md)、[适配规则](references/05-3d-production-adapter.md)和 [剧情与分镜状态](references/01-story-and-shots.md)。新创意按原版 Project Brief → Story Outline 的因果结构创作；已有剧本保留剧情和对白，用其故事检查定位问题，不能硬塞八个新事件。\n2. 保存 `project_brief.md`、`story_outline.md`、`project_manifest.json`。指定参数优先；缺省 16:9、H3、文本分镜，已有分段沿用时长；新改编在上述180/240秒预算内规划。默认风格化 3D；有明确指定风格则全文、资产、分镜统一沿用，不强制 Q 版比例或新增滑稽动作。\n3. 按 [资产与绑定](references/02-assets-and-binding.md)制作角色卡、无人物场景卡的完整提示词与清单。分清制作设定卡和出镜参考；实际图片没有生成/查看时标记 UNVERIFIED。\n4. 必须读取 [六列逐秒镜头表原文](references/animation/references/shot-table-spec.md)，生成 `standard-shot-table.md` 和同源的 `animation_plan.json`。每行对应一个 AVS segment：完整动作、机位、空间、声音及交接；一秒一条，关键动作可再细分。保持六列的名称与顺序。单行包含必要切镜时，正文的 `[Shot N]` 仅代表本段内真实切点，不把每秒都写成切镜。\n5. 完成原版 Step 5.5 六项制作复核并保存 `production_review.json`。可确定的时序/映射用包内脚本检查；钩子、表演、空间继承和跨镜连续性另由 AI 对照源稿复核。遵循用户已锁剧情的例外写明理由，不为满足钩子配额加剧情。\n6. 必须读取 [文本分镜原文](references/animation/references/storyboard-guidelines.md)，生成一个 `text_storyboards.md`：每段一个节，含空间卡、前后交接、精确资产绑定、逐秒四象限内容。铅笔分镜只在用户要求时生成，不能代替文本分镜或直接喂入最终视频。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-镜头版/references/05-3d-production-adapter.md",
+      "paragraph": 12,
+      "text": "- `columns`：六个原文列名；`visual_style`：本项目明确风格；`shots`：与 `project_manifest.json` 中 segments 同序、同数量。\n- 每行 `shot_id`、`segment_id`、`duration_s`；`continuity_handoff` 包含 `incoming_state`、`end_state`、`from_previous`、`to_next`。这些起止状态与项目清单相同。\n- `reference_anchors`：`fixed_landmarks`、`characters`、`exited_character_status`、`lighting_baseline`、`scene_asset`。场景/人物资产名称与当前段的 Picture 绑定一致；人物写 screen position、朝向、初姿，固定锚点写画面位置。画外人物仍记录去向，不能把裁出画面当作已离开房间。\n- `hook_type`：原文词汇；`description`：景别/运镜/表演风格及 `per_second_directives`；`audio_track`：逐时段对白/SFX/旁白及口型状态，未发生的音轨写无。\n- 逐秒条目：`start_s`、`end_s`、`action`、`camera`、`spatial`、`audio`、`handoff`，必须完整覆盖 0 到段尾，无缝无重叠，每条不超过 1 秒；关键小动作可细分。每条交代本次姿态/表情、手持物、锚点、声音和承接。静止/无声也写具体状态，不以省略代替。\n- `production_review.json` 按段保存 `hook_density`、`single_shot_duration`、`character_count`、`spatial_anchor_inheritance`、`per_second_coverage`、`cross_shot_continuity` 六项复核，附证据、问题及例外理由。通过真实复核才填 PASS；对用户固定剧情不适用的钩子密度可填 NOT_APPLICABLE 并解释，不能写虚假 PASS。"
+    },
+    {
+      "source_file": "05_2D漫画专用/SKILL.md",
+      "paragraph": 4,
+      "text": "- 当前AI漫剧项目默认 `production_mode=ANIMATED_COMIC`，生成2D人物/场景/道具图片提示词、剧本分镜和H3批量MD。\n- 用户明确只要漫画页、条漫、静态分格时，使用 `COMIC_STILLS`：输出页/格编号、构图、画面提示词、对白/气泡排版建议和资产清单；不添加视频时间预算或H3文件。对白文字建议后期排版，不要求图片模型自行写准大段文字。\n- 用户只要求资产、分镜或已有MD转换时按指定阶段工作。新创作的对白可改编；已确认对白、段号、切点和绑定冻结后，优化阶段原样复用。\n- 默认制作文本和提示词。生成图片、视频、配乐或自动提交ComfyUI任务，应属于用户明确要求的范围；本Skill不自行更换模型或参数。"
+    },
+    {
+      "source_file": "05_2D漫画专用/SKILL.md",
+      "paragraph": 8,
+      "text": "人物、服装、道具、背景与视频每段必须沿用相同 `style_id` 和 `visual_style`。正向画风描述不混入Pixar、C4D/Octane、SSS皮肤、3D渲染或真人摄影。普通景别、透视、构图和光影关系可保留，表达为绘制画面效果。"
+    },
+    {
+      "source_file": "05_2D漫画专用/references/05-2d-shot-mapping.md",
+      "paragraph": 1,
+      "text": "采用 `project.shot_design_policy=story_driven_2d`，每个视频段默认一个充分的连续镜头；戏剧功能需要时设计段内2个镜头。总镜头数和视频任务数分别统计。用户明确指定某段多镜头时设 `multi_shot_required=true`，不能以单镜头替代。"
+    },
+    {
+      "source_file": "README.md",
+      "paragraph": 12,
+      "text": "### 本版新增覆盖\n- 景别（wide / medium / medium_close / close_up / detail_close_up）\n- 机位高度（high / eye / low / top-down 等）\n- 镜头角度（front / three-quarter / side / rear three-quarter）\n- 构图（人物与关键设施在画面中的位置、必须入画内容、允许画外内容）\n- 镜头焦段感觉（wide-feel / natural / portrait-compression / detail-emphasis）\n- 运镜（locked-off / push-in / pull-back / gentle pan / lateral follow / handheld forbidden 等）\n- 使用条件（什么时候该用这种镜头）\n- 禁止条件（什么时候不能用这种镜头）\n- 自动选择规则（根据段落功能自动选景别和镜头）\n- H3 输出格式（固定 cinematography 段写法）"
+    },
+    {
+      "source_file": "README.md",
+      "paragraph": 14,
+      "text": "## 镜头语言输出要求\n最终 H3 Prompt 中必须包含：\n- `shot_plan:`\n- `cinematography:`\n并与时间轴共同工作。"
+    },
+    {
+      "source_file": "README.md",
+      "paragraph": 15,
+      "text": "## 关键原则\n1. 自动判断，但不得乱选景别。\n2. 一个片段只能有**一个主景别**；若需要插入细节，必须在 `cut_policy` 中显式允许。\n3. 默认 5 秒段优先单镜头；非必要不切镜。\n4. 景别服务剧情任务，不为“好看”随意放大或拉远。\n5. 构图必须写出“什么必须看见、什么允许不入画”。"
+    }
+  ]
+}

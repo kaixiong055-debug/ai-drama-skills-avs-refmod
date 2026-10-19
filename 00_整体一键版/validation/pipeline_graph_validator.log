@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "execution_order": [
+    "story_adapter",
+    "character_bible",
+    "asset_bible",
+    "script",
+    "storyboard",
+    "production_state",
+    "spatial_lock",
+    "binding",
+    "h3_export",
+    "generation",
+    "qc",
+    "assembly"
+  ]
+}
+Failed to find real location of C:\Python313\python.exe

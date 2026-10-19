@@ -1,0 +1,225 @@
+{
+  "authority": "supplementary historical detail evidence; current contract/schema control execution",
+  "entries": [
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 0,
+      "text": "---\nname: 01_小说转AI漫剧剧本\ndescription: 把小说/原始剧本转换为有时长预算的紧凑AI漫剧、连续性导演执行稿与 Project Manifest；默认目标3分钟、最多4分钟，支持完整批量制作包。\ncompatibility: MiniMax H3 / ComfyUI-AI-Video-Studio; 5-second drama workflow.\n---"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 5,
+      "text": "### 1.0 批量制作时长预算（V4.3，优先于旧版保真与完整版段数规则）\n新改编默认 `BATCH_COMPACT`：目标 **180秒/36段**，硬上限 **240秒/48段**，每段5秒。目标不是最低时长；短文能讲清就用更少段，不补空镜凑满3分钟。长文也不自动放宽上限，不自动拆成多集绕过单篇预算。用户明确指定的目标/上限优先；“完整版/制作包/批量/按Skills执行”只决定交付文件完整性，不代表逐句保留或无限加段。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 7,
+      "text": "未经用户明确指定更长时长，不得因保真、桥接、对白拆分、镜头语言或完整制作包要求突破预算。超过目标先压缩，超过上限必须返回改编阶段；不得把超时项目标记完成。关键剧情确实无法装入时，在报告中写明容量冲突和具体选项，等待用户选择更长版或删减范围。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 8,
+      "text": "禁止：\n- 把“精简”理解成“只留剧情结论”；\n- 用一句总结替代原文中可表演、可见、能塑造人物的过程；\n- 删除核心笑点的触发与结果、关键动作因果和关系转折；次要反应、停顿、观察及重复尝试可以合并或省略；\n- 一句话 = 5 秒；\n- 为控制时长制造无法理解的时间/空间跳变；允许用现有段首尾、声音或明确时间省略交代变化，不为每次变化新建一段；\n- 把“卸妆+换衣+洗漱+出房门”压成一个 5 秒动作；\n- 上一段人物在 A 点，下一段无解释突然在 B 点；\n- 换装、妆容、天气、昼夜大变但没有交代；\n- 同一核心空间无限新增场景图。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 9,
+      "text": "## 1.1 Fidelity Within Budget｜预算内保留关键戏\n默认采用紧凑改编。保真指事实、关键因果、人物关系与剧情落点准确；不要求每句描写、每个微反应、每次生活操作都独立表演。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 11,
+      "text": "### 必须保留的细节类型\n仅当以下内容承担核心因果、人物转折、关键笑点或伏笔时设 `PROTECTED_DETAIL=true`。普通生活观察与微动作不因“可拍”就自动受保护：\n1. **动作因果链**：保留“箱子卡住→拉拽失败→男主接手→尴尬致谢”的可见过程；可将拉拽与反应合入同段。只有剧情依赖准确次数时才锁定原文次数。\n2. **轻喜剧节奏**：失败、重复、停顿、反应、嘴硬、被拆穿、二次反转。\n3. **人物反差**：职场精致 vs 私下迷糊；外冷 vs 微笑；洁癖/秩序感等可视细节。\n4. **关系推进 Beat**：第一次笑、第一次帮忙、第一次一起吃饭、第一次形成生活分工、第一次“晚上见”。\n5. **可视环境锚点**：遥控器排列、拖鞋整齐、杯子由高到低、湿脚印、雨水、窗外灯光等真正参与剧情或人物塑造的细节。\n6. **重要对白回合**：只要对白承担人物性格、笑点、关系、伏笔，就不能只保留结论。\n7. **关键反应**：被拆穿或关系变化的反应应可读；看一眼、低头、收回视线等普通微反应优先与对白/动作并行，不单独占5秒。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 13,
+      "text": "### 绝对禁止“结论式替代”\n例如原文：\n`“我不饿”→肚子响→否认→肚子第二次响→男主忍笑→女主指出他肩膀动了→男主转身开冰箱`\n不能改成：\n`“她嘴硬说不饿，被肚子叫出卖，顾言川给她煮面。”`\n前者是完整戏，后者只是剧情摘要。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 14,
+      "text": "## 1.2 Source Beat Ledger｜原文 Beat 台账\n在切 5 秒段前，必须先把原文拆成 `source_beats`。每个 Beat 标记：\n- `beat_id`\n- `source_event`\n- `function`: plot | character | comedy | relationship | clue | atmosphere | transition\n- `preservation`: EXACT | VISUAL_EQUIVALENT | COMPRESS_SAFE | DROP_REDUNDANT | OMIT_OPTIONAL\n- `protected_details`\n- `dialogue_lines`\n- `micro_reactions`\n- `priority`: CORE | SUPPORT | OPTIONAL\n- `compression_reason`（合并、省略或缩短时填写）"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 16,
+      "text": "规则：\n- `EXACT`：关键对白/关键动作必须基本原样保留；\n- `VISUAL_EQUIVALENT`：文学描述可改成等价可视表演，但功能和细节不能消失；\n- `COMPRESS_SAFE`：允许缩短对白、合并动作或画面等价表达，保留关键因果；\n- `DROP_REDUNDANT`：重复解释可删除；\n- `OMIT_OPTIONAL`：预算内省略非核心细节，必须登记理由，不能用于关键剧情。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 17,
+      "text": "### 覆盖检查\n最终所有段落必须能反向映射到 `source_beats`。\n凡 `EXACT` 或 `VISUAL_EQUIVALENT` Beat 没有被任何 segment 覆盖，输出判定失败。\n不能删除关键剧情掩盖容量问题。次要Beat允许合并或合理省略；需在报告说明，不把它们全部升级成受保护Beat。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 25,
+      "text": "硬规则：\n1. normal 默认 3.5 中文字/秒；suspense 3.0；fast 4.0。\n2. `estimated_spoken_s <= 4.2` 才允许正常出稿；4.2–4.6 仅允许人物基本静止、无复杂动作；`>4.6` 必须拆段。\n3. 默认最多 5 个短句；超过 5 句必须拆段，除非全部是极短单字/双字应答且估算时长仍 PASS。\n4. 对白拆段优先保持问答依赖链，不得把“触发句”和“回答句”拆断。\n5. 允许自然压缩重复信息，例如“有鸡蛋。还有虾。”可在不改变剧情信息时合并为“有鸡蛋和虾。”；禁止擅自删掉角色关系、笑点或关键反应。\n6. 若对白过密，先在改编阶段缩短非关键对白、去掉画面已表达的重复旁白，再在总预算内拆段；不得靠不自然加速或突破上限解决。对白与简单动作/听者反应可并行，不能把同时发生的时间机械相加。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 32,
+      "text": "HIGH 不得直接输出。必须选择：\nA. 确实需要时插入桥接段，并计入总时长预算；\nB. 明确 `OFF_SCREEN_STATE_CHANGE`，让上一段进入可变化空间，下一段从变化完成状态开始；\nC. 若剧情允许，合并成明确的蒙太奇/时间桥，但仍需 5 秒可读。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 55,
+      "text": "## 12. Outputs\n1. `<项目名>_AI漫剧剧本与5秒分镜_V3.docx`\n   - 必须保留“原文 Beat → 分镜段”的可追踪关系；\n   - 不得只给剧情梗概式画面描述；\n   - 每段的画面动作应写到可以直接导演/生成，而不是只写结果。\n2. `project_manifest.json`\n3. `continuity_report.md`\n4. `scene_asset_budget_plan.md`"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 76,
+      "text": "- `dialogue_state`: `NONE` / `PRESENT`；\n- `dialogue_lines`: 若 `PRESENT`，写当前段允许出现的对白原文及顺序；若 `NONE`，必须为空数组；\n- `carry_states`: 当前段内需跨时间窗持续的关键人物/道具状态，例如 `RIGHT_HAND_HOLDS_WHITE_SHIRT`；\n- `offframe_targets`: 画外固定目标及其屏幕方向，例如 `{\"target\":\"ENTRY_DOOR\",\"screen_direction\":\"RIGHT\"}`；\n- `screen_direction_confidence`: HIGH / MEDIUM / LOW。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 80,
+      "text": "### 15.1 每个 segment 必须扫描固定设施\n若当前 source beat / action / eyeline / dialogue cause 涉及以下对象之一，必须登记 `fixed_facilities`：\n- 洗衣机、烘干机、洗衣区；\n- 入户门、门槛、玄关、门牌；\n- 冰箱、灶台、水槽、厨房操作台；\n- 餐桌、沙发、茶几、固定电视墙；\n- 床、书桌、衣柜、固定柜体；\n- 窗、阳台门、墙上时钟；\n- 电梯门、楼道门、小区固定出入口；\n- 任何剧情动作必须依赖其固定位置才能成立的长期设施。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 90,
+      "text": "- `interaction_objects`：当前真正参与动作的物体；\n- `object_state_contracts`：物体起始位置、起始状态、动作后的结束状态；\n- `authorized_support_objects`：允许出现的辅助物件；默认空数组；\n- `forbidden_invented_objects`：容易被模型误补、但原文/资产未授权的物件；\n- `limb_action_contract`：涉及手部/肢体精细交互时，明确哪只手执行、另一只手处于何处；\n- `anatomy_risk`：LOW / MEDIUM / HIGH；\n- `discrete_beats[].termination`：离散事件结束条件；\n- `reference_minimum_roles`：当前段真正需要的参考职责，而不是图片数量目标。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 101,
+      "text": "### 17.1 Counted-action chain｜计数动作链不得多算/少算\n凡 source beat 出现“一次、第二次、三次、再次、连续 N 次”，必须登记 `counted_action_sequence`。\n每个动作阶段必须区分：\n- `PREPARE`：握住、接近、起步、轮子靠近门槛，不计入正式次数；\n- `COUNTED_1`：第一次完整执行；\n- `COUNTED_2`：第二次完整执行；\n- `RESULT`：动作结果/他人接手。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 103,
+      "text": "### 17.2 Dialogue timing de-duplication｜对白时间轴不可重复同一句\n每句对白只能落在一个明确时间窗中。若同一句确实按原文重复（如“没有”说两次），必须登记不同 source beat / occurrence index；否则视为重复错误。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 133,
+      "text": "## 18.3 Segment Quantity Rule\n完整制作包沿用 §1.0 的预算：默认目标36个5秒segment、硬上限48个。取消“第一章不少于30段”的最低数量要求，不因文章变长或交付文件齐全就自动扩展时长。剧情短则更少段，所有实际段仍须提供完整字段和文件；制作资料完整性与逐句原文保留分开判断。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/project_manifest_contract_v3.md",
+      "paragraph": 9,
+      "text": "## Source beat\n```json\n{\n  \"beat_id\":\"B023\",\n  \"source_event\":\"林晚晴嘴硬说不饿，肚子连续两次叫，顾言川忍笑被她发现\",\n  \"function\":[\"character\",\"comedy\",\"relationship\"],\n  \"preservation\":\"EXACT\",\n  \"protected_details\":[\"第一次肚子叫\",\"下午两点\",\"第二次肚子叫\",\"肩膀动了\",\"转身开冰箱\"],\n  \"covered_by_segments\":[12,13,14]\n}\n```\nEvery `EXACT` and `VISUAL_EQUIVALENT` beat must have non-empty `covered_by_segments`."
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/runtime_budget_contract.md",
+      "paragraph": 1,
+      "text": "这是本地制作预算，不是H3模型的时长限制。适用于新小说/剧本改编；用户已锁定的分段不得在下游优化时自动重写。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/runtime_budget_contract.md",
+      "paragraph": 3,
+      "text": "- `profile=ADAPTIVE_COMPACT`：5秒一段，根据原文正文长度给出自适应规划：≤800字 12/18段；801–1500字 15/21段；1501–2500字 18/24段；2501–4000字 24/30段；>4000字 30/36段（前者为规划目标，后者为硬上限）。\n- 目标只是容量参考，不是要填满的配额；允许显著更短，不设最少段数。字数只用于选择预算档位，不作为逐句拆镜依据。\n- 用户明确给出的目标、上限、段数或单段时长优先；登记 `profile=USER_DEFINED` 与 `override_reason`。仅说“完整版/详细/制作包”不算时长授权。\n- 本Skill输出固定5秒分镜；非5秒工作流应使用相应Skill，不通过更改单段长度绕开本合同。\n- 超过目标先复核；超过上限不得输出完成包。容量冲突不能靠无限加段、不自然语速或偷偷删除关键剧情解决。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/runtime_budget_contract.md",
+      "paragraph": 5,
+      "text": "1. 仅统计原文正文中的汉字、字母、数字，不统计空白标点、生成后的台账或表格。运行 `python scripts/plan_runtime_budget.py --source-characters 1000`，将JSON写到 `project.runtime_budget`。自定义例：`--target-seconds 120 --max-seconds 180 --override-reason \"用户要求两分钟版\"`。\n2. 按完整戏剧事件归组，选定核心因果、转折、笑点、关系变化与伏笔。其余按支撑/可选分类；不要把每句环境描写、每次看一眼都登记为独立受保护事件。\n3. 先做段数预算，再写逐段执行信息。采用**合并优先**：同一空间、同一连续Beat中的动作、短对白、听者反应、结果优先装入同一5秒segment；对白能与简单动作/反应并行时按同时发生估算。只有剧情目的改变、时空断点、对白超载或物理动作超载才允许新建segment。\n4. 非关键对白、内心解释和收尾旁白可缩短或由画面表达。保留笑点的触发、可见反应和结果；次数仅在剧情依赖时原样锁定。禁止把核心戏改成仅有结论的摘要。\n5. 出入房间、换装、做饭、跨夜可在已有段末/下一段首明示时间省略，登记画外状态变化。独立桥接只在观众确实无法理解时使用，不展示真实耗时全过程。\n6. 每个段的微动作无需独立5秒。开场建立空间必须尽量兼容主动作，短反应随对白呈现，道具特写优先作为同段短插入，时间/空间桥接优先利用上一段结尾或下一段开头。不得为单个表情、一个回头、一次看门、一个环境镜头单独增加5秒。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/runtime_budget_contract.md",
+      "paragraph": 9,
+      "text": "报告简要列原文字数、目标/上限、实际段数/时长、关键Beat覆盖、合并与省略的理由。批量再汇总总篇数、总视频段数和总视频时长。纯文本制作未生成视频时不得声称实际成片已验收。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/runtime_budget_contract.md",
+      "paragraph": 11,
+      "text": "原文作为事实来源保存。选定的改编对白在上游冻结后，下游必须原样复用；紧凑改编不授权H3正文优化器临时删台词或扩镜。用户明确要求原文全部对白逐字保留且超过预算时，报告具体容量冲突，等用户指定更长预算或放宽保留范围。\n"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/SKILL.md",
+      "paragraph": 10,
+      "text": "已有用户确认的分段/MD维持原时长；仅转换或优化时，不自动裁剪旧项目。上游已有预算则继承，阶段B不得扩镜突破；超上限先返回上游改编。用户明确指定其他时长时记录 `USER_DEFINED` 与依据，不能把“完整版”当作更长时长授权。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/01-story-and-shots.md",
+      "paragraph": 6,
+      "text": "新改编默认 `BATCH_COMPACT`，目标180秒、上限240秒、每段5秒（36/48段）。目标不是下限，所有开场、结尾、旁白与桥接计入总时长；长文不自动扩容或拆集。用户明确指定其他预算优先。已有确认分段沿用，仅转换/优化旧MD不自动套用新时长。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/01-story-and-shots.md",
+      "paragraph": 7,
+      "text": "将预算保存在 `project.runtime_budget`，例如：\n```json\n{\"profile\":\"BATCH_COMPACT\",\"source_character_count\":1000,\"segment_duration_s\":5,\"target_runtime_s\":180,\"max_runtime_s\":240,\"target_segment_count\":36,\"max_segment_count\":48,\"override_reason\":\"\"}\n```\n字数来自输入原文正文；自定义预算用 `profile=USER_DEFINED` 并登记 `override_reason`。最终 `project.final_segment_count` 与 `project.final_runtime_s` 据实际视频段计算，多镜头数另计。超目标复核压缩，超上限必须先改编，不能标记完成。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/01-story-and-shots.md",
+      "paragraph": 8,
+      "text": "默认 5 秒一个段，不把一句话机械等同于 5 秒。每段承载一个主要戏剧目标，可含同一目标中的自然微动作。对话估算参考正常约 3.5 中文字/秒，按语速、停顿、情绪和身体动作调整；这是估算，不能保证音频精准。超载先在上游缩短非关键对白、并行动作/反应，再在总预算内拆分；不在官方优化阶段偷偷改时长。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/03-avs-envelope.md",
+      "paragraph": 13,
+      "text": "项目 manifest 与初稿必须具有相同段号顺序和时长；若有 title、集数、场景、连续性、Picture/Speaker 绑定，也必须对应。源 beat、状态和对白保持不变。对白对象使用 `{\"speaker_id\":\"S1\", \"text\":\"原文\"}`；不同 occurrence 分开列，最终正文的 `<d>[Chinese] 原文</d>` 与列表顺序一致。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/AVS隐藏空间预热_V4.4导入协议.md",
+      "paragraph": 18,
+      "text": "正式段仍然是完整的 5 秒（或用户指定时长），可以在 0.0 秒直接进入说话人的近景。它必须写："
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/05-3d-production-adapter.md",
+      "paragraph": 5,
+      "text": "| 原版 Hub 制作环节 | 本包 AVS 文本任务 |\n|---|---|\n| 画布按制作顺序建节点 | 按同一顺序保存简报、大纲、资产提示词/清单、镜头表和文本分镜到文件 |\n| 每步选择卡与创作确认 | 复用用户确认值；自动完整 MD 任务连续完成文字流程。缺少实质关键信息才提问，已有参数不重复询问；不因没有 Hub 卡片工具停工 |\n| 默认 30–60 秒短片 | 不裁掉章节。总长从用户要求/源分段推导；未分段通常 5 秒一段，按戏剧与对白负担调整 |\n| 角色/场景卡实际图像生成 | 先完成可生成的提示词与清单。用户要求生成图片才运行可用图片工具；没有图片只能标记未核实 |\n| 六列镜头表 → Step 5.5 → 一个文本分镜文档 | 这三个环节仍为完整任务的必需输出；已提供正确内容时复用，保证一行、一节对应一个真实镜头；多个真实镜头可归属一个 AVS 段，显式记录多对一映射 |\n| 模型与分辨率选择卡 | 批量 MD 默认 H3，复用现有 AVS 参数。文件不强制 2K 或官方 API 参数，不自动更换本地模型/量化/采样器 |\n| Seedance 回退与自动重试 | 仅用户要求视频且具备工具时参考回退原文；不把 Seedance 提示词混进 H3 MD，不自动下载模型或发付费任务 |\n| 全片合成并生成 BGM | 仅明确视频/合成任务才执行。用户未要求配乐时保持既有约定；本工作流缺省 N/A，不为移植原版增加配乐 |"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 3,
+      "text": "核心规则：**先故事、再资产；用户输入内容后立刻用选项卡确认画面尺寸/比例与总时长；产物按顺序上画布；所有需要用户确认的地方必须用选项卡；角色/场景卡后固定顺序为：六列标准镜头信息表（每秒指令+音频+空间锚点链+hook）→ 镜头表自检门 → 一份单一文本分镜文档（每镜一节，对齐半解说短剧分镜字段；用户主动开启可视化模式时再加铅笔图；用户标记需要重点迭代的镜时抽取成独立节点）→ 视频模型选项卡（H3 默认，Seedance 2.0 回退）+ 分辨率选项卡 → 用选定视频模型生成单镜头片段 → 全片拼接与 BGM 合成；最终视频必须清除所有分镜痕迹**。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 10,
+      "text": "- 一句话创意或粗略故事\n- 目标产物：只要蓝图、只要资产、六列标准镜头信息表、单文本分镜文档（默认）+ 重点迭代镜抽取的独立节点 + 多宫格铅笔分镜（开启可视化模式时）、单镜头视频片段（视频模型在 Step 7 选定）、拼接正片，还是 BGM 合成最终成片\n- 用户已说明的预估时长\n- 用户已说明的画面尺寸 / 比例\n- 视觉基调：默认温暖风格化 3D 动画\n- 台词需求：有对白、旁白，还是无台词\n- 只有用户明确指定台词语言时才锁定语言；不要默认英文台词"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 16,
+      "text": "只有用户同时选择画面尺寸/比例和总时长，或明确给出自定义值后，才进入下一步。把已确认的画面尺寸/比例和总时长写入项目简报，并贯穿用于镜头时长、转场连贯性、六列标准镜头信息表、单镜头分镜（默认文本，开可视化模式时含铅笔图）、单镜头视频片段、全片拼接、BGM 匹配和最终合成设置。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 63,
+      "text": "1. **Hook 密度**：每镜都有 `Hook 类型`；每连续 3 镜至少 1 镜使用 `reveal`/`reversal`/`callback`；开场镜和收尾镜各带强 hook（`visual-joke` / `reversal` / `reveal` / `suspense` / `tender`）。\n2. **单镜时长**：任何镜头不超过 15 秒。节拍需要更长就拆镜。\n3. **单镜角色数**：任何镜头不超过 3 个重要角色（定义为有画面动作或对白的角色）。\n4. **空间锚点继承**：含 2 镜以上的同场景，下一镜的 `固定地标` 和 `光位基线` 必须与上一镜一致或含明确连续性备注（如 `door-frame 随镜头左环绕由右侧 1/3 移至中央`）。\n5. **每秒指令覆盖**：从 `0s` 到镜尾的每秒都有 `Per-Second Directives`，每条含 5 个必填要素（动作/姿态/表情、镜头、空间、音频线索、交接）。允许 `2.0–2.5s` 亚秒节拍但不能留时间空隙。\n6. **跨镜连续性**：逐行读 `连续性衔接` 列必须形成连续链 — 任何一镜都不能从一个与上一镜结束矛盾的状态起步。任何翻转眼神、人物位置、道具状态或光位的镜头必须明确标记翻转（如 `HARD CUT — 时间跳 2h`）。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/animation/3d-animation-short-generator.cn.md",
+      "paragraph": 145,
+      "text": "- 输入捕获后，下一步之前：选画面尺寸 / 比例\n- 输入捕获后，下一步之前：选总时长\n- 项目简报后\n- 故事大纲后\n- 角色卡后\n- 场景卡后\n- 标准镜头表后（门 1：批准表格进入自检）\n- 镜头表自检通过后（门 2：批准自检，然后立即选分镜模式：仅文本 / 文本+铅笔图）\n- 单镜头分镜后（默认单文本分镜文档，可含抽取的独立节点；可视化模式时含铅笔图）\n- 单镜头视频片段渲染前：选视频模型（H3 默认，Seedance 2.0 回退，逐镜混合）\n- 单镜头视频片段渲染前：选视频分辨率\n- 单镜头视频片段后\n- 全片拼接、BGM 匹配和最终合成后"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-镜头版/references/05-3d-production-adapter.md",
+      "paragraph": 5,
+      "text": "| 原版 Hub 制作环节 | 本包 AVS 文本任务 |\n|---|---|\n| 画布按制作顺序建节点 | 按同一顺序保存简报、大纲、资产提示词/清单、镜头表和文本分镜到文件 |\n| 每步选择卡与创作确认 | 复用用户确认值；自动完整 MD 任务连续完成文字流程。缺少实质关键信息才提问，已有参数不重复询问；不因没有 Hub 卡片工具停工 |\n| 默认 30–60 秒短片 | 不裁掉章节。总长从用户要求/源分段推导；未分段通常 5 秒一段，按戏剧与对白负担调整 |\n| 角色/场景卡实际图像生成 | 先完成可生成的提示词与清单。用户要求生成图片才运行可用图片工具；没有图片只能标记未核实 |\n| 六列镜头表 → Step 5.5 → 一个文本分镜文档 | 这三个环节仍为完整任务的必需输出；已提供正确内容时复用，保证一行、一节、一段的稳定映射 |\n| 模型与分辨率选择卡 | 批量 MD 默认 H3，复用现有 AVS 参数。文件不强制 2K 或官方 API 参数，不自动更换本地模型/量化/采样器 |\n| Seedance 回退与自动重试 | 仅用户要求视频且具备工具时参考回退原文；不把 Seedance 提示词混进 H3 MD，不自动下载模型或发付费任务 |\n| 全片合成并生成 BGM | 仅明确视频/合成任务才执行。用户未要求配乐时保持既有约定；本工作流缺省 N/A，不为移植原版增加配乐 |"
+    },
+    {
+      "source_file": "05_2D漫画专用/SKILL.md",
+      "paragraph": 2,
+      "text": "一个独立入口完成2D制作资料，使用本文件夹内的规则、脚本和H3写作参考。沿用用户确认的人物、素材名、画风、分段和对白；已有2D参考图优先于默认画风。本文档的2D画风及制作预算是项目约定，不是H3官方限制。"
+    },
+    {
+      "source_file": "05_2D漫画专用/SKILL.md",
+      "paragraph": 12,
+      "text": "按完整戏剧事件登记 `source_beats`，分类 `priority=CORE|SUPPORT|OPTIONAL`。保留核心因果、笑点触发和结果、关系转折、关键伏笔；微反应可随对白发生，次要生活动作和重复解释可合并/省略并记录依据。不得通过不自然加速或删除关键剧情解决超时；确实无法容纳时报告具体冲突，由用户指定更长预算或删减范围。已有确认时长的转换任务，记录用户已锁定预算后复用，不自动裁剪。"
+    },
+    {
+      "source_file": "05_2D漫画专用/SKILL.md",
+      "paragraph": 27,
+      "text": "- 动态完整版：剧本与5秒分镜、最终H3批量MD、2D人物场景道具提示词、project/asset/segments清单、镜头映射和实际检查报告；用户要求DOCX或ZIP时同步提供。\n- 静态完整版：漫画页/格分镜、每格完整图片提示词、对白/气泡排版建议、2D资产清单和画风检查报告；不强制套入视频格式。\n- 批量逐篇遵守时长上限并汇总总篇数、段数与视频时长。素材未生成/未查看写 `UNVERIFIED`，未生成视频写 `video_quality_status=NOT_TESTED`，不得将结构PASS说成已验收画面。"
+    },
+    {
+      "source_file": "05_2D漫画专用/references/02-assets-and-storyboards.md",
+      "paragraph": 3,
+      "text": "动态版先用预算脚本生成 `project.runtime_budget`，再规划36段以内的初稿；最多48段，允许更少。对白正常约3.5字/秒，5秒段通常预留动作与停顿；不把同时发生的简单反应机械加成额外时间。过密先精简非关键对白，再在预算内拆段。关键台词、计数动作与声音不得在切镜时重复。"
+    },
+    {
+      "source_file": "README.md",
+      "paragraph": 18,
+      "text": "新文章改编默认目标 **3分钟（36个5秒段）**，硬上限 **4分钟（48段）**。短文章可更短，长文章不自动扩镜或拆集；完整制作包使用同一预算。先按核心戏剧事件归组，再合并次要动作、微反应、重复对白与旁白，桥接优先在现有段首尾交代。关键剧情、笑点和关系转折保留。"
+    },
+    {
+      "source_file": "README.md",
+      "paragraph": 19,
+      "text": "Skill 01 的 `scripts/plan_runtime_budget.py` 生成预算，`scripts/validate_project_manifest_v3.py` 检查总时长、段数、关键Beat覆盖与对白容量；三个Skill 03入口继承预算，最终MD校验同样拦截超上限。用户明确指定其他时长可覆盖默认值并登记依据。仅转换已有确认的分镜/MD维持其原时长。"
+    }
+  ]
+}

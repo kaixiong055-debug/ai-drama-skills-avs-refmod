@@ -1,0 +1,168 @@
+{
+  "schema_version": "5.1",
+  "kind": "story",
+  "lineage": {
+    "source_request": "6776c28b906cf419d5251e6daca850b008bd2af29778ad39f3f3749bb2ecb312"
+  },
+  "project": {
+    "title": {
+      "cn": "室友空间连续性示例",
+      "en": "Roommate spatial continuity example"
+    },
+    "episode_id": "EP01",
+    "episode_name": {
+      "cn": "第一章",
+      "en": "Chapter 1"
+    },
+    "production_profile": "DRAMA_DIALOGUE",
+    "visual_style": {
+      "cn": "自然写实漫剧，稳定人物与室内光线",
+      "en": "A natural cinematic drama with consistent characters and stable indoor lighting"
+    },
+    "runtime_budget": {
+      "profile": "BATCH_COMPACT",
+      "target_seconds": 180,
+      "max_seconds": 240
+    },
+    "allow_stale_asset": false,
+    "runtime_prompt_budget": {
+      "cn": {
+        "target_min": 2500,
+        "target_max": 5000
+      },
+      "en": {
+        "target_min": 3500,
+        "target_max": 8000
+      },
+      "ordinary_two_person_warning": 15000,
+      "semantic_completeness_first": true
+    },
+    "keyframe_policy": "AUTO"
+  },
+  "scenes": [
+    {
+      "scene_id": "SCN_LIVING_NIGHT",
+      "scene_variant": "MASTER",
+      "area": "MAIN",
+      "name": {
+        "cn": "夜晚客厅",
+        "en": "the living room at night"
+      },
+      "time_of_day": {
+        "cn": "晚上",
+        "en": "Night"
+      },
+      "soundscape": {
+        "cn": "低声室内环境底声和轻微呼吸",
+        "en": "quiet indoor room tone and subtle breathing"
+      },
+      "master_asset_id": "SCN_LIVING_MASTER",
+      "initial_state": {
+        "character_positions": {
+          "CHAR_A": {
+            "x_m": 0.0,
+            "y_m": 0.0,
+            "depth": "foreground",
+            "facing": "right",
+            "eyeline_target": "CHAR_B"
+          },
+          "CHAR_B": {
+            "x_m": 1.8,
+            "y_m": 0.0,
+            "depth": "foreground",
+            "facing": "left",
+            "eyeline_target": "CHAR_A"
+          }
+        },
+        "fixed_architecture": {
+          "walls": {
+            "cn": "矩形客厅；北墙固定",
+            "en": "rectangular living room; fixed north wall"
+          }
+        },
+        "door_positions": {
+          "ENTRY_DOOR": {
+            "cn": "后方左侧",
+            "en": "rear left"
+          }
+        },
+        "window_positions": {
+          "WINDOW": {
+            "cn": "后方右侧",
+            "en": "rear right"
+          }
+        },
+        "furniture_positions": {
+          "SOFA": {
+            "cn": "位于角色右侧后方",
+            "en": "behind the characters on the right"
+          },
+          "TABLE": {
+            "cn": "前景中央",
+            "en": "foreground center"
+          },
+          "CHAIR": {
+            "cn": "左侧中景",
+            "en": "midground left"
+          }
+        },
+        "entrance_positions": {
+          "ENTRY_DOOR": {
+            "cn": "后方左侧进场",
+            "en": "enter from rear left"
+          }
+        },
+        "exit_positions": {
+          "ENTRY_DOOR": {
+            "cn": "后方左侧离场",
+            "en": "exit toward rear left"
+          }
+        },
+        "door_states": {
+          "ENTRY_DOOR": "closed"
+        },
+        "major_props": {},
+        "camera_side": "south",
+        "dialogue_axis": "locked_east_west",
+        "dialogue_group": [
+          "CHAR_A",
+          "CHAR_B"
+        ]
+      },
+      "spatial_measurement": {
+        "measurement_mode": "RELATIVE",
+        "confidence": "UNKNOWN"
+      }
+    }
+  ],
+  "source": {
+    "type": "confirmed_storyboard",
+    "description": "synthetic regression fixture; no actual video quality claim"
+  },
+  "source_beats": [
+    {
+      "beat_id": "SRC_B001",
+      "preservation": "EXACT"
+    },
+    {
+      "beat_id": "SRC_B002",
+      "preservation": "EXACT"
+    },
+    {
+      "beat_id": "SRC_B003",
+      "preservation": "EXACT"
+    },
+    {
+      "beat_id": "SRC_B004",
+      "preservation": "EXACT"
+    },
+    {
+      "beat_id": "SRC_B005",
+      "preservation": "EXACT"
+    },
+    {
+      "beat_id": "SRC_B006",
+      "preservation": "EXACT"
+    }
+  ]
+}

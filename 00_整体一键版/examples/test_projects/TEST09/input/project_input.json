@@ -1,0 +1,710 @@
+{
+  "schema_version": "5.0",
+  "source": {
+    "type": "confirmed_storyboard",
+    "description": "synthetic regression fixture; no actual video quality claim"
+  },
+  "project": {
+    "title": {
+      "cn": "室友空间连续性示例",
+      "en": "Roommate spatial continuity example"
+    },
+    "episode_id": "EP01",
+    "episode_name": {
+      "cn": "第一章",
+      "en": "Chapter 1"
+    },
+    "production_profile": "DRAMA_DIALOGUE",
+    "visual_style": {
+      "cn": "自然写实漫剧，稳定人物与室内光线",
+      "en": "A natural cinematic drama with consistent characters and stable indoor lighting"
+    },
+    "runtime_budget": {
+      "profile": "BATCH_COMPACT",
+      "target_seconds": 180,
+      "max_seconds": 240
+    }
+  },
+  "cast": [
+    {
+      "character_id": "CHAR_A",
+      "name": {
+        "cn": "顾言川",
+        "en": "Gu Yanchuan"
+      },
+      "identity": {
+        "cn": "约28岁的成年人，保持原面部和身材比例",
+        "en": "an adult approximately 28 years old with consistent facial features and body proportions"
+      },
+      "hairstyle": {
+        "cn": "整齐的黑发",
+        "en": "neatly styled black hair"
+      },
+      "default_wardrobe": "OFFICE",
+      "hair_state": "dry",
+      "wardrobes": {
+        "OFFICE": {
+          "description": {
+            "cn": "黑色通勤西装",
+            "en": "a black office suit"
+          },
+          "runtime_asset_id": "CHAR_A_H3_OFFICE"
+        }
+      }
+    },
+    {
+      "character_id": "CHAR_B",
+      "name": {
+        "cn": "林晚晴",
+        "en": "Lin Wanqing"
+      },
+      "identity": {
+        "cn": "约28岁的成年人，保持原面部和身材比例",
+        "en": "an adult approximately 28 years old with consistent facial features and body proportions"
+      },
+      "hairstyle": {
+        "cn": "整齐的黑发",
+        "en": "neatly styled black hair"
+      },
+      "default_wardrobe": "OFFICE",
+      "hair_state": "dry",
+      "wardrobes": {
+        "OFFICE": {
+          "description": {
+            "cn": "黑色通勤西装",
+            "en": "a black office suit"
+          },
+          "runtime_asset_id": "CHAR_B_H3_OFFICE"
+        }
+      }
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "CHAR_A_H3_OFFICE",
+      "file": "CHAR_A_H3_OFFICE.png",
+      "role": "H3_RUNTIME",
+      "character_id": "CHAR_A",
+      "wardrobe": "OFFICE",
+      "direct_bindable": true,
+      "description": {
+        "cn": "顾言川的身份与黑色通勤西装",
+        "en": "Gu Yanchuan's identity and black office suit"
+      }
+    },
+    {
+      "asset_id": "CHAR_B_H3_OFFICE",
+      "file": "CHAR_B_H3_OFFICE.png",
+      "role": "H3_RUNTIME",
+      "character_id": "CHAR_B",
+      "wardrobe": "OFFICE",
+      "direct_bindable": true,
+      "description": {
+        "cn": "林晚晴的身份与黑色通勤西装",
+        "en": "Lin Wanqing's identity and black office suit"
+      }
+    },
+    {
+      "asset_id": "SCN_LIVING_MASTER",
+      "file": "SCN_LIVING_MASTER.png",
+      "role": "MASTER",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "scene_family_id": "LIVING",
+      "direct_bindable": true,
+      "description": {
+        "cn": "客厅建筑、门窗、沙发、茶几及固定空间几何",
+        "en": "the living-room architecture, doors, windows, sofa, coffee table, and fixed spatial geometry"
+      }
+    },
+    {
+      "asset_id": "PROP_SHIRT",
+      "file": "PROP_SHIRT.png",
+      "role": "PROP",
+      "direct_bindable": true,
+      "description": {
+        "cn": "白衬衫外观",
+        "en": "the white shirt appearance"
+      }
+    }
+  ],
+  "scenes": [
+    {
+      "scene_id": "SCN_LIVING_NIGHT",
+      "scene_variant": "MASTER",
+      "area": "MAIN",
+      "name": {
+        "cn": "夜晚客厅",
+        "en": "the living room at night"
+      },
+      "time_of_day": {
+        "cn": "晚上",
+        "en": "Night"
+      },
+      "soundscape": {
+        "cn": "低声室内环境底声和轻微呼吸",
+        "en": "quiet indoor room tone and subtle breathing"
+      },
+      "master_asset_id": "SCN_LIVING_MASTER",
+      "initial_state": {
+        "character_positions": {
+          "CHAR_A": {
+            "x_m": 0.0,
+            "y_m": 0.0,
+            "depth": "foreground",
+            "facing": "right",
+            "eyeline_target": "CHAR_B"
+          },
+          "CHAR_B": {
+            "x_m": 1.8,
+            "y_m": 0.0,
+            "depth": "foreground",
+            "facing": "left",
+            "eyeline_target": "CHAR_A"
+          }
+        },
+        "fixed_architecture": {
+          "walls": {
+            "cn": "矩形客厅；北墙固定",
+            "en": "rectangular living room; fixed north wall"
+          }
+        },
+        "door_positions": {
+          "ENTRY_DOOR": {
+            "cn": "后方左侧",
+            "en": "rear left"
+          }
+        },
+        "window_positions": {
+          "WINDOW": {
+            "cn": "后方右侧",
+            "en": "rear right"
+          }
+        },
+        "furniture_positions": {
+          "SOFA": {
+            "cn": "位于角色右侧后方",
+            "en": "behind the characters on the right"
+          },
+          "TABLE": {
+            "cn": "前景中央",
+            "en": "foreground center"
+          },
+          "CHAIR": {
+            "cn": "左侧中景",
+            "en": "midground left"
+          }
+        },
+        "entrance_positions": {
+          "ENTRY_DOOR": {
+            "cn": "后方左侧进场",
+            "en": "enter from rear left"
+          }
+        },
+        "exit_positions": {
+          "ENTRY_DOOR": {
+            "cn": "后方左侧离场",
+            "en": "exit toward rear left"
+          }
+        },
+        "door_states": {
+          "ENTRY_DOOR": "closed"
+        },
+        "major_props": {
+          "SHIRT": {
+            "holder": "CHAR_A.right_hand",
+            "state": {
+              "cn": "松散持有",
+              "en": "held loosely"
+            },
+            "valid_until_changed": true
+          }
+        },
+        "camera_side": "south",
+        "dialogue_axis": "locked_east_west",
+        "dialogue_group": [
+          "CHAR_A",
+          "CHAR_B"
+        ]
+      },
+      "prop_asset_ids": {
+        "SHIRT": "PROP_SHIRT"
+      }
+    }
+  ],
+  "beats": [
+    {
+      "beat_id": "B001",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "speaker": "CHAR_A",
+      "dialogue": "你笑了？",
+      "spoken_language": "Chinese",
+      "start_s": 0.2,
+      "end_s": 2.2,
+      "emotion": {
+        "cn": "克制、自然",
+        "en": "restrained and natural"
+      },
+      "action": {
+        "cn": "保持原位，说完短句",
+        "en": "Remain in the established position and deliver the short line"
+      },
+      "source_beat_ids": [
+        "SRC_B001"
+      ]
+    },
+    {
+      "beat_id": "B002",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "speaker": "CHAR_B",
+      "dialogue": "没有。",
+      "spoken_language": "Chinese",
+      "start_s": 2.7,
+      "end_s": 4.5,
+      "emotion": {
+        "cn": "克制、自然",
+        "en": "restrained and natural"
+      },
+      "action": {
+        "cn": "保持原位，说完短句",
+        "en": "Remain in the established position and deliver the short line"
+      },
+      "source_beat_ids": [
+        "SRC_B002"
+      ]
+    },
+    {
+      "beat_id": "B003",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "speaker": "CHAR_A",
+      "dialogue": "你笑了？",
+      "spoken_language": "Chinese",
+      "start_s": 0.2,
+      "end_s": 2.2,
+      "emotion": {
+        "cn": "克制、自然",
+        "en": "restrained and natural"
+      },
+      "action": {
+        "cn": "保持原位，说完短句",
+        "en": "Remain in the established position and deliver the short line"
+      },
+      "source_beat_ids": [
+        "SRC_B003"
+      ]
+    },
+    {
+      "beat_id": "B004",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "speaker": "CHAR_B",
+      "dialogue": "没有。",
+      "spoken_language": "Chinese",
+      "start_s": 2.7,
+      "end_s": 4.5,
+      "emotion": {
+        "cn": "克制、自然",
+        "en": "restrained and natural"
+      },
+      "action": {
+        "cn": "保持原位，说完短句",
+        "en": "Remain in the established position and deliver the short line"
+      },
+      "source_beat_ids": [
+        "SRC_B004"
+      ]
+    },
+    {
+      "beat_id": "B005",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "speaker": "CHAR_A",
+      "dialogue": "你笑了？",
+      "spoken_language": "Chinese",
+      "start_s": 0.2,
+      "end_s": 2.2,
+      "emotion": {
+        "cn": "克制、自然",
+        "en": "restrained and natural"
+      },
+      "action": {
+        "cn": "保持原位，说完短句",
+        "en": "Remain in the established position and deliver the short line"
+      },
+      "source_beat_ids": [
+        "SRC_B005"
+      ]
+    },
+    {
+      "beat_id": "B006",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "speaker": "CHAR_B",
+      "dialogue": "没有。",
+      "spoken_language": "Chinese",
+      "start_s": 2.7,
+      "end_s": 4.5,
+      "emotion": {
+        "cn": "克制、自然",
+        "en": "restrained and natural"
+      },
+      "action": {
+        "cn": "保持原位，说完短句",
+        "en": "Remain in the established position and deliver the short line"
+      },
+      "source_beat_ids": [
+        "SRC_B006"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "SEG001",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "duration_s": 5,
+      "participants": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "beat_ids": [
+        "B001",
+        "B002"
+      ],
+      "shots": [
+        {
+          "shot_id": "SH001",
+          "start_s": 0.0,
+          "end_s": 2.5,
+          "beat_ids": [
+            "B001"
+          ],
+          "shot_scale": "close_up",
+          "lens_mm": 85,
+          "camera_height_m": 1.5,
+          "camera_movement": "locked_off",
+          "camera_angle": {
+            "cn": "同轴线侧的侧前方反打",
+            "en": "a three-quarter reverse angle on the same side of the dialogue axis"
+          },
+          "composition": {
+            "cn": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+            "en": "Frame the current speaker’s face and shoulders; all others remain off-screen in their established positions"
+          },
+          "lighting": {
+            "cn": "窗侧柔光，室内补光，方向保持稳定",
+            "en": "soft window-side key light and consistent indoor fill"
+          },
+          "depth_of_field": {
+            "cn": "浅景深但面部清晰",
+            "en": "shallow depth of field with a clearly readable face"
+          },
+          "action": {
+            "cn": "说话人轻微呼吸，视线保持指向听者",
+            "en": "The speaker breathes subtly and keeps the eyeline toward the listener"
+          },
+          "cut_reason": {
+            "cn": "呈现当前说话人的细微反应",
+            "en": "show the current speaker’s subtle reaction"
+          }
+        },
+        {
+          "shot_id": "SH002",
+          "start_s": 2.5,
+          "end_s": 5.0,
+          "beat_ids": [
+            "B002"
+          ],
+          "shot_scale": "close_up",
+          "lens_mm": 85,
+          "camera_height_m": 1.5,
+          "camera_movement": "locked_off",
+          "camera_angle": {
+            "cn": "同轴线侧的侧前方反打",
+            "en": "a three-quarter reverse angle on the same side of the dialogue axis"
+          },
+          "composition": {
+            "cn": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+            "en": "Frame the current speaker’s face and shoulders; all others remain off-screen in their established positions"
+          },
+          "lighting": {
+            "cn": "窗侧柔光，室内补光，方向保持稳定",
+            "en": "soft window-side key light and consistent indoor fill"
+          },
+          "depth_of_field": {
+            "cn": "浅景深但面部清晰",
+            "en": "shallow depth of field with a clearly readable face"
+          },
+          "action": {
+            "cn": "说话人轻微呼吸，视线保持指向听者",
+            "en": "The speaker breathes subtly and keeps the eyeline toward the listener"
+          },
+          "cut_reason": {
+            "cn": "呈现当前说话人的细微反应",
+            "en": "show the current speaker’s subtle reaction"
+          }
+        }
+      ],
+      "title": {
+        "cn": "室友短句对白",
+        "en": "A short exchange between roommates"
+      },
+      "summary": {
+        "cn": "角色在固定客厅位置完成一问一答",
+        "en": "The characters exchange a question and answer from their fixed living-room positions"
+      },
+      "detailed_description": {
+        "cn": "表情自然克制，动作保持轻微；画外人物不移动。",
+        "en": "Use natural, restrained expressions and subtle movements. Off-screen characters do not move."
+      },
+      "before_events": [],
+      "events": [
+        {
+          "op": "prop",
+          "at_s": 4.8,
+          "prop_id": "SHIRT",
+          "from_holder": "CHAR_A.right_hand",
+          "holder": "CHAIR",
+          "state": {
+            "cn": "搭在椅背",
+            "en": "draped over the chair back"
+          },
+          "description": {
+            "cn": "用右手把衬衫放在椅背",
+            "en": "Place the shirt on the chair back with the right hand"
+          }
+        }
+      ],
+      "anatomy_risk": "MEDIUM",
+      "limb_contracts": [
+        {
+          "cn": "右手放置衬衫；左手自然位于身体左侧；恰好两只手、两条手臂。",
+          "en": "The right hand places the shirt; the left hand rests naturally at the left side of the body; exactly two hands and two arms."
+        }
+      ]
+    },
+    {
+      "segment_id": "SEG002",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "duration_s": 5,
+      "participants": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "beat_ids": [
+        "B003",
+        "B004"
+      ],
+      "shots": [
+        {
+          "shot_id": "SH003",
+          "start_s": 0.0,
+          "end_s": 2.5,
+          "beat_ids": [
+            "B003"
+          ],
+          "shot_scale": "close_up",
+          "lens_mm": 85,
+          "camera_height_m": 1.5,
+          "camera_movement": "locked_off",
+          "camera_angle": {
+            "cn": "同轴线侧的侧前方反打",
+            "en": "a three-quarter reverse angle on the same side of the dialogue axis"
+          },
+          "composition": {
+            "cn": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+            "en": "Frame the current speaker’s face and shoulders; all others remain off-screen in their established positions"
+          },
+          "lighting": {
+            "cn": "窗侧柔光，室内补光，方向保持稳定",
+            "en": "soft window-side key light and consistent indoor fill"
+          },
+          "depth_of_field": {
+            "cn": "浅景深但面部清晰",
+            "en": "shallow depth of field with a clearly readable face"
+          },
+          "action": {
+            "cn": "说话人轻微呼吸，视线保持指向听者",
+            "en": "The speaker breathes subtly and keeps the eyeline toward the listener"
+          },
+          "cut_reason": {
+            "cn": "呈现当前说话人的细微反应",
+            "en": "show the current speaker’s subtle reaction"
+          }
+        },
+        {
+          "shot_id": "SH004",
+          "start_s": 2.5,
+          "end_s": 5.0,
+          "beat_ids": [
+            "B004"
+          ],
+          "shot_scale": "close_up",
+          "lens_mm": 85,
+          "camera_height_m": 1.5,
+          "camera_movement": "locked_off",
+          "camera_angle": {
+            "cn": "同轴线侧的侧前方反打",
+            "en": "a three-quarter reverse angle on the same side of the dialogue axis"
+          },
+          "composition": {
+            "cn": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+            "en": "Frame the current speaker’s face and shoulders; all others remain off-screen in their established positions"
+          },
+          "lighting": {
+            "cn": "窗侧柔光，室内补光，方向保持稳定",
+            "en": "soft window-side key light and consistent indoor fill"
+          },
+          "depth_of_field": {
+            "cn": "浅景深但面部清晰",
+            "en": "shallow depth of field with a clearly readable face"
+          },
+          "action": {
+            "cn": "说话人轻微呼吸，视线保持指向听者",
+            "en": "The speaker breathes subtly and keeps the eyeline toward the listener"
+          },
+          "cut_reason": {
+            "cn": "呈现当前说话人的细微反应",
+            "en": "show the current speaker’s subtle reaction"
+          }
+        }
+      ],
+      "title": {
+        "cn": "室友短句对白",
+        "en": "A short exchange between roommates"
+      },
+      "summary": {
+        "cn": "角色在固定客厅位置完成一问一答",
+        "en": "The characters exchange a question and answer from their fixed living-room positions"
+      },
+      "detailed_description": {
+        "cn": "表情自然克制，动作保持轻微；画外人物不移动。",
+        "en": "Use natural, restrained expressions and subtle movements. Off-screen characters do not move."
+      },
+      "before_events": [],
+      "events": []
+    },
+    {
+      "segment_id": "SEG003",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "duration_s": 5,
+      "participants": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "beat_ids": [
+        "B005",
+        "B006"
+      ],
+      "shots": [
+        {
+          "shot_id": "SH005",
+          "start_s": 0.0,
+          "end_s": 2.5,
+          "beat_ids": [
+            "B005"
+          ],
+          "shot_scale": "close_up",
+          "lens_mm": 85,
+          "camera_height_m": 1.5,
+          "camera_movement": "locked_off",
+          "camera_angle": {
+            "cn": "同轴线侧的侧前方反打",
+            "en": "a three-quarter reverse angle on the same side of the dialogue axis"
+          },
+          "composition": {
+            "cn": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+            "en": "Frame the current speaker’s face and shoulders; all others remain off-screen in their established positions"
+          },
+          "lighting": {
+            "cn": "窗侧柔光，室内补光，方向保持稳定",
+            "en": "soft window-side key light and consistent indoor fill"
+          },
+          "depth_of_field": {
+            "cn": "浅景深但面部清晰",
+            "en": "shallow depth of field with a clearly readable face"
+          },
+          "action": {
+            "cn": "说话人轻微呼吸，视线保持指向听者",
+            "en": "The speaker breathes subtly and keeps the eyeline toward the listener"
+          },
+          "cut_reason": {
+            "cn": "呈现当前说话人的细微反应",
+            "en": "show the current speaker’s subtle reaction"
+          }
+        },
+        {
+          "shot_id": "SH006",
+          "start_s": 2.5,
+          "end_s": 5.0,
+          "beat_ids": [
+            "B006"
+          ],
+          "shot_scale": "close_up",
+          "lens_mm": 85,
+          "camera_height_m": 1.5,
+          "camera_movement": "locked_off",
+          "camera_angle": {
+            "cn": "同轴线侧的侧前方反打",
+            "en": "a three-quarter reverse angle on the same side of the dialogue axis"
+          },
+          "composition": {
+            "cn": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+            "en": "Frame the current speaker’s face and shoulders; all others remain off-screen in their established positions"
+          },
+          "lighting": {
+            "cn": "窗侧柔光，室内补光，方向保持稳定",
+            "en": "soft window-side key light and consistent indoor fill"
+          },
+          "depth_of_field": {
+            "cn": "浅景深但面部清晰",
+            "en": "shallow depth of field with a clearly readable face"
+          },
+          "action": {
+            "cn": "说话人轻微呼吸，视线保持指向听者",
+            "en": "The speaker breathes subtly and keeps the eyeline toward the listener"
+          },
+          "cut_reason": {
+            "cn": "呈现当前说话人的细微反应",
+            "en": "show the current speaker’s subtle reaction"
+          }
+        }
+      ],
+      "title": {
+        "cn": "室友短句对白",
+        "en": "A short exchange between roommates"
+      },
+      "summary": {
+        "cn": "角色在固定客厅位置完成一问一答",
+        "en": "The characters exchange a question and answer from their fixed living-room positions"
+      },
+      "detailed_description": {
+        "cn": "表情自然克制，动作保持轻微；画外人物不移动。",
+        "en": "Use natural, restrained expressions and subtle movements. Off-screen characters do not move."
+      },
+      "before_events": [],
+      "events": []
+    }
+  ],
+  "source_beats": [
+    {
+      "beat_id": "SRC_B001",
+      "preservation": "EXACT"
+    },
+    {
+      "beat_id": "SRC_B002",
+      "preservation": "EXACT"
+    },
+    {
+      "beat_id": "SRC_B003",
+      "preservation": "EXACT"
+    },
+    {
+      "beat_id": "SRC_B004",
+      "preservation": "EXACT"
+    },
+    {
+      "beat_id": "SRC_B005",
+      "preservation": "EXACT"
+    },
+    {
+      "beat_id": "SRC_B006",
+      "preservation": "EXACT"
+    }
+  ]
+}

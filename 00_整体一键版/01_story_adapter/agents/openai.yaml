@@ -1,0 +1,4 @@
+interface:
+  display_name: "ai-drama-story-adapter"
+  short_description: "把小说或原始剧本改编为带原文Beat台账、因果与预算的故事数据；不决定镜头。"
+  default_prompt: "使用 $ai-drama-story-adapter 按 V5.1 的单一权威数据合同完成本层工作。"

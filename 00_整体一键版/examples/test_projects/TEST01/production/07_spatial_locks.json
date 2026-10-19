@@ -1,0 +1,1384 @@
+{
+  "schema_version": "5.1",
+  "kind": "spatial_locks",
+  "lineage": {
+    "production": "5385aee44b821e86fdf0a7f8652844ea0f50b5c3c3aeb5c49cb21a4e684b45fb"
+  },
+  "locks": [
+    {
+      "unit_id": "LOCK_SC01_A01",
+      "lock_id": "LOCK_SC01_A01",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "before_segment_id": "SEG001",
+      "duration_s": 1.0,
+      "include_in_final": false,
+      "state_id": "LOCK_SC01_A01_STATE",
+      "reasons": [
+        "NEW_SCENE"
+      ],
+      "continuation_source": null,
+      "h3_mode": "REF2VA"
+    }
+  ],
+  "states": {
+    "LOCK_SC01_A01_STATE": {
+      "scene_id": "SCN_LIVING_NIGHT",
+      "scene_variant": "MASTER",
+      "spatial_measurement": {
+        "measurement_mode": "RELATIVE",
+        "confidence": "UNKNOWN"
+      },
+      "area": "MAIN",
+      "character_positions": {
+        "CHAR_A": {
+          "x_m": 0.0,
+          "y_m": 0.0,
+          "depth": "foreground",
+          "facing": "right",
+          "eyeline_target": "CHAR_B",
+          "screen_position": "left"
+        },
+        "CHAR_B": {
+          "x_m": 1.8,
+          "y_m": 0.0,
+          "depth": "foreground",
+          "facing": "left",
+          "eyeline_target": "CHAR_A",
+          "screen_position": "right"
+        }
+      },
+      "camera_side": "south",
+      "dialogue_axis": "locked_east_west",
+      "dialogue_group": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "major_props": {},
+      "door_states": {
+        "ENTRY_DOOR": "closed"
+      },
+      "characters": {
+        "CHAR_A": {
+          "wardrobe": "OFFICE",
+          "hair_state": "dry",
+          "clothing_state": {
+            "cn": "干燥、完整",
+            "en": "dry and intact"
+          },
+          "pose": {
+            "cn": "自然站立",
+            "en": "standing naturally"
+          }
+        },
+        "CHAR_B": {
+          "wardrobe": "OFFICE",
+          "hair_state": "dry",
+          "clothing_state": {
+            "cn": "干燥、完整",
+            "en": "dry and intact"
+          },
+          "pose": {
+            "cn": "自然站立",
+            "en": "standing naturally"
+          }
+        }
+      },
+      "completed_actions": [],
+      "completed_sounds": [],
+      "valid_until_changed": true,
+      "fixed_architecture": {
+        "walls": {
+          "cn": "矩形客厅；北墙固定",
+          "en": "rectangular living room; fixed north wall"
+        }
+      },
+      "door_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧",
+          "en": "rear left"
+        }
+      },
+      "window_positions": {
+        "WINDOW": {
+          "cn": "后方右侧",
+          "en": "rear right"
+        }
+      },
+      "furniture_positions": {
+        "SOFA": {
+          "cn": "位于角色右侧后方",
+          "en": "behind the characters on the right"
+        },
+        "TABLE": {
+          "cn": "前景中央",
+          "en": "foreground center"
+        },
+        "CHAIR": {
+          "cn": "左侧中景",
+          "en": "midground left"
+        }
+      },
+      "entrance_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧进场",
+          "en": "enter from rear left"
+        }
+      },
+      "exit_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧离场",
+          "en": "exit toward rear left"
+        }
+      },
+      "left_to_right_order": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "foreground_characters": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "midground_characters": [],
+      "background_characters": [],
+      "coordinate_unit": "relative_layout",
+      "distance_between_characters": {
+        "CHAR_A|CHAR_B": {
+          "cn": "相邻，保持已建立的相对间隔；未提供米制尺度",
+          "en": "Adjacent, maintaining the established relative spacing; metric scale is unspecified"
+        }
+      },
+      "facing": {
+        "CHAR_A": "right",
+        "CHAR_B": "left"
+      },
+      "eyelines": {
+        "CHAR_A": "CHAR_B",
+        "CHAR_B": "CHAR_A"
+      },
+      "anchor_version": "A01"
+    },
+    "SEG001_INCOMING": {
+      "scene_id": "SCN_LIVING_NIGHT",
+      "scene_variant": "MASTER",
+      "spatial_measurement": {
+        "measurement_mode": "RELATIVE",
+        "confidence": "UNKNOWN"
+      },
+      "area": "MAIN",
+      "character_positions": {
+        "CHAR_A": {
+          "x_m": 0.0,
+          "y_m": 0.0,
+          "depth": "foreground",
+          "facing": "right",
+          "eyeline_target": "CHAR_B",
+          "screen_position": "left"
+        },
+        "CHAR_B": {
+          "x_m": 1.8,
+          "y_m": 0.0,
+          "depth": "foreground",
+          "facing": "left",
+          "eyeline_target": "CHAR_A",
+          "screen_position": "right"
+        }
+      },
+      "camera_side": "south",
+      "dialogue_axis": "locked_east_west",
+      "dialogue_group": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "major_props": {},
+      "door_states": {
+        "ENTRY_DOOR": "closed"
+      },
+      "characters": {
+        "CHAR_A": {
+          "wardrobe": "OFFICE",
+          "hair_state": "dry",
+          "clothing_state": {
+            "cn": "干燥、完整",
+            "en": "dry and intact"
+          },
+          "pose": {
+            "cn": "自然站立",
+            "en": "standing naturally"
+          }
+        },
+        "CHAR_B": {
+          "wardrobe": "OFFICE",
+          "hair_state": "dry",
+          "clothing_state": {
+            "cn": "干燥、完整",
+            "en": "dry and intact"
+          },
+          "pose": {
+            "cn": "自然站立",
+            "en": "standing naturally"
+          }
+        }
+      },
+      "completed_actions": [],
+      "completed_sounds": [],
+      "valid_until_changed": true,
+      "fixed_architecture": {
+        "walls": {
+          "cn": "矩形客厅；北墙固定",
+          "en": "rectangular living room; fixed north wall"
+        }
+      },
+      "door_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧",
+          "en": "rear left"
+        }
+      },
+      "window_positions": {
+        "WINDOW": {
+          "cn": "后方右侧",
+          "en": "rear right"
+        }
+      },
+      "furniture_positions": {
+        "SOFA": {
+          "cn": "位于角色右侧后方",
+          "en": "behind the characters on the right"
+        },
+        "TABLE": {
+          "cn": "前景中央",
+          "en": "foreground center"
+        },
+        "CHAIR": {
+          "cn": "左侧中景",
+          "en": "midground left"
+        }
+      },
+      "entrance_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧进场",
+          "en": "enter from rear left"
+        }
+      },
+      "exit_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧离场",
+          "en": "exit toward rear left"
+        }
+      },
+      "left_to_right_order": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "foreground_characters": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "midground_characters": [],
+      "background_characters": [],
+      "coordinate_unit": "relative_layout",
+      "distance_between_characters": {
+        "CHAR_A|CHAR_B": {
+          "cn": "相邻，保持已建立的相对间隔；未提供米制尺度",
+          "en": "Adjacent, maintaining the established relative spacing; metric scale is unspecified"
+        }
+      },
+      "facing": {
+        "CHAR_A": "right",
+        "CHAR_B": "left"
+      },
+      "eyelines": {
+        "CHAR_A": "CHAR_B",
+        "CHAR_B": "CHAR_A"
+      }
+    },
+    "SEG001_CURRENT": {
+      "scene_id": "SCN_LIVING_NIGHT",
+      "scene_variant": "MASTER",
+      "spatial_measurement": {
+        "measurement_mode": "RELATIVE",
+        "confidence": "UNKNOWN"
+      },
+      "area": "MAIN",
+      "character_positions": {
+        "CHAR_A": {
+          "x_m": 0.0,
+          "y_m": 0.0,
+          "depth": "foreground",
+          "facing": "right",
+          "eyeline_target": "CHAR_B",
+          "screen_position": "left"
+        },
+        "CHAR_B": {
+          "x_m": 1.8,
+          "y_m": 0.0,
+          "depth": "foreground",
+          "facing": "left",
+          "eyeline_target": "CHAR_A",
+          "screen_position": "right"
+        }
+      },
+      "camera_side": "south",
+      "dialogue_axis": "locked_east_west",
+      "dialogue_group": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "major_props": {},
+      "door_states": {
+        "ENTRY_DOOR": "closed"
+      },
+      "characters": {
+        "CHAR_A": {
+          "wardrobe": "OFFICE",
+          "hair_state": "dry",
+          "clothing_state": {
+            "cn": "干燥、完整",
+            "en": "dry and intact"
+          },
+          "pose": {
+            "cn": "自然站立",
+            "en": "standing naturally"
+          }
+        },
+        "CHAR_B": {
+          "wardrobe": "OFFICE",
+          "hair_state": "dry",
+          "clothing_state": {
+            "cn": "干燥、完整",
+            "en": "dry and intact"
+          },
+          "pose": {
+            "cn": "自然站立",
+            "en": "standing naturally"
+          }
+        }
+      },
+      "completed_actions": [],
+      "completed_sounds": [],
+      "valid_until_changed": true,
+      "fixed_architecture": {
+        "walls": {
+          "cn": "矩形客厅；北墙固定",
+          "en": "rectangular living room; fixed north wall"
+        }
+      },
+      "door_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧",
+          "en": "rear left"
+        }
+      },
+      "window_positions": {
+        "WINDOW": {
+          "cn": "后方右侧",
+          "en": "rear right"
+        }
+      },
+      "furniture_positions": {
+        "SOFA": {
+          "cn": "位于角色右侧后方",
+          "en": "behind the characters on the right"
+        },
+        "TABLE": {
+          "cn": "前景中央",
+          "en": "foreground center"
+        },
+        "CHAIR": {
+          "cn": "左侧中景",
+          "en": "midground left"
+        }
+      },
+      "entrance_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧进场",
+          "en": "enter from rear left"
+        }
+      },
+      "exit_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧离场",
+          "en": "exit toward rear left"
+        }
+      },
+      "left_to_right_order": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "foreground_characters": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "midground_characters": [],
+      "background_characters": [],
+      "coordinate_unit": "relative_layout",
+      "distance_between_characters": {
+        "CHAR_A|CHAR_B": {
+          "cn": "相邻，保持已建立的相对间隔；未提供米制尺度",
+          "en": "Adjacent, maintaining the established relative spacing; metric scale is unspecified"
+        }
+      },
+      "facing": {
+        "CHAR_A": "right",
+        "CHAR_B": "left"
+      },
+      "eyelines": {
+        "CHAR_A": "CHAR_B",
+        "CHAR_B": "CHAR_A"
+      },
+      "anchor_version": "A01"
+    },
+    "SEG001_END": {
+      "scene_id": "SCN_LIVING_NIGHT",
+      "scene_variant": "MASTER",
+      "spatial_measurement": {
+        "measurement_mode": "RELATIVE",
+        "confidence": "UNKNOWN"
+      },
+      "area": "MAIN",
+      "character_positions": {
+        "CHAR_A": {
+          "x_m": 0.0,
+          "y_m": 0.0,
+          "depth": "foreground",
+          "facing": "right",
+          "eyeline_target": "CHAR_B",
+          "screen_position": "left"
+        },
+        "CHAR_B": {
+          "x_m": 1.8,
+          "y_m": 0.0,
+          "depth": "foreground",
+          "facing": "left",
+          "eyeline_target": "CHAR_A",
+          "screen_position": "right"
+        }
+      },
+      "camera_side": "south",
+      "dialogue_axis": "locked_east_west",
+      "dialogue_group": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "major_props": {},
+      "door_states": {
+        "ENTRY_DOOR": "closed"
+      },
+      "characters": {
+        "CHAR_A": {
+          "wardrobe": "OFFICE",
+          "hair_state": "dry",
+          "clothing_state": {
+            "cn": "干燥、完整",
+            "en": "dry and intact"
+          },
+          "pose": {
+            "cn": "自然站立",
+            "en": "standing naturally"
+          }
+        },
+        "CHAR_B": {
+          "wardrobe": "OFFICE",
+          "hair_state": "dry",
+          "clothing_state": {
+            "cn": "干燥、完整",
+            "en": "dry and intact"
+          },
+          "pose": {
+            "cn": "自然站立",
+            "en": "standing naturally"
+          }
+        }
+      },
+      "completed_actions": [],
+      "completed_sounds": [],
+      "valid_until_changed": true,
+      "fixed_architecture": {
+        "walls": {
+          "cn": "矩形客厅；北墙固定",
+          "en": "rectangular living room; fixed north wall"
+        }
+      },
+      "door_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧",
+          "en": "rear left"
+        }
+      },
+      "window_positions": {
+        "WINDOW": {
+          "cn": "后方右侧",
+          "en": "rear right"
+        }
+      },
+      "furniture_positions": {
+        "SOFA": {
+          "cn": "位于角色右侧后方",
+          "en": "behind the characters on the right"
+        },
+        "TABLE": {
+          "cn": "前景中央",
+          "en": "foreground center"
+        },
+        "CHAIR": {
+          "cn": "左侧中景",
+          "en": "midground left"
+        }
+      },
+      "entrance_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧进场",
+          "en": "enter from rear left"
+        }
+      },
+      "exit_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧离场",
+          "en": "exit toward rear left"
+        }
+      },
+      "left_to_right_order": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "foreground_characters": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "midground_characters": [],
+      "background_characters": [],
+      "coordinate_unit": "relative_layout",
+      "distance_between_characters": {
+        "CHAR_A|CHAR_B": {
+          "cn": "相邻，保持已建立的相对间隔；未提供米制尺度",
+          "en": "Adjacent, maintaining the established relative spacing; metric scale is unspecified"
+        }
+      },
+      "facing": {
+        "CHAR_A": "right",
+        "CHAR_B": "left"
+      },
+      "eyelines": {
+        "CHAR_A": "CHAR_B",
+        "CHAR_B": "CHAR_A"
+      },
+      "anchor_version": "A01"
+    },
+    "SEG002_INCOMING": {
+      "scene_id": "SCN_LIVING_NIGHT",
+      "scene_variant": "MASTER",
+      "spatial_measurement": {
+        "measurement_mode": "RELATIVE",
+        "confidence": "UNKNOWN"
+      },
+      "area": "MAIN",
+      "character_positions": {
+        "CHAR_A": {
+          "x_m": 0.0,
+          "y_m": 0.0,
+          "depth": "foreground",
+          "facing": "right",
+          "eyeline_target": "CHAR_B",
+          "screen_position": "left"
+        },
+        "CHAR_B": {
+          "x_m": 1.8,
+          "y_m": 0.0,
+          "depth": "foreground",
+          "facing": "left",
+          "eyeline_target": "CHAR_A",
+          "screen_position": "right"
+        }
+      },
+      "camera_side": "south",
+      "dialogue_axis": "locked_east_west",
+      "dialogue_group": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "major_props": {},
+      "door_states": {
+        "ENTRY_DOOR": "closed"
+      },
+      "characters": {
+        "CHAR_A": {
+          "wardrobe": "OFFICE",
+          "hair_state": "dry",
+          "clothing_state": {
+            "cn": "干燥、完整",
+            "en": "dry and intact"
+          },
+          "pose": {
+            "cn": "自然站立",
+            "en": "standing naturally"
+          }
+        },
+        "CHAR_B": {
+          "wardrobe": "OFFICE",
+          "hair_state": "dry",
+          "clothing_state": {
+            "cn": "干燥、完整",
+            "en": "dry and intact"
+          },
+          "pose": {
+            "cn": "自然站立",
+            "en": "standing naturally"
+          }
+        }
+      },
+      "completed_actions": [],
+      "completed_sounds": [],
+      "valid_until_changed": true,
+      "fixed_architecture": {
+        "walls": {
+          "cn": "矩形客厅；北墙固定",
+          "en": "rectangular living room; fixed north wall"
+        }
+      },
+      "door_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧",
+          "en": "rear left"
+        }
+      },
+      "window_positions": {
+        "WINDOW": {
+          "cn": "后方右侧",
+          "en": "rear right"
+        }
+      },
+      "furniture_positions": {
+        "SOFA": {
+          "cn": "位于角色右侧后方",
+          "en": "behind the characters on the right"
+        },
+        "TABLE": {
+          "cn": "前景中央",
+          "en": "foreground center"
+        },
+        "CHAIR": {
+          "cn": "左侧中景",
+          "en": "midground left"
+        }
+      },
+      "entrance_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧进场",
+          "en": "enter from rear left"
+        }
+      },
+      "exit_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧离场",
+          "en": "exit toward rear left"
+        }
+      },
+      "left_to_right_order": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "foreground_characters": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "midground_characters": [],
+      "background_characters": [],
+      "coordinate_unit": "relative_layout",
+      "distance_between_characters": {
+        "CHAR_A|CHAR_B": {
+          "cn": "相邻，保持已建立的相对间隔；未提供米制尺度",
+          "en": "Adjacent, maintaining the established relative spacing; metric scale is unspecified"
+        }
+      },
+      "facing": {
+        "CHAR_A": "right",
+        "CHAR_B": "left"
+      },
+      "eyelines": {
+        "CHAR_A": "CHAR_B",
+        "CHAR_B": "CHAR_A"
+      },
+      "anchor_version": "A01"
+    },
+    "SEG002_CURRENT": {
+      "scene_id": "SCN_LIVING_NIGHT",
+      "scene_variant": "MASTER",
+      "spatial_measurement": {
+        "measurement_mode": "RELATIVE",
+        "confidence": "UNKNOWN"
+      },
+      "area": "MAIN",
+      "character_positions": {
+        "CHAR_A": {
+          "x_m": 0.0,
+          "y_m": 0.0,
+          "depth": "foreground",
+          "facing": "right",
+          "eyeline_target": "CHAR_B",
+          "screen_position": "left"
+        },
+        "CHAR_B": {
+          "x_m": 1.8,
+          "y_m": 0.0,
+          "depth": "foreground",
+          "facing": "left",
+          "eyeline_target": "CHAR_A",
+          "screen_position": "right"
+        }
+      },
+      "camera_side": "south",
+      "dialogue_axis": "locked_east_west",
+      "dialogue_group": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "major_props": {},
+      "door_states": {
+        "ENTRY_DOOR": "closed"
+      },
+      "characters": {
+        "CHAR_A": {
+          "wardrobe": "OFFICE",
+          "hair_state": "dry",
+          "clothing_state": {
+            "cn": "干燥、完整",
+            "en": "dry and intact"
+          },
+          "pose": {
+            "cn": "自然站立",
+            "en": "standing naturally"
+          }
+        },
+        "CHAR_B": {
+          "wardrobe": "OFFICE",
+          "hair_state": "dry",
+          "clothing_state": {
+            "cn": "干燥、完整",
+            "en": "dry and intact"
+          },
+          "pose": {
+            "cn": "自然站立",
+            "en": "standing naturally"
+          }
+        }
+      },
+      "completed_actions": [],
+      "completed_sounds": [],
+      "valid_until_changed": true,
+      "fixed_architecture": {
+        "walls": {
+          "cn": "矩形客厅；北墙固定",
+          "en": "rectangular living room; fixed north wall"
+        }
+      },
+      "door_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧",
+          "en": "rear left"
+        }
+      },
+      "window_positions": {
+        "WINDOW": {
+          "cn": "后方右侧",
+          "en": "rear right"
+        }
+      },
+      "furniture_positions": {
+        "SOFA": {
+          "cn": "位于角色右侧后方",
+          "en": "behind the characters on the right"
+        },
+        "TABLE": {
+          "cn": "前景中央",
+          "en": "foreground center"
+        },
+        "CHAIR": {
+          "cn": "左侧中景",
+          "en": "midground left"
+        }
+      },
+      "entrance_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧进场",
+          "en": "enter from rear left"
+        }
+      },
+      "exit_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧离场",
+          "en": "exit toward rear left"
+        }
+      },
+      "left_to_right_order": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "foreground_characters": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "midground_characters": [],
+      "background_characters": [],
+      "coordinate_unit": "relative_layout",
+      "distance_between_characters": {
+        "CHAR_A|CHAR_B": {
+          "cn": "相邻，保持已建立的相对间隔；未提供米制尺度",
+          "en": "Adjacent, maintaining the established relative spacing; metric scale is unspecified"
+        }
+      },
+      "facing": {
+        "CHAR_A": "right",
+        "CHAR_B": "left"
+      },
+      "eyelines": {
+        "CHAR_A": "CHAR_B",
+        "CHAR_B": "CHAR_A"
+      },
+      "anchor_version": "A01"
+    },
+    "SEG002_END": {
+      "scene_id": "SCN_LIVING_NIGHT",
+      "scene_variant": "MASTER",
+      "spatial_measurement": {
+        "measurement_mode": "RELATIVE",
+        "confidence": "UNKNOWN"
+      },
+      "area": "MAIN",
+      "character_positions": {
+        "CHAR_A": {
+          "x_m": 0.0,
+          "y_m": 0.0,
+          "depth": "foreground",
+          "facing": "right",
+          "eyeline_target": "CHAR_B",
+          "screen_position": "left"
+        },
+        "CHAR_B": {
+          "x_m": 1.8,
+          "y_m": 0.0,
+          "depth": "foreground",
+          "facing": "left",
+          "eyeline_target": "CHAR_A",
+          "screen_position": "right"
+        }
+      },
+      "camera_side": "south",
+      "dialogue_axis": "locked_east_west",
+      "dialogue_group": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "major_props": {},
+      "door_states": {
+        "ENTRY_DOOR": "closed"
+      },
+      "characters": {
+        "CHAR_A": {
+          "wardrobe": "OFFICE",
+          "hair_state": "dry",
+          "clothing_state": {
+            "cn": "干燥、完整",
+            "en": "dry and intact"
+          },
+          "pose": {
+            "cn": "自然站立",
+            "en": "standing naturally"
+          }
+        },
+        "CHAR_B": {
+          "wardrobe": "OFFICE",
+          "hair_state": "dry",
+          "clothing_state": {
+            "cn": "干燥、完整",
+            "en": "dry and intact"
+          },
+          "pose": {
+            "cn": "自然站立",
+            "en": "standing naturally"
+          }
+        }
+      },
+      "completed_actions": [],
+      "completed_sounds": [],
+      "valid_until_changed": true,
+      "fixed_architecture": {
+        "walls": {
+          "cn": "矩形客厅；北墙固定",
+          "en": "rectangular living room; fixed north wall"
+        }
+      },
+      "door_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧",
+          "en": "rear left"
+        }
+      },
+      "window_positions": {
+        "WINDOW": {
+          "cn": "后方右侧",
+          "en": "rear right"
+        }
+      },
+      "furniture_positions": {
+        "SOFA": {
+          "cn": "位于角色右侧后方",
+          "en": "behind the characters on the right"
+        },
+        "TABLE": {
+          "cn": "前景中央",
+          "en": "foreground center"
+        },
+        "CHAIR": {
+          "cn": "左侧中景",
+          "en": "midground left"
+        }
+      },
+      "entrance_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧进场",
+          "en": "enter from rear left"
+        }
+      },
+      "exit_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧离场",
+          "en": "exit toward rear left"
+        }
+      },
+      "left_to_right_order": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "foreground_characters": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "midground_characters": [],
+      "background_characters": [],
+      "coordinate_unit": "relative_layout",
+      "distance_between_characters": {
+        "CHAR_A|CHAR_B": {
+          "cn": "相邻，保持已建立的相对间隔；未提供米制尺度",
+          "en": "Adjacent, maintaining the established relative spacing; metric scale is unspecified"
+        }
+      },
+      "facing": {
+        "CHAR_A": "right",
+        "CHAR_B": "left"
+      },
+      "eyelines": {
+        "CHAR_A": "CHAR_B",
+        "CHAR_B": "CHAR_A"
+      },
+      "anchor_version": "A01"
+    },
+    "SEG003_INCOMING": {
+      "scene_id": "SCN_LIVING_NIGHT",
+      "scene_variant": "MASTER",
+      "spatial_measurement": {
+        "measurement_mode": "RELATIVE",
+        "confidence": "UNKNOWN"
+      },
+      "area": "MAIN",
+      "character_positions": {
+        "CHAR_A": {
+          "x_m": 0.0,
+          "y_m": 0.0,
+          "depth": "foreground",
+          "facing": "right",
+          "eyeline_target": "CHAR_B",
+          "screen_position": "left"
+        },
+        "CHAR_B": {
+          "x_m": 1.8,
+          "y_m": 0.0,
+          "depth": "foreground",
+          "facing": "left",
+          "eyeline_target": "CHAR_A",
+          "screen_position": "right"
+        }
+      },
+      "camera_side": "south",
+      "dialogue_axis": "locked_east_west",
+      "dialogue_group": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "major_props": {},
+      "door_states": {
+        "ENTRY_DOOR": "closed"
+      },
+      "characters": {
+        "CHAR_A": {
+          "wardrobe": "OFFICE",
+          "hair_state": "dry",
+          "clothing_state": {
+            "cn": "干燥、完整",
+            "en": "dry and intact"
+          },
+          "pose": {
+            "cn": "自然站立",
+            "en": "standing naturally"
+          }
+        },
+        "CHAR_B": {
+          "wardrobe": "OFFICE",
+          "hair_state": "dry",
+          "clothing_state": {
+            "cn": "干燥、完整",
+            "en": "dry and intact"
+          },
+          "pose": {
+            "cn": "自然站立",
+            "en": "standing naturally"
+          }
+        }
+      },
+      "completed_actions": [],
+      "completed_sounds": [],
+      "valid_until_changed": true,
+      "fixed_architecture": {
+        "walls": {
+          "cn": "矩形客厅；北墙固定",
+          "en": "rectangular living room; fixed north wall"
+        }
+      },
+      "door_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧",
+          "en": "rear left"
+        }
+      },
+      "window_positions": {
+        "WINDOW": {
+          "cn": "后方右侧",
+          "en": "rear right"
+        }
+      },
+      "furniture_positions": {
+        "SOFA": {
+          "cn": "位于角色右侧后方",
+          "en": "behind the characters on the right"
+        },
+        "TABLE": {
+          "cn": "前景中央",
+          "en": "foreground center"
+        },
+        "CHAIR": {
+          "cn": "左侧中景",
+          "en": "midground left"
+        }
+      },
+      "entrance_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧进场",
+          "en": "enter from rear left"
+        }
+      },
+      "exit_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧离场",
+          "en": "exit toward rear left"
+        }
+      },
+      "left_to_right_order": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "foreground_characters": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "midground_characters": [],
+      "background_characters": [],
+      "coordinate_unit": "relative_layout",
+      "distance_between_characters": {
+        "CHAR_A|CHAR_B": {
+          "cn": "相邻，保持已建立的相对间隔；未提供米制尺度",
+          "en": "Adjacent, maintaining the established relative spacing; metric scale is unspecified"
+        }
+      },
+      "facing": {
+        "CHAR_A": "right",
+        "CHAR_B": "left"
+      },
+      "eyelines": {
+        "CHAR_A": "CHAR_B",
+        "CHAR_B": "CHAR_A"
+      },
+      "anchor_version": "A01"
+    },
+    "SEG003_CURRENT": {
+      "scene_id": "SCN_LIVING_NIGHT",
+      "scene_variant": "MASTER",
+      "spatial_measurement": {
+        "measurement_mode": "RELATIVE",
+        "confidence": "UNKNOWN"
+      },
+      "area": "MAIN",
+      "character_positions": {
+        "CHAR_A": {
+          "x_m": 0.0,
+          "y_m": 0.0,
+          "depth": "foreground",
+          "facing": "right",
+          "eyeline_target": "CHAR_B",
+          "screen_position": "left"
+        },
+        "CHAR_B": {
+          "x_m": 1.8,
+          "y_m": 0.0,
+          "depth": "foreground",
+          "facing": "left",
+          "eyeline_target": "CHAR_A",
+          "screen_position": "right"
+        }
+      },
+      "camera_side": "south",
+      "dialogue_axis": "locked_east_west",
+      "dialogue_group": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "major_props": {},
+      "door_states": {
+        "ENTRY_DOOR": "closed"
+      },
+      "characters": {
+        "CHAR_A": {
+          "wardrobe": "OFFICE",
+          "hair_state": "dry",
+          "clothing_state": {
+            "cn": "干燥、完整",
+            "en": "dry and intact"
+          },
+          "pose": {
+            "cn": "自然站立",
+            "en": "standing naturally"
+          }
+        },
+        "CHAR_B": {
+          "wardrobe": "OFFICE",
+          "hair_state": "dry",
+          "clothing_state": {
+            "cn": "干燥、完整",
+            "en": "dry and intact"
+          },
+          "pose": {
+            "cn": "自然站立",
+            "en": "standing naturally"
+          }
+        }
+      },
+      "completed_actions": [],
+      "completed_sounds": [],
+      "valid_until_changed": true,
+      "fixed_architecture": {
+        "walls": {
+          "cn": "矩形客厅；北墙固定",
+          "en": "rectangular living room; fixed north wall"
+        }
+      },
+      "door_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧",
+          "en": "rear left"
+        }
+      },
+      "window_positions": {
+        "WINDOW": {
+          "cn": "后方右侧",
+          "en": "rear right"
+        }
+      },
+      "furniture_positions": {
+        "SOFA": {
+          "cn": "位于角色右侧后方",
+          "en": "behind the characters on the right"
+        },
+        "TABLE": {
+          "cn": "前景中央",
+          "en": "foreground center"
+        },
+        "CHAIR": {
+          "cn": "左侧中景",
+          "en": "midground left"
+        }
+      },
+      "entrance_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧进场",
+          "en": "enter from rear left"
+        }
+      },
+      "exit_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧离场",
+          "en": "exit toward rear left"
+        }
+      },
+      "left_to_right_order": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "foreground_characters": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "midground_characters": [],
+      "background_characters": [],
+      "coordinate_unit": "relative_layout",
+      "distance_between_characters": {
+        "CHAR_A|CHAR_B": {
+          "cn": "相邻，保持已建立的相对间隔；未提供米制尺度",
+          "en": "Adjacent, maintaining the established relative spacing; metric scale is unspecified"
+        }
+      },
+      "facing": {
+        "CHAR_A": "right",
+        "CHAR_B": "left"
+      },
+      "eyelines": {
+        "CHAR_A": "CHAR_B",
+        "CHAR_B": "CHAR_A"
+      },
+      "anchor_version": "A01"
+    },
+    "SEG003_END": {
+      "scene_id": "SCN_LIVING_NIGHT",
+      "scene_variant": "MASTER",
+      "spatial_measurement": {
+        "measurement_mode": "RELATIVE",
+        "confidence": "UNKNOWN"
+      },
+      "area": "MAIN",
+      "character_positions": {
+        "CHAR_A": {
+          "x_m": 0.0,
+          "y_m": 0.0,
+          "depth": "foreground",
+          "facing": "right",
+          "eyeline_target": "CHAR_B",
+          "screen_position": "left"
+        },
+        "CHAR_B": {
+          "x_m": 1.8,
+          "y_m": 0.0,
+          "depth": "foreground",
+          "facing": "left",
+          "eyeline_target": "CHAR_A",
+          "screen_position": "right"
+        }
+      },
+      "camera_side": "south",
+      "dialogue_axis": "locked_east_west",
+      "dialogue_group": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "major_props": {},
+      "door_states": {
+        "ENTRY_DOOR": "closed"
+      },
+      "characters": {
+        "CHAR_A": {
+          "wardrobe": "OFFICE",
+          "hair_state": "dry",
+          "clothing_state": {
+            "cn": "干燥、完整",
+            "en": "dry and intact"
+          },
+          "pose": {
+            "cn": "自然站立",
+            "en": "standing naturally"
+          }
+        },
+        "CHAR_B": {
+          "wardrobe": "OFFICE",
+          "hair_state": "dry",
+          "clothing_state": {
+            "cn": "干燥、完整",
+            "en": "dry and intact"
+          },
+          "pose": {
+            "cn": "自然站立",
+            "en": "standing naturally"
+          }
+        }
+      },
+      "completed_actions": [],
+      "completed_sounds": [],
+      "valid_until_changed": true,
+      "fixed_architecture": {
+        "walls": {
+          "cn": "矩形客厅；北墙固定",
+          "en": "rectangular living room; fixed north wall"
+        }
+      },
+      "door_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧",
+          "en": "rear left"
+        }
+      },
+      "window_positions": {
+        "WINDOW": {
+          "cn": "后方右侧",
+          "en": "rear right"
+        }
+      },
+      "furniture_positions": {
+        "SOFA": {
+          "cn": "位于角色右侧后方",
+          "en": "behind the characters on the right"
+        },
+        "TABLE": {
+          "cn": "前景中央",
+          "en": "foreground center"
+        },
+        "CHAIR": {
+          "cn": "左侧中景",
+          "en": "midground left"
+        }
+      },
+      "entrance_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧进场",
+          "en": "enter from rear left"
+        }
+      },
+      "exit_positions": {
+        "ENTRY_DOOR": {
+          "cn": "后方左侧离场",
+          "en": "exit toward rear left"
+        }
+      },
+      "left_to_right_order": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "foreground_characters": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "midground_characters": [],
+      "background_characters": [],
+      "coordinate_unit": "relative_layout",
+      "distance_between_characters": {
+        "CHAR_A|CHAR_B": {
+          "cn": "相邻，保持已建立的相对间隔；未提供米制尺度",
+          "en": "Adjacent, maintaining the established relative spacing; metric scale is unspecified"
+        }
+      },
+      "facing": {
+        "CHAR_A": "right",
+        "CHAR_B": "left"
+      },
+      "eyelines": {
+        "CHAR_A": "CHAR_B",
+        "CHAR_B": "CHAR_A"
+      },
+      "anchor_version": "A01"
+    }
+  }
+}

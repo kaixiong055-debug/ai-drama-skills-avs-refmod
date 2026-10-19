@@ -1,0 +1,604 @@
+{
+  "schema_version": "5.1",
+  "read_only": true,
+  "view_of": "05_storyboard.json + 06_production.json + 07_spatial_locks.json + 08_binding.json",
+  "canonical_hash": "369178c7dfc15f6caa649e864ee9b7e28693fa405108d1115ede24647b8b8e13",
+  "columns": [
+    "Shot ID & Duration",
+    "Continuity Handoff",
+    "Reference Anchors (Spatial + Identity)",
+    "Hook Type",
+    "Shot Description (Per-Second Directives)",
+    "Audio & Dialogue Track"
+  ],
+  "shots": [
+    {
+      "shot_id": "SH001",
+      "segment_id": "SEG001",
+      "duration_s": 2.5,
+      "segment_start_s": 0.0,
+      "segment_end_s": 2.5,
+      "local_timeline": [
+        {
+          "local_start_s": 0.0,
+          "local_end_s": 1.0,
+          "segment_start_s": 0.0,
+          "segment_end_s": 1.0,
+          "action": "说话人轻微呼吸，视线保持指向听者",
+          "camera": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+          "spatial_anchor": "LOCK_SC01_A01",
+          "state_ids": {
+            "incoming": "SEG001_INCOMING",
+            "current": "SEG001_CURRENT",
+            "end": "SEG001_END"
+          },
+          "audio_beat_ids": [
+            "B001"
+          ],
+          "state_events": []
+        },
+        {
+          "local_start_s": 1.0,
+          "local_end_s": 2.0,
+          "segment_start_s": 1.0,
+          "segment_end_s": 2.0,
+          "action": "说话人轻微呼吸，视线保持指向听者",
+          "camera": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+          "spatial_anchor": "LOCK_SC01_A01",
+          "state_ids": {
+            "incoming": "SEG001_INCOMING",
+            "current": "SEG001_CURRENT",
+            "end": "SEG001_END"
+          },
+          "audio_beat_ids": [
+            "B001"
+          ],
+          "state_events": []
+        },
+        {
+          "local_start_s": 2.0,
+          "local_end_s": 2.5,
+          "segment_start_s": 2.0,
+          "segment_end_s": 2.5,
+          "action": "说话人轻微呼吸，视线保持指向听者",
+          "camera": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+          "spatial_anchor": "LOCK_SC01_A01",
+          "state_ids": {
+            "incoming": "SEG001_INCOMING",
+            "current": "SEG001_CURRENT",
+            "end": "SEG001_END"
+          },
+          "audio_beat_ids": [
+            "B001"
+          ],
+          "state_events": []
+        }
+      ],
+      "camera_contract": {
+        "shot_id": "SH001",
+        "start_s": 0.0,
+        "end_s": 2.5,
+        "beat_ids": [
+          "B001"
+        ],
+        "shot_scale": "close_up",
+        "lens_mm": 85,
+        "camera_height_m": 1.5,
+        "camera_movement": "locked_off",
+        "camera_angle": {
+          "cn": "同轴线侧的侧前方反打",
+          "en": "a three-quarter reverse angle on the same side of the dialogue axis"
+        },
+        "composition": {
+          "cn": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+          "en": "Frame the current speaker’s face and shoulders; all others remain off-screen in their established positions"
+        },
+        "lighting": {
+          "cn": "窗侧柔光，室内补光，方向保持稳定",
+          "en": "soft window-side key light and consistent indoor fill"
+        },
+        "depth_of_field": {
+          "cn": "浅景深但面部清晰",
+          "en": "shallow depth of field with a clearly readable face"
+        },
+        "action": {
+          "cn": "说话人轻微呼吸，视线保持指向听者",
+          "en": "The speaker breathes subtly and keeps the eyeline toward the listener"
+        },
+        "cut_reason": {
+          "cn": "呈现当前说话人的细微反应",
+          "en": "show the current speaker’s subtle reaction"
+        }
+      }
+    },
+    {
+      "shot_id": "SH002",
+      "segment_id": "SEG001",
+      "duration_s": 2.5,
+      "segment_start_s": 2.5,
+      "segment_end_s": 5.0,
+      "local_timeline": [
+        {
+          "local_start_s": 0.0,
+          "local_end_s": 1.0,
+          "segment_start_s": 2.5,
+          "segment_end_s": 3.5,
+          "action": "说话人轻微呼吸，视线保持指向听者",
+          "camera": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+          "spatial_anchor": "LOCK_SC01_A01",
+          "state_ids": {
+            "incoming": "SEG001_INCOMING",
+            "current": "SEG001_CURRENT",
+            "end": "SEG001_END"
+          },
+          "audio_beat_ids": [
+            "B002"
+          ],
+          "state_events": []
+        },
+        {
+          "local_start_s": 1.0,
+          "local_end_s": 2.0,
+          "segment_start_s": 3.5,
+          "segment_end_s": 4.5,
+          "action": "说话人轻微呼吸，视线保持指向听者",
+          "camera": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+          "spatial_anchor": "LOCK_SC01_A01",
+          "state_ids": {
+            "incoming": "SEG001_INCOMING",
+            "current": "SEG001_CURRENT",
+            "end": "SEG001_END"
+          },
+          "audio_beat_ids": [
+            "B002"
+          ],
+          "state_events": []
+        },
+        {
+          "local_start_s": 2.0,
+          "local_end_s": 2.5,
+          "segment_start_s": 4.5,
+          "segment_end_s": 5.0,
+          "action": "说话人轻微呼吸，视线保持指向听者",
+          "camera": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+          "spatial_anchor": "LOCK_SC01_A01",
+          "state_ids": {
+            "incoming": "SEG001_INCOMING",
+            "current": "SEG001_CURRENT",
+            "end": "SEG001_END"
+          },
+          "audio_beat_ids": [],
+          "state_events": []
+        }
+      ],
+      "camera_contract": {
+        "shot_id": "SH002",
+        "start_s": 2.5,
+        "end_s": 5.0,
+        "beat_ids": [
+          "B002"
+        ],
+        "shot_scale": "close_up",
+        "lens_mm": 85,
+        "camera_height_m": 1.5,
+        "camera_movement": "locked_off",
+        "camera_angle": {
+          "cn": "同轴线侧的侧前方反打",
+          "en": "a three-quarter reverse angle on the same side of the dialogue axis"
+        },
+        "composition": {
+          "cn": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+          "en": "Frame the current speaker’s face and shoulders; all others remain off-screen in their established positions"
+        },
+        "lighting": {
+          "cn": "窗侧柔光，室内补光，方向保持稳定",
+          "en": "soft window-side key light and consistent indoor fill"
+        },
+        "depth_of_field": {
+          "cn": "浅景深但面部清晰",
+          "en": "shallow depth of field with a clearly readable face"
+        },
+        "action": {
+          "cn": "说话人轻微呼吸，视线保持指向听者",
+          "en": "The speaker breathes subtly and keeps the eyeline toward the listener"
+        },
+        "cut_reason": {
+          "cn": "呈现当前说话人的细微反应",
+          "en": "show the current speaker’s subtle reaction"
+        }
+      }
+    },
+    {
+      "shot_id": "SH003",
+      "segment_id": "SEG002",
+      "duration_s": 2.5,
+      "segment_start_s": 0.0,
+      "segment_end_s": 2.5,
+      "local_timeline": [
+        {
+          "local_start_s": 0.0,
+          "local_end_s": 1.0,
+          "segment_start_s": 0.0,
+          "segment_end_s": 1.0,
+          "action": "说话人轻微呼吸，视线保持指向听者",
+          "camera": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+          "spatial_anchor": "LOCK_SC01_A01",
+          "state_ids": {
+            "incoming": "SEG002_INCOMING",
+            "current": "SEG002_CURRENT",
+            "end": "SEG002_END"
+          },
+          "audio_beat_ids": [
+            "B003"
+          ],
+          "state_events": []
+        },
+        {
+          "local_start_s": 1.0,
+          "local_end_s": 2.0,
+          "segment_start_s": 1.0,
+          "segment_end_s": 2.0,
+          "action": "说话人轻微呼吸，视线保持指向听者",
+          "camera": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+          "spatial_anchor": "LOCK_SC01_A01",
+          "state_ids": {
+            "incoming": "SEG002_INCOMING",
+            "current": "SEG002_CURRENT",
+            "end": "SEG002_END"
+          },
+          "audio_beat_ids": [
+            "B003"
+          ],
+          "state_events": []
+        },
+        {
+          "local_start_s": 2.0,
+          "local_end_s": 2.5,
+          "segment_start_s": 2.0,
+          "segment_end_s": 2.5,
+          "action": "说话人轻微呼吸，视线保持指向听者",
+          "camera": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+          "spatial_anchor": "LOCK_SC01_A01",
+          "state_ids": {
+            "incoming": "SEG002_INCOMING",
+            "current": "SEG002_CURRENT",
+            "end": "SEG002_END"
+          },
+          "audio_beat_ids": [
+            "B003"
+          ],
+          "state_events": []
+        }
+      ],
+      "camera_contract": {
+        "shot_id": "SH003",
+        "start_s": 0.0,
+        "end_s": 2.5,
+        "beat_ids": [
+          "B003"
+        ],
+        "shot_scale": "close_up",
+        "lens_mm": 85,
+        "camera_height_m": 1.5,
+        "camera_movement": "locked_off",
+        "camera_angle": {
+          "cn": "同轴线侧的侧前方反打",
+          "en": "a three-quarter reverse angle on the same side of the dialogue axis"
+        },
+        "composition": {
+          "cn": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+          "en": "Frame the current speaker’s face and shoulders; all others remain off-screen in their established positions"
+        },
+        "lighting": {
+          "cn": "窗侧柔光，室内补光，方向保持稳定",
+          "en": "soft window-side key light and consistent indoor fill"
+        },
+        "depth_of_field": {
+          "cn": "浅景深但面部清晰",
+          "en": "shallow depth of field with a clearly readable face"
+        },
+        "action": {
+          "cn": "说话人轻微呼吸，视线保持指向听者",
+          "en": "The speaker breathes subtly and keeps the eyeline toward the listener"
+        },
+        "cut_reason": {
+          "cn": "呈现当前说话人的细微反应",
+          "en": "show the current speaker’s subtle reaction"
+        }
+      }
+    },
+    {
+      "shot_id": "SH004",
+      "segment_id": "SEG002",
+      "duration_s": 2.5,
+      "segment_start_s": 2.5,
+      "segment_end_s": 5.0,
+      "local_timeline": [
+        {
+          "local_start_s": 0.0,
+          "local_end_s": 1.0,
+          "segment_start_s": 2.5,
+          "segment_end_s": 3.5,
+          "action": "说话人轻微呼吸，视线保持指向听者",
+          "camera": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+          "spatial_anchor": "LOCK_SC01_A01",
+          "state_ids": {
+            "incoming": "SEG002_INCOMING",
+            "current": "SEG002_CURRENT",
+            "end": "SEG002_END"
+          },
+          "audio_beat_ids": [
+            "B004"
+          ],
+          "state_events": []
+        },
+        {
+          "local_start_s": 1.0,
+          "local_end_s": 2.0,
+          "segment_start_s": 3.5,
+          "segment_end_s": 4.5,
+          "action": "说话人轻微呼吸，视线保持指向听者",
+          "camera": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+          "spatial_anchor": "LOCK_SC01_A01",
+          "state_ids": {
+            "incoming": "SEG002_INCOMING",
+            "current": "SEG002_CURRENT",
+            "end": "SEG002_END"
+          },
+          "audio_beat_ids": [
+            "B004"
+          ],
+          "state_events": []
+        },
+        {
+          "local_start_s": 2.0,
+          "local_end_s": 2.5,
+          "segment_start_s": 4.5,
+          "segment_end_s": 5.0,
+          "action": "说话人轻微呼吸，视线保持指向听者",
+          "camera": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+          "spatial_anchor": "LOCK_SC01_A01",
+          "state_ids": {
+            "incoming": "SEG002_INCOMING",
+            "current": "SEG002_CURRENT",
+            "end": "SEG002_END"
+          },
+          "audio_beat_ids": [],
+          "state_events": []
+        }
+      ],
+      "camera_contract": {
+        "shot_id": "SH004",
+        "start_s": 2.5,
+        "end_s": 5.0,
+        "beat_ids": [
+          "B004"
+        ],
+        "shot_scale": "close_up",
+        "lens_mm": 85,
+        "camera_height_m": 1.5,
+        "camera_movement": "locked_off",
+        "camera_angle": {
+          "cn": "同轴线侧的侧前方反打",
+          "en": "a three-quarter reverse angle on the same side of the dialogue axis"
+        },
+        "composition": {
+          "cn": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+          "en": "Frame the current speaker’s face and shoulders; all others remain off-screen in their established positions"
+        },
+        "lighting": {
+          "cn": "窗侧柔光，室内补光，方向保持稳定",
+          "en": "soft window-side key light and consistent indoor fill"
+        },
+        "depth_of_field": {
+          "cn": "浅景深但面部清晰",
+          "en": "shallow depth of field with a clearly readable face"
+        },
+        "action": {
+          "cn": "说话人轻微呼吸，视线保持指向听者",
+          "en": "The speaker breathes subtly and keeps the eyeline toward the listener"
+        },
+        "cut_reason": {
+          "cn": "呈现当前说话人的细微反应",
+          "en": "show the current speaker’s subtle reaction"
+        }
+      }
+    },
+    {
+      "shot_id": "SH005",
+      "segment_id": "SEG003",
+      "duration_s": 2.5,
+      "segment_start_s": 0.0,
+      "segment_end_s": 2.5,
+      "local_timeline": [
+        {
+          "local_start_s": 0.0,
+          "local_end_s": 1.0,
+          "segment_start_s": 0.0,
+          "segment_end_s": 1.0,
+          "action": "说话人轻微呼吸，视线保持指向听者",
+          "camera": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+          "spatial_anchor": "LOCK_SC01_A01",
+          "state_ids": {
+            "incoming": "SEG003_INCOMING",
+            "current": "SEG003_CURRENT",
+            "end": "SEG003_END"
+          },
+          "audio_beat_ids": [
+            "B005"
+          ],
+          "state_events": []
+        },
+        {
+          "local_start_s": 1.0,
+          "local_end_s": 2.0,
+          "segment_start_s": 1.0,
+          "segment_end_s": 2.0,
+          "action": "说话人轻微呼吸，视线保持指向听者",
+          "camera": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+          "spatial_anchor": "LOCK_SC01_A01",
+          "state_ids": {
+            "incoming": "SEG003_INCOMING",
+            "current": "SEG003_CURRENT",
+            "end": "SEG003_END"
+          },
+          "audio_beat_ids": [
+            "B005"
+          ],
+          "state_events": []
+        },
+        {
+          "local_start_s": 2.0,
+          "local_end_s": 2.5,
+          "segment_start_s": 2.0,
+          "segment_end_s": 2.5,
+          "action": "说话人轻微呼吸，视线保持指向听者",
+          "camera": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+          "spatial_anchor": "LOCK_SC01_A01",
+          "state_ids": {
+            "incoming": "SEG003_INCOMING",
+            "current": "SEG003_CURRENT",
+            "end": "SEG003_END"
+          },
+          "audio_beat_ids": [
+            "B005"
+          ],
+          "state_events": []
+        }
+      ],
+      "camera_contract": {
+        "shot_id": "SH005",
+        "start_s": 0.0,
+        "end_s": 2.5,
+        "beat_ids": [
+          "B005"
+        ],
+        "shot_scale": "close_up",
+        "lens_mm": 85,
+        "camera_height_m": 1.5,
+        "camera_movement": "locked_off",
+        "camera_angle": {
+          "cn": "同轴线侧的侧前方反打",
+          "en": "a three-quarter reverse angle on the same side of the dialogue axis"
+        },
+        "composition": {
+          "cn": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+          "en": "Frame the current speaker’s face and shoulders; all others remain off-screen in their established positions"
+        },
+        "lighting": {
+          "cn": "窗侧柔光，室内补光，方向保持稳定",
+          "en": "soft window-side key light and consistent indoor fill"
+        },
+        "depth_of_field": {
+          "cn": "浅景深但面部清晰",
+          "en": "shallow depth of field with a clearly readable face"
+        },
+        "action": {
+          "cn": "说话人轻微呼吸，视线保持指向听者",
+          "en": "The speaker breathes subtly and keeps the eyeline toward the listener"
+        },
+        "cut_reason": {
+          "cn": "呈现当前说话人的细微反应",
+          "en": "show the current speaker’s subtle reaction"
+        }
+      }
+    },
+    {
+      "shot_id": "SH006",
+      "segment_id": "SEG003",
+      "duration_s": 2.5,
+      "segment_start_s": 2.5,
+      "segment_end_s": 5.0,
+      "local_timeline": [
+        {
+          "local_start_s": 0.0,
+          "local_end_s": 1.0,
+          "segment_start_s": 2.5,
+          "segment_end_s": 3.5,
+          "action": "说话人轻微呼吸，视线保持指向听者",
+          "camera": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+          "spatial_anchor": "LOCK_SC01_A01",
+          "state_ids": {
+            "incoming": "SEG003_INCOMING",
+            "current": "SEG003_CURRENT",
+            "end": "SEG003_END"
+          },
+          "audio_beat_ids": [
+            "B006"
+          ],
+          "state_events": []
+        },
+        {
+          "local_start_s": 1.0,
+          "local_end_s": 2.0,
+          "segment_start_s": 3.5,
+          "segment_end_s": 4.5,
+          "action": "说话人轻微呼吸，视线保持指向听者",
+          "camera": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+          "spatial_anchor": "LOCK_SC01_A01",
+          "state_ids": {
+            "incoming": "SEG003_INCOMING",
+            "current": "SEG003_CURRENT",
+            "end": "SEG003_END"
+          },
+          "audio_beat_ids": [
+            "B006"
+          ],
+          "state_events": []
+        },
+        {
+          "local_start_s": 2.0,
+          "local_end_s": 2.5,
+          "segment_start_s": 4.5,
+          "segment_end_s": 5.0,
+          "action": "说话人轻微呼吸，视线保持指向听者",
+          "camera": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+          "spatial_anchor": "LOCK_SC01_A01",
+          "state_ids": {
+            "incoming": "SEG003_INCOMING",
+            "current": "SEG003_CURRENT",
+            "end": "SEG003_END"
+          },
+          "audio_beat_ids": [],
+          "state_events": []
+        }
+      ],
+      "camera_contract": {
+        "shot_id": "SH006",
+        "start_s": 2.5,
+        "end_s": 5.0,
+        "beat_ids": [
+          "B006"
+        ],
+        "shot_scale": "close_up",
+        "lens_mm": 85,
+        "camera_height_m": 1.5,
+        "camera_movement": "locked_off",
+        "camera_angle": {
+          "cn": "同轴线侧的侧前方反打",
+          "en": "a three-quarter reverse angle on the same side of the dialogue axis"
+        },
+        "composition": {
+          "cn": "当前说话人的面部与肩部可见，其他人仍在原位画外",
+          "en": "Frame the current speaker’s face and shoulders; all others remain off-screen in their established positions"
+        },
+        "lighting": {
+          "cn": "窗侧柔光，室内补光，方向保持稳定",
+          "en": "soft window-side key light and consistent indoor fill"
+        },
+        "depth_of_field": {
+          "cn": "浅景深但面部清晰",
+          "en": "shallow depth of field with a clearly readable face"
+        },
+        "action": {
+          "cn": "说话人轻微呼吸，视线保持指向听者",
+          "en": "The speaker breathes subtly and keeps the eyeline toward the listener"
+        },
+        "cut_reason": {
+          "cn": "呈现当前说话人的细微反应",
+          "en": "show the current speaker’s subtle reaction"
+        }
+      }
+    }
+  ]
+}

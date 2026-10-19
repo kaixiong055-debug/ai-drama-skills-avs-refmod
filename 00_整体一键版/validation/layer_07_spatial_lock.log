@@ -1,0 +1,22 @@
+Failed to find real location of C:\Python313\python.exe
+test_TEST05_entry_relocks (tests.test_pipeline.ProductionTests.test_TEST05_entry_relocks) ... ok
+test_TEST06_exit_relocks (tests.test_pipeline.ProductionTests.test_TEST06_exit_relocks) ... ok
+test_TEST07_swap_A02 (tests.test_pipeline.ProductionTests.test_TEST07_swap_A02) ... ok
+test_TEST08_three_segments_no_redundant_lock (tests.test_pipeline.ProductionTests.test_TEST08_three_segments_no_redundant_lock) ... ok
+test_body_facing_not_overwritten_by_eyeline (test_measurement_v51.MeasurementTests.test_body_facing_not_overwritten_by_eyeline) ... ok
+test_fake_metric_geometry_rejected (test_measurement_v51.MeasurementTests.test_fake_metric_geometry_rejected) ... ok
+test_layout_magnitude_does_not_create_metric (test_measurement_v51.MeasurementTests.test_layout_magnitude_does_not_create_metric) ... ok
+test_legacy_image_layout_defaults_relative_no_fake_metres (test_measurement_v51.MeasurementTests.test_legacy_image_layout_defaults_relative_no_fake_metres) ... ok
+test_metric_contradictory_constraints_rejected (test_measurement_v51.MeasurementTests.test_metric_contradictory_constraints_rejected) ... ok
+test_metric_preserves_user_distance (test_measurement_v51.MeasurementTests.test_metric_preserves_user_distance) ... ok
+test_metric_without_evidence_blocks (test_measurement_v51.MeasurementTests.test_metric_without_evidence_blocks) ... ok
+test_new_version_request_and_pack_artifacts (test_measurement_v51.MeasurementTests.test_new_version_request_and_pack_artifacts) ... ok
+test_photo_inference_not_metric_source (test_measurement_v51.MeasurementTests.test_photo_inference_not_metric_source) ... ok
+test_relative_cannot_be_promoted (test_measurement_v51.MeasurementTests.test_relative_cannot_be_promoted) ... ok
+test_state_cannot_override_scale (test_measurement_v51.MeasurementTests.test_state_cannot_override_scale) ... ok
+test_unknown_remains_unknown (test_measurement_v51.MeasurementTests.test_unknown_remains_unknown) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 2.706s
+
+OK

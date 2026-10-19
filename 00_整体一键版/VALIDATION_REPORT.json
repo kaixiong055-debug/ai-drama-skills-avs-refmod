@@ -1,0 +1,26 @@
+{
+  "version": "5.1.6",
+  "tests": {
+    "count": 140,
+    "status": "PASS",
+    "seconds": 13.676
+  },
+  "skills_validated": [
+    "00_router",
+    "01_story_adapter",
+    "02_character_bible",
+    "03_asset_bible",
+    "04_script",
+    "05_storyboard",
+    "06_h3_runtime",
+    "07_spatial_lock",
+    "08_binding",
+    "09_generation",
+    "10_qc",
+    "11_assembly"
+  ],
+  "refmod_extraction": "PASS (4 files, local H3 VAE)",
+  "refmod_load_and_conditioning_injection": "PASS (actual plugin, CPU test)",
+  "video_generation_tested": false,
+  "scope": "RefMod execution instructions added; engine generation/serialization unchanged; AVS adapter installed separately on this machine."
+}

@@ -1,0 +1,9 @@
+Failed to find real location of C:\Python313\python.exe
+test_assembly_excludes_locks_and_trims_once (tests.test_operations.OperationsTests.test_assembly_excludes_locks_and_trims_once) ... ok
+test_assembly_pending_fails (tests.test_operations.OperationsTests.test_assembly_pending_fails) ... ok
+test_assembly_unverified_frames_fail (tests.test_operations.OperationsTests.test_assembly_unverified_frames_fail) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 3.467s
+
+OK

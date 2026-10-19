@@ -1,0 +1,58 @@
+{
+  "runtime_prompt_budget": {
+    "cn": {
+      "target_min": 2500,
+      "target_max": 5000
+    },
+    "en": {
+      "target_min": 3500,
+      "target_max": 8000
+    },
+    "ordinary_two_person_warning": 15000,
+    "semantic_completeness_first": true
+  },
+  "compression": "OWNERSHIP_AND_EXACT_DEDUPLICATION; NO_TRUNCATION",
+  "warnings": [],
+  "units": {
+    "LOCK_SC01_A01": {
+      "cn_characters": 2820,
+      "cn_before_dedup_characters": 2821,
+      "cn_removed_repeated_characters": 1,
+      "en_characters": 5850,
+      "en_before_dedup_characters": 5851,
+      "en_removed_repeated_characters": 1
+    },
+    "SEG001": {
+      "cn_characters": 3477,
+      "cn_before_dedup_characters": 3478,
+      "cn_removed_repeated_characters": 1,
+      "en_characters": 7361,
+      "en_before_dedup_characters": 7362,
+      "en_removed_repeated_characters": 1
+    },
+    "LOCK_SC01_A02": {
+      "cn_characters": 2427,
+      "cn_before_dedup_characters": 2428,
+      "cn_removed_repeated_characters": 1,
+      "en_characters": 5019,
+      "en_before_dedup_characters": 5020,
+      "en_removed_repeated_characters": 1
+    },
+    "SEG002": {
+      "cn_characters": 3304,
+      "cn_before_dedup_characters": 3305,
+      "cn_removed_repeated_characters": 1,
+      "en_characters": 6891,
+      "en_before_dedup_characters": 6892,
+      "en_removed_repeated_characters": 1
+    },
+    "SEG003": {
+      "cn_characters": 3054,
+      "cn_before_dedup_characters": 3055,
+      "cn_removed_repeated_characters": 1,
+      "en_characters": 6457,
+      "en_before_dedup_characters": 6458,
+      "en_removed_repeated_characters": 1
+    }
+  }
+}

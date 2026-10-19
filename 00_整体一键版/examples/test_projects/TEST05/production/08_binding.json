@@ -1,0 +1,128 @@
+{
+  "schema_version": "5.1",
+  "kind": "binding",
+  "lineage": {
+    "spatial_locks": "97c87e4b0b71202f6b901b18935d6a662c2de43aad736dfde630609b2b152c07",
+    "assets": "2654068becd27d47155aa5c626dfeba9817a0230722cc774dc00cdf0a0773089"
+  },
+  "units": {
+    "LOCK_SC01_A01": {
+      "P1": {
+        "asset_id": "CHAR_A_H3_OFFICE",
+        "file": "CHAR_A_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P2": {
+        "asset_id": "CHAR_B_H3_OFFICE",
+        "file": "CHAR_B_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P3": {
+        "asset_id": "SCN_LIVING_MASTER",
+        "file": "SCN_LIVING_MASTER.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      }
+    },
+    "SEG001": {
+      "P1": {
+        "asset_id": "CHAR_A_H3_OFFICE",
+        "file": "CHAR_A_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P2": {
+        "asset_id": "CHAR_B_H3_OFFICE",
+        "file": "CHAR_B_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P3": {
+        "asset_id": "SCN_LIVING_MASTER",
+        "file": "SCN_LIVING_MASTER.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      }
+    },
+    "LOCK_SC01_A02": {
+      "P1": {
+        "asset_id": "CHAR_A_H3_OFFICE",
+        "file": "CHAR_A_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P2": {
+        "asset_id": "CHAR_B_H3_OFFICE",
+        "file": "CHAR_B_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P3": {
+        "asset_id": "CHAR_C_H3_OFFICE",
+        "file": "CHAR_C_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P4": {
+        "asset_id": "SCN_LIVING_MASTER",
+        "file": "SCN_LIVING_MASTER.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      }
+    },
+    "SEG002": {
+      "P1": {
+        "asset_id": "CHAR_A_H3_OFFICE",
+        "file": "CHAR_A_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P2": {
+        "asset_id": "CHAR_B_H3_OFFICE",
+        "file": "CHAR_B_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P3": {
+        "asset_id": "CHAR_C_H3_OFFICE",
+        "file": "CHAR_C_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P4": {
+        "asset_id": "SCN_LIVING_MASTER",
+        "file": "SCN_LIVING_MASTER.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      }
+    },
+    "SEG003": {
+      "P1": {
+        "asset_id": "CHAR_A_H3_OFFICE",
+        "file": "CHAR_A_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P2": {
+        "asset_id": "CHAR_B_H3_OFFICE",
+        "file": "CHAR_B_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P3": {
+        "asset_id": "CHAR_C_H3_OFFICE",
+        "file": "CHAR_C_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P4": {
+        "asset_id": "SCN_LIVING_MASTER",
+        "file": "SCN_LIVING_MASTER.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      }
+    }
+  },
+  "asset_files": {
+    "CHAR_A_H3_OFFICE": {
+      "file": "CHAR_A_H3_OFFICE.png",
+      "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+    },
+    "CHAR_B_H3_OFFICE": {
+      "file": "CHAR_B_H3_OFFICE.png",
+      "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+    },
+    "CHAR_C_H3_OFFICE": {
+      "file": "CHAR_C_H3_OFFICE.png",
+      "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+    },
+    "SCN_LIVING_MASTER": {
+      "file": "SCN_LIVING_MASTER.png",
+      "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+    }
+  }
+}

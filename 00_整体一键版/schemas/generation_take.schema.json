@@ -1,0 +1,172 @@
+{
+  "type": "object",
+  "properties": {
+    "generation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "segment_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "take_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "prompt_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "model": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mode": {
+      "type": "string",
+      "minLength": 1
+    },
+    "spatial_anchor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "shot_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "output": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "picture_bindings": {
+      "type": "object"
+    },
+    "continuation_source": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "reject_reason": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "IDENTITY_DRIFT",
+          "FACE_DRIFT",
+          "COSTUME_DRIFT",
+          "POSITION_DRIFT",
+          "LEFT_RIGHT_SWAP",
+          "AXIS_FLIP",
+          "EYELINE_ERROR",
+          "SCENE_GEOMETRY_DRIFT",
+          "PROP_DISAPPEAR",
+          "PROP_SPAWN",
+          "HAND_DEFORMATION",
+          "EXTRA_LIMB",
+          "ACTION_NOT_COMPLETED",
+          "ACTION_REPEATED",
+          "SOUND_REPEATED",
+          "END_FRAME_DEFORMATION",
+          "MOTION_BLUR_EXCESSIVE"
+        ]
+      }
+    },
+    "language": {
+      "enum": [
+        "cn",
+        "en"
+      ]
+    },
+    "model_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "workflow": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "steps": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "seed": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "resolution": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "hidden_lock": {
+      "type": "boolean"
+    },
+    "continuation": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "reference_assets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "runtime_seconds": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "exclusiveMinimum": 0
+    },
+    "output_file": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "scenario_signature": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "generation_id",
+    "segment_id",
+    "take_id",
+    "prompt_version",
+    "model",
+    "mode",
+    "spatial_anchor",
+    "status",
+    "shot_id",
+    "output",
+    "picture_bindings",
+    "continuation_source",
+    "reject_reason"
+  ],
+  "additionalProperties": true
+}

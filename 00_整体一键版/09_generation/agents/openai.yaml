@@ -1,0 +1,4 @@
+interface:
+  display_name: "ai-drama-generation"
+  short_description: "准备H3生成任务、AddGuide依赖、Take编号及不可变提示词版本台账；不自动提交视频。"
+  default_prompt: "使用 $ai-drama-generation 按 V5.1 的单一权威数据合同完成本层工作。"

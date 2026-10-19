@@ -1,0 +1,25 @@
+Failed to find real location of C:\Python313\python.exe
+test_TEST01_two_person_multiround (tests.test_pipeline.ProductionTests.test_TEST01_two_person_multiround) ... ok
+test_TEST12_bilingual_parity_and_export (tests.test_pipeline.ProductionTests.test_TEST12_bilingual_parity_and_export) ... ok
+test_any_segment_is_independent (test_runtime_v51.RuntimeV51Tests.test_any_segment_is_independent) ... ok
+test_budget_warning_does_not_fail_legitimate_complex_runtime (test_runtime_v51.RuntimeV51Tests.test_budget_warning_does_not_fail_legitimate_complex_runtime) ... ok
+test_chinese_metric_provenance_is_auditable_without_english_leak (test_runtime_v51.RuntimeV51Tests.test_chinese_metric_provenance_is_auditable_without_english_leak) ... ok
+test_conflicting_position_facing_camera_geometry_fail (test_runtime_v51.RuntimeV51Tests.test_conflicting_position_facing_camera_geometry_fail) ... ok
+test_corrupted_translation_and_timing_rejected (test_runtime_v51.RuntimeV51Tests.test_corrupted_translation_and_timing_rejected) ... ok
+test_dialogue_only_in_audio_owner (test_runtime_v51.RuntimeV51Tests.test_dialogue_only_in_audio_owner) ... ok
+test_duplicate_spatial_and_axis_fail (test_runtime_v51.RuntimeV51Tests.test_duplicate_spatial_and_axis_fail) ... ok
+test_five_people_all_present_once (test_runtime_v51.RuntimeV51Tests.test_five_people_all_present_once) ... ok
+test_full_and_runtime_preserve_verified_metric (test_runtime_v51.RuntimeV51Tests.test_full_and_runtime_preserve_verified_metric) ... ok
+test_intermediate_moves_returning_to_baseline_are_preserved (test_runtime_v51.RuntimeV51Tests.test_intermediate_moves_returning_to_baseline_are_preserved) ... ok
+test_keyframe_is_picture_reference_not_new_entity_subject (test_runtime_v51.RuntimeV51Tests.test_keyframe_is_picture_reference_not_new_entity_subject) ... ok
+test_negative_repetition_and_similar_spatial_repetition (test_runtime_v51.RuntimeV51Tests.test_negative_repetition_and_similar_spatial_repetition) ... ok
+test_prop_transfer_end_state_and_holder_preserved (test_runtime_v51.RuntimeV51Tests.test_prop_transfer_end_state_and_holder_preserved) ... ok
+test_relative_no_fabricated_metric_full_or_runtime (test_runtime_v51.RuntimeV51Tests.test_relative_no_fabricated_metric_full_or_runtime) ... ok
+test_runtime_bilingual_canonical_and_ownership (test_runtime_v51.RuntimeV51Tests.test_runtime_bilingual_canonical_and_ownership) ... ok
+test_soft_budget_warns_and_dedup_never_truncates_unique_state (test_runtime_v51.RuntimeV51Tests.test_soft_budget_warns_and_dedup_never_truncates_unique_state) ... ok
+test_sound_count_window_once_and_completion_survives (test_runtime_v51.RuntimeV51Tests.test_sound_count_window_once_and_completion_survives) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 3.541s
+
+OK

@@ -1,0 +1,78 @@
+{
+  "case_id": "R08",
+  "name": {
+    "cn": "角色换位",
+    "en": "Characters change positions"
+  },
+  "protocol": {
+    "participants": 2,
+    "procedure": "Show an explicit authorized crossing or position exchange with a readable path; record new positions and rebuild the subsequent anchor.",
+    "inspect": [
+      "no unmotivated swap",
+      "correct final positions",
+      "camera-side consistency"
+    ]
+  },
+  "scenario_review": "NOT_RUN",
+  "status": "NOT_RUN",
+  "metrics": {
+    "identity_drift": null,
+    "position_drift": null,
+    "left_right_swap": null,
+    "axis_flip": null,
+    "eyeline_error": null,
+    "scene_geometry_drift": null,
+    "prop_drift": null,
+    "end_frame_deformation": null
+  },
+  "variants": {
+    "A": {
+      "prompt_family": "5.0",
+      "hidden_lock": false,
+      "status": "NOT_RUN",
+      "runs": [],
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      }
+    },
+    "B": {
+      "prompt_family": "5.0",
+      "hidden_lock": true,
+      "status": "NOT_RUN",
+      "runs": [],
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      }
+    },
+    "C": {
+      "prompt_family": "5.1",
+      "hidden_lock": true,
+      "status": "NOT_RUN",
+      "runs": [],
+      "metrics": {
+        "identity_drift": null,
+        "position_drift": null,
+        "left_right_swap": null,
+        "axis_flip": null,
+        "eyeline_error": null,
+        "scene_geometry_drift": null,
+        "prop_drift": null,
+        "end_frame_deformation": null
+      }
+    }
+  }
+}

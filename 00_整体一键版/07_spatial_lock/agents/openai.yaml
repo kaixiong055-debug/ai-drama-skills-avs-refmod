@@ -1,0 +1,4 @@
+interface:
+  display_name: "ai-drama-spatial-lock"
+  short_description: "维护2至5人空间状态机及隐藏LOCK，阻止近景重排、换边、越轴与续写断裂。"
+  default_prompt: "使用 $ai-drama-spatial-lock 按 V5.1 的单一权威数据合同完成本层工作。"

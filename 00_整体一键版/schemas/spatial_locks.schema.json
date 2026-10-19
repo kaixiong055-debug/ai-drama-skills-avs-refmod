@@ -1,0 +1,481 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ai-drama:v5:spatial_locks",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "5.0",
+        "5.1"
+      ]
+    },
+    "kind": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lineage": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "locks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "lock_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "state_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "before_segment_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "duration_s": {
+            "type": "number",
+            "minimum": 0.8,
+            "maximum": 1.5
+          },
+          "include_in_final": {
+            "const": false
+          }
+        },
+        "required": [
+          "lock_id",
+          "state_id",
+          "before_segment_id",
+          "duration_s",
+          "include_in_final"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "states": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "scene_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scene_variant": {
+            "type": "string",
+            "minLength": 1
+          },
+          "area": {
+            "type": "string",
+            "minLength": 1
+          },
+          "character_positions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "x_m": {
+                  "type": "number"
+                },
+                "y_m": {
+                  "type": "number"
+                },
+                "depth": {
+                  "enum": [
+                    "foreground",
+                    "midground",
+                    "background"
+                  ]
+                },
+                "facing": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "eyeline_target": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "x_m",
+                "y_m",
+                "depth",
+                "facing",
+                "eyeline_target"
+              ],
+              "additionalProperties": true
+            }
+          },
+          "left_to_right_order": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "foreground_characters": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "midground_characters": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "background_characters": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "distance_between_characters": {
+            "type": "object",
+            "additionalProperties": {
+              "oneOf": [
+                {
+                  "type": "number",
+                  "minimum": 0
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ]
+                }
+              ]
+            }
+          },
+          "facing": {
+            "type": "object"
+          },
+          "eyelines": {
+            "type": "object"
+          },
+          "dialogue_axis": {
+            "type": "string",
+            "minLength": 1
+          },
+          "camera_side": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fixed_architecture": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "cn": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "en": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "cn",
+                "en"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "door_positions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "cn": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "en": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "cn",
+                "en"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "window_positions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "cn": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "en": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "cn",
+                "en"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "furniture_positions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "cn": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "en": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "cn",
+                "en"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "entrance_positions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "cn": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "en": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "cn",
+                "en"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "exit_positions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "cn": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "en": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "cn",
+                "en"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "major_props": {
+            "type": "object"
+          },
+          "characters": {
+            "type": "object"
+          },
+          "valid_until_changed": {
+            "const": true
+          },
+          "spatial_measurement": {
+            "type": "object",
+            "properties": {
+              "measurement_mode": {
+                "enum": [
+                  "RELATIVE",
+                  "METRIC",
+                  "UNKNOWN"
+                ]
+              },
+              "confidence": {
+                "enum": [
+                  "HIGH",
+                  "MEDIUM",
+                  "LOW",
+                  "UNKNOWN"
+                ]
+              },
+              "source_measurement_mode": {
+                "enum": [
+                  "RELATIVE",
+                  "METRIC",
+                  "UNKNOWN"
+                ]
+              },
+              "provenance": {
+                "type": "object",
+                "properties": {
+                  "source_type": {
+                    "enum": [
+                      "USER_SPECIFIED",
+                      "DIMENSIONED_FLOORPLAN",
+                      "BLENDER_3D",
+                      "CAD",
+                      "VERIFIABLE_SCALE",
+                      "CANONICAL_SCENE"
+                    ]
+                  },
+                  "source_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "source_type",
+                  "source_id",
+                  "evidence"
+                ]
+              },
+              "constraints": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "subject_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "reference_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "distance_m": {
+                      "type": "number",
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "subject_id",
+                    "reference_id",
+                    "distance_m"
+                  ]
+                }
+              },
+              "relative_descriptions": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "measurement_mode",
+              "confidence"
+            ],
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "measurement_mode": {
+                      "const": "METRIC"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "provenance"
+                  ]
+                }
+              }
+            ]
+          },
+          "coordinate_unit": {
+            "enum": [
+              "metres",
+              "relative_layout"
+            ]
+          }
+        },
+        "required": [
+          "scene_id",
+          "scene_variant",
+          "area",
+          "character_positions",
+          "left_to_right_order",
+          "foreground_characters",
+          "midground_characters",
+          "background_characters",
+          "distance_between_characters",
+          "facing",
+          "eyelines",
+          "dialogue_axis",
+          "camera_side",
+          "fixed_architecture",
+          "door_positions",
+          "window_positions",
+          "furniture_positions",
+          "entrance_positions",
+          "exit_positions",
+          "major_props",
+          "characters",
+          "valid_until_changed"
+        ],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "lineage",
+    "locks",
+    "states"
+  ],
+  "additionalProperties": true
+}

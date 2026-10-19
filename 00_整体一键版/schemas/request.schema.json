@@ -1,0 +1,2045 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ai-drama:v5:request",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "5.0",
+        "5.1"
+      ]
+    },
+    "project": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "object",
+          "properties": {
+            "cn": {
+              "type": "string",
+              "minLength": 1
+            },
+            "en": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "cn",
+            "en"
+          ],
+          "additionalProperties": false
+        },
+        "episode_name": {
+          "type": "object",
+          "properties": {
+            "cn": {
+              "type": "string",
+              "minLength": 1
+            },
+            "en": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "cn",
+            "en"
+          ],
+          "additionalProperties": false
+        },
+        "production_profile": {
+          "type": "string",
+          "minLength": 1
+        },
+        "visual_style": {
+          "type": "object",
+          "properties": {
+            "cn": {
+              "type": "string",
+              "minLength": 1
+            },
+            "en": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "cn",
+            "en"
+          ],
+          "additionalProperties": false
+        },
+        "runtime_budget": {
+          "type": "object",
+          "properties": {
+            "profile": {
+              "type": "string",
+              "minLength": 1
+            },
+            "target_seconds": {
+              "type": "number"
+            },
+            "max_seconds": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "profile",
+            "target_seconds",
+            "max_seconds"
+          ],
+          "additionalProperties": true
+        },
+        "keyframe_policy": {
+          "enum": [
+            "AUTO",
+            "ALWAYS",
+            "NEVER"
+          ]
+        },
+        "allow_stale_asset": {
+          "type": "boolean"
+        },
+        "runtime_prompt_budget": {
+          "type": "object",
+          "properties": {
+            "cn": {
+              "type": "object"
+            },
+            "en": {
+              "type": "object"
+            },
+            "semantic_completeness_first": {
+              "const": true
+            }
+          },
+          "additionalProperties": true
+        },
+        "character_binding_mode": {
+          "enum": [
+            "PICTURE",
+            "AVS_REFMOD"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "episode_name",
+        "production_profile",
+        "visual_style",
+        "runtime_budget"
+      ],
+      "additionalProperties": true
+    },
+    "cast": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "character_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "object",
+            "properties": {
+              "cn": {
+                "type": "string",
+                "minLength": 1
+              },
+              "en": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "cn",
+              "en"
+            ],
+            "additionalProperties": false
+          },
+          "identity": {
+            "type": "object",
+            "properties": {
+              "cn": {
+                "type": "string",
+                "minLength": 1
+              },
+              "en": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "cn",
+              "en"
+            ],
+            "additionalProperties": false
+          },
+          "hairstyle": {
+            "type": "object",
+            "properties": {
+              "cn": {
+                "type": "string",
+                "minLength": 1
+              },
+              "en": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "cn",
+              "en"
+            ],
+            "additionalProperties": false
+          },
+          "default_wardrobe": {
+            "type": "string",
+            "minLength": 1
+          },
+          "wardrobes": {
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false
+                },
+                "runtime_asset_id": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "description",
+                "runtime_asset_id"
+              ],
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "character_id",
+          "name",
+          "identity",
+          "hairstyle",
+          "default_wardrobe",
+          "wardrobes"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "asset_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "file": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "direct_bindable": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "object",
+            "properties": {
+              "cn": {
+                "type": "string",
+                "minLength": 1
+              },
+              "en": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "cn",
+              "en"
+            ],
+            "additionalProperties": false
+          },
+          "version": {
+            "type": [
+              "integer",
+              "string",
+              "null"
+            ]
+          },
+          "derived_from": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "source_versions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": [
+                "integer",
+                "string",
+                "null"
+              ]
+            }
+          },
+          "source_version": {
+            "oneOf": [
+              {
+                "type": [
+                  "integer",
+                  "string",
+                  "null"
+                ]
+              },
+              {
+                "type": "object",
+                "additionalProperties": {
+                  "type": [
+                    "integer",
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            ]
+          },
+          "generated_from_version": {
+            "oneOf": [
+              {
+                "type": [
+                  "integer",
+                  "string",
+                  "null"
+                ]
+              },
+              {
+                "type": "object",
+                "additionalProperties": {
+                  "type": [
+                    "integer",
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            ]
+          },
+          "status": {
+            "enum": [
+              "VALID",
+              "STALE",
+              "MISSING",
+              "UNVERIFIED"
+            ]
+          }
+        },
+        "required": [
+          "asset_id",
+          "file",
+          "role",
+          "direct_bindable",
+          "description"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "scenes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "scene_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "object",
+            "properties": {
+              "cn": {
+                "type": "string",
+                "minLength": 1
+              },
+              "en": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "cn",
+              "en"
+            ],
+            "additionalProperties": false
+          },
+          "time_of_day": {
+            "type": "object",
+            "properties": {
+              "cn": {
+                "type": "string",
+                "minLength": 1
+              },
+              "en": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "cn",
+              "en"
+            ],
+            "additionalProperties": false
+          },
+          "soundscape": {
+            "type": "object",
+            "properties": {
+              "cn": {
+                "type": "string",
+                "minLength": 1
+              },
+              "en": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "cn",
+              "en"
+            ],
+            "additionalProperties": false
+          },
+          "master_asset_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "initial_state": {
+            "type": "object",
+            "properties": {
+              "fixed_architecture": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "door_positions": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "window_positions": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "furniture_positions": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "entrance_positions": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "exit_positions": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "character_positions": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "x_m": {
+                      "type": "number"
+                    },
+                    "y_m": {
+                      "type": "number"
+                    },
+                    "depth": {
+                      "enum": [
+                        "foreground",
+                        "midground",
+                        "background"
+                      ]
+                    },
+                    "facing": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "eyeline_target": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "x_m",
+                    "y_m",
+                    "depth",
+                    "facing",
+                    "eyeline_target"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            },
+            "required": [
+              "fixed_architecture",
+              "door_positions",
+              "window_positions",
+              "furniture_positions",
+              "entrance_positions",
+              "exit_positions",
+              "character_positions"
+            ],
+            "additionalProperties": true
+          },
+          "spatial_measurement": {
+            "type": "object",
+            "properties": {
+              "measurement_mode": {
+                "enum": [
+                  "RELATIVE",
+                  "METRIC",
+                  "UNKNOWN"
+                ]
+              },
+              "confidence": {
+                "enum": [
+                  "HIGH",
+                  "MEDIUM",
+                  "LOW",
+                  "UNKNOWN"
+                ]
+              },
+              "source_measurement_mode": {
+                "enum": [
+                  "RELATIVE",
+                  "METRIC",
+                  "UNKNOWN"
+                ]
+              },
+              "provenance": {
+                "type": "object",
+                "properties": {
+                  "source_type": {
+                    "enum": [
+                      "USER_SPECIFIED",
+                      "DIMENSIONED_FLOORPLAN",
+                      "BLENDER_3D",
+                      "CAD",
+                      "VERIFIABLE_SCALE",
+                      "CANONICAL_SCENE"
+                    ]
+                  },
+                  "source_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "source_type",
+                  "source_id",
+                  "evidence"
+                ]
+              },
+              "constraints": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "subject_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "reference_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "distance_m": {
+                      "type": "number",
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "subject_id",
+                    "reference_id",
+                    "distance_m"
+                  ]
+                }
+              },
+              "relative_descriptions": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "measurement_mode",
+              "confidence"
+            ],
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "measurement_mode": {
+                      "const": "METRIC"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "provenance"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "required": [
+          "scene_id",
+          "name",
+          "time_of_day",
+          "soundscape",
+          "master_asset_id",
+          "initial_state"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "beats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "beat_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scene_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "action": {
+            "type": "object",
+            "properties": {
+              "cn": {
+                "type": "string",
+                "minLength": 1
+              },
+              "en": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "cn",
+              "en"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "beat_id",
+          "scene_id",
+          "action"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "segments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "segment_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scene_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "duration_s": {
+            "const": 5
+          },
+          "participants": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "beat_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "shots": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "shot_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "start_s": {
+                  "type": "number"
+                },
+                "end_s": {
+                  "type": "number"
+                },
+                "beat_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "shot_scale": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "lens_mm": {
+                  "type": "number"
+                },
+                "camera_height_m": {
+                  "type": "number"
+                },
+                "camera_movement": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "camera_angle": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false
+                },
+                "composition": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false
+                },
+                "lighting": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false
+                },
+                "depth_of_field": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false
+                },
+                "action": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false
+                },
+                "cut_reason": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false
+                },
+                "performance": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false,
+                  "description": "Authored bilingual shot-level facial acting, gaze, blink and quiet breathing within existing timing."
+                },
+                "face_visible": {
+                  "type": "boolean",
+                  "description": "False for prop/text inserts or other shots without a visible face."
+                }
+              },
+              "required": [
+                "shot_id",
+                "start_s",
+                "end_s",
+                "beat_ids",
+                "shot_scale",
+                "lens_mm",
+                "camera_height_m",
+                "camera_movement",
+                "camera_angle",
+                "composition",
+                "lighting",
+                "depth_of_field",
+                "action",
+                "cut_reason"
+              ],
+              "additionalProperties": true
+            }
+          },
+          "title": {
+            "type": "object",
+            "properties": {
+              "cn": {
+                "type": "string",
+                "minLength": 1
+              },
+              "en": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "cn",
+              "en"
+            ],
+            "additionalProperties": false
+          },
+          "summary": {
+            "type": "object",
+            "properties": {
+              "cn": {
+                "type": "string",
+                "minLength": 1
+              },
+              "en": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "cn",
+              "en"
+            ],
+            "additionalProperties": false
+          },
+          "detailed_description": {
+            "type": "object",
+            "properties": {
+              "cn": {
+                "type": "string",
+                "minLength": 1
+              },
+              "en": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "cn",
+              "en"
+            ],
+            "additionalProperties": false
+          },
+          "events": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "op": {
+                  "enum": [
+                    "enter",
+                    "exit",
+                    "move",
+                    "axis",
+                    "group",
+                    "area",
+                    "appearance",
+                    "prop",
+                    "door",
+                    "action",
+                    "sound"
+                  ]
+                },
+                "description": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "op",
+                "description"
+              ],
+              "additionalProperties": true,
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "enter"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "character_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "position": {
+                        "type": "object",
+                        "properties": {
+                          "x_m": {
+                            "type": "number"
+                          },
+                          "y_m": {
+                            "type": "number"
+                          },
+                          "depth": {
+                            "enum": [
+                              "foreground",
+                              "midground",
+                              "background"
+                            ]
+                          },
+                          "facing": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "eyeline_target": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        },
+                        "required": [
+                          "x_m",
+                          "y_m",
+                          "depth",
+                          "facing",
+                          "eyeline_target"
+                        ],
+                        "additionalProperties": true
+                      }
+                    },
+                    "required": [
+                      "character_id",
+                      "position"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "exit"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "character_id": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "character_id"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "move"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "character_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "position": {
+                        "type": "object",
+                        "minProperties": 1
+                      },
+                      "path": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    },
+                    "required": [
+                      "character_id",
+                      "position",
+                      "path"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "axis"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "camera_side": {
+                        "enum": [
+                          "north",
+                          "south",
+                          "east",
+                          "west"
+                        ]
+                      },
+                      "authorized": {
+                        "const": true
+                      }
+                    },
+                    "required": [
+                      "camera_side",
+                      "authorized"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "group"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "members": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    },
+                    "required": [
+                      "members"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "area"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "area": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "path": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    },
+                    "required": [
+                      "area",
+                      "path"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "appearance"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "character_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "cause": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "character_id",
+                      "cause"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "prop"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "prop_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "holder": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "state": {
+                        "type": "object",
+                        "properties": {
+                          "cn": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "en": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        },
+                        "required": [
+                          "cn",
+                          "en"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "prop_id",
+                      "holder",
+                      "state"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "door"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "door_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "state": {
+                        "enum": [
+                          "closed",
+                          "open",
+                          "half_open"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "door_id",
+                      "state"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "action"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "event_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "at_s": {
+                        "type": "number"
+                      },
+                      "count": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "phase": {
+                        "const": "complete"
+                      }
+                    },
+                    "required": [
+                      "event_id",
+                      "at_s",
+                      "count",
+                      "phase"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "sound"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "event_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "at_s": {
+                        "type": "number"
+                      },
+                      "count": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "window_start": {
+                        "type": "number"
+                      },
+                      "window_end": {
+                        "type": "number"
+                      },
+                      "termination": {
+                        "type": "object",
+                        "properties": {
+                          "cn": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "en": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        },
+                        "required": [
+                          "cn",
+                          "en"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "event_id",
+                      "at_s",
+                      "count",
+                      "window_start",
+                      "window_end",
+                      "termination"
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "before_events": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "op": {
+                  "enum": [
+                    "enter",
+                    "exit",
+                    "move",
+                    "axis",
+                    "group",
+                    "area",
+                    "appearance",
+                    "prop",
+                    "door",
+                    "action",
+                    "sound"
+                  ]
+                },
+                "description": {
+                  "type": "object",
+                  "properties": {
+                    "cn": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "cn",
+                    "en"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "op",
+                "description"
+              ],
+              "additionalProperties": true,
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "enter"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "character_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "position": {
+                        "type": "object",
+                        "properties": {
+                          "x_m": {
+                            "type": "number"
+                          },
+                          "y_m": {
+                            "type": "number"
+                          },
+                          "depth": {
+                            "enum": [
+                              "foreground",
+                              "midground",
+                              "background"
+                            ]
+                          },
+                          "facing": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "eyeline_target": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        },
+                        "required": [
+                          "x_m",
+                          "y_m",
+                          "depth",
+                          "facing",
+                          "eyeline_target"
+                        ],
+                        "additionalProperties": true
+                      }
+                    },
+                    "required": [
+                      "character_id",
+                      "position"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "exit"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "character_id": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "character_id"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "move"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "character_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "position": {
+                        "type": "object",
+                        "minProperties": 1
+                      },
+                      "path": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    },
+                    "required": [
+                      "character_id",
+                      "position",
+                      "path"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "axis"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "camera_side": {
+                        "enum": [
+                          "north",
+                          "south",
+                          "east",
+                          "west"
+                        ]
+                      },
+                      "authorized": {
+                        "const": true
+                      }
+                    },
+                    "required": [
+                      "camera_side",
+                      "authorized"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "group"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "members": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    },
+                    "required": [
+                      "members"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "area"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "area": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "path": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    },
+                    "required": [
+                      "area",
+                      "path"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "appearance"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "character_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "cause": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "character_id",
+                      "cause"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "prop"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "prop_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "holder": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "state": {
+                        "type": "object",
+                        "properties": {
+                          "cn": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "en": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        },
+                        "required": [
+                          "cn",
+                          "en"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "prop_id",
+                      "holder",
+                      "state"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "door"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "door_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "state": {
+                        "enum": [
+                          "closed",
+                          "open",
+                          "half_open"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "door_id",
+                      "state"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "action"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "event_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "at_s": {
+                        "type": "number"
+                      },
+                      "count": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "phase": {
+                        "const": "complete"
+                      }
+                    },
+                    "required": [
+                      "event_id",
+                      "at_s",
+                      "count",
+                      "phase"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "op": {
+                        "const": "sound"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "event_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "at_s": {
+                        "type": "number"
+                      },
+                      "count": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "window_start": {
+                        "type": "number"
+                      },
+                      "window_end": {
+                        "type": "number"
+                      },
+                      "termination": {
+                        "type": "object",
+                        "properties": {
+                          "cn": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "en": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        },
+                        "required": [
+                          "cn",
+                          "en"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "event_id",
+                      "at_s",
+                      "count",
+                      "window_start",
+                      "window_end",
+                      "termination"
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "shot_keyframes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "shot_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "keyframe_required": {
+                  "type": "boolean"
+                },
+                "keyframe_recommended": {
+                  "type": "boolean"
+                },
+                "keyframe_type": {
+                  "enum": [
+                    "SPATIAL_ANCHOR_KEYFRAME",
+                    "SHOT_KEYFRAME",
+                    "ACTION_KEYFRAME",
+                    "END_STATE_KEYFRAME",
+                    "SHOT_REFERENCE"
+                  ]
+                },
+                "source_assets": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "output": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "status": {
+                  "enum": [
+                    "VALID",
+                    "STALE",
+                    "MISSING",
+                    "UNVERIFIED",
+                    "NOT_REQUIRED",
+                    "PLANNED",
+                    "AVAILABLE"
+                  ]
+                }
+              },
+              "required": [
+                "shot_id"
+              ]
+            }
+          },
+          "keyframe_policy": {
+            "enum": [
+              "AUTO",
+              "ALWAYS",
+              "NEVER"
+            ]
+          }
+        },
+        "required": [
+          "segment_id",
+          "scene_id",
+          "duration_s",
+          "participants",
+          "beat_ids",
+          "shots",
+          "title",
+          "summary",
+          "detailed_description"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "shot_keyframes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "shot_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "keyframe_required": {
+            "type": "boolean"
+          },
+          "keyframe_recommended": {
+            "type": "boolean"
+          },
+          "keyframe_type": {
+            "enum": [
+              "SPATIAL_ANCHOR_KEYFRAME",
+              "SHOT_KEYFRAME",
+              "ACTION_KEYFRAME",
+              "END_STATE_KEYFRAME",
+              "SHOT_REFERENCE"
+            ]
+          },
+          "source_assets": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "output": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "enum": [
+              "VALID",
+              "STALE",
+              "MISSING",
+              "UNVERIFIED",
+              "NOT_REQUIRED",
+              "PLANNED",
+              "AVAILABLE"
+            ]
+          }
+        },
+        "required": [
+          "shot_id"
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "project",
+    "cast",
+    "assets",
+    "scenes",
+    "beats",
+    "segments"
+  ],
+  "additionalProperties": true
+}

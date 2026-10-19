@@ -1,0 +1,109 @@
+{
+  "schema_version": "5.1",
+  "kind": "production",
+  "lineage": {
+    "storyboard": "37be3fda888028b2ce77937321879049fa6605c0728652e5f1aaf888736e54de",
+    "assets": "8cf1167a909c2f90510db758ac56a5d70e0cfaa7be640f048388d647292e7158"
+  },
+  "units": [
+    {
+      "unit_id": "SEG001",
+      "segment_id": "SEG001",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "duration_s": 5.0,
+      "include_in_final": true,
+      "spatial_anchor": "LOCK_SC01_A01",
+      "state_ids": {
+        "incoming": "SEG001_INCOMING",
+        "current": "SEG001_CURRENT",
+        "end": "SEG001_END"
+      },
+      "continuation_source": {
+        "unit_id": "LOCK_SC01_A01",
+        "tail_frames": 22,
+        "fps": 24,
+        "guide_frame_idx": 0,
+        "inherit_audio": false
+      },
+      "shot_ids": [
+        "SH001",
+        "SH002"
+      ],
+      "events": [],
+      "active_speakers": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "primary_listener": null,
+      "secondary_listeners": [],
+      "h3_mode": "REF2VA"
+    },
+    {
+      "unit_id": "SEG002",
+      "segment_id": "SEG002",
+      "scene_id": "SCN_LIVING_NIGHT",
+      "duration_s": 5.0,
+      "include_in_final": true,
+      "spatial_anchor": "LOCK_SC01_A01",
+      "state_ids": {
+        "incoming": "SEG002_INCOMING",
+        "current": "SEG002_CURRENT",
+        "end": "SEG002_END"
+      },
+      "continuation_source": {
+        "unit_id": "SEG001",
+        "tail_frames": 22,
+        "fps": 24,
+        "guide_frame_idx": 0,
+        "inherit_audio": false
+      },
+      "shot_ids": [
+        "SH003",
+        "SH004"
+      ],
+      "events": [],
+      "active_speakers": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "primary_listener": null,
+      "secondary_listeners": [],
+      "h3_mode": "REF2VA"
+    },
+    {
+      "unit_id": "SEG003",
+      "segment_id": "SEG003",
+      "scene_id": "SCN_LIVING_MORNING",
+      "duration_s": 5.0,
+      "include_in_final": true,
+      "spatial_anchor": "LOCK_SC02_A01",
+      "state_ids": {
+        "incoming": "SEG003_INCOMING",
+        "current": "SEG003_CURRENT",
+        "end": "SEG003_END"
+      },
+      "continuation_source": {
+        "unit_id": "LOCK_SC02_A01",
+        "tail_frames": 22,
+        "fps": 24,
+        "guide_frame_idx": 0,
+        "inherit_audio": false
+      },
+      "shot_ids": [
+        "SH005",
+        "SH006"
+      ],
+      "events": [],
+      "active_speakers": [
+        "CHAR_A",
+        "CHAR_B"
+      ],
+      "primary_listener": null,
+      "secondary_listeners": [],
+      "h3_mode": "REF2VA"
+    }
+  ],
+  "production_profile": "DRAMA_DIALOGUE",
+  "final_runtime_s": 15,
+  "final_segment_count": 3
+}

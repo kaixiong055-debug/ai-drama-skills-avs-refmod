@@ -1,0 +1,4 @@
+interface:
+  display_name: "ai-drama-assembly"
+  short_description: "只选已验收的正式SEG，排除Hidden LOCK，按实际引导重叠帧数形成装配清单。"
+  default_prompt: "使用 $ai-drama-assembly 按 V5.1 的单一权威数据合同完成本层工作。"

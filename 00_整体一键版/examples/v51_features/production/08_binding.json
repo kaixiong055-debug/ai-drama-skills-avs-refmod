@@ -1,0 +1,238 @@
+{
+  "schema_version": "5.1",
+  "kind": "binding",
+  "lineage": {
+    "spatial_locks": "053fa3a882c01bd06953dfc471fd4d500ebea0e2f2ee516da591f4e384e7d7cd",
+    "assets": "78b3e7cc1e276b7c0cdc862bcfc8a90067fd119faa70c497f808bdc0344fb3dc"
+  },
+  "units": {
+    "LOCK_SC01_A01": {
+      "P1": {
+        "asset_id": "CHAR_A_H3_OFFICE",
+        "file": "CHAR_A_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P2": {
+        "asset_id": "CHAR_B_H3_OFFICE",
+        "file": "CHAR_B_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P3": {
+        "asset_id": "SCN_LIVING_MASTER",
+        "file": "SCN_LIVING_MASTER.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P4": {
+        "asset_id": "SCN_LIVING_ENTRY",
+        "file": "SCN_LIVING_ENTRY.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P5": {
+        "asset_id": "PROP_LUGGAGE_CLOSED",
+        "file": "PROP_LUGGAGE_CLOSED.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P6": {
+        "asset_id": "KF_SH001_SPATIAL_ANCHOR_KEYFRAME",
+        "file": "KF_SH001_SPATIAL_ANCHOR_KEYFRAME.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72",
+        "keyframe_type": "SPATIAL_ANCHOR_KEYFRAME",
+        "shot_id": "SH001",
+        "reference_authority": {
+          "controls": [
+            "composition",
+            "current_blocking",
+            "shot_scale",
+            "spatial_relations"
+          ],
+          "cannot_override": [
+            "character_identity_master",
+            "current_wardrobe",
+            "scene_master_geometry"
+          ]
+        }
+      }
+    },
+    "SEG001": {
+      "P1": {
+        "asset_id": "CHAR_A_H3_OFFICE",
+        "file": "CHAR_A_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P2": {
+        "asset_id": "CHAR_B_H3_OFFICE",
+        "file": "CHAR_B_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P3": {
+        "asset_id": "SCN_LIVING_MASTER",
+        "file": "SCN_LIVING_MASTER.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P4": {
+        "asset_id": "SCN_LIVING_ENTRY",
+        "file": "SCN_LIVING_ENTRY.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P5": {
+        "asset_id": "PROP_LUGGAGE_CLOSED",
+        "file": "PROP_LUGGAGE_CLOSED.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P6": {
+        "asset_id": "KF_SH001_SPATIAL_ANCHOR_KEYFRAME",
+        "file": "KF_SH001_SPATIAL_ANCHOR_KEYFRAME.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72",
+        "keyframe_type": "SPATIAL_ANCHOR_KEYFRAME",
+        "shot_id": "SH001",
+        "reference_authority": {
+          "controls": [
+            "composition",
+            "current_blocking",
+            "shot_scale",
+            "spatial_relations"
+          ],
+          "cannot_override": [
+            "character_identity_master",
+            "current_wardrobe",
+            "scene_master_geometry"
+          ]
+        }
+      },
+      "P7": {
+        "asset_id": "KF_SH001_SHOT_KEYFRAME",
+        "file": "KF_SH001_SHOT_KEYFRAME.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72",
+        "keyframe_type": "SHOT_KEYFRAME",
+        "shot_id": "SH001",
+        "reference_authority": {
+          "controls": [
+            "composition",
+            "current_blocking",
+            "shot_scale",
+            "spatial_relations"
+          ],
+          "cannot_override": [
+            "character_identity_master",
+            "current_wardrobe",
+            "scene_master_geometry"
+          ]
+        }
+      }
+    },
+    "SEG002": {
+      "P1": {
+        "asset_id": "CHAR_A_H3_OFFICE",
+        "file": "CHAR_A_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P2": {
+        "asset_id": "CHAR_B_H3_OFFICE",
+        "file": "CHAR_B_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P3": {
+        "asset_id": "SCN_LIVING_MASTER",
+        "file": "SCN_LIVING_MASTER.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P4": {
+        "asset_id": "PROP_LUGGAGE_CLOSED",
+        "file": "PROP_LUGGAGE_CLOSED.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      }
+    },
+    "SEG003": {
+      "P1": {
+        "asset_id": "CHAR_A_H3_OFFICE",
+        "file": "CHAR_A_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P2": {
+        "asset_id": "CHAR_B_H3_OFFICE",
+        "file": "CHAR_B_H3_OFFICE.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P3": {
+        "asset_id": "SCN_LIVING_MASTER",
+        "file": "SCN_LIVING_MASTER.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      },
+      "P4": {
+        "asset_id": "PROP_LUGGAGE_CLOSED",
+        "file": "PROP_LUGGAGE_CLOSED.png",
+        "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+      }
+    }
+  },
+  "asset_files": {
+    "CHAR_A_H3_OFFICE": {
+      "file": "CHAR_A_H3_OFFICE.png",
+      "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+    },
+    "CHAR_B_H3_OFFICE": {
+      "file": "CHAR_B_H3_OFFICE.png",
+      "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+    },
+    "SCN_LIVING_MASTER": {
+      "file": "SCN_LIVING_MASTER.png",
+      "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+    },
+    "CHAR_A_MASTER": {
+      "file": "CHAR_A_MASTER.png",
+      "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+    },
+    "CHAR_A_FACE4": {
+      "file": "CHAR_A_FACE4.png",
+      "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+    },
+    "CHAR_A_BODY": {
+      "file": "CHAR_A_BODY.png",
+      "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+    },
+    "CHAR_A_WARDROBE_OFFICE": {
+      "file": "CHAR_A_WARDROBE_OFFICE.png",
+      "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+    },
+    "CHAR_B_MASTER": {
+      "file": "CHAR_B_MASTER.png",
+      "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+    },
+    "CHAR_B_FACE4": {
+      "file": "CHAR_B_FACE4.png",
+      "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+    },
+    "CHAR_B_BODY": {
+      "file": "CHAR_B_BODY.png",
+      "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+    },
+    "CHAR_B_WARDROBE_OFFICE": {
+      "file": "CHAR_B_WARDROBE_OFFICE.png",
+      "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+    },
+    "SCN_LIVING_ENTRY": {
+      "file": "SCN_LIVING_ENTRY.png",
+      "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+    },
+    "PROP_LUGGAGE_MASTER": {
+      "file": "PROP_LUGGAGE_MASTER.png",
+      "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+    },
+    "PROP_LUGGAGE_CLOSED": {
+      "file": "PROP_LUGGAGE_CLOSED.png",
+      "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+    },
+    "PROP_LUGGAGE_OPEN": {
+      "file": "PROP_LUGGAGE_OPEN.png",
+      "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+    },
+    "KF_SH001_SPATIAL_ANCHOR_KEYFRAME": {
+      "file": "KF_SH001_SPATIAL_ANCHOR_KEYFRAME.png",
+      "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+    },
+    "KF_SH001_SHOT_KEYFRAME": {
+      "file": "KF_SH001_SHOT_KEYFRAME.png",
+      "sha256": "b7f2416bf4f60fe669cb5ea8b471f4bffe16e387cdcf2129f4b36504bbd30e72"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+# V5.1 资产依赖
+
+每个资产的 version 是自己的内容版本；derived_from 列出直接源ID，source_versions 记录生成时所读各源版本，generated_from_version保留生成来源版本记录。MASTER更新不能通过把所有source_versions自动改成最新版来假装重新生成。
+
+依赖图先检查ID存在与无环，再由直接版本不匹配或上游STALE/MISSING向下游传播。角色MASTER影响FACE4/BODY/衣服/Runtime；Runtime必须匹配当前人物和衣服，Scene AREA匹配当前Scene MASTER，Prop状态匹配Prop MASTER。状态VALID/STALE/MISSING/UNVERIFIED与图片真实内容复核不同，存在文件不等于美术已验收。
+
+旧包只有可用Runtime时保留existing_runtime_only兼容证据，状态不升级为已验证。READY默认拒绝STALE或MISSING绑定；allow_stale_asset必须是用户显式授权并记录依据。缺失文件不能靠此例外放行。asset_dependency_report.json随每次导出生成，更新源后重新编译以传播状态。
+
+自然语言入口通过 `one_click.py source --catalog asset_catalog.json` 读用户已有版本台账。catalog可为数组或含assets数组的对象，元素绑定实际file及asset_id，并携带上述版本/依赖字段。模型没有权限给自己设置allow_stale_asset，source适配器从用户config读取该布尔值，缺省false；没有catalog版本证据时会移除模型臆造版本和VALID状态。derived_from可作为待核实的语义依赖提案，不能据此声称历史生成版本已验证。

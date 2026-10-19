@@ -1,0 +1,225 @@
+{
+  "authority": "supplementary historical detail evidence; current contract/schema control execution",
+  "entries": [
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 45,
+      "text": "### 超过 9 张时必须压缩\n按顺序处理：\nA. 把多个低优先级视角并入 SHEET4/SHEET9；\nB. 删除低频区域图；\nC. 若本质是另一独立空间，拆成新 Scene Family；\nD. 复用 MASTER/SHEET/已有区域图；\nE. 单纯昼夜/天气变化优先用 Prompt 状态控制，而不是新增图片。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 46,
+      "text": "## 8. Character Family Planner｜人物资产注册\n主要人物必须注册：\n- MASTER 身份；\n- FACE 面部四宫格；\n- BODY 身材比例；\n- WARDROBE_* 每套服装；\n- H3_* 每套实际视频运行造型。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 51,
+      "text": "Transition 资产不应导致任一 Scene Family 的场景图总数超过 9；如果把 Transition 计入室内场景预算，则必须在该 9 张内完成取舍。推荐在 manifest 中单独类型化为 transition，但仍受单段 Picture 1–9 预算约束。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 65,
+      "text": "### 14.5 Spatial Context Memory｜空间上下文记忆\n每个 Scene Family / 区域必须维护：\n- `spatial_context_established: true|false`\n- `current_region`\n- `previous_region`\n- `movement_path`\n- `spatial_reestablish_required: true|false`"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 77,
+      "text": "规则：\n1. 无对白不能留模糊占位；`dialogue_state=NONE`。\n2. 有对白必须严格来自 source beat，不得新增。\n3. 关键 carry-state 只有在明确发生“放下/交接/离手/状态改变”时才结束。\n4. 画外目标的左右方向必须继承 Scene MASTER / AREA / 已建立轴线，不能临时猜。无法确定时标记 LOW，并要求下游报 `SCREEN_DIRECTION_UNRESOLVED`。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 78,
+      "text": "## 15. V3.3 Fixed Facility / Local Area Registration Gate｜固定设施与局部 AREA 登记（HARD RULE）"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 79,
+      "text": "这是下游 H3 空间稳定性的上游 Source of Truth。不得把“是否需要 AREA”全部推给 Skill 3 临时猜测。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 82,
+      "text": "### 15.2 AREA 需求必须在 Scene Family 资产计划中提前注册\n如果一个固定设施在多个段中参与动作/视线/因果，且 MASTER 无法清楚提供其局部几何，则 `scene_families[].required_assets` 必须注册对应 AREA。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 84,
+      "text": "不得等到 Skill 3 才发现 AREA 缺失。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 87,
+      "text": "### 15.5 QA\n最终 `project_manifest.json` 必须检查：\n- `local_area_required=true` 的段，Scene Family 是否已规划对应 AREA；\n- 固定设施是否在相邻 continuity_group 中无原因换位；\n- 明确次数事件是否被完整保留，没有因切段丢次数；\n- AREA 需求是否仍满足 `scene_image_count <= 9`。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 95,
+      "text": "### 16.4 Reference minimum roles｜最少且足够\n声音来自某方向，不等于必须增加该方向 AREA。若 MASTER 已能确定入户门总体方向，洗衣区镜头不应仅因门铃而额外绑定 ENTRY AREA。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 104,
+      "text": "### 17.3 Subject/Picture semantic typing｜标签语义固定\n- 角色、可交互道具、需要保持实体状态的对象：用 `<Subject N>`。\n- Scene MASTER / AREA 若作为场景权威可写 `<Subject N>`；一旦在 `subject_definitions` 定义成 Subject，`retention_analysis` 必须继续用同一 `<Subject N>`。\n- `<Picture N>` 仅用于 storyboard / composition / transition / first-frame 等规划型参考，或没有被定义成 Subject 的纯参考图。\n- 禁止同一语义实体在 `subject_definitions` 是 `<Subject 5>`，到 `retention_analysis` 变成 `<Picture 5>`。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 152,
+      "text": "拆分必须保持：\n- 编号连续；\n- Asset ID连续；\n- Scene Family连续；\n- Manifest可合并。"
+    },
+    {
+      "source_file": "02_剧本转人物场景道具提示词/SKILL.md",
+      "paragraph": 11,
+      "text": "不得用 FACE/SHEET/WARDROBE 拼板直接替代 H3 Runtime 主图。"
+    },
+    {
+      "source_file": "02_剧本转人物场景道具提示词/SKILL.md",
+      "paragraph": 23,
+      "text": "注意：\n- 门内和门外各自仍是独立 Scene Family；\n- Transition 是连接参考，不替代双方 MASTER；\n- 生成时锁定门的方向、开合轴、门框、内外空间关系；\n- 不得自动生成第二扇门或镜像布局。"
+    },
+    {
+      "source_file": "02_剧本转人物场景道具提示词/SKILL.md",
+      "paragraph": 28,
+      "text": "## 8. Storyboard authority\nStoryboard 只锁：\n- composition\n- blocking\n- eyeline\n- action phase\n- camera direction\n- weapon trajectory"
+    },
+    {
+      "source_file": "02_剧本转人物场景道具提示词/SKILL.md",
+      "paragraph": 33,
+      "text": "## 11. QA\n必须检查：\n- 每个主要角色是否有 MASTER + FACE + BODY；\n- 每个实际服装状态是否有 WARDROBE + H3_RUNTIME；\n- H3 运行图是否单人；\n- 每个核心 Scene 是否有 MASTER；\n- 每个 Scene Family 图片文件数 <=9；\n- SHEET9 是否同一房间而非九个不同设计；\n- Transition 是否锁门内外逻辑；\n- Storyboard 是否在基础资产之后；\n- 无文字/logo/水印（剧情必要字迹除外）。"
+    },
+    {
+      "source_file": "02_剧本转人物场景道具提示词/SKILL.md",
+      "paragraph": 35,
+      "text": "## 12. V3.3 Fixed Facility AREA Asset Gate｜固定设施 AREA 资产生成（HARD RULE）"
+    },
+    {
+      "source_file": "02_剧本转人物场景道具提示词/SKILL.md",
+      "paragraph": 36,
+      "text": "Skill 1 已在 `project_manifest.json` 登记 `fixed_facilities / local_area_required / local_area_variant` 后，本 Skill 必须把这些需求真正转成可生成、可绑定的 Scene AREA 资产。"
+    },
+    {
+      "source_file": "02_剧本转人物场景道具提示词/SKILL.md",
+      "paragraph": 37,
+      "text": "### 12.1 AREA 不是装饰图，而是固定局部几何权威\nAREA Prompt 必须明确锁定：\n- 当前局部区域与 MASTER 属于同一个真实空间；\n- 固定设施的绝对/相对位置；\n- 与第二空间锚点的方向关系；\n- 门、墙、柜体、窗、洗衣机、灶台等不得重新设计或换边；\n- 摄像机可变化，但局部拓扑必须继承 MASTER。"
+    },
+    {
+      "source_file": "02_剧本转人物场景道具提示词/SKILL.md",
+      "paragraph": 39,
+      "text": "### 12.2 自动生成 AREA 的条件\n只要某 segment 满足：\n`local_area_required=true`\n且 Scene Family 当前没有可满足该设施的 AREA，必须新增一个 AREA 资产，前提是仍满足 Scene Family <=9。"
+    },
+    {
+      "source_file": "02_剧本转人物场景道具提示词/SKILL.md",
+      "paragraph": 40,
+      "text": "优先复用：\n1. 已有 AREA 能覆盖同一固定设施；\n2. 否则新增最小必要 AREA；\n3. 若预算已满，优先删除低频/弱价值区域图，不得删除核心 MASTER；\n4. 仍无法满足时标记 `SCENE_AREA_BUDGET_CONFLICT`，不得静默跳过。"
+    },
+    {
+      "source_file": "02_剧本转人物场景道具提示词/SKILL.md",
+      "paragraph": 42,
+      "text": "### 12.4 命名必须可被一键导入精确匹配\n推荐：\n- `SCN_1602_INTERIOR_LAUNDRY_AREA.png`\n- `SCN_1602_INTERIOR_ENTRY.png`\n- `SCN_1602_INTERIOR_KITCHEN.png`"
+    },
+    {
+      "source_file": "02_剧本转人物场景道具提示词/SKILL.md",
+      "paragraph": 46,
+      "text": "- 只有 project_manifest 明确需要长期稳定外观/尺度/交互的对象才生成独立 PROP。不得因为生活常识擅自创建衣架、洗衣篮、夹子、托盘、推车等辅助物件。\n- `authorized_support_objects` 为空时，资产阶段不得替剧情补辅助物件。\n- AREA 只由视觉动作/站位/固定设施局部几何需求触发；纯画外声音方向不能单独触发 AREA。\n- 洗衣区取衣 + 门铃三响：需要 `INTERIOR_MASTER + LAUNDRY_AREA`；若门不入镜、不接触门/门槛/门把，不因门铃增加 `INTERIOR_ENTRY`。\n- AREA Prompt 不得在关键动作区新增会被模型误认为可交互对象的临时辅助物件。"
+    },
+    {
+      "source_file": "02_剧本转人物场景道具提示词/SKILL.md",
+      "paragraph": 48,
+      "text": "## V3.6 镜头语言继承规则（Storyboard / Shot Reference HARD RULE）\n当生成 storyboard、镜头构图参考图或 shot-specific scene reference 时，必须读取 project_manifest 中当前 segment 的 `shot_scale / camera_angle / camera_height / lens_mm / composition / lighting_direction / depth_of_field / axis_and_screen_direction`。\n这些字段控制构图与摄影机，不得重新随机设计。人物身份仍由角色资产控制；Scene MASTER/AREA 仍控制空间几何。\n纯 MASTER、纯 AREA 资产图不绑定某个具体镜头的焦段和人物站位，以免污染长期场景资产。"
+    },
+    {
+      "source_file": "02_剧本转人物场景道具提示词/SKILL.md",
+      "paragraph": 49,
+      "text": "## V3.9 Text-bearing Asset Gate｜剧情文字资产硬门\n如果 `project_manifest` 标记 `text_reference_required=true` 或 `text_bearing_props` 中 `must_be_legible=true`：\n1. 必须生成独立可绑定参考资产（门牌、工牌、纸箱标签、手机界面、时钟面等）；\n2. 资产文件名必须稳定且写入 asset_manifest；\n3. Prompt 只允许要求参考资产中已经设计好的文字，不得让 H3 临时拼写品牌/部门/号码；\n4. 若文字不要求可读，则不要额外生成文字资产，标记 `legibility_required=false`。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/SKILL.md",
+      "paragraph": 4,
+      "text": "- 小说/剧本：先完成剧情、分镜和资产规划，再执行两阶段 MD 流程。\n- 已有 `project_manifest.json` / `asset_manifest.json`：复用已确认编号、分段与素材。\n- 已有批量 MD：将其作为阶段 A 初稿；先核对导入结构和绑定，修复确定的结构错误并记录，再锁定初稿。\n- 用户只要求某一阶段时执行该阶段；用户要求“生成批量 MD / 一键导入 / 完整制作”时，阶段 A 和阶段 B 都是必需工作，不得输出初稿后停下来询问是否优化。\n- 本 skill 生成文本和制作资料。生成图片、运行视频或改模型参数需要属于用户明确要求的工作范围。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/SKILL.md",
+      "paragraph": 12,
+      "text": "1. 根据输入读取需要的上游参考，生成或核对 `project_manifest.json` 和 `asset_manifest.json`。\n2. 完成每段剧情、对白顺序、时长、服装、道具起止状态、时段天气、景别、空间关系、连续性及最少必要参考。过载问题在这里解决；确认阶段 A 后不再通过“优化”擅自增减段落。\n3. 按 [外壳合同](references/03-avs-envelope.md)生成完整 `<项目名>_H3批量导入_初稿.md`：每段都具有完整外壳和完整基准正文，不留 `...` 或“待优化”占位。\n4. 每张绑定图都必须在正文中有实际作用。发现错名、冗余绑定或未知素材，在锁定初稿前修正并记录；不得猜文件名。\n5. 保存 `segments.json` 的剧情与状态合同。阶段 B 读取的是这些源合同、初稿和真实图片，不是只读取初稿摘要。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/02-assets-and-binding.md",
+      "paragraph": 4,
+      "text": "场景 MASTER 定义材质和固定结构；AREA 补充本镜头不可替代的局部设施；SHEET 用于必要的空间规划。不同视角必须复核同一套房的拓扑，不能仅凭同色家具认定一致。未知区域可不入镜。场景参考的白天光线若与夜戏冲突，要准备相符素材或明确“保留几何，替换光照”，而不是无条件保留光照。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/02-assets-and-binding.md",
+      "paragraph": 5,
+      "text": "道具只为剧情实际使用、需要长期稳定或明确交互的物件建库；不得为取衣等动作自增衣架、洗衣篮等辅助物。门内外按实际空间分别建库，需要过门可补连接参考；声音方向本身不触发额外 AREA。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/03-avs-envelope.md",
+      "paragraph": 11,
+      "text": "```json\n{\n  \"schema_version\": \"5.0\",\n  \"project\": {\"title\": \"合租以后\", \"final_segment_count\": 1},\n  \"source_beats\": [{\"beat_id\": \"B001\", \"source_event\": \"取衣时门铃三响\", \"preservation\": \"EXACT\"}],\n  \"segments\": [{\n    \"segment_id\": 1,\n    \"title\": \"雨夜门铃三响\",\n    \"duration_s\": 5,\n    \"episode_id\": \"EP01\",\n    \"episode_name\": \"第一章\",\n    \"scene_id\": \"SC01\",\n    \"scene_name\": \"1602合租公寓室内\",\n    \"scene_family_id\": \"SCN_1602_INTERIOR\",\n    \"continuity\": \"独立生成\",\n    \"inherit_previous_audio\": false,\n    \"source_beat_ids\": [\"B001\"],\n    \"current_segment_dialogue\": [],\n    \"picture_bindings\": {\"P1\": \"CHAR_GYC_H3_HOME.png\", \"P2\": \"SCN_1602_INTERIOR_MASTER.png\", \"P3\": \"SCN_1602_INTERIOR_LAUNDRY_AREA.png\"},\n    \"speaker_bindings\": {},\n    \"character_states\": [{\"character_id\": \"CHAR_GYC\", \"wardrobe_variant\": \"HOME\", \"visible_appearance_en\": \"messy black hair, black short-sleeve T-shirt, grey lounge pants, no glasses\"}],\n    \"time_of_day\": \"rainy night\",\n    \"incoming_state\": \"洗衣机门已打开，白衬衫在滚筒内，人物穿黑T恤站在机前\",\n    \"end_state\": \"人物仍在洗衣机旁，右手拿着取出的白衬衫，注意力转向画外玄关\",\n    \"shot_function\": \"REACTION\",\n    \"shot_scale\": \"medium_close\",\n    \"camera_movement\": \"locked_off\",\n    \"cut_policy\": \"single_continuous_shot\",\n    \"subject_registry\": {\"Subject 1\": {\"role\": \"character\", \"sources\": [\"Picture 1\"]}, \"Subject 2\": {\"role\": \"environment\", \"sources\": [\"Picture 2\", \"Picture 3\"]}},\n    \"discrete_sound_events\": [{\"event\": \"doorbell\", \"count\": 3, \"window_start\": 1.4, \"window_end\": 2.5, \"termination\": \"silent after the third ring\"}]\n  }]\n}\n```"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD-多镜头版/references/03-avs-envelope.md",
+      "paragraph": 11,
+      "text": "```json\n{\n  \"schema_version\": \"6.1\",\n  \"project\": {\"title\": \"合租以后\", \"final_segment_count\": 1, \"shot_design_policy\": \"multi_shot_first\"},\n  \"source_beats\": [{\"beat_id\": \"B001\", \"source_event\": \"取衣时门铃三响\", \"preservation\": \"EXACT\"}],\n  \"segments\": [{\n    \"segment_id\": 1,\n    \"title\": \"雨夜门铃三响\",\n    \"duration_s\": 5,\n    \"episode_id\": \"EP01\",\n    \"episode_name\": \"第一章\",\n    \"scene_id\": \"SC01\",\n    \"scene_name\": \"1602合租公寓室内\",\n    \"scene_family_id\": \"SCN_1602_INTERIOR\",\n    \"continuity\": \"独立生成\",\n    \"inherit_previous_audio\": false,\n    \"source_beat_ids\": [\"B001\"],\n    \"current_segment_dialogue\": [],\n    \"picture_bindings\": {\"P1\": \"CHAR_GYC_H3_HOME.png\", \"P2\": \"SCN_1602_INTERIOR_MASTER.png\", \"P3\": \"SCN_1602_INTERIOR_LAUNDRY_AREA.png\"},\n    \"speaker_bindings\": {},\n    \"character_states\": [{\"character_id\": \"CHAR_GYC\", \"wardrobe_variant\": \"HOME\", \"visible_appearance_en\": \"messy black hair, black short-sleeve T-shirt, grey lounge pants, no glasses\"}],\n    \"time_of_day\": \"rainy night\",\n    \"incoming_state\": \"洗衣机门已打开，白衬衫在滚筒内，人物穿黑T恤站在机前\",\n    \"end_state\": \"人物仍在洗衣机旁，右手拿着取出的白衬衫，注意力转向画外玄关\",\n    \"shot_function\": \"REACTION\",\n    \"shot_scale\": \"medium_close\",\n    \"camera_movement\": \"locked_off\",\n    \"cut_policy\": \"multi_shot\",\n    \"planned_cut_times_s\": [2.5],\n    \"shot_plan\": [\n      {\"shot_id\":\"SH001\", \"shot_number\":1, \"start_s\":0, \"end_s\":2.5, \"duration_s\":2.5,\n       \"shot_scale\":\"medium\", \"camera_angle\":\"three-quarter side\", \"camera_movement\":\"locked_off\",\n       \"composition\":\"face, right arm and open washer drum in frame\", \"cut_reason\":\"opening retrieval action\",\n       \"incoming_state\":\"洗衣机门已打开，白衬衫在滚筒内，人物穿黑T恤站在机前\",\n       \"end_state\":\"三声门铃已经结束，人物右手拿着衬衫仍站在机前\"},\n      {\"shot_id\":\"SH002\", \"shot_number\":2, \"start_s\":2.5, \"end_s\":5, \"duration_s\":2.5,\n       \"shot_scale\":\"close_up\", \"camera_angle\":\"front three-quarter on same axis side\", \"camera_movement\":\"locked_off\",\n       \"composition\":\"face fills frame; same cabinet edge at screen left\", \"cut_reason\":\"show reaction after the bell\",\n       \"incoming_state\":\"三声门铃已经结束，人物右手拿着衬衫仍站在机前\",\n       \"end_state\":\"人物仍在洗衣机旁，右手拿着取出的白衬衫，注意力转向画外玄关\"}\n    ],\n    \"subject_registry\": {\"Subject 1\": {\"role\": \"character\", \"sources\": [\"Picture 1\"]}, \"Subject 2\": {\"role\": \"environment\", \"sources\": [\"Picture 2\", \"Picture 3\"]}},\n    \"discrete_sound_events\": [{\"event\": \"doorbell\", \"count\": 3, \"window_start\": 1.4, \"window_end\": 2.5, \"termination\": \"silent after the third ring\"}]\n  }]\n}\n```"
+    },
+    {
+      "source_file": "04_H3素材自动绑定/SKILL.md",
+      "paragraph": 9,
+      "text": "## 6. Character/Wardrobe Gate\n必须检查：\n- 当前 segment 的服装 variant 与绑定 H3_RUNTIME 一致；\n- FACE/MASTER/BODY/WARDROBE 设计板不得误当 H3 runtime 主图；\n- 同 continuity_group 主副角色尽量保持稳定 Picture 槽顺序。"
+    },
+    {
+      "source_file": "04_H3素材自动绑定/SKILL.md",
+      "paragraph": 12,
+      "text": "硬规则：\n- 不得因为资产存在于 Scene Family 就自动绑定；\n- 不得把整个 Scene Family 全塞入一个片段；\n- `MASTER + AREA + SHEET9` 同时绑定时必须在检查报告中分别写明三者不可替代的职责，否则删除冗余项；\n- 当前 H3_RUNTIME 已锁定角色身份与服装时，不重复绑定 FACE/BODY/WARDROBE/人物 MASTER；\n- 最终执行 `reference_minimization_pass`：能够删除而不损失当前镜头控制的信息，一律删除。"
+    },
+    {
+      "source_file": "04_H3素材自动绑定/SKILL.md",
+      "paragraph": 20,
+      "text": "## 13. V3.3 Fixed Facility Binding Gate｜固定设施 AREA 绑定 Ready Gate（HARD RULE）"
+    },
+    {
+      "source_file": "04_H3素材自动绑定/SKILL.md",
+      "paragraph": 22,
+      "text": "### 13.1 必须读取 Skill 1/3 的固定设施需求\n若 segment 中任一条件成立：\n- `local_area_required=true`\n- `fixed_facilities` 非空且参与当前动作/视线/因果\n- H3 MD 的 `<Subject N>` / `detailed_description` 明确声明 AREA 为 local fixed-facility authority"
+    },
+    {
+      "source_file": "04_H3素材自动绑定/SKILL.md",
+      "paragraph": 24,
+      "text": "### 13.2 Reference Minimization 的例外\n`reference_minimization_pass` 仍然执行，但不得删除：\n1. 当前人物 H3_RUNTIME；\n2. Scene MASTER；\n3. 当前动作依赖的 fixed-facility AREA；\n4. 必要 Transition/第二空间；\n5. 当前关键道具。"
+    },
+    {
+      "source_file": "04_H3素材自动绑定/SKILL.md",
+      "paragraph": 26,
+      "text": "### 13.3 缺失处理\n需要 AREA 但文件夹/asset_manifest 找不到精确匹配时：\n- 输出 `LOCAL_AREA_ASSET_MISSING`；\n- 该 segment 不得标记 READY；\n- 不得用相似但职责不同的 AREA 偷换；\n- 不得仅用 MASTER 冒充“已完整绑定”。"
+    },
+    {
+      "source_file": "04_H3素材自动绑定/SKILL.md",
+      "paragraph": 29,
+      "text": "标记 READY 前额外检查：\n1. 纯画外声音不得触发无必要 AREA；洗衣区 + 门铃且门不入镜时，通常保持 `人物 + MASTER + LAUNDRY_AREA`。\n2. 关键交互物必须有起始状态；缺失标记 `OBJECT_PROVENANCE_UNSPECIFIED`。\n3. manifest 明确 `authorized_support_objects=[]` 时，Prompt 不得引入未授权辅助物件；否则 `UNAUTHORIZED_SUPPORT_PROP`。\n4. `anatomy_risk=MEDIUM/HIGH` 时应存在 active hand / inactive hand 约束；否则 `LIMB_ACTION_UNDERSPECIFIED`。\n5. 有 count 的离散声音/动作必须有终止语义；否则 `DISCRETE_EVENT_TERMINATION_MISSING`。\n6. 不得为了“更稳”擅自追加 Skill 3 未要求的 ENTRY/SHEET/STORYBOARD 等图片。"
+    },
+    {
+      "source_file": "04_H3素材自动绑定/SKILL.md",
+      "paragraph": 30,
+      "text": "## V3.6 镜头语言非绑定职责\n自动绑定只负责把 manifest / MD 指定的 Picture 资产准确绑定到槽位；不得因为某张参考图的原始构图而覆盖 segment 的 camera plan。人物参考图只控制身份/服装，MASTER/AREA 控制空间几何，最终景别、机位、焦段、运镜、构图和轴线以当前 segment 的 H3 Prompt 为准。"
+    },
+    {
+      "source_file": "05_2D漫画专用/SKILL.md",
+      "paragraph": 15,
+      "text": "人物MASTER/FACE/BODY定义身份与比例，WARDROBE定义服装，H3_RUNTIME使用单人干净定妆图。背景MASTER/AREA继承同一户型、固定设施和绘画方式；素材拼板按实际用途选择，不将漫画分格板直接当作单帧视频人物定妆图。每段Picture限P1–P9，本项目默认每个Scene Family最多9个图文件，不按9张凑数。"
+    },
+    {
+      "source_file": "05_2D漫画专用/references/02-assets-and-storyboards.md",
+      "paragraph": 6,
+      "text": "- MASTER/FACE：同人物脸型、眼睛、发型、线条、皮肤配色，不用真实毛孔/SSS塑造身份。\n- BODY：正常成年人比例，干净站姿；服装变化不改头身比和人物身份。\n- WARDROBE：服装结构、颜色、绘制衣褶，正背/侧面按实际需求输出。\n- H3_RUNTIME：单人、当前造型、清晰脸部与必要身体范围；需要完整动作时用全身图。拼板管理图与当前单帧出镜参考分开。\n- Scene MASTER/AREA：无人物绘制背景，锁户型、门窗、家具、光源和固定设施；相同空间不同机位不重新设计。单个Scene Family默认最多9个图文件，拼板文件按1个算。\n- PROP：只有持续外观/交互确需稳定的物品独立建图，按同一绘画体系输出；不为普通常识补新增辅助道具。"
+    },
+    {
+      "source_file": "05_2D漫画专用/references/03-avs-envelope.md",
+      "paragraph": 11,
+      "text": "```json\n{\n  \"schema_version\": \"6.1\",\n  \"project\": {\"title\": \"合租以后\", \"final_segment_count\": 1, \"shot_design_policy\": \"story_driven_2d\"},\n  \"source_beats\": [{\"beat_id\": \"B001\", \"source_event\": \"取衣时门铃三响\", \"preservation\": \"EXACT\"}],\n  \"segments\": [{\n    \"segment_id\": 1,\n    \"title\": \"雨夜门铃三响\",\n    \"duration_s\": 5,\n    \"episode_id\": \"EP01\",\n    \"episode_name\": \"第一章\",\n    \"scene_id\": \"SC01\",\n    \"scene_name\": \"1602合租公寓室内\",\n    \"scene_family_id\": \"SCN_1602_INTERIOR\",\n    \"continuity\": \"独立生成\",\n    \"inherit_previous_audio\": false,\n    \"source_beat_ids\": [\"B001\"],\n    \"current_segment_dialogue\": [],\n    \"picture_bindings\": {\"P1\": \"CHAR_GYC_H3_HOME.png\", \"P2\": \"SCN_1602_INTERIOR_MASTER.png\", \"P3\": \"SCN_1602_INTERIOR_LAUNDRY_AREA.png\"},\n    \"speaker_bindings\": {},\n    \"character_states\": [{\"character_id\": \"CHAR_GYC\", \"wardrobe_variant\": \"HOME\", \"visible_appearance_en\": \"messy black hair, black short-sleeve T-shirt, grey lounge pants, no glasses\"}],\n    \"time_of_day\": \"rainy night\",\n    \"incoming_state\": \"洗衣机门已打开，白衬衫在滚筒内，人物穿黑T恤站在机前\",\n    \"end_state\": \"人物仍在洗衣机旁，右手拿着取出的白衬衫，注意力转向画外玄关\",\n    \"shot_function\": \"REACTION\",\n    \"shot_scale\": \"medium_close\",\n    \"camera_movement\": \"locked_off\",\n    \"cut_policy\": \"multi_shot\",\n    \"planned_cut_times_s\": [2.5],\n    \"shot_plan\": [\n      {\"shot_id\":\"SH001\", \"shot_number\":1, \"start_s\":0, \"end_s\":2.5, \"duration_s\":2.5,\n       \"shot_scale\":\"medium\", \"camera_angle\":\"three-quarter side\", \"camera_movement\":\"locked_off\",\n       \"composition\":\"face, right arm and open washer drum in frame\", \"cut_reason\":\"opening retrieval action\",\n       \"incoming_state\":\"洗衣机门已打开，白衬衫在滚筒内，人物穿黑T恤站在机前\",\n       \"end_state\":\"三声门铃已经结束，人物右手拿着衬衫仍站在机前\"},\n      {\"shot_id\":\"SH002\", \"shot_number\":2, \"start_s\":2.5, \"end_s\":5, \"duration_s\":2.5,\n       \"shot_scale\":\"close_up\", \"camera_angle\":\"front three-quarter on same axis side\", \"camera_movement\":\"locked_off\",\n       \"composition\":\"face fills frame; same cabinet edge at screen left\", \"cut_reason\":\"show reaction after the bell\",\n       \"incoming_state\":\"三声门铃已经结束，人物右手拿着衬衫仍站在机前\",\n       \"end_state\":\"人物仍在洗衣机旁，右手拿着取出的白衬衫，注意力转向画外玄关\"}\n    ],\n    \"subject_registry\": {\"Subject 1\": {\"role\": \"character\", \"sources\": [\"Picture 1\"]}, \"Subject 2\": {\"role\": \"environment\", \"sources\": [\"Picture 2\", \"Picture 3\"]}},\n    \"discrete_sound_events\": [{\"event\": \"doorbell\", \"count\": 3, \"window_start\": 1.4, \"window_end\": 2.5, \"termination\": \"silent after the third ring\"}]\n  }]\n}\n```"
+    },
+    {
+      "source_file": "ACTION_SOURCE_CONTRACT.md",
+      "paragraph": 1,
+      "text": "- 参考视频只允许作为动作结构、节奏、攻防因果和摄影运动的解析来源。\n- 禁止直接把参考视频截图当正式 Storyboard 或人物身份图喂给 H3。\n- 正式 Storyboard 必须在人物、场景、服装、武器/关键道具资产确认后再生成。\n- Storyboard 负责构图/调度/动作阶段，不负责人物身份。\n- 人物身份来自 Character Family；场景空间来自 Scene Family；门内外连续来自 Transition Assets。"
+    }
+  ]
+}

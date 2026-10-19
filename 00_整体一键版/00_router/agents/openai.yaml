@@ -1,0 +1,4 @@
+interface:
+  display_name: "ai-drama-router"
+  short_description: "一键生成双语H3生产包；自动路由小说、剧本、确认分镜及素材，统一调度各层。"
+  default_prompt: "使用 $ai-drama-router 按 V5.1 的单一权威数据合同完成本层工作。"

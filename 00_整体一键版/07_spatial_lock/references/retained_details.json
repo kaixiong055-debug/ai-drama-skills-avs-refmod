@@ -1,0 +1,235 @@
+{
+  "authority": "supplementary historical detail evidence; current contract/schema control execution",
+  "entries": [
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 81,
+      "text": "推荐字段：\n```json\n\"fixed_facilities\": [\"WASHER\", \"WALL_CLOCK\", \"ENTRY_DOOR\"],\n\"local_area_required\": true,\n\"local_area_variant\": \"LAUNDRY_AREA\",\n\"secondary_spatial_anchors\": [\"WALL_CLOCK\", \"ENTRY_DIRECTION\"]\n```"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 156,
+      "text": "2～5 人对白使用 **LOCK → 正式段续写**，而不是把 1 秒全景塞进正式 5 秒："
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/SKILL.md",
+      "paragraph": 157,
+      "text": "- 新场景或空间关系失效时，创建约 0.8～1.2 秒、默认 1 秒的隐藏 `LOCK` 生产卡。\n- LOCK 尽量让全部在场人物同框，仅做轻微待机；锁定左/右、前/后、距离、朝向、视线、180° 轴线和关键固定物。\n- LOCK 在 AI Video Studio 工作台里真实生成，但 `【段类型】隐藏空间预热`、`【成片】否`，不占正式 SEG 编号、不计正式时长、最终合成自动排除。\n- 紧随 LOCK 的第一正式段写 `【空间锁来源】LOCK_xxx`、`【连续性】续写上一段`、`【继承尾音】否`，通过尾部 22 帧 AddGuide 延续空间。\n- 正式首段从自己的 0.0 秒开始，可直接说话人近景；不得再次浪费 1 秒展示全景。\n- AI Video Studio v0.16.9 会对 `LOCK → 第一正式段` 自动补偿约 22/24 秒生成窗口，最终裁掉重叠帧后仍交付接近目标正式时长。\n- 同场后续正式段继续接上一正式段，不重复 LOCK。只有新场景、角色进退、明显换位、换轴或实测漂移时才重新锁定。\n- 先完成“正式版 MD”的旧有冻结/官方优化/校验，再用 `spatial_locks.json` 与 `scripts/inject_spatial_locks.py` 生成“工作台版 MD”，最后运行 `scripts/validate_workbench_md.py`。\n- **实际导入 AI Video Studio 时交付工作台版；project_manifest / segments.json 的正式段计数仍不包含 LOCK。**"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+      "paragraph": 2,
+      "text": "“约 1 秒全景”不是正式镜头，而是 **production-only hidden spatial preroll / LOCK**。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+      "paragraph": 3,
+      "text": "LOCK 只负责给 H3 建立世界空间：谁在左/右、前/后、人物距离、身体朝向、视线、180° 对话轴线、门/桌/沙发等固定物位置。它不承担正式剧情，不说关键对白，不进入最终成片。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+      "paragraph": 4,
+      "text": "V4.4 与 AI Video Studio v0.16.9 的实现是：**LOCK 作为工作台里可真实生成的隐藏生产卡片存在；它不占正式 SEG 编号，但可以把尾部 22 帧传给下一正式段 AddGuide。**"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+      "paragraph": 6,
+      "text": "```text\nLOCK_SC03_V01（0.8～1.2秒，默认1.0秒；隐藏；不进成片）\n        ↓ 尾22帧 / AddGuide frame_idx=0\nSEG012（正式5秒；0.0秒即可直接近景）\n        ↓ 上一正式段尾22帧\nSEG013（正式5秒）\n        ↓\nSEG014……\n```"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+      "paragraph": 9,
+      "text": "LOCK 自动排除。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+      "paragraph": 11,
+      "text": "H3 AddGuide 会把上一段尾部约 22 帧放入下一段开头作为引导。AI Video Studio v0.16.9 在 `LOCK → 第一正式段` 时自动把生成预算增加约 `22/24` 秒；最终合成再裁掉重叠窗口，所以正式段交付时长仍接近用户指定的 5 秒，而不是只剩 4 秒。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+      "paragraph": 12,
+      "text": "## LOCK 触发条件"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+      "paragraph": 13,
+      "text": "满足以下任一情况时建立新 LOCK："
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+      "paragraph": 15,
+      "text": "同一场景、同一批人物、站位未变、轴线未变时，不重复 LOCK。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+      "paragraph": 16,
+      "text": "## LOCK 画面规则"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+      "paragraph": 17,
+      "text": "LOCK 优先：全景 / 中远景 / 群像中景，必须尽量让所有当场对话角色同时可见。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+      "paragraph": 22,
+      "text": "```yaml\nspatial_lock_state:\n  lock_id: LOCK_SC03_V01\n  scene_id: SC03\n  cast_count: 4\n  left_to_right_order: [A, B, C, D]\n  foreground: [A, B]\n  midground: [C]\n  background: [D]\n  active_speakers: [A, B]\n  listeners: [C, D]\n  facing:\n    A: right\n    B: right_front\n    C: left_front\n    D: left\n  dialogue_axis: locked\n  camera_side: fixed_same_side\n  key_fixed_objects:\n    - sofa behind C\n    - door behind D\n```"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+      "paragraph": 26,
+      "text": "- 继承上一 LOCK 的 world-space layout；\n- 近景只是 framing change，不是人物位移；\n- 当前说话人仍在 LOCK 的原区域；\n- 画外人物仍停留在 LOCK 确定的位置；\n- 视线继续指向原对话对象；\n- 保持同一轴线侧；\n- 不换边、不瞬移、不站位重置。"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+      "paragraph": 29,
+      "text": "LOCK 使用独立头："
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+      "paragraph": 30,
+      "text": "```text\n【空间预热 LOCK_SC03_V01｜1秒｜客厅四人空间锁】\n【段类型】隐藏空间预热\n【成片】否\n【空间锁ID】LOCK_SC03_V01\n【连续性】独立生成\n【继承尾音】否\n```"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+      "paragraph": 32,
+      "text": "```text\n【视频片段 12｜5秒｜A近景说话】\n【段类型】正式视频段\n【成片】是\n【空间锁来源】LOCK_SC03_V01\n【连续性】续写上一段\n【继承尾音】否\n```"
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+      "paragraph": 35,
+      "text": "不要让 LOCK 破坏原本的正式段校验："
+    },
+    {
+      "source_file": "01_小说转AI漫剧剧本_V4.2_完整制作包执行版/references/多人对话空间锚定合同.md",
+      "paragraph": 38,
+      "text": "- 禁止把 LOCK 写成正式 SEG 内部的 0.0～1.0 秒。\n- 禁止每个正式 5 秒段都自动加一个可见全景。\n- 禁止让 LOCK 占掉正式对白时间。\n- 禁止最终成片包含 LOCK。\n- 禁止同场站位稳定时机械“回群像确认”。\n- 禁止把切近景理解成人物换位。"
+    },
+    {
+      "source_file": "02_剧本转人物场景道具提示词/SKILL.md",
+      "paragraph": 41,
+      "text": "### 12.3 asset_manifest scene asset 新增建议字段\n```json\n{\n  \"variant\":\"LAUNDRY_AREA\",\n  \"h3_usage\":\"local_fixed_facility_authority\",\n  \"fixed_facilities\":[\"WASHER\",\"WALL_CLOCK\"],\n  \"spatial_relations\":[\"ENTRY_DIRECTION\"],\n  \"direct_bindable\":true\n}\n```"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/03-avs-envelope.md",
+      "paragraph": 18,
+      "text": "本合同上面的 `【视频片段 N】` 是正式剧情层。2～5 人对白需要隐藏空间预热时，不在正式段内部增加 1 秒全景；而是在正式版校验完成后，按照 [AVS隐藏空间预热 V4.4 导入协议](AVS隐藏空间预热_V4.4导入协议.md) 插入独立 `【空间预热 LOCK_xxx】` 生产卡，生成“工作台版 MD”。LOCK 不占 `final_segment_count`，不计 `final_runtime_s`，不出现在 `segments.json` 正式段列表。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/AVS隐藏空间预热_V4.4导入协议.md",
+      "paragraph": 2,
+      "text": "隐藏空间预热（LOCK）不是正式镜头，不占正式 SEG 编号，不计入剧情时长，不进入最终成片。它是 **AI Video Studio 工作台里的生产卡片**：先让 H3 用约 1 秒 / 22 帧建立 2～5 人空间位置，再由紧随其后的正式段使用 AddGuide 续写。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/AVS隐藏空间预热_V4.4导入协议.md",
+      "paragraph": 4,
+      "text": "1. `*_H3批量导入_正式版.md`：只含正式 `【视频片段 N】`，用于剧情/manifest/官方正文冻结与校验。\n2. `*_H3批量导入_工作台版.md`：在正式版基础上插入 `【空间预热 LOCK_xxx】` 生产卡，直接导入 AI Video Studio v0.16.9+。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/AVS隐藏空间预热_V4.4导入协议.md",
+      "paragraph": 7,
+      "text": "## LOCK 卡片的精确格式"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/AVS隐藏空间预热_V4.4导入协议.md",
+      "paragraph": 8,
+      "text": "```text\n【空间预热 LOCK_SC03_V01｜1秒｜客厅四人空间锁】\n【集数】EP01｜第一章\n【场景】SC03｜客厅夜晚\n【段类型】隐藏空间预热\n【成片】否\n【空间锁ID】LOCK_SC03_V01\n【H3模式】REF2VA\n【连续性】独立生成\n【继承尾音】否\n【生成模式】单张生成\n【Picture绑定】P1=CHAR_A.png；P2=CHAR_B.png；P3=CHAR_C.png；P4=CHAR_D.png；P5=SCENE_MASTER.png\n【Speaker绑定】无"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/AVS隐藏空间预热_V4.4导入协议.md",
+      "paragraph": 15,
+      "text": "LOCK 的 `Picture绑定` 必须只包含建立空间真正需要的在场人物、场景和关键固定物。不要为了“参考更全”塞无关素材。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/AVS隐藏空间预热_V4.4导入协议.md",
+      "paragraph": 17,
+      "text": "## 紧随 LOCK 的第一正式段"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/AVS隐藏空间预热_V4.4导入协议.md",
+      "paragraph": 19,
+      "text": "```text\n【视频片段 12｜5秒｜顾言川近景回应】\n【集数】EP01｜第一章\n【场景】SC03｜客厅夜晚\n【段类型】正式视频段\n【成片】是\n【空间锁来源】LOCK_SC03_V01\n【H3模式】REF2VA\n【连续性】续写上一段\n【继承尾音】否\n【生成模式】单张生成\n...\n```"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/AVS隐藏空间预热_V4.4导入协议.md",
+      "paragraph": 21,
+      "text": "- 继承上一隐藏空间预热建立的 world-space layout；\n- 近景只是 framing change，不代表人物移动；\n- 画外人物仍停留在 LOCK 确定的位置；\n- 不换边、不瞬移、不随机越轴；\n- 不需要在正式段开头再次展示全景。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/AVS隐藏空间预热_V4.4导入协议.md",
+      "paragraph": 23,
+      "text": "1. 生成 LOCK；\n2. 取 LOCK 尾部约 22 帧作为下一正式段 AddGuide；\n3. 对第一正式段自动补偿约 22/24 秒生成预算；\n4. 最终合成裁掉重叠引导窗口；\n5. 完全跳过 LOCK 卡片，因此正式 5 秒不会被 1 秒预热吃掉。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/AVS隐藏空间预热_V4.4导入协议.md",
+      "paragraph": 26,
+      "text": "LOCK 只负责场景初始化。若站位未失效："
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/AVS隐藏空间预热_V4.4导入协议.md",
+      "paragraph": 27,
+      "text": "```text\nLOCK_SC03_V01 (隐藏)\n↓\nSEG012 正式近景\n↓\nSEG013 正式反打\n↓\nSEG014 正式反应镜头\n```"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/AVS隐藏空间预热_V4.4导入协议.md",
+      "paragraph": 28,
+      "text": "SEG013、SEG014 继续从上一正式段尾部续写，不重复 LOCK。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/AVS隐藏空间预热_V4.4导入协议.md",
+      "paragraph": 29,
+      "text": "只有以下情况重新插入新 LOCK："
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/AVS隐藏空间预热_V4.4导入协议.md",
+      "paragraph": 31,
+      "text": "重新锁定也使用独立 LOCK ID，例如 `LOCK_SC03_V02`。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/AVS隐藏空间预热_V4.4导入协议.md",
+      "paragraph": 33,
+      "text": "## 正式段与 LOCK 的编号规则"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/AVS隐藏空间预热_V4.4导入协议.md",
+      "paragraph": 34,
+      "text": "- 正式段：`SEG001 / SEG002 ...`，保持连续，决定 `final_segment_count` 和正式时长。\n- 隐藏预热：`LOCK_SC03_V01 / LOCK_SC03_V02 ...`，不占 SEG 编号。\n- `project_manifest.json` 与 `segments.json` 仍只统计正式段。\n- 工作台版 MD 可以比正式版多很多 LOCK 卡，但成片时长仍只统计正式段。"
+    },
+    {
+      "source_file": "03_剧本转H3一键导入MD/references/AVS隐藏空间预热_V4.4导入协议.md",
+      "paragraph": 43,
+      "text": "- LOCK 绝不能写成正式段内部的 `0.0–1.0s` 镜头。\n- LOCK 绝不能算进正式剧情时长。\n- LOCK 不说关键对白，不完成关键剧情动作。\n- 正式首段不需要“回全景确认位置”；它应直接开始正式镜头。\n- 同场站位有效时，不机械重复 LOCK。\n- 最终成片不包含 LOCK。\n"
+    },
+    {
+      "source_file": "06_H3多人对话防乱位/SKILL.md",
+      "paragraph": 0,
+      "text": "---\nname: H3多人对话隐藏空间预热防乱位\ndescription: 专门解决 2～5 人对白场景中 H3 切近景后人物乱位；把约1秒群像作为工作台隐藏 LOCK 生产卡，用22帧 AddGuide 续写正式近景，最终自动排除 LOCK。\nmetadata:\n  version: \"2.1-v4.4\"\n---"
+    },
+    {
+      "source_file": "06_H3多人对话防乱位/SKILL.md",
+      "paragraph": 6,
+      "text": "对需要空间初始化的场景，除了正式 SEG 之外，还要生成 `spatial_locks.json`，每个 LOCK 指定 `before_segment_id`、独立 `lock_id`、同场景信息、精确 Picture 绑定和完整 H3 Prompt。"
+    },
+    {
+      "source_file": "06_H3多人对话防乱位/SKILL.md",
+      "paragraph": 7,
+      "text": "正式 SEG 编号与时长不受 LOCK 影响。"
+    },
+    {
+      "source_file": "06_H3多人对话防乱位/SKILL.md",
+      "paragraph": 9,
+      "text": "```text\n正式版 MD（仅正式 SEG，先完成原有校验）\n        + spatial_locks.json\n        ↓ inject_spatial_locks.py\n工作台版 MD（LOCK + 正式 SEG）\n        ↓ validate_workbench_md.py\n导入 AI Video Studio v0.16.9+\n```"
+    },
+    {
+      "source_file": "06_H3多人对话防乱位/SKILL.md",
+      "paragraph": 11,
+      "text": "- LOCK 默认约 1.0 秒 / 22 帧。\n- LOCK 是隐藏生产卡，不是成片镜头。\n- LOCK 不说关键对白、不做复杂动作。\n- 正式首段紧跟 LOCK 并续写，0.0 秒可直接近景。\n- 同场空间有效时不重复 LOCK。\n- 最终成片自动排除 LOCK。"
+    },
+    {
+      "source_file": "README.md",
+      "paragraph": 1,
+      "text": "V4.4 把 V4.3 的“隐藏 1 秒空间预热”真正接到 AI Video Studio v0.16.9：LOCK 现在是可导入、可生成、可续写、最终自动排除的生产卡。正式 SEG 不再被迫每段切 1 秒全景。"
+    }
+  ]
+}

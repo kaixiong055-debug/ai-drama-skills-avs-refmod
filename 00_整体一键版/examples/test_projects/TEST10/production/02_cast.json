@@ -1,0 +1,61 @@
+{
+  "schema_version": "5.1",
+  "kind": "cast",
+  "lineage": {
+    "story": "bc461851f03b4f819b3b35661ed99f6e7338786c916ac90425a1516e455fb35c"
+  },
+  "characters": [
+    {
+      "character_id": "CHAR_A",
+      "name": {
+        "cn": "顾言川",
+        "en": "Gu Yanchuan"
+      },
+      "identity": {
+        "cn": "约28岁的成年人，保持原面部和身材比例",
+        "en": "an adult approximately 28 years old with consistent facial features and body proportions"
+      },
+      "hairstyle": {
+        "cn": "整齐的黑发",
+        "en": "neatly styled black hair"
+      },
+      "default_wardrobe": "OFFICE",
+      "hair_state": "dry",
+      "wardrobes": {
+        "OFFICE": {
+          "description": {
+            "cn": "黑色通勤西装",
+            "en": "a black office suit"
+          },
+          "runtime_asset_id": "CHAR_A_H3_OFFICE"
+        }
+      }
+    },
+    {
+      "character_id": "CHAR_B",
+      "name": {
+        "cn": "林晚晴",
+        "en": "Lin Wanqing"
+      },
+      "identity": {
+        "cn": "约28岁的成年人，保持原面部和身材比例",
+        "en": "an adult approximately 28 years old with consistent facial features and body proportions"
+      },
+      "hairstyle": {
+        "cn": "整齐的黑发",
+        "en": "neatly styled black hair"
+      },
+      "default_wardrobe": "OFFICE",
+      "hair_state": "dry",
+      "wardrobes": {
+        "OFFICE": {
+          "description": {
+            "cn": "黑色通勤西装",
+            "en": "a black office suit"
+          },
+          "runtime_asset_id": "CHAR_B_H3_OFFICE"
+        }
+      }
+    }
+  ]
+}
