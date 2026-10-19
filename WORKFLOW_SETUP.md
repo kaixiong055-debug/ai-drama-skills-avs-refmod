@@ -21,7 +21,7 @@
 3. 将 `integrations/ComfyUI-AI-Video-Studio` 整个目录复制到 `ComfyUI/custom_nodes/`。已有安装先备份，避免形成两份重复插件。插件依赖要使用运行 ComfyUI 的同一个 Python 安装：`<ComfyUI的Python> -m pip install -r <插件目录>/requirements.txt`。本次打包没有执行安装。
 4. 安装 [ComfyUI-MiniMaxH3Mod](https://github.com/Luisacaotica/ComfyUI-MiniMaxH3Mod)；本机快照基于提交 `f9462081e28794389b5a6c5067eb327412ad8ee7`，复制到 custom_nodes 后按其 requirements 安装依赖。网盘包的 `03_RefMod依赖源码` 可用于同版本安装。无需同时安装两份。
 5. 核对 `MODEL_REQUIREMENTS.md`。已有文件可通过 ComfyUI 模型搜索路径复用，不重复下载。重启 ComfyUI，确认 AVS 与 RefMod 节点加载成功，再导入空工作流。
-6. 仅在使用 Skills 独立 CLI/GUI 时，才需要在对应 Python 环境安装 `00_整体一键版/requirements.txt`。自然语言自动规划的独立工具还需要自行配置视觉/文本规划网关；示例地址与模型名不是已开通服务，也不是生图接口。
+6. 仅在使用 Skills 独立 CLI/GUI 时，才需要在对应 Python 环境安装 `00_full_pipeline/requirements.txt`。自然语言自动规划的独立工具还需要自行配置视觉/文本规划网关；示例地址与模型名不是已开通服务，也不是生图接口。
 
 ## 你这台 4060 Ti 8GB 的使用顺序
 

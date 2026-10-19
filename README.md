@@ -12,15 +12,17 @@
 
 ## 新手先看：技能列表里应该选哪个
 
+五个对外技能目录现已统一使用英文名称，保留00–04编号。更新已安装的 Skills 时，请用下表的英文目录替换原来的对应技能目录，避免同一个技能同时保留两份；技能内部 `name` 和界面用途不变。本仓库改名不会自动修改你电脑上已安装的 Skills 副本。
+
 安装后如果技能列表里出现很多 `ai-drama-*`，**日常只需选择下面五个入口**。以下显示名称对应当前界面截图；若宿主显示方式不同，以同一行的内部名称为准。
 
 | 你想做什么 | 界面显示名称（可直接搜索） | 内部名称 | 对应目录 |
 | --- | --- | --- | --- |
-| 给小说、剧本或整章，走完整制作资料流程 | **Ai Drama Full Pipeline** | `ai-drama-full-pipeline` | `00_整体一键版` |
-| 只做分镜，暂时不生成 H3 | **Ai Drama Storyboard Standalone** | `ai-drama-storyboard-standalone` | `01_只做分镜` |
-| 将已确认分镜转换成中文 H3 | **Ai Drama H3 Cn Standalone** | `ai-drama-h3-cn-standalone` | `02_只做中文H3` |
-| 将已有中文 H3 转换成同源英文 H3 | **Ai Drama H3 En Standalone** | `ai-drama-h3-en-standalone` | `03_只做英文H3` |
-| 用一句话制作一个 ≤5 秒的测试段提示词 | **Ai Drama One Line H3 Standalone** | `ai-drama-one-line-h3-standalone` | `04_一句话快速单段` |
+| 给小说、剧本或整章，走完整制作资料流程 | **Ai Drama Full Pipeline** | `ai-drama-full-pipeline` | `00_full_pipeline` |
+| 只做分镜，暂时不生成 H3 | **Ai Drama Storyboard Standalone** | `ai-drama-storyboard-standalone` | `01_storyboard` |
+| 将已确认分镜转换成中文 H3 | **Ai Drama H3 Cn Standalone** | `ai-drama-h3-cn-standalone` | `02_h3_cn` |
+| 将已有中文 H3 转换成同源英文 H3 | **Ai Drama H3 En Standalone** | `ai-drama-h3-en-standalone` | `03_h3_en` |
+| 用一句话制作一个 ≤5 秒的测试段提示词 | **Ai Drama One Line H3 Standalone** | `ai-drama-one-line-h3-standalone` | `04_one_line_h3` |
 
 **第一次测试人物库和视频工作流，选 Ai Drama One Line H3 Standalone；准备做整集，选 Ai Drama Full Pipeline。** 分步制作可按 Storyboard Standalone → H3 Cn Standalone → H3 En Standalone 使用。它们不是每次都必须全部运行。
 
@@ -73,7 +75,7 @@
 
 ```text
 ai-drama-skills-avs-refmod/
-├── 00_整体一键版/ … 04_一句话快速单段/    # 保持原来的五个同级 Skills
+├── 00_full_pipeline/ … 04_one_line_h3/    # 保持原来的五个同级 Skills
 ├── integrations/
 │   └── ComfyUI-AI-Video-Studio/
 │       ├── __init__.py、nodes.py、director.py 等 Python 文件
@@ -222,7 +224,7 @@ ComfyUI/
 ```text
 ai-drama-skills-avs-refmod/
 ├── README.md                         # 你正在看的 GitHub 完整说明
-├── 00_整体一键版/
+├── 00_full_pipeline/
 │   ├── SKILL.md
 │   ├── one_click.py
 │   ├── workbench.py
@@ -231,19 +233,19 @@ ai-drama-skills-avs-refmod/
 │   ├── 00_router/ ... 12_single_segment/   # 既有完整生产链内部资源
 │   ├── engine/  schemas/  scripts/ ...      # 引擎/校验/示例
 │   └── ...
-├── 01_只做分镜/
+├── 01_storyboard/
 │   ├── SKILL.md
 │   ├── references/
 │   └── examples/
-├── 02_只做中文H3/
+├── 02_h3_cn/
 │   ├── SKILL.md
 │   ├── references/
 │   └── examples/H3_PROMPTS_FULL_CN.md
-├── 03_只做英文H3/
+├── 03_h3_en/
 │   ├── SKILL.md
 │   ├── references/
 │   └── examples/H3_PROMPTS_FULL_EN.md
-└── 04_一句话快速单段/
+└── 04_one_line_h3/
     ├── SKILL.md
     ├── references/
     └── ...
@@ -253,11 +255,11 @@ ai-drama-skills-avs-refmod/
 
 | 入口 | SKILL.md 里的实际 `name` | 需要的输入 | 用户最终得到什么 |
 | --- | --- | --- | --- |
-| `00_整体一键版` | `ai-drama-full-pipeline` | 小说、剧本、完整项目需求 | 分镜、资产规划、中文/英文 H3 和整体交付资料 |
-| `01_只做分镜` | `ai-drama-storyboard-standalone` | 小说、剧本、剧情 | **只**得到详细分镜，不生成 H3 |
-| `02_只做中文H3` | `ai-drama-h3-cn-standalone` | 已确认分镜 | **只**得到中文 FULL 14 栏 H3 |
-| `03_只做英文H3` | `ai-drama-h3-en-standalone` | 已有中文 H3 FULL | **只**得到英文 FULL 14 栏 H3 |
-| `04_一句话快速单段` | `ai-drama-one-line-h3-standalone` | 一句话、单镜要求 | **一个** ≤5 秒的 FULL 14 栏 H3 |
+| `00_full_pipeline` | `ai-drama-full-pipeline` | 小说、剧本、完整项目需求 | 分镜、资产规划、中文/英文 H3 和整体交付资料 |
+| `01_storyboard` | `ai-drama-storyboard-standalone` | 小说、剧本、剧情 | **只**得到详细分镜，不生成 H3 |
+| `02_h3_cn` | `ai-drama-h3-cn-standalone` | 已确认分镜 | **只**得到中文 FULL 14 栏 H3 |
+| `03_h3_en` | `ai-drama-h3-en-standalone` | 已有中文 H3 FULL | **只**得到英文 FULL 14 栏 H3 |
+| `04_one_line_h3` | `ai-drama-one-line-h3-standalone` | 一句话、单镜要求 | **一个** ≤5 秒的 FULL 14 栏 H3 |
 
 **优先级：** 需要全部就调用 **00**；用户明确说“只做某一步”，应调用 **01/02/03/04**。01–04 都含各自必需的 `references/` / `examples/`，不是依赖 00 在线转接的薄壳。
 
@@ -273,11 +275,11 @@ ai-drama-skills-avs-refmod/
 你的项目/
 └── .agents/
     └── skills/
-        ├── 00_整体一键版/SKILL.md
-        ├── 01_只做分镜/SKILL.md
-        ├── 02_只做中文H3/SKILL.md
-        ├── 03_只做英文H3/SKILL.md
-        └── 04_一句话快速单段/SKILL.md
+        ├── 00_full_pipeline/SKILL.md
+        ├── 01_storyboard/SKILL.md
+        ├── 02_h3_cn/SKILL.md
+        ├── 03_h3_en/SKILL.md
+        └── 04_one_line_h3/SKILL.md
 ```
 
 这种放法只对当前项目可用，适合想让团队一起维护 Skill 版本的情况。
@@ -446,7 +448,7 @@ RefMod职责、道具holder、门状态、上一段尾22帧及其他连续性信
 
 ```text
 Step 1  上传小说/剧本 + 已有资产（可选）
-Step 2  调用 00_整体一键版
+Step 2  调用 00_full_pipeline
 Step 3  检查输出的角色/场景/道具与分镜（尤其故事事实和对白）
 Step 4  取得完整中文 + 英文 H3 FULL 14栏一键导入文件
 Step 5  在 AI-Video-Studio 中准备人物Identity RefMod与Clothing RefMod
@@ -694,9 +696,9 @@ negative_rules:
 
 ### 真实的完整样例文件
 
-- [中文 H3 FULL 示例](02_只做中文H3/examples/H3_PROMPTS_FULL_CN.md)
-- [英文 H3 FULL 示例](03_只做英文H3/examples/H3_PROMPTS_FULL_EN.md)
-- [分镜样例](01_只做分镜/examples/05_storyboard.json)
+- [中文 H3 FULL 示例](02_h3_cn/examples/H3_PROMPTS_FULL_CN.md)
+- [英文 H3 FULL 示例](03_h3_en/examples/H3_PROMPTS_FULL_EN.md)
+- [分镜样例](01_storyboard/examples/05_storyboard.json)
 
 以上是包内已有的参考资料。样例中的人物、Scene、Picture 名称属于样例数据，不代表使用者已经拥有这些资产。
 
@@ -704,7 +706,7 @@ negative_rules:
 
 ## 09. 英文版转换示例与语言规则
 
-`03_只做英文H3` 要保留段头、14栏字段名和所有绑定关系，只翻译自然语言描述：
+`03_h3_en` 要保留段头、14栏字段名和所有绑定关系，只翻译自然语言描述：
 
 ```text
 subject_definitions:
@@ -794,7 +796,7 @@ Gu Yanchuan speaks in Mandarin Chinese exactly as written:
 
 ## 11. 整体版 GUI / CLI 使用
 
-`00_整体一键版` 除 `SKILL.md` 入口外，也包含 `workbench.py`、`one_click.py` 等工程工具。**它们不是无需配置即可把小说变成视频的程序。**
+`00_full_pipeline` 除 `SKILL.md` 入口外，也包含 `workbench.py`、`one_click.py` 等工程工具。**它们不是无需配置即可把小说变成视频的程序。**
 
 ### 环境
 
@@ -803,7 +805,7 @@ Gu Yanchuan speaks in Mandarin Chinese exactly as written:
 - ComfyUI / H3 模型 / RefMod 节点与模型权重需要另行准备，Skills 负责生产资料，不提供权重。
 
 ```bash
-cd 00_整体一键版
+cd 00_full_pipeline
 python -m pip install -r requirements.txt
 ```
 
@@ -834,7 +836,7 @@ python one_click.py selftest --report test_report.json
 python one_click.py example --people 5 --output example_run
 ```
 
-规划器配置样例见：`00_整体一键版/planner_config.example.json`。不要将 API Token、内网规划器地址、真实客户小说及未获授权的人物照片提交到公开 GitHub。
+规划器配置样例见：`00_full_pipeline/planner_config.example.json`。不要将 API Token、内网规划器地址、真实客户小说及未获授权的人物照片提交到公开 GitHub。
 
 ---
 
@@ -865,7 +867,7 @@ python one_click.py example --people 5 --output example_run
 ## 13. 常见问题与故障排查
 
 **Q：五个 Skills 要放在两个不同的文件夹吗？**  
-A：不需要。安装时是五个**同级** Skill 目录，`00_整体一键版`、`01_只做分镜`、`02_只做中文H3`、`03_只做英文H3`、`04_一句话快速单段`。
+A：不需要。安装时是五个**同级** Skill 目录，`00_full_pipeline`、`01_storyboard`、`02_h3_cn`、`03_h3_en`、`04_one_line_h3`。
 
 **Q：为什么调用 01 只生成分镜，不直接给 H3？**  
 A：这是独立职责设计。要中文 H3 再调用 02，要英文 H3 再调用 03；想一次完成则用 00。
