@@ -10,8 +10,43 @@
 
 **项目定位：** 这是一套供 Codex 等支持 `SKILL.md` 的智能助手调用的**制作规则、模板与生产工具**，不是 MiniMax H3 模型本体，也不是安装后自动生成视频的 ComfyUI 节点。提示词由 Skills 生成；图片与 RefMod 由用户在 AI-Video-Studio 中准备、选择并运行。
 
+## 新手先看：技能列表里应该选哪个
+
+安装后如果技能列表里出现很多 `ai-drama-*`，**日常只需选择下面五个入口**。以下显示名称对应当前界面截图；若宿主显示方式不同，以同一行的内部名称为准。
+
+| 你想做什么 | 界面显示名称（可直接搜索） | 内部名称 | 对应目录 |
+| --- | --- | --- | --- |
+| 给小说、剧本或整章，走完整制作资料流程 | **Ai Drama Full Pipeline** | `ai-drama-full-pipeline` | `00_整体一键版` |
+| 只做分镜，暂时不生成 H3 | **Ai Drama Storyboard Standalone** | `ai-drama-storyboard-standalone` | `01_只做分镜` |
+| 将已确认分镜转换成中文 H3 | **Ai Drama H3 Cn Standalone** | `ai-drama-h3-cn-standalone` | `02_只做中文H3` |
+| 将已有中文 H3 转换成同源英文 H3 | **Ai Drama H3 En Standalone** | `ai-drama-h3-en-standalone` | `03_只做英文H3` |
+| 用一句话制作一个 ≤5 秒的测试段提示词 | **Ai Drama One Line H3 Standalone** | `ai-drama-one-line-h3-standalone` | `04_一句话快速单段` |
+
+**第一次测试人物库和视频工作流，选 Ai Drama One Line H3 Standalone；准备做整集，选 Ai Drama Full Pipeline。** 分步制作可按 Storyboard Standalone → H3 Cn Standalone → H3 En Standalone 使用。它们不是每次都必须全部运行。
+
+### 下面那些内部技能需要逐个点吗
+
+不需要。`ai-drama-router`、`ai-drama-story-adapter`、`ai-drama-character-bible`、`ai-drama-asset-bible`、`ai-drama-script`、`ai-drama-storyboard`、`ai-drama-spatial-lock`、`ai-drama-binding`、`ai-drama-h3-runtime`、`ai-drama-generation`、`ai-drama-qc`、`ai-drama-assembly` 是整体版的内部制作模块，按整体入口的规则组织使用。**保留这些文件，不要为了精简技能列表而删除，也不用按列表顺序逐个手动运行。**
+
+**Ai Drama Single Segment**（`ai-drama-single-segment`）也是整体版内部的单段入口。日常从外部直接做一句话测试时，选择独立的 **Ai Drama One Line H3 Standalone** 即可。尤其注意 `ai-drama-storyboard` 与 **Ai Drama Storyboard Standalone** 不同，用户单独做分镜时选带 Standalone 的那个。
+
+### 第一次测试：直接复制这段
+
+选择 **Ai Drama One Line H3 Standalone** 后，把下面内容发给助手，并补充实际男主、造型及场景资料：
+
+```text
+使用 ai-drama-one-line-h3-standalone。
+用已有男主制作一个5秒测试段：男主站在已确认场景中，轻微转头看向镜头，神情平静，无对白。
+采用 AVS_REFMOD，人物身份和服装使用我在 Studio 中选择的角色与造型。
+复用已有素材，不生成新脸，不虚构人物ID或素材路径；缺少的信息先指出。
+输出可导入的中文 H3 FULL 14栏，不执行视频生成。
+```
+
+拿到提示词后，进入 AVS：准备人物参考 → 导入 H3 → 为该段选择演员和造型 → 绑定所需场景素材 → 选择“当前视频段”生成。**Skill 输出提示词不代表已经生成视频**；使用此人物绑定流程仍必须先安装 ComfyUI-MiniMaxH3Mod，安装步骤见下文。
+
 ## 目录 / Contents
 
+- [新手先看：技能列表里应该选哪个](#新手先看技能列表里应该选哪个)
 - [新增：Python 插件、工作流安装与使用](#新增python-插件工作流安装与使用)
 - [01. 这套 Skills 能做什么](#01-这套-skills-能做什么)
 - [02. 五个 Skill：00–04](#02-五个-skill0004)
